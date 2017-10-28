@@ -14,20 +14,12 @@ class Users extends Model {
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data", "permises"];
 
-    // protected $fks = [
-    //   "permises" => [
-    //     "key" => "id",
-    //     "table_ref" => "",
-    //     "key_ref" => ""
-    //   ]
-    // ];
-
     public function __construct($properties = null) {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
 
-        public function setId($id) {
+    public function setId($id) {
         $this->id = $id;
     }
     public function getId() {

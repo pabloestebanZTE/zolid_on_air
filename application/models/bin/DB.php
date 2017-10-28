@@ -1,11 +1,11 @@
 <?php
-require_once APPPATH.'models/bin/ZolidException.php';
 
 class DB extends PDO {
 
     private $cogs;
     private $table;
     private $wheres;
+    private $others;
     private $action;
     private $sql;
 
@@ -13,13 +13,10 @@ class DB extends PDO {
         $this->init($table);
     }
 
-    public function setTable($table){
-      $this->table = (isset($table)) ? $table : "";
-    }
-
     public function init($table = null) {
         $this->cogs = require APPPATH.'config/db.php';
         $this->sql = "";
+        $this->others = "";
         $this->table = (isset($table)) ? $table : "";
         $this->wheres = "";
         $this->action = "";
@@ -133,12 +130,12 @@ class DB extends PDO {
     }
 
     public function limit($limit = 0, $limit2 = 0) {
-        $this->sql .= " LIMIT $limit" . (($limit2 > 0) ? ", $limit2" : "");
+        $this->others .= " LIMIT $limit" . (($limit2 > 0) ? ", $limit2" : "");
         return $this;
     }
 
     public function orderBy($key, $order) {
-        $this->sql .= " ORDER BY `$key` $order";
+        $this->others .= " ORDER BY `$key` $order";
         return $this;
     }
 
@@ -148,11 +145,12 @@ class DB extends PDO {
                 $this->sql = "SELECT * FROM $this->table";
             }
             $this->sql .= " " . $this->wheres;
-            $sth = $this->prepare($this->sql);
+            $this->sql .= " " . $this->others;
+            $sth = $this->prepare($this->sql);            
             $sth->execute();
             return $sth->fetchAll(($fech != null) ? $fech : $this->cogs["fetch"]);
         } catch (Exception $ex) {
-            throw (new ZolidException(EMessages::ERROR_QUERY))
+            throw (new DeplynException(EMessages::ERROR_QUERY))
                     ->setOriginalMessage($exc->getMessage());
         }
     }
@@ -178,7 +176,7 @@ class DB extends PDO {
     public function insert($obj) {
         try {
             if (trim($this->table) == "") {
-                return (new ZolidException(EMessages::ERROR_INSERT))
+                return (new DeplynException(EMessages::ERROR_INSERT))
                                 ->setMessage("Debe invocarse el método table antes que el método insert()");
             }
             $fieldNames = implode('`, `', array_keys($obj));
@@ -188,7 +186,7 @@ class DB extends PDO {
             $id = $this->lastInsertId();
             return $id;
         } catch (Exception $exc) {
-            throw (new ZolidException(EMessages::ERROR_INSERT))
+            throw (new DeplynException(EMessages::ERROR_INSERT))
                     ->setOriginalMessage($exc->getMessage());
         }
     }
@@ -196,7 +194,7 @@ class DB extends PDO {
     public function update($obj) {
         try {
             if (trim($this->table) == "") {
-                throw (new ZolidException(EMessages::ERROR_UPDATE))
+                throw (new DeplynException(EMessages::ERROR_UPDATE))
                         ->setMessage("Debe invocarse el método table antes que el método insert()");
             }
             $fieldDetails = null;
@@ -208,7 +206,7 @@ class DB extends PDO {
             $this->run($obj);
             return true;
         } catch (Exception $exc) {
-            throw (new ZolidException(EMessages::ERROR_UPDATE))
+            throw (new DeplynException(EMessages::ERROR_UPDATE))
                     ->setOriginalMessage($exc->getMessage());
         }
     }
@@ -216,14 +214,14 @@ class DB extends PDO {
     public function delete() {
         try {
             if (trim($this->table) == "") {
-                return (new ZolidException(EMessages::ERROR_DELETE))
+                return (new DeplynException(EMessages::ERROR_DELETE))
                                 ->setMessage("Debe invocarse el método table antes que el método insert()");
             }
             $this->sql = "DELETE FROM $this->table $this->wheres";
             $result = $this->exec($this->sql);
             return true;
         } catch (Exception $exc) {
-            throw (new ZolidException(EMessages::ERROR_DELETE))
+            throw (new DeplynException(EMessages::ERROR_DELETE))
                     ->setOriginalMessage($exc->getMessage());
         }
     }
@@ -235,14 +233,6 @@ class DB extends PDO {
         }
         $sth->execute();
     }
-
-    // public function begin(){
-    //   $this->beginTransaction();
-    // }
-
-    // public function commitTransaction(){
-    //   $this->commit();
-    // }
 
     function getSql() {
         return $this->sql;

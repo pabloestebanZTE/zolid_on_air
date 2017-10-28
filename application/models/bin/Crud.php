@@ -58,14 +58,13 @@ class Crud {
         return $this->db->count();
     }
 
-    public function getLastId() {
-       $this->init();
-       return $this->db->count() + 1;
+    public function get() {
+        $this->init();
+        return $this->db->get();
     }
 
-    public function get() {
-      $this->init();
-      return $this->db->get();
+    public function listAll() {
+        return $this->get();
     }
 
     private function getObj() {
@@ -147,11 +146,6 @@ class Crud {
         if (empty($this->db)) {
             $this->db = new DB($this->table);
         }
-    }
-
-    public function setTransaction($db){
-      $this->db = $db;
-      $this->db->setTable($this->table);
     }
 
 }

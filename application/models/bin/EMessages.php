@@ -5,6 +5,7 @@ class EMessages {
 
     const CORRECT = 1;
     const SUCCESS = 1;
+    const QUERY = 12;
     const INSERT = 2;
     const UPDATE = 3;
     const DELETE = 4;
@@ -22,7 +23,9 @@ class EMessages {
         switch ($code) {
             case EMessages::CORRECT:
             case EMessages::SUCCESS:
-                return new Response(1, "Se ha consultado con éxito.");
+                return new Response(1, "Se ha ejecutado la solicitud correctamente.");
+            case EMessages::QUERY:
+                return new Response(1, "Se realizó la consulta correctamente.");
             case EMessages::INSERT:
                 return new Response(1, "Se ha insertado el registro con éxito.");
             case EMessages::UPDATE:

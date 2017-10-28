@@ -17,7 +17,7 @@ class dao_user_model extends CI_Model {
       try{
         $user = new Users();
         $datos = $user->get();
-        $response = new Response(EMessages::SUCCESS);
+        $response = new Response(EMessages::QUERY);
         $response->setData($datos);
         return $response;
       }catch(ZolidException $ex){
@@ -34,8 +34,64 @@ class dao_user_model extends CI_Model {
         $datos = $user->where("token","=","123")
                  ->orWhere("password","=","12345")
                  ->get();
-        $response = new Response(EMessages::SUCCESS);
+        $response = new Response(EMessages::QUERY);
         $response->setData($datos);
+        return $response;
+      }catch(ZolidException $ex){
+        return $ex;
+      }
+    }
+
+    /**
+    * Consulta haciendo uso del eloquent con parámetros personalizados...
+    */
+
+    public function getCustom2($request){
+      try{
+        //Se seleccionan solo dos parámetros que se desean mostrar (password y token se excluirán)...
+        $data = DB::table('users')
+                ->select("id","username")
+                ->get();
+        $response = new Response(EMessages::QUERY);
+        $response->setData($data);
+        return $response;
+      }catch(ZolidException $ex){
+        return $ex;
+      }
+    }
+
+    /**
+    * En el siguiente ejemplo se listan los usuarios, se hace una ordenación por id
+    * de forma descendente y se limita el número de registros a solo uno.
+    */
+    public function getCustom3($request){
+      try{
+        $data = DB::table("users")
+                ->where("token","=","123")
+                ->orderBy("id","DESC")
+                ->limit(1)->get();
+        $response = new Response(EMessages::QUERY);
+        $response->setData($data);
+        return $response;
+      }catch(ZolidException $ex){
+        return $ex;
+      }
+    }
+
+
+    /**
+    * En el siguiente ejemplo se listan los usuarios, y al igual que antes se
+    * se hace un limit pero esta vez se pasan dos parámetros al método limit, esto,
+    * con el fin de hacer limites entre rangos especificos de archivos (Muy útil para las páginaciones).
+    */
+    public function getCustom4($request){
+      try{
+        $data = DB::table("users")
+                ->where("token","=","123")
+                ->limit(0,2)
+                ->get();
+        $response = new Response(EMessages::QUERY);
+        $response->setData($data);
         return $response;
       }catch(ZolidException $ex){
         return $ex;
@@ -51,7 +107,7 @@ class dao_user_model extends CI_Model {
             $datos = $user
                   ->where("id", "=", $request->id)
                   ->first();
-            $response = new Response(EMessages::SUCCESS);
+            $response = new Response(EMessages::QUERY);
             $response->setData($datos);
             return $response;
           }catch(ZolidException $ex){
