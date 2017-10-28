@@ -63,14 +63,9 @@ class Crud {
        return $this->db->count() + 1;
     }
 
-
     public function get() {
-        $this->init();
-        return $this->db->get();
-    }
-
-    public function listAll() {
-        return $this->get();
+      $this->init();
+      return $this->db->get();
     }
 
     private function getObj() {
