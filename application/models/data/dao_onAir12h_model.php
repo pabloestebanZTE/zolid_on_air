@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_user_model extends CI_Model{
+    class dao_onAir12h_model1 extends CI_Model{
 
         public function __construct(){
         }
