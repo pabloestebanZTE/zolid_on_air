@@ -10,6 +10,9 @@ class dao_user_model extends CI_Model {
         $this->load->model('dto/Users');
     }
 
+   /**
+   * Retornará todos los registros de la entidad Users en un arreglo de objetos...
+   */
     public function getAll($request){
       try{
         $user = new Users();
@@ -22,6 +25,9 @@ class dao_user_model extends CI_Model {
       }
     }
 
+    /**
+    * Retornará una lista(array) de objetos que coincidan con las reglas de la consulta.
+    */
     public function getCustom($request){
       try{
         $user = new Users();
@@ -36,7 +42,9 @@ class dao_user_model extends CI_Model {
       }
     }
 
-
+    /**
+    * Consultará un objeto con los datos del usuario.
+    */
     public function findById($request){
           try{
             $user = new Users();
@@ -49,8 +57,11 @@ class dao_user_model extends CI_Model {
           }catch(ZolidException $ex){
             return $ex;
           }
-        }
+    }
 
+    /**
+    * Se inserta un usuario.
+    */
     public function insert($request){
       try{
         $user = new Users();
@@ -61,6 +72,9 @@ class dao_user_model extends CI_Model {
       }
     }
 
+   /**
+   * Se actualiza un usuario.
+   */
     public function update($request){
       try{
         $user = new Users();
@@ -72,6 +86,9 @@ class dao_user_model extends CI_Model {
       }
     }
 
+    /**
+    * Se elimina un usuario.
+    */
     public function delete($request){
       try{
         $user = new Users();

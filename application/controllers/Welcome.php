@@ -11,7 +11,7 @@ class Welcome extends CI_Controller {
 
     public function index() {
       $dato = new dao_user_model();
-      $res = $dato->getCustom($this->request);
+      $res = $dato->getAll($request);
       $this->json($res);
     }
 

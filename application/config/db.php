@@ -23,7 +23,7 @@ return [
       | you may use many connections at once using the Database library.
       |
      */
-    'default' => 'mysql',
+    'default' => 'mysqlLocalhost',
     /*
       |--------------------------------------------------------------------------
       | Database Connections
@@ -47,6 +47,19 @@ return [
             'database' => 'on_air',
             'username' => 'AdminZTE',
             'password' => 'a4b3c2d1',
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+        'mysqlLocalhost' => [
+            'driver' => 'mysql',
+            'host' => 'localhost',
+            'port' => '3306',
+            'database' => 'deplyn',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
