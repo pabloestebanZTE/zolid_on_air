@@ -7,10 +7,10 @@
     <!--   ICONO PAGINA    -->
     <link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
     <!--   BOOTSTRAP    -->
-    <link rel="stylesheet" href="/Datafill_OT/assets/css/bootstrap.css"/>->
-    <link rel="stylesheet" href="/Datafill_OT/assets/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="<?= URL::to('assets/css/bootstrap.css') ?>"/>->
+    <link rel="stylesheet" href="<?= URL::to('assets/css/font-awesome.min.css') ?>"/>
     <!--   CSS ESTILOS PRINCIPAL    -->
-    <link rel="stylesheet" href="/Datafill_OT/assets/css/stylePrincipal.css"/>
+    <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css') ?>" />
     <link rel='stylesheet' type='text/css'  href='http://fonts.googleapis.com/css?family=Open+Sans'/>
 </head>
 <body>
@@ -25,7 +25,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="logo"><img id="logo" src="/Datafill_OT/assets/img/logo2.png" /></a>
+                    <a class="logo"><img id="logo" src="<?= URL::to('assets/img/logo2.png') ?>"/></a>
                 </div>
                 <!-- Collect the nav links for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -36,17 +36,17 @@
                         </li>
                         <li class="cam"><a href="#services">Servicios</a>
                         <ul>
-                            <li><a href="/Datafill_OT/index.php/Service/assignService">Agendar Actividad</a></li>
-                            <li><a href="/Datafill_OT/index.php/Service/listServices">Ver Actividades</a></li>
-                            <li><a href="/Datafill_OT/index.php/SendMail/send_mail">Ver Ingenieros</a></li>
+                            <li><a href="#">Agendar Actividad</a></li>
+                            <li><a href="#">Ver Actividades</a></li>
+                            <li><a href="#">Ver</a></li>
                         </ul>
                         </li>
-                        <li class="cam"><a href="/Datafill_OT/index.php/Service/RF">RF</a>
+                        <li class="cam"><a href="#">servicios</a>
                         </li>
                          <li class="cam"><a href="#contact-sec">Contactos</a>
                         </li>
                         </li>
-                         <li class="cam"><a href="/Datafill_OT/index.php/welcome/index">Salir</a>
+                         <li class="cam"><a href="<?= URL::to('index.php/welcome/index') ?>" />Salir</a>
                         </li>
                     </ul>
                 </div>
@@ -61,11 +61,11 @@
             <div class="col-md-9 col-sm-9">
               <div>
                 <a><br>
-                  <img class="logoz" id="logoz" src="/Datafill_OT/assets/img/logoz.png" />
+                  <img class="logoz" id="logoz" src="<?= URL::to('assets/img/logoz.png') ?>" />
                 </a>
               </div>
               <h1 class="head-main">ZTE</h1>
-              <span class="head-sub-main">Proyecto Datafill OT - Claro</span>
+              <span class="head-sub-main">Proyecto ONAIR - Claro</span>
               <div class="head-last"><!--texto aca--> </div>
             </div>
         </div>
@@ -157,12 +157,14 @@
     <!--End footer Section -->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY  -->
-    <script src="/Datafill_OT/assets/plugins/jquery-1.10.2.js"></script>
+    <script src="<?= URL::to('assets/plugins/jquery-1.10.2.js') ?>" /></script>
     <!-- BOOTSTRAP CORE SCRIPT   -->
-    <script src="/Datafill_OT/assets/plugins/bootstrap.js"></script>
+    <script src="<?= URL::to('assets/plugins/bootstrap.js') ?>" /></script>
     <!-- PARALLAX SCRIPT   -->
-    <script src="/Datafill_OT/assets/plugins/4jquery.parallax-1.1.3.js"></script>
+    <script src="<?= URL::to('assets/plugins/4jquery.parallax-1.1.3.js') ?>" /></script>
     <!-- CUSTOM SCRIPT   -->
-    <script src="/Datafill_OT/assets/js/custom.js"></script>
+    <script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
+
+
 </body>
 </html>
