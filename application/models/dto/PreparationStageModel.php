@@ -1,6 +1,6 @@
 <?php
 
-class PreparationStage extends Model {
+class PreparationStageModel extends Model {
 
     protected $k_id_preparation;
     protected $n_bcf_wbts_id;
@@ -36,8 +36,8 @@ class PreparationStage extends Model {
     protected $id_notificacion__;
     protected $id_documentacion__;
     protected $id_rftools__;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "preparation_stage";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -46,7 +46,7 @@ class PreparationStage extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdPreparation($k_id_preparation) {
         $this->k_id_preparation = $k_id_preparation;
     }
@@ -254,4 +254,3 @@ class PreparationStage extends Model {
 
 
 }
-

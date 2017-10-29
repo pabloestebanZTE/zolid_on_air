@@ -1,6 +1,6 @@
 <?php
 
-class TicketOnAir extends Model {
+class TicketOnAirModel extends Model {
 
     protected $k_id_onair;
     protected $k_id_status_onair;
@@ -52,8 +52,8 @@ class TicketOnAir extends Model {
     protected $n_en_prorroga__;
     protected $n_cont_prorrogas__;
     protected $n_noc;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "ticket_on_air";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -62,7 +62,7 @@ class TicketOnAir extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdOnair($k_id_onair) {
         $this->k_id_onair = $k_id_onair;
     }
@@ -366,4 +366,3 @@ class TicketOnAir extends Model {
 
 
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-class ScaledOnAir extends Model {
+class ScaledOnAirModel extends Model {
 
     protected $k_id_scaled_on_air;
     protected $k_id_onair;
@@ -24,8 +24,8 @@ class ScaledOnAir extends Model {
     protected $n_tipificacion_solucion;
     protected $n_detalle_solucion;
     protected $n_ultimo_subestado_de_escalamiento;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "scaled_on_air";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -34,7 +34,7 @@ class ScaledOnAir extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdScaledOnAir($k_id_scaled_on_air) {
         $this->k_id_scaled_on_air = $k_id_scaled_on_air;
     }
@@ -170,4 +170,3 @@ class ScaledOnAir extends Model {
 
 
 }
-

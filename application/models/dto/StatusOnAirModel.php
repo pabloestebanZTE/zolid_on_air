@@ -1,12 +1,12 @@
 <?php
 
-class StatusOnAir extends Model {
+class StatusOnAirModel extends Model {
 
     protected $k_id_status_onair;
     protected $k_id_substatus;
     protected $k_id_status;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "status_on_air";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -15,7 +15,7 @@ class StatusOnAir extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdStatusOnair($k_id_status_onair) {
         $this->k_id_status_onair = $k_id_status_onair;
     }
@@ -37,4 +37,3 @@ class StatusOnAir extends Model {
 
 
 }
-

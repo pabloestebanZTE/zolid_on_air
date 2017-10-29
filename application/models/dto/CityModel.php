@@ -1,12 +1,12 @@
 <?php
 
-class City extends Model {
+class CityModel extends Model {
 
     protected $k_id_city;
     protected $k_id_regional;
     protected $n_name_city;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "city";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -15,7 +15,7 @@ class City extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdCity($k_id_city) {
         $this->k_id_city = $k_id_city;
     }
@@ -37,4 +37,3 @@ class City extends Model {
 
 
 }
-

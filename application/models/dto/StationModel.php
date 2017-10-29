@@ -1,12 +1,12 @@
 <?php
 
-class Station extends Model {
+class StationModel extends Model {
 
     protected $k_id_station;
     protected $k_id_city;
     protected $n_name_station;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "station";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -15,7 +15,7 @@ class Station extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdStation($k_id_station) {
         $this->k_id_station = $k_id_station;
     }
@@ -37,4 +37,3 @@ class Station extends Model {
 
 
 }
-

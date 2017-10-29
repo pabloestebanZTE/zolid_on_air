@@ -1,11 +1,11 @@
 <?php
 
-class Band extends Model {
+class BandModel extends Model {
 
     protected $k_id_band;
     protected $n_name_band;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "band";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -14,7 +14,7 @@ class Band extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdBand($k_id_band) {
         $this->k_id_band = $k_id_band;
     }
@@ -30,4 +30,3 @@ class Band extends Model {
 
 
 }
-

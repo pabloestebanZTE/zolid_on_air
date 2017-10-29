@@ -1,6 +1,6 @@
 <?php
 
-class Users extends Model {
+class UsersModel extends Model {
 
     protected $id;
     protected $token;

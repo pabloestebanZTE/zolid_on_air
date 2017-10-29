@@ -1,11 +1,11 @@
 <?php
 
-class Work extends Model {
+class WorkModel extends Model {
 
     protected $k_id_work;
     protected $n_name_ork;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "work";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -14,7 +14,7 @@ class Work extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdWork($k_id_work) {
         $this->k_id_work = $k_id_work;
     }
@@ -30,4 +30,3 @@ class Work extends Model {
 
 
 }
-

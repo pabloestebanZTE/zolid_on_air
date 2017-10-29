@@ -1,13 +1,13 @@
 <?php
 
-class OnAir24h extends Model {
+class OnAir24hModel extends Model {
 
     protected $k_id_24h_real;
     protected $k_id_onair;
     protected $k_id_follow_up_24h;
     protected $d_fin24h;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "on_air24h";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -16,7 +16,7 @@ class OnAir24h extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKId24hReal($k_id_24h_real) {
         $this->k_id_24h_real = $k_id_24h_real;
     }
@@ -44,4 +44,3 @@ class OnAir24h extends Model {
 
 
 }
-

@@ -1,12 +1,12 @@
 <?php
 
-class Precheck extends Model {
+class PrecheckModel extends Model {
 
     protected $k_id_precheck;
     protected $k_id_user;
     protected $d_finpre;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "precheck";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -15,7 +15,7 @@ class Precheck extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdPrecheck($k_id_precheck) {
         $this->k_id_precheck = $k_id_precheck;
     }
@@ -37,4 +37,3 @@ class Precheck extends Model {
 
 
 }
-

@@ -1,11 +1,11 @@
 <?php
 
-class Technology extends Model {
+class TechnologyModel extends Model {
 
     protected $k_id_technology;
     protected $n_name_technology;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "technology";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -14,7 +14,7 @@ class Technology extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdTechnology($k_id_technology) {
         $this->k_id_technology = $k_id_technology;
     }
@@ -30,4 +30,3 @@ class Technology extends Model {
 
 
 }
-
