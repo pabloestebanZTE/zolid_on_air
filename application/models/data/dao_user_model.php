@@ -9,7 +9,7 @@
         protected $session;
 
         public function __construct(){
-           $this->load->model('dto/User');
+           $this->load->model('dto/UserModel');
         }
 
         public function getAll(){

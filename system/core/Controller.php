@@ -89,6 +89,7 @@ class CI_Controller {
         $this->load->model('bin/Auth');
         $this->load->model('bin/URL');
         $this->load->model('bin/Hash');
+        $this->load->model('bin/Session');
         $this->request = new Request();
         log_message('info', 'Controller Class Initialized');
     }

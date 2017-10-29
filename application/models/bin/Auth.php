@@ -6,20 +6,20 @@ class Auth {
     private static $class;
 
     function __construct() {
-        
+
     }
 
-    private function init() {
+    public static function init() {
         if (isset(self::$class)) {
             return;
         }
-        $cogs = require_once PATH_CONFIG . "auth.php";
+        $cogs = require_once APPPATH . "config/auth.php";
         self::$class = $cogs["providers"]["users"]["model"];
-        require_once PATH_MODELS . self::$class . ".php";
+        require_once APPPATH. "models/dto/" . self::$class . ".php";
     }
 
     /**
-     * 
+     *
      * @param Array $args
      * @param boolean $remember
      */
@@ -51,8 +51,10 @@ class Auth {
             $i++;
         }
         $user = $db->select(self::$sql)->first();
-        self::save($user);
-        return count($user) > 0;
+        if($user != null){
+          self::save($user);
+        }
+        return $user != null;
     }
 
     function str_lreplace($search, $replace, $subject) {
@@ -63,7 +65,7 @@ class Auth {
         return $subject;
     }
 
-    private function save($user) {
+    public static function save($user) {
         Session::set("auth", $user);
     }
 
