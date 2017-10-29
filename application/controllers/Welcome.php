@@ -9,7 +9,7 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-      echo "hola gente";
+      $this->load->view('login');
     }
 
 }

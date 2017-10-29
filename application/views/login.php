@@ -11,7 +11,7 @@
     <!--   ANIMACION LOGIN    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <!--   CSS ESTILOS LOGIN    -->
-    <link rel="stylesheet" href="/Zolid/assets/css/stylelogin.css">
+    <link rel="stylesheet" href="/zolid_on_air/assets/css/stylelogin.css">
     <!--   JQUERY   -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <!--   SCRIPT PROPIOS   -->
@@ -41,8 +41,7 @@
             </td>
             <datalist id="project">
               <option value="Fonade" />
-              <option value="Datafill OT" />
-              <option value="ONAIR" />
+              <option value="On-Air" />
             </datalist>
           </div>
         </div>
