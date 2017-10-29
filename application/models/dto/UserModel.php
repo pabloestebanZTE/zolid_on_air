@@ -10,6 +10,7 @@ class UserModel extends Model {
     protected $i_phone_user;
     protected $i_cellphone_user;
     protected $n_password;
+    protected $n_role_user;
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "user";
@@ -69,6 +70,14 @@ class UserModel extends Model {
     public function getNPassword() {
         return $this->n_password;
     }
+
+    public function setNRoleUser($n_role_user) {
+        $this->n_role_user = $n_role_user;
+    }
+
+    public function getNRoleUser() {
+        return $this->n_role_user;
+   }
 
 
 }

@@ -11,20 +11,35 @@
       }
 
       public function loginUser(){
-        echo "<br><br><br><br><br>";
-        echo "o_ougiugiulih";
-        // $dato = new dao_user_model;
-        // $res = $dato->findByUsername($this->request);
-        //$this->json($res);
+         $dato = new dao_user_model;
+         $res = $dato->findByUsername($this->request);
+         print_r($res);
+          if($res->data != ""){
+            if($res->data->n_password == $this->request->password){
+               if($res->data->n_role_user == "Coordinador"){
 
-        // $res = $this->dao_user_model->findByUsername($this->request);
-        // print_r($res);
+               }
+               if($res->data->n_role_user == "Documentador"){
+
+               }
+               if($res->data->n_role_user == "Ingeniero"){
+
+               }
+               $this->login($res);
+            }else {
+              $answer['error'] = "error";
+              $this->load->view('login', $answer);
+            }
+         }else {
+           $answer['error'] = "error";
+           $this->load->view('login', $answer);
+         }
       }
 
 
       //preferiblemente dejar el código en el dao_user_model...
-      public function login(){
-        $request = $this->request;        
+      public function login($user){
+        $request = $this->request;
         if (Auth::attempt([
                   "n_mail_user" => $request->username,
                   "n_password" => $request->password,
@@ -32,6 +47,8 @@
                       "n_username_user" => $request->username
                   ]
               ])) {
+          $answer['user'] = $user->data;
+          $this->load->view('principal', $answer);
           //Redireccionar, o cargar vista de acceso válido...
           echo "LOGUEADO CORRECTAMENTE<br/>";
       } else {

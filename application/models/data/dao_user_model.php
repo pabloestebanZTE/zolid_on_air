@@ -10,6 +10,7 @@
 
         public function __construct(){
            $this->load->model('dto/UserModel');
+
         }
 
         public function getAll(){
@@ -27,8 +28,8 @@
 
         public function findByUsername($request){
           try {
-            $user = new User();
-            $datos = $user->where("n_username_user","=","camilo")
+            $user = new UserModel();
+            $datos = $user->where("n_username_user","=",$request->username)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
