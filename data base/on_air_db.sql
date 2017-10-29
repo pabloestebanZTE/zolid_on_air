@@ -3,439 +3,439 @@ use on_air;
 
 
 /*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     10/28/2017 12:45:07 PM                       */
+/* dbms name:      mysql 5.0                                    */
+/* created on:     10/28/2017 12:45:07 pm                       */
 /*==============================================================*/
 
 
-drop table if exists BAND;
+drop table if exists band;
 
-drop table if exists CITY;
+drop table if exists city;
 
-drop table if exists FOLLOW_UP_12H;
+drop table if exists follow_up_12h;
 
-drop table if exists FOLLOW_UP_24H;
+drop table if exists follow_up_24h;
 
-drop table if exists FOLLOW_UP_36H;
+drop table if exists follow_up_36h;
 
-drop table if exists ON_AIR24H;
+drop table if exists on_air24h;
 
-drop table if exists ON_AIR_12H;
+drop table if exists on_air_12h;
 
-drop table if exists ON_AIR_36H;
+drop table if exists on_air_36h;
 
-drop table if exists PRECHECK;
+drop table if exists precheck;
 
-drop table if exists PREPARATION_STAGE;
+drop table if exists preparation_stage;
 
-drop table if exists REGIONAL;
+drop table if exists regional;
 
-drop table if exists SCALED;
+drop table if exists scaled;
 
-drop table if exists SCALED_ON_AIR;
+drop table if exists scaled_on_air;
 
-drop table if exists STATION;
+drop table if exists station;
 
-drop table if exists STATUS;
+drop table if exists status;
 
-drop table if exists STATUS_ON_AIR;
+drop table if exists status_on_air;
 
-drop table if exists SUBSTATUS;
+drop table if exists substatus;
 
-drop table if exists TECHNOLOGY;
+drop table if exists technology;
 
-drop table if exists TICKET_ON_AIR;
+drop table if exists ticket_on_air;
 
-drop table if exists USER;
+drop table if exists user;
 
-drop table if exists WORK;
+drop table if exists work;
 
 /*==============================================================*/
-/* Table: BAND                                                  */
+/* table: band                                                  */
 /*==============================================================*/
-create table BAND
+create table band
 (
-   K_ID_BAND            int not null,
-   N_NAME_BAND          varchar(50) not null,
-   primary key (K_ID_BAND)
+   k_id_band            int not null,
+   n_name_band          varchar(50) not null,
+   primary key (k_id_band)
 );
 
 /*==============================================================*/
-/* Table: CITY                                                  */
+/* table: city                                                  */
 /*==============================================================*/
-create table CITY
+create table city
 (
-   K_ID_CITY            int not null,
-   K_ID_REGIONAL        int,
-   N_NAME_CITY          varchar(100) not null,
-   primary key (K_ID_CITY)
+   k_id_city            int not null,
+   k_id_regional        int,
+   n_name_city          varchar(100) not null,
+   primary key (k_id_city)
 );
 
 /*==============================================================*/
-/* Table: FOLLOW_UP_12H                                         */
+/* table: follow_up_12h                                         */
 /*==============================================================*/
-create table FOLLOW_UP_12H
+create table follow_up_12h
 (
-   K_ID_FOLLOW_UP_12H   int not null,
-   K_ID_USER            int,
-   primary key (K_ID_FOLLOW_UP_12H)
+   k_id_follow_up_12h   int not null,
+   k_id_user            int,
+   primary key (k_id_follow_up_12h)
 );
 
 /*==============================================================*/
-/* Table: FOLLOW_UP_24H                                         */
+/* table: follow_up_24h                                         */
 /*==============================================================*/
-create table FOLLOW_UP_24H
+create table follow_up_24h
 (
-   K_ID_FOLLOW_UP_24H   int not null,
-   K_ID_USER            int,
-   primary key (K_ID_FOLLOW_UP_24H)
+   k_id_follow_up_24h   int not null,
+   k_id_user            int,
+   primary key (k_id_follow_up_24h)
 );
 
 /*==============================================================*/
-/* Table: FOLLOW_UP_36H                                         */
+/* table: follow_up_36h                                         */
 /*==============================================================*/
-create table FOLLOW_UP_36H
+create table follow_up_36h
 (
-   K_ID_FOLLOW_UP_36H   int not null,
-   K_ID_USER            int,
-   primary key (K_ID_FOLLOW_UP_36H)
+   k_id_follow_up_36h   int not null,
+   k_id_user            int,
+   primary key (k_id_follow_up_36h)
 );
 
 /*==============================================================*/
-/* Table: ON_AIR24H                                             */
+/* table: on_air24h                                             */
 /*==============================================================*/
-create table ON_AIR24H
+create table on_air24h
 (
-   K_ID_24H_REAL        int not null,
-   K_ID_ONAIR           int,
-   K_ID_FOLLOW_UP_24H   int,
-   D_FIN24H             datetime,
-   primary key (K_ID_24H_REAL)
+   k_id_24h_real        int not null,
+   k_id_onair           int,
+   k_id_follow_up_24h   int,
+   d_fin24h             datetime,
+   primary key (k_id_24h_real)
 );
 
 /*==============================================================*/
-/* Table: ON_AIR_12H                                            */
+/* table: on_air_12h                                            */
 /*==============================================================*/
-create table ON_AIR_12H
+create table on_air_12h
 (
-   K_ID_12H_REAL        int not null,
-   K_ID_FOLLOW_UP_12H   int,
-   K_ID_ONAIR           int,
-   D_FIN12H             date,
-   primary key (K_ID_12H_REAL)
+   k_id_12h_real        int not null,
+   k_id_follow_up_12h   int,
+   k_id_onair           int,
+   d_fin12h             date,
+   primary key (k_id_12h_real)
 );
 
 /*==============================================================*/
-/* Table: ON_AIR_36H                                            */
+/* table: on_air_36h                                            */
 /*==============================================================*/
-create table ON_AIR_36H
+create table on_air_36h
 (
-   K_ID_36H_REAL        int not null,
-   K_ID_FOLLOW_UP_36H   int,
-   K_ID_ONAIR           int,
-   D_FIN36H             datetime,
-   primary key (K_ID_36H_REAL)
+   k_id_36h_real        int not null,
+   k_id_follow_up_36h   int,
+   k_id_onair           int,
+   d_fin36h             datetime,
+   primary key (k_id_36h_real)
 );
 
 /*==============================================================*/
-/* Table: PRECHECK                                              */
+/* table: precheck                                              */
 /*==============================================================*/
-create table PRECHECK
+create table precheck
 (
-   K_ID_PRECHECK        int not null,
-   K_ID_USER            int,
-   D_FINPRE             datetime,
-   primary key (K_ID_PRECHECK)
+   k_id_precheck        int not null,
+   k_id_user            int,
+   d_finpre             datetime,
+   primary key (k_id_precheck)
 );
 
 /*==============================================================*/
-/* Table: PREPARATION_STAGE                                     */
+/* table: preparation_stage                                     */
 /*==============================================================*/
-create table PREPARATION_STAGE
+create table preparation_stage
 (
-   K_ID_PREPARATION     int not null,
-   N_BCF_WBTS_ID        varchar(100),
-   N_BTS_ID             varchar(100),
-   D_INGRESO_ON_AIR     datetime,
-   B_VISTAMM            bool,
-   N_ENTEEJECUTOR       varchar(100),
-   N_CONTROLADOR        varchar(100),
-   N_IDCONTROLADOR      varchar(100),
-   D_CORRECCIONESPENDIENTES datetime,
-   N_BTSIPADDRESS       varchar(100),
-   N_INTEGRADOR         varchar(100),
-   N_WP                 varchar(100),
-   N_CRQ                varchar(100),
-   N_TESTGESTION        varchar(100),
-   N_SITIOLIMPIO        varchar(100),
-   N_INSTALACION_HW_SITIO varchar(100),
-   N_CAMBIOS_CONFIG_SOLICITADOS varchar(100),
-   N_CAMBIOS_CONFIG_FINAL varchar(100),
-   N_CONTRATISTA__      varchar(100),
-   N_COMENTARIOCCIAL__  varchar(100),
-   N_TICKETREMEDY__     varchar(100),
-   N_LAC                varchar(100),
-   N_RAC                varchar(100),
-   N_SAC                varchar(100),
-   N_INTEGRACION_GESTION_Y_TRAFICA varchar(100),
-   PUESTA_SERVICIO_SITIO_NUEVO_LTE__ varchar(100),
-   N_INSTALACION_HW_4G_SITIO__ varchar(100),
-   PRE_LAUNCH           varchar(100),
-   N_EVIDENCIASL__      varchar(100),
-   IDENCIASL__          varchar(100),
-   I_WEEK               int,
-   ID_NOTIFICACION__    varchar(100),
-   ID_DOCUMENTACION__   varchar(100),
-   ID_RFTOOLS__         varchar(100),
-   primary key (K_ID_PREPARATION)
+   k_id_preparation     int not null,
+   n_bcf_wbts_id        varchar(100),
+   n_bts_id             varchar(100),
+   d_ingreso_on_air     datetime,
+   b_vistamm            bool,
+   n_enteejecutor       varchar(100),
+   n_controlador        varchar(100),
+   n_idcontrolador      varchar(100),
+   d_correccionespendientes datetime,
+   n_btsipaddress       varchar(100),
+   n_integrador         varchar(100),
+   n_wp                 varchar(100),
+   n_crq                varchar(100),
+   n_testgestion        varchar(100),
+   n_sitiolimpio        varchar(100),
+   n_instalacion_hw_sitio varchar(100),
+   n_cambios_config_solicitados varchar(100),
+   n_cambios_config_final varchar(100),
+   n_contratista__      varchar(100),
+   n_comentarioccial__  varchar(100),
+   n_ticketremedy__     varchar(100),
+   n_lac                varchar(100),
+   n_rac                varchar(100),
+   n_sac                varchar(100),
+   n_integracion_gestion_y_trafica varchar(100),
+   puesta_servicio_sitio_nuevo_lte__ varchar(100),
+   n_instalacion_hw_4g_sitio__ varchar(100),
+   pre_launch           varchar(100),
+   n_evidenciasl__      varchar(100),
+   idenciasl__          varchar(100),
+   i_week               int,
+   id_notificacion__    varchar(100),
+   id_documentacion__   varchar(100),
+   id_rftools__         varchar(100),
+   primary key (k_id_preparation)
 );
 
 /*==============================================================*/
-/* Table: REGIONAL                                              */
+/* table: regional                                              */
 /*==============================================================*/
-create table REGIONAL
+create table regional
 (
-   K_ID_REGIONAL        int not null,
-   N_NAME_REGIONAL      varchar(100) not null,
-   primary key (K_ID_REGIONAL)
+   k_id_regional        int not null,
+   n_name_regional      varchar(100) not null,
+   primary key (k_id_regional)
 );
 
 /*==============================================================*/
-/* Table: SCALED                                                */
+/* table: scaled                                                */
 /*==============================================================*/
-create table SCALED
+create table scaled
 (
-   K_ID_SACLED          int not null,
-   primary key (K_ID_SACLED)
+   k_id_sacled          int not null,
+   primary key (k_id_sacled)
 );
 
 /*==============================================================*/
-/* Table: SCALED_ON_AIR                                         */
+/* table: scaled_on_air                                         */
 /*==============================================================*/
-create table SCALED_ON_AIR
+create table scaled_on_air
 (
-   K_ID_SCALED_ON_AIR   int not null,
-   K_ID_ONAIR           int,
-   K_ID_SACLED          int,
-   D_TIME_ESCALADO__    datetime,
-   D_FECHA_ESCALADO     datetime,
-   I_CONT_ESC_IMP       int,
-   TIME_ESC_IMP__       int,
-   I_CONT_ESC_RF__      int,
-   I_TIME_ESC_RF__      int,
-   CONT_ESC_NPO__       int,
-   I_TIME_ESC_NPO__     int,
-   CONT_ESC_CARE__      int,
-   I_TIME_ESC_CARE__    int,
-   I_CONT_ESC_GDRT__    int,
-   I_TIME_ESC_GDRT__    int,
-   I_CONT_ESC_OYM__     int,
-   TIME_ESC_OYM__       int,
-   CONT_ESC_CALIDAD__   int,
-   I_TIME_ESC_CALIDAD__ int,
-   N_TIPIFICACION_SOLUCION varchar(100),
-   N_DETALLE_SOLUCION   varchar(300),
-   N_ULTIMO_SUBESTADO_DE_ESCALAMIENTO varchar(100),
-   primary key (K_ID_SCALED_ON_AIR)
+   k_id_scaled_on_air   int not null,
+   k_id_onair           int,
+   k_id_sacled          int,
+   d_time_escalado__    datetime,
+   d_fecha_escalado     datetime,
+   i_cont_esc_imp       int,
+   time_esc_imp__       int,
+   i_cont_esc_rf__      int,
+   i_time_esc_rf__      int,
+   cont_esc_npo__       int,
+   i_time_esc_npo__     int,
+   cont_esc_care__      int,
+   i_time_esc_care__    int,
+   i_cont_esc_gdrt__    int,
+   i_time_esc_gdrt__    int,
+   i_cont_esc_oym__     int,
+   time_esc_oym__       int,
+   cont_esc_calidad__   int,
+   i_time_esc_calidad__ int,
+   n_tipificacion_solucion varchar(100),
+   n_detalle_solucion   varchar(300),
+   n_ultimo_subestado_de_escalamiento varchar(100),
+   primary key (k_id_scaled_on_air)
 );
 
 /*==============================================================*/
-/* Table: STATION                                               */
+/* table: station                                               */
 /*==============================================================*/
-create table STATION
+create table station
 (
-   K_ID_STATION         int not null,
-   K_ID_CITY            int,
-   N_NAME_STATION       varchar(100) not null,
-   primary key (K_ID_STATION)
+   k_id_station         int not null,
+   k_id_city            int,
+   n_name_station       varchar(100) not null,
+   primary key (k_id_station)
 );
 
 /*==============================================================*/
-/* Table: STATUS                                                */
+/* table: status                                                */
 /*==============================================================*/
-create table STATUS
+create table status
 (
-   K_ID_STATUS          int not null,
-   N_NAME_STATUS        varchar(100) not null,
-   primary key (K_ID_STATUS)
+   k_id_status          int not null,
+   n_name_status        varchar(100) not null,
+   primary key (k_id_status)
 );
 
 /*==============================================================*/
-/* Table: STATUS_ON_AIR                                         */
+/* table: status_on_air                                         */
 /*==============================================================*/
-create table STATUS_ON_AIR
+create table status_on_air
 (
-   K_ID_STATUS_ONAIR    int not null,
-   K_ID_SUBSTATUS       int,
-   K_ID_STATUS          int,
-   primary key (K_ID_STATUS_ONAIR)
+   k_id_status_onair    int not null,
+   k_id_substatus       int,
+   k_id_status          int,
+   primary key (k_id_status_onair)
 );
 
 /*==============================================================*/
-/* Table: SUBSTATUS                                             */
+/* table: substatus                                             */
 /*==============================================================*/
-create table SUBSTATUS
+create table substatus
 (
-   K_ID_SUBSTATUS       int not null,
-   N_NAME_SUBSTATUS     varchar(100) not null,
-   primary key (K_ID_SUBSTATUS)
+   k_id_substatus       int not null,
+   n_name_substatus     varchar(100) not null,
+   primary key (k_id_substatus)
 );
 
 /*==============================================================*/
-/* Table: TECHNOLOGY                                            */
+/* table: technology                                            */
 /*==============================================================*/
-create table TECHNOLOGY
+create table technology
 (
-   K_ID_TECHNOLOGY      int not null,
-   N_NAME_TECHNOLOGY    varchar(50) not null,
-   primary key (K_ID_TECHNOLOGY)
+   k_id_technology      int not null,
+   n_name_technology    varchar(50) not null,
+   primary key (k_id_technology)
 );
 
 /*==============================================================*/
-/* Table: TICKET_ON_AIR                                         */
+/* table: ticket_on_air                                         */
 /*==============================================================*/
-create table TICKET_ON_AIR
+create table ticket_on_air
 (
-   K_ID_ONAIR           int not null,
-   K_ID_STATUS_ONAIR    int,
-   K_ID_WORK            int,
-   K_ID_PREPARATION     int,
-   K_ID_STATION         int,
-   K_ID_TECHNOLOGY      int,
-   K_ID_BAND            int,
-   K_ID_PRECHECK        int,
-   B_EXCPETION_GRI      bool,
-   D_FECHA_ULTIMA_REV   datetime,
-   D_DESBLOQUEO         datetime,
-   D_BLOQUEO            datetime,
-   N_REVIEWEDFO         varchar(100),
-   D_FECHAPRODUCCION    datetime,
-   N_SECTORESBLOQUEADOS varchar(100),
-   N_SECTORESDESBLOQUEADOS varchar(100),
-   N_ESTADOONAIR        varchar(100),
-   N_ATRIBUIBLE_NOKIA__ varchar(100),
-   N_KPIS_DEGRADED__    varchar(10),
-   N_ATRIBUIBLE_NOKIA2  varchar(100),
-   N_KPI1               varchar(100),
-   N_KPI2               varchar(100),
-   N_KPI3               varchar(100),
-   N_KPI4               varchar(100),
-   I_VALOR_KPI1         int,
-   I_VALOR_KPI2         int,
-   I_VALOR_KPI3         int,
-   I_VALOR_KPI4         int,
-   N_ALARMA1            varchar(20),
-   N_ALARMA2            varchar(20),
-   N_ALARMA3            varchar(20),
-   N_ALARMA4            varchar(20),
-   I_CONT_TOTAL_ESCALAMIENTO int,
-   I_TIME_TOTAL_ESCALAMIENTO int,
-   I_LIDER_CAMBIO       int,
-   I_LIDER_CUADRILLA    int,
-   N_IMPLEMENTACION_CAMPO__ varchar(20),
-   N_DOC__              varchar(20),
-   N_GESTION_POWER__    varchar(20),
-   N_OBRA_CIVIL__       varchar(20),
-   ON_AIR__             varchar(20),
-   FECHA_RFT__          datetime,
-   D_FECHA_CG           datetime,
-   N_EXCLUSION_BAJO_TRAFICO__ varchar(100),
-   N_TICKET__           varchar(100),
-   N_ESTADO_TICKET__    varchar(100),
-   N_SLN_MODERNIZACION__ varchar(100),
-   N_EN_PRORROGA__      varchar(100),
-   N_CONT_PRORROGAS__   int,
-   N_NOC                varchar(100),
-   primary key (K_ID_ONAIR)
+   k_id_onair           int not null,
+   k_id_status_onair    int,
+   k_id_work            int,
+   k_id_preparation     int,
+   k_id_station         int,
+   k_id_technology      int,
+   k_id_band            int,
+   k_id_precheck        int,
+   b_excpetion_gri      bool,
+   d_fecha_ultima_rev   datetime,
+   d_desbloqueo         datetime,
+   d_bloqueo            datetime,
+   n_reviewedfo         varchar(100),
+   d_fechaproduccion    datetime,
+   n_sectoresbloqueados varchar(100),
+   n_sectoresdesbloqueados varchar(100),
+   n_estadoonair        varchar(100),
+   n_atribuible_nokia__ varchar(100),
+   n_kpis_degraded__    varchar(10),
+   n_atribuible_nokia2  varchar(100),
+   n_kpi1               varchar(100),
+   n_kpi2               varchar(100),
+   n_kpi3               varchar(100),
+   n_kpi4               varchar(100),
+   i_valor_kpi1         int,
+   i_valor_kpi2         int,
+   i_valor_kpi3         int,
+   i_valor_kpi4         int,
+   n_alarma1            varchar(20),
+   n_alarma2            varchar(20),
+   n_alarma3            varchar(20),
+   n_alarma4            varchar(20),
+   i_cont_total_escalamiento int,
+   i_time_total_escalamiento int,
+   i_lider_cambio       int,
+   i_lider_cuadrilla    int,
+   n_implementacion_campo__ varchar(20),
+   n_doc__              varchar(20),
+   n_gestion_power__    varchar(20),
+   n_obra_civil__       varchar(20),
+   on_air__             varchar(20),
+   fecha_rft__          datetime,
+   d_fecha_cg           datetime,
+   n_exclusion_bajo_trafico__ varchar(100),
+   n_ticket__           varchar(100),
+   n_estado_ticket__    varchar(100),
+   n_sln_modernizacion__ varchar(100),
+   n_en_prorroga__      varchar(100),
+   n_cont_prorrogas__   int,
+   n_noc                varchar(100),
+   primary key (k_id_onair)
 );
 
 /*==============================================================*/
-/* Table: USER                                                  */
+/* table: user                                                  */
 /*==============================================================*/
-create table USER
+create table user
 (
-   K_ID_USER            int not null,
-   N_NAME_USER          varchar(150) not null,
-   N_LAST_NAME_USER     varchar(150) not null,
-   N_USERNAME_USER      varchar(100) not null,
-   primary key (K_ID_USER)
+   k_id_user            int not null,
+   n_name_user          varchar(150) not null,
+   n_last_name_user     varchar(150) not null,
+   n_username_user      varchar(100) not null,
+   primary key (k_id_user)
 );
 
 /*==============================================================*/
-/* Table: WORK                                                  */
+/* table: work                                                  */
 /*==============================================================*/
-create table WORK
+create table work
 (
-   K_ID_WORK            int not null,
-   N_NAME_ORK           varchar(200) not null,
-   primary key (K_ID_WORK)
+   k_id_work            int not null,
+   n_name_ork           varchar(200) not null,
+   primary key (k_id_work)
 );
 
-alter table CITY add constraint FK_CITY_REG foreign key (K_ID_REGIONAL)
-      references REGIONAL (K_ID_REGIONAL) on delete restrict on update restrict;
+alter table city add constraint fk_city_reg foreign key (k_id_regional)
+      references regional (k_id_regional) on delete restrict on update restrict;
 
-alter table FOLLOW_UP_12H add constraint FK_12H_USER foreign key (K_ID_USER)
-      references USER (K_ID_USER) on delete restrict on update restrict;
+alter table follow_up_12h add constraint fk_12h_user foreign key (k_id_user)
+      references user (k_id_user) on delete restrict on update restrict;
 
-alter table FOLLOW_UP_24H add constraint FK_24H_USER foreign key (K_ID_USER)
-      references USER (K_ID_USER) on delete restrict on update restrict;
+alter table follow_up_24h add constraint fk_24h_user foreign key (k_id_user)
+      references user (k_id_user) on delete restrict on update restrict;
 
-alter table FOLLOW_UP_36H add constraint FK_36H_USER foreign key (K_ID_USER)
-      references USER (K_ID_USER) on delete restrict on update restrict;
+alter table follow_up_36h add constraint fk_36h_user foreign key (k_id_user)
+      references user (k_id_user) on delete restrict on update restrict;
 
-alter table ON_AIR24H add constraint FK_FOLLOW_24H foreign key (K_ID_FOLLOW_UP_24H)
-      references FOLLOW_UP_24H (K_ID_FOLLOW_UP_24H) on delete restrict on update restrict;
+alter table on_air24h add constraint fk_follow_24h foreign key (k_id_follow_up_24h)
+      references follow_up_24h (k_id_follow_up_24h) on delete restrict on update restrict;
 
-alter table ON_AIR24H add constraint FK_ON_AIR_24H foreign key (K_ID_ONAIR)
-      references TICKET_ON_AIR (K_ID_ONAIR) on delete restrict on update restrict;
+alter table on_air24h add constraint fk_on_air_24h foreign key (k_id_onair)
+      references ticket_on_air (k_id_onair) on delete restrict on update restrict;
 
-alter table ON_AIR_12H add constraint FK_FOLLOW_12H foreign key (K_ID_FOLLOW_UP_12H)
-      references FOLLOW_UP_12H (K_ID_FOLLOW_UP_12H) on delete restrict on update restrict;
+alter table on_air_12h add constraint fk_follow_12h foreign key (k_id_follow_up_12h)
+      references follow_up_12h (k_id_follow_up_12h) on delete restrict on update restrict;
 
-alter table ON_AIR_12H add constraint FK_ON_AIR_12H foreign key (K_ID_ONAIR)
-      references TICKET_ON_AIR (K_ID_ONAIR) on delete restrict on update restrict;
+alter table on_air_12h add constraint fk_on_air_12h foreign key (k_id_onair)
+      references ticket_on_air (k_id_onair) on delete restrict on update restrict;
 
-alter table ON_AIR_36H add constraint FK_FOLLOW_36 foreign key (K_ID_FOLLOW_UP_36H)
-      references FOLLOW_UP_36H (K_ID_FOLLOW_UP_36H) on delete restrict on update restrict;
+alter table on_air_36h add constraint fk_follow_36 foreign key (k_id_follow_up_36h)
+      references follow_up_36h (k_id_follow_up_36h) on delete restrict on update restrict;
 
-alter table ON_AIR_36H add constraint FK_ON_AIR_36H foreign key (K_ID_ONAIR)
-      references TICKET_ON_AIR (K_ID_ONAIR) on delete restrict on update restrict;
+alter table on_air_36h add constraint fk_on_air_36h foreign key (k_id_onair)
+      references ticket_on_air (k_id_onair) on delete restrict on update restrict;
 
-alter table PRECHECK add constraint FK_PRECHECK_USER foreign key (K_ID_USER)
-      references USER (K_ID_USER) on delete restrict on update restrict;
+alter table precheck add constraint fk_precheck_user foreign key (k_id_user)
+      references user (k_id_user) on delete restrict on update restrict;
 
-alter table SCALED_ON_AIR add constraint FK_ON_AIR_SCALED foreign key (K_ID_ONAIR)
-      references TICKET_ON_AIR (K_ID_ONAIR) on delete restrict on update restrict;
+alter table scaled_on_air add constraint fk_on_air_scaled foreign key (k_id_onair)
+      references ticket_on_air (k_id_onair) on delete restrict on update restrict;
 
-alter table SCALED_ON_AIR add constraint FK_SCALED_REAL foreign key (K_ID_SACLED)
-      references SCALED (K_ID_SACLED) on delete restrict on update restrict;
+alter table scaled_on_air add constraint fk_scaled_real foreign key (k_id_sacled)
+      references scaled (k_id_sacled) on delete restrict on update restrict;
 
-alter table STATION add constraint FK_STATION_CITY foreign key (K_ID_CITY)
-      references CITY (K_ID_CITY) on delete restrict on update restrict;
+alter table station add constraint fk_station_city foreign key (k_id_city)
+      references city (k_id_city) on delete restrict on update restrict;
 
-alter table STATUS_ON_AIR add constraint FK_STATUS_ONAIR foreign key (K_ID_SUBSTATUS)
-      references SUBSTATUS (K_ID_SUBSTATUS) on delete restrict on update restrict;
+alter table status_on_air add constraint fk_status_onair foreign key (k_id_substatus)
+      references substatus (k_id_substatus) on delete restrict on update restrict;
 
-alter table STATUS_ON_AIR add constraint FK_SUBSTATUS_ONAIR foreign key (K_ID_STATUS)
-      references STATUS (K_ID_STATUS) on delete restrict on update restrict;
+alter table status_on_air add constraint fk_substatus_onair foreign key (k_id_status)
+      references status (k_id_status) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_BAND foreign key (K_ID_BAND)
-      references BAND (K_ID_BAND) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_band foreign key (k_id_band)
+      references band (k_id_band) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_PRECHECK foreign key (K_ID_PRECHECK)
-      references PRECHECK (K_ID_PRECHECK) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_precheck foreign key (k_id_precheck)
+      references precheck (k_id_precheck) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_PREP_STAGE foreign key (K_ID_PREPARATION)
-      references PREPARATION_STAGE (K_ID_PREPARATION) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_prep_stage foreign key (k_id_preparation)
+      references preparation_stage (k_id_preparation) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_STATION foreign key (K_ID_STATION)
-      references STATION (K_ID_STATION) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_station foreign key (k_id_station)
+      references station (k_id_station) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_STATUS foreign key (K_ID_STATUS_ONAIR)
-      references STATUS_ON_AIR (K_ID_STATUS_ONAIR) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_status foreign key (k_id_status_onair)
+      references status_on_air (k_id_status_onair) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_TECHNOLOGY foreign key (K_ID_TECHNOLOGY)
-      references TECHNOLOGY (K_ID_TECHNOLOGY) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_technology foreign key (k_id_technology)
+      references technology (k_id_technology) on delete restrict on update restrict;
 
-alter table TICKET_ON_AIR add constraint FK_ON_AIR_WORK foreign key (K_ID_WORK)
-      references WORK (K_ID_WORK) on delete restrict on update restrict;
+alter table ticket_on_air add constraint fk_on_air_work foreign key (k_id_work)
+      references work (k_id_work) on delete restrict on update restrict;

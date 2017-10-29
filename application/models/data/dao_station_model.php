@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_user_model extends CI_Model{
+    class dao_station_model extends CI_Model{
 
         public function __construct(){
         }
