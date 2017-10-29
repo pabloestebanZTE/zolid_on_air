@@ -9,7 +9,6 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-<<<<<<< HEAD
       // $dao = new dao_user_model();
       // $res = $dao->getCustom4($this->request);
       // $this->json($res);
@@ -17,9 +16,6 @@ class Welcome extends CI_Controller {
 
     public function prueba(){
         $this->load->view('index');
-=======
-      $this->load->view('login');
->>>>>>> 7c6955600145257a7bed5aad8f9819a3eec42680
     }
 
 }
