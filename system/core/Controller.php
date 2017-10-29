@@ -87,6 +87,8 @@ class CI_Controller {
         $this->load->model('bin/Crud');
         $this->load->model('bin/Model');
         $this->load->model('bin/Auth');
+        $this->load->model('bin/URL');
+        $this->load->model('bin/Hash');
         $this->request = new Request();
         log_message('info', 'Controller Class Initialized');
     }

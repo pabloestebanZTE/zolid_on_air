@@ -6,6 +6,7 @@ class Welcome extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->model('data/dao_examples_model');
     }
 
     public function index() {
@@ -16,6 +17,12 @@ class Welcome extends CI_Controller {
 
     public function prueba(){
         $this->load->view('index');
+    }
+
+    public function insertuser(){
+      $dao = new dao_examples_model();
+      $res = $dao->insert($this->request);
+      $this->json($res);
     }
 
 }
