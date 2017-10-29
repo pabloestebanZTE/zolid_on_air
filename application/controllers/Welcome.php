@@ -6,12 +6,16 @@ class Welcome extends CI_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->load->model('dto/User');
+        $this->load->model('data/dao_user_model');
     }
 
     public function index() {
-      // $dao = new dao_user_model();
-      // $res = $dao->getCustom4($this->request);
-      // $this->json($res);
+    //   $dato = new dao_user_model();
+    //   $res = $dato->getAll($this->request);
+    //   $this->json($res);
+    // //  print_r($res);
+       $this->load->view('login');
     }
 
     public function prueba(){

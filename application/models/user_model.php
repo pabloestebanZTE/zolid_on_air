@@ -53,6 +53,5 @@
 			$this->setPermission($permission);
     }
 	}
-	}
-	}
+	
 ?>

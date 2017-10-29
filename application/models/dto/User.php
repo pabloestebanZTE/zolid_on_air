@@ -1,6 +1,6 @@
 <?php
 
-class User extends Model {
+class User extends CI_Model {
 
     protected $k_id_user;
     protected $n_name_user;
@@ -10,8 +10,8 @@ class User extends Model {
     protected $i_phone_user;
     protected $i_cellphone_user;
     protected $n_password;
-    
-    //Los campos que desea ocultar para que no se reflejen en la vista.    
+
+    //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "user";
     //Los campos que desea exculir del modelo.
     protected $exclude = ["hidden", "exclude", "table", "class", "db", "__data"];
@@ -20,7 +20,7 @@ class User extends Model {
         parent::__construct($properties);
         $this->class = get_class($this);
     }
-    
+
         public function setKIdUser($k_id_user) {
         $this->k_id_user = $k_id_user;
     }
@@ -72,4 +72,3 @@ class User extends Model {
 
 
 }
-

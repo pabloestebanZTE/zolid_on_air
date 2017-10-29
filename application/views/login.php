@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>ZOLID LOGIN</title>
     <!--   SWEET ALERT    -->
-    <link rel="stylesheet" href="/Zolid/assets/plugins/sweetalert-master/dist/sweetalert.css" />
-    <script type="text/javascript" src="/Zolid/assets/plugins/sweetalert-master/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="/zolid_on_air/assets/plugins/sweetalert-master/dist/sweetalert.css" />
+    <script type="text/javascript" src="/zolid_on_air/assets/plugins/sweetalert-master/dist/sweetalert.min.js"></script>
     <!--   ICONO PAGINA    -->
     <link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
     <!--   ANIMACION LOGIN    -->
@@ -48,7 +48,7 @@
         <div class="cms">
           <div class="roti">
             <h1>ZTE</h1>
-            <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = 'http://localhost/Zolid/index.php/User/loginUser'">Login</button><br />
+            <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = 'http://localhost/zolid_on_air/index.php/User/loginUser'">Login</button><br />
             <p><a href="#">ZTE</a> <a>And</a> <a href="#">ZTE Colombia</a></p>
           </div>
         </div>
@@ -61,6 +61,6 @@
       }
     ?>
     <!--   ANIMACION DE LOGIN   -->
-    <script src="/Zolid/assets/js/index.js"></script>
+    <script src="/zolid_on_air/assets/js/index.js"></script>
   </body>
 </html>
