@@ -347,6 +347,8 @@
 <script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
 <!--BOOTSTRAP-TABLE SCRIPT-->
 <script src="<?= URL::to('assets/plugins/bootstrap-table.js') ?>"></script>
+<script src="<?= URL::to("assets/js/utils/app.global.js")?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/utils/app.dom.js")?>" type="text/javascript"></script>
 <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
 </body>
 </html>
