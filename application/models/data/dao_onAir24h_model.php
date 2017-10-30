@@ -6,7 +6,37 @@
 
     class dao_onAir24h_model extends CI_Model{
 
-        public function __construct(){
+      public function __construct(){
+        $this->load->model('dto/OnAir24hModel');
+      }
+
+      public function getAll(){
+        try {
+          $onair24 = new OnAir24hModel();
+          $datos = $onair24->get();
+          $response = new Response(EMessages::SUCCESS);
+          $response->setData($datos);
+          return $response;
+        } catch (ZolidException $ex) {
+          return $ex;
         }
-    }
+      }
+
+      public function getUserByOnair24($idUser){
+        try {
+          $onair24 = new OnAir24hModel();
+          $datos = $onair24->where("k_id_user","=",$idUser)
+                        ->first();
+          $response = new Response(EMessages::SUCCESS);
+          $response->setData($datos);
+          return $response;
+
+        } catch (ZolidException $ex) {
+          return $ex;
+        }
+
+
+      }
+
+  }
 ?>

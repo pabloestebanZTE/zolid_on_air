@@ -107,7 +107,7 @@ class Auth {
       return Auth::isRole("Documentador");
     }
 
-    public static function isInteniero(){
+    public static function isIngeniero(){
       return Auth::isRole("Ingeniero");
     }
 
