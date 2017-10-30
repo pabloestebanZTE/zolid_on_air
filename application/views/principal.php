@@ -60,7 +60,7 @@
             <div class="col col-md-12">
                 <br>
                 <button type="button" class="btn btn-primary">hola</button>
-                <input type="hidden" value="<?= Auth:: ?>"
+                <input type="hidden" value="<?= Auth::getRole() ?>" id="rol">
                 <table id="tablaPrincipal" class="table table-hover table-condensed table-striped" data-toggle="table" data-search="true" data-sortable="true" data-pagination="true">
                     <thead>
                         <tr>
@@ -341,5 +341,6 @@
 <script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
 <!--BOOTSTRAP-TABLE SCRIPT-->
 <script src="<?= URL::to('assets/plugins/bootstrap-table.js') ?>"></script>
+<script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
 </body>
 </html>
