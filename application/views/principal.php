@@ -90,5 +90,5 @@
         <script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
         <!--BOOTSTRAP-TABLE SCRIPT-->
         <script src="<?= URL::to('assets/plugins/bootstrap-table.js') ?>"></script>
-</body>
+    </body>
 </html>
