@@ -11,7 +11,7 @@ var principal = {
   * Listará las actividades de los usuarios que ingresan al sistema...
   */
   listActivities: function(){
-    app.post('')
+    // app.post('')
   }
 };
 
