@@ -95,6 +95,10 @@ class Auth {
       }
     }
 
+    public static function getRole(){
+      return Auth::user()->n_role_user;
+    }
+
     public static function isCoordinador(){
       return Auth::isRole("Coordinador");
     }
