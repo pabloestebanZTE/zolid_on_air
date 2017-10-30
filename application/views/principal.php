@@ -10,10 +10,11 @@
         <link rel="stylesheet" href="<?= URL::to('assets/css/bootstrap.css') ?>"/>->
         <link rel="stylesheet" href="<?= URL::to('assets/plugins/font-awesome/css/font-awesome.min.css') ?>"/>
         <!--   CSS ESTILOS PRINCIPAL    -->
-        <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css') ?>" />
         <link rel='stylesheet' type='text/css'  href='http://fonts.googleapis.com/css?family=Open+Sans'/>
         <!-- CSS BOOTSTRAP-TABLE-->
         <link rel="stylesheet" href="<?= URL::to('assets/css/bootstrap-table.css') ?>">
+        <link rel="stylesheet" href="<?= URL::to('assets/css/helper-class.css') ?>">
+        <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css') ?>" />
     </head>
     <body>
         <!-- Navigation -->
@@ -57,274 +58,277 @@
         </header>
         <!--End Navigation -->
         <div class="container">
-            <div class="col col-md-12">
-                <br>
-                <button type="button" class="btn btn-primary">hola</button>
-                <input type="hidden" value="<?= Auth::getRole() ?>" id="rol">
-                <table id="tablaPrincipal" class="table table-hover table-condensed table-striped" data-toggle="table" data-search="true" data-sortable="true" data-pagination="true">
-                    <thead>
-                        <tr>
-                            <th>Sitio</th>
-                            <th>Tipo de trabajo</th>
-                            <th>Estado</th>
-                            <th>Subestado</th>
-                            <th>Tiempo</th>
-                            <th>Tecnologia</th>
-                            <th>Banda</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo1</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                            <td>
-                                <span class="fa fa-fw fa-ambulance">Detalle</span><br>
-                                <span class="fa fa-fw fa-ambulance">Documentacion Ticket</span><br>
-                                <span class="fa fa-fw fa-ambulance">Asignar</span><br>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                        <tr>
-                            <td>Sitio</td>
-                            <td>Tipo de trabajo</td>
-                            <td>Estado</td>
-                            <td>Subestado</td>
-                            <td>Tiempo</td>
-                            <td>Tecnologia</td>
-                            <td>Banda</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class="col col-md-12 p-t-20">
+                    <button type="button" class="btn btn-primary m-t-50">Asignar</button>
+                </div>
+                <div class="col col-md-12">
+                    <input type="hidden" value="<?= Auth::getRole() ?>" id="rol">
+                    <table id="tablaPrincipal" class="table table-hover table-condensed table-striped" data-toggle="table" data-search="true" data-sortable="true" data-pagination="true">
+                        <thead>
+                            <tr>
+                                <th>Sitio</th>
+                                <th>Tipo de trabajo</th>
+                                <th>Estado</th>
+                                <th>Subestado</th>
+                                <th>Tiempo</th>
+                                <th>Tecnologia</th>
+                                <th>Banda</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo1</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                                <td>
+                                    <span class="fa fa-fw fa-ambulance">Detalle</span><br>
+                                    <span class="fa fa-fw fa-ambulance">Documentacion Ticket</span><br>
+                                    <span class="fa fa-fw fa-ambulance">Asignar</span><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                            <tr>
+                                <td>Sitio</td>
+                                <td>Tipo de trabajo</td>
+                                <td>Estado</td>
+                                <td>Subestado</td>
+                                <td>Tiempo</td>
+                                <td>Tecnologia</td>
+                                <td>Banda</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!--footer Section -->
@@ -343,6 +347,8 @@
 <script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
 <!--BOOTSTRAP-TABLE SCRIPT-->
 <script src="<?= URL::to('assets/plugins/bootstrap-table.js') ?>"></script>
+<script src="<?= URL::to("assets/js/utils/app.global.js")?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/js/utils/app.dom.js")?>" type="text/javascript"></script>
 <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
 </body>
 </html>
