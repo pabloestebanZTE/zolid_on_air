@@ -29,6 +29,8 @@
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
+            $response->data->k_id_status = $this->findStatusById($response->data->k_id_status)->data;//DB::status
+            $response->data->k_id_substatus = $this->findSubstatusById($response->data->k_id_substatus)->data;//substatus
             return $response;
           } catch (ZolidException $ex) {
             return $ex;
