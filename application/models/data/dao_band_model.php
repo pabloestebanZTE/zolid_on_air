@@ -6,7 +6,33 @@
 
     class dao_band_model extends CI_Model{
 
-        public function __construct(){
+      public function __construct(){
+         $this->load->model('dto/BandModel');
+      }
+      public function getAll(){
+        try {
+          $band = new BandModel();
+          $datos = $band->get();
+          $response = new Response(EMessages::SUCCESS);
+          $response->setData($datos);
+          return $response;
+        } catch (ZolidException $ex) {
+          return $ex;
         }
-    }
+      }
+
+      public function findById($id){
+        try {
+          $band = new BandModel();
+          $datos = $band->where("k_id_band","=",$id)
+                        ->first();
+          $response = new Response(EMessages::SUCCESS);
+          $response->setData($datos);
+          return $response;
+        } catch (ZolidException $ex) {
+          return $ex;
+        }
+      }
+
+  }
 ?>

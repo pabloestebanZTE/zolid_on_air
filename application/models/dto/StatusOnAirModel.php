@@ -1,6 +1,6 @@
 <?php
 
-class StatusOnAirModel extends Model {
+class StatusOnairModel extends Model {
 
     protected $k_id_status_onair;
     protected $k_id_substatus;
