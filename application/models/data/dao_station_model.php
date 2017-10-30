@@ -28,6 +28,8 @@
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
+            $response->data->k_id_city = $this->findCityById($response->data->k_id_city)->data;//city
+            $response->data->k_id_city->k_id_regional = $this->findRegionalById($response->data->k_id_city->k_id_regional)->data;//regional
             return $response;
           } catch (ZolidException $ex) {
             return $ex;
@@ -48,7 +50,6 @@
 
         public function findRegionalById($id){
           try {
-            echo "holalalalala";
             $datos = DB::table("regional")->where("k_id_regional","=", $id)
                                   ->first();
             $response = new Response(EMessages::SUCCESS);
