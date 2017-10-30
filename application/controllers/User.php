@@ -49,7 +49,7 @@
         $this->comprobarSesion();
       }
 
-      public function comprobarSesion(){
+      public function comprobarSesion(){        
         //Comprobar si existe una sesión...
         if(Auth::check()){
           $this->json(new Response(EMessages::SESSION_ACTIVE));

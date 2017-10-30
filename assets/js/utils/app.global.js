@@ -1,5 +1,5 @@
 var app = {
-    urlbase: $('body').attr('data-base'),
+    urlbase: $('body').attr('data-base') + '/',
     validResponse: function (response) {
         switch (response.code) {
             case 1:

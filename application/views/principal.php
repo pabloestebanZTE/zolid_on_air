@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="<?= URL::to('assets/css/helper-class.css') ?>">
         <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css') ?>" />
     </head>
-    <body>
+    <body data-base="<?php URL::base()?>">
         <!-- Navigation -->
         <header>
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
