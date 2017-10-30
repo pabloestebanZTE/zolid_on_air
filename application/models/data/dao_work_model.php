@@ -7,6 +7,34 @@
     class dao_work_model extends CI_Model{
 
         public function __construct(){
+          $this->load->model('dto/WorkModel');
         }
+        public function getAll(){
+          try {
+            $work = new WorkModel();
+            $datos = $work->get();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+        public function findById($id){
+          try {
+            $work = new WorkModel();
+            $datos = $work->where("k_id_work","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+
+
     }
 ?>

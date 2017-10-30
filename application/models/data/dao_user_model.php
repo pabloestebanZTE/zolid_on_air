@@ -23,7 +23,6 @@
           } catch (ZolidException $ex) {
             return $ex;
           }
-
         }
 
         public function findByUsername($request){
@@ -39,10 +38,10 @@
           }
         }
 
-        public function findByPassword($request){
+        public function findById($request){
           try {
             $user = new User();
-            $datos = $user->where("n_password","=",$request->password)
+            $datos = $user->where("k_id_user","=",$request->idUser)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
@@ -51,7 +50,6 @@
             return $ex;
           }
         }
-
 
     }
 ?>

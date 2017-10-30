@@ -1,0 +1,58 @@
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class TicketOnair extends CI_Controller {
+
+    function __construct() {
+        parent::__construct();
+        $this->load->model('data/dao_ticketOnAir_model');
+        $this->load->model('data/dao_station_model');
+        $this->load->model('data/dao_band_model');
+        $this->load->model('data/dao_work_model');
+        $this->load->model('data/dao_technology_model');
+        $this->load->model('data/dao_statusOnair_model');
+
+    }
+
+    public function listTicketOnair(){
+      $ticketsOnAir = new dao_ticketOnAir_model();
+       $station = new dao_station_model();
+       $band = new dao_band_model();
+       $work = new dao_work_model();
+       $technology = new dao_technology_model();
+       $statusOnair = new dao_statusOnair_model();
+
+       $res = $ticketsOnAir->getAll($this->request);
+
+       for ($j=0; $j <count($res->data) ; $j++) {
+          $res->data[$j]->k_id_status_onair = $statusOnair->findById($res->data[$j]->k_id_status_onair)->data;//Status onair
+
+          $res->data[$j]->k_id_status_onair->k_id_status = $this->dao_statusOnair_model->findStatusById($res->data[$j]->k_id_status_onair->k_id_status)->data;//DB::status
+
+          $res->data[$j]->k_id_status_onair->k_id_substatus = $this->dao_statusOnair_model->findSubstatusById($res->data[$j]->k_id_status_onair->k_id_substatus)->data;//DB::substatus
+
+          $res->data[$j]->k_id_station = $station->findById($res->data[$j]->k_id_station)->data;//Station
+
+          $res->data[$j]->k_id_station->k_id_city = $this->dao_station_model->findCityById($res->data[$j]->k_id_station->k_id_city)->data;//city
+
+          $res->data[$j]->k_id_station->k_id_city->k_id_regional = $this->dao_station_model->findRegionalById($res->data[$j]->k_id_station->k_id_city->k_id_regional)->data;//regional
+
+          $res->data[$j]->k_id_band = $band->findById($res->data[$j]->k_id_band)->data;//band
+
+          $res->data[$j]->k_id_work = $work->findById($res->data[$j]->k_id_work)->data;//work
+
+          $res->data[$j]->k_id_technology = $technology->findById($res->data[$j]->k_id_technology)->data;//technology
+
+
+
+
+       }
+       header('Content-Type: text/plain');
+      //  $res->data
+      //  $this->json($res);
+       print_r($res);
+       $this->load->view('login');
+    }
+
+}
