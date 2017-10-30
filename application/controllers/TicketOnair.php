@@ -40,7 +40,13 @@ class TicketOnair extends CI_Controller {
       //  $res->data
       //  $this->json($res);
         // print_r($res);
-       $this->load->view('login');
     }
+
+    public function ticketUser($userId){
+
+
+
+    }
+
 
 }
