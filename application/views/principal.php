@@ -56,23 +56,29 @@
             </nav>
         </header>
         <!--End Navigation -->
-
-        <button type="button" class="btn btn-primary">hola</button>
         <div class="container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Sitio</th>
-                        <th>Tipo de trabajo</th>
-                        <th>Estado</th>
-                        <th>Subestado</th>
-                        <th>Tiempo</th>
-                        <th>Tecnologia</th>
-                        <th>Banda</th>
-                    </tr>
-                </thead>
-            </table>
-            <table data-toggle="table"> <thead> <tr> <th>Item ID</th> <th>Item Name</th> <th>Item Price</th> </tr> </thead> <tbody> <tr> <td>1</td> <td>Item 1</td> <td>$1</td> </tr> <tr> <td>2</td> <td>Item 2</td> <td>$2</td> </tr> </tbody> </table> 
+            <div class="col col-md-12">
+                <br>
+                <button type="button" class="btn btn-primary">hola</button>
+
+                <table id="tablaPrincipal" class="table table-hover table-condensed table-striped" data-toggle="table" data-search="true" data-sortable="true" data-pagination="true">
+                    <thead>
+                        <tr>
+                            <th>Sitio</th>
+                            <th>Tipo de trabajo</th>
+                            <th>Estado</th>
+                            <th>Subestado</th>
+                            <th>Tiempo</th>
+                            <th>Tecnologia</th>
+                            <th>Banda</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!--footer Section -->
         <div class="for-full-back" id="footer">
@@ -82,13 +88,13 @@
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
         <!-- CORE JQUERY  -->
         <script src="<?= URL::to('assets/plugins/jquery-1.10.2.js') ?>" /></script>
-        <!-- BOOTSTRAP CORE SCRIPT   -->
-        <script src="<?= URL::to('assets/plugins/bootstrap.js') ?>" /></script>
-        <!-- PARALLAX SCRIPT   -->
-        <script src="<?= URL::to('assets/plugins/4jquery.parallax-1.1.3.js') ?>" /></script>
-        <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
-        <!--BOOTSTRAP-TABLE SCRIPT-->
-        <script src="<?= URL::to('assets/plugins/bootstrap-table.js') ?>"></script>
-    </body>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="<?= URL::to('assets/plugins/bootstrap.js') ?>" /></script>
+<!-- PARALLAX SCRIPT   -->
+<script src="<?= URL::to('assets/plugins/4jquery.parallax-1.1.3.js') ?>" /></script>
+<!-- CUSTOM SCRIPT   -->
+<script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
+<!--BOOTSTRAP-TABLE SCRIPT-->
+<script src="<?= URL::to('assets/plugins/bootstrap-table.js') ?>"></script>
+</body>
 </html>
