@@ -12,6 +12,7 @@ class TicketOnair extends CI_Controller {
         $this->load->model('data/dao_work_model');
         $this->load->model('data/dao_technology_model');
         $this->load->model('data/dao_statusOnair_model');
+        $this->load->model('data/dao_precheck_model');
 
     }
 
@@ -42,8 +43,11 @@ class TicketOnair extends CI_Controller {
         // print_r($res);
     }
 
-    public function ticketUser($userId){
-
+    public function ticketUser(){
+        $precheck = new dao_precheck_model();
+        $userId = 1;
+        $ticket = $precheck->getPrecheckById($userId);
+        print_r($ticket);
 
 
     }
