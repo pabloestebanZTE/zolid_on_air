@@ -9,6 +9,8 @@ class EMessages {
     const INSERT = 2;
     const UPDATE = 3;
     const DELETE = 4;
+    const SESSION_ACTIVE = 12;
+    const SESSION_INACTIVE = 13;
     const ERROR = -1;
     const ERROR_CONNECTION = -6;
     const ERROR_QUERY = -5;
@@ -17,7 +19,6 @@ class EMessages {
     const ERROR_DELETE = -8;
     const ERROR_ACTION = -9;
     const ERROR_FATAL = -10;
-    const NUEVO_MENSAJE = 11;
 
     public static function getResponse($code) {
         switch ($code) {
@@ -48,8 +49,10 @@ class EMessages {
                 return new Response(-1, "Error al ejecutar la acción solicitada.");
             case EMessages::ERROR_FATAL:
                 return new Response(-99, "Error fatal.");
-            case EMessages::NUEVO_MENSAJE:
-                return new Response(11, "Nuevo mensjae");
+            case EMessages::SESSION_ACTIVE:
+                return new Response(1, "La sesión se encuentra activa");
+            case EMessages::SESSION_INACTIVE:
+                return new Response(1, "La sesión se encuentra inactiva.");
         }
     }
 

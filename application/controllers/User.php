@@ -10,53 +10,39 @@
 
       }
 
-      public function loginUser(){
-         $dato = new dao_user_model;
-         $res = $dato->findByUsername($this->request);
-         print_r($res);
-          if($res->data != ""){
-            if($res->data->n_password == $this->request->password){
-               if($res->data->n_role_user == "Coordinador"){
-
-               }
-               if($res->data->n_role_user == "Documentador"){
-
-               }
-               if($res->data->n_role_user == "Ingeniero"){
-
-               }
-               $this->login($res);
-            }else {
-              $answer['error'] = "error";
-              $this->load->view('login', $answer);
-            }
-         }else {
-           $answer['error'] = "error";
-           $this->load->view('login', $answer);
-         }
-      }
-
-
-      //preferiblemente dejar el código en el dao_user_model...
-      public function login($user){
-        $request = $this->request;
-        if (Auth::attempt([
+      private function validUser($request){
+        return Auth::attempt([
                   "n_mail_user" => $request->username,
                   "n_password" => $request->password,
                   "OR" => [
                       "n_username_user" => $request->username
                   ]
-              ])) {
-          $answer['user'] = $user->data;
-          $this->load->view('principal', $answer);
-          //Redireccionar, o cargar vista de acceso válido...
-          echo "LOGUEADO CORRECTAMENTE<br/>";
-      } else {
-        //Redireccionar o cargar vista de acceso inválido...
-          echo "NO SE PUDO LOGEAR<br/>";
-      }
+                ]);
       }
 
+      public function loginUser(){
+        $res = $this->validUser($this->request);
+        //Comprobamos si el Auth ha encontrado válida las credenciales consultadas...
+        if($res){
+             //Se actualiza la forma de validar los roles...
+             //Podemos acceder directamente al método que comprobará un rol en especifico.
+             if(Auth::isCoordinador()){
+
+             }
+             if(Auth::isDocumentador()){
+
+             }
+             //O también podemos detectar si el rol es uno personalizado...
+             if(Auth::isRole("Ingeniero")){
+
+             }
+             $answer['user'] = Auth::user();
+             $this->load->view('principal', $answer);
+        }else {
+         $answer['error'] = "error";
+         $this->load->view('login', $answer);
+        }
+      }
 
       public function logout(){
         Auth::logout();
@@ -66,11 +52,9 @@
       public function comprobarSesion(){
         //Comprobar si existe una sesión...
         if(Auth::check()){
-          echo "Hay sesión<br/><pre>";
-          var_dump(Auth::user());
-          echo "</pre>";
+          $this->json(new Response(EMessages::SESSION_ACTIVE));
         }else{
-          echo "No hay sesión";
+          $this->json(new Response(EMessages::SESSION_INACTIVE));
         }
       }
 
