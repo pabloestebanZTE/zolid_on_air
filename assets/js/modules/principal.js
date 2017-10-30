@@ -1,0 +1,5 @@
+var principal = {
+  init: function(){
+
+  },
+}
