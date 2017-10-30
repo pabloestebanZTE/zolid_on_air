@@ -84,7 +84,9 @@
                             <td>Tecnologia</td>
                             <td>Banda</td>
                             <td>
-                                <span class="glyphicon glyphicon-align-center"></span>
+                                <span class="fa fa-fw fa-ambulance">Detalle</span><br>
+                                <span class="fa fa-fw fa-ambulance">Documentacion Ticket</span><br>
+                                <span class="fa fa-fw fa-ambulance">Asignar</span><br>
                             </td>
                         </tr>
                         <tr>
