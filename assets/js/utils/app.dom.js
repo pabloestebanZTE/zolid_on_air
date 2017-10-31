@@ -57,6 +57,8 @@ var dom = {
           switch (tipo) {
             case 'success':
               return '<i class="fa fa-fw fa-info-circle"></i> ';
+            case 'loading':
+              return '<i class="fa fa-fw fa-refresh fa-spin"></i> ';
             case 'danger':
               return '<i class="fa fa-fw fa-times-circle"></i> ';
             default:
@@ -64,6 +66,7 @@ var dom = {
           }
         };
         alerta.find('#text').html(icon(tipo) + message);
+        tipo = (tipo == 'loading') ? 'info' : tipo;
         alerta.attr('class', 'alert alert-' + tipo + ' alert-dismissable');
         alerta.hide().slideDown(500);
         return {
@@ -118,11 +121,64 @@ var dom = {
 				 }).send();
       };
       form.on('submit', onSubmitForm);
+    },
+    //Para agregar todas las interacciones del dom genericas.
+    init: function(){
+      $('body').on('click', '.alert .close', function () {
+          $(this).parent().hide();
+      });
+
+      $('[data-toggle="tooltip"]').tooltip();
+
+      $('.container.autoheight').css('min-height', screen.height + 'px');
+    },
+    fillString: function(dom, obj){
+      var getKeyPart = function(keyPart, key){
+        if(keyPart.trim("") != ""){
+          keyPart += "." + key;
+        }else{
+          keyPart = key;
+        }
+        return keyPart;
+      };
+      var getValueFromObjet = function(obj, keyPart){
+        for (var key in obj) {
+          //Evalua si el atributo actual es un objeto...
+          var o = obj[key];
+          if(typeof o === "object"){
+            getValueFromObjet(o, getKeyPart(keyPart, key));
+          }else{
+            keyTemp = getKeyPart(keyPart, key);
+            var reg = new RegExp("{" + keyTemp + "}", "g");
+            dom = dom.replace(reg, o);
+          }
+        }
+      };
+      getValueFromObjet(obj, "");
+      return dom;
+    },
+    configTable: function(data, columns){
+      return {
+        data: data,
+        columns: columns,
+        "language": {
+            "url": app.urlbase + "assets/plugins/datatables/lang/es.json"
+        },
+        columnDefs: [{
+            defaultContent: "",
+            targets: 0,
+            orderable: false,
+        }],
+        order: [[1, 'asc']]
+      }
+    },
+    refreshTable: function(tabla, data){
+      tabla.clear().draw();
+      tabla.rows.add(data);
+      tabla.columns.adjust().draw();
     }
 };
 
 $(function () {
-    $('body').on('click', '.alert .close', function () {
-        $(this).parent().hide();
-    });
+    dom.init();
 });

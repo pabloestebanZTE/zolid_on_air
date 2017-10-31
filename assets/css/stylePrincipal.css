@@ -1,4 +1,4 @@
-﻿/*=============================================================
+/*=============================================================
     Authour URI: www.binarytheme.com
     License: Commons Attribution 3.0
 
@@ -50,7 +50,8 @@
 
 
 body {
-          font-family: 'Open Sans', sans-serif;
+    padding-top: 41px;
+    font-family: 'Open Sans', sans-serif;
     font-size:14px;
 }
 
@@ -307,4 +308,14 @@ color: #5e5d5d ;
     color:#fff;
     padding:20px 50px 20px 50px;
     text-align:center;
+}
+
+.table-condensed>tbody>tr>td, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>td, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>thead>tr>th{
+    background: white !important;
+    border: 0.5px solid #cccccc;
+}
+
+.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th{
+    background: #337ab7 !important;
+    color: white;
 }
