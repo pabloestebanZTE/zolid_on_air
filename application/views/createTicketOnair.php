@@ -25,7 +25,6 @@
   </style>
 </head>
 <body>
-
 <div class="msg-example">
   <div class="info-box wizard-msg">
     1. Choose *.msg file...
@@ -87,7 +86,6 @@
       $('.src-file').change(function () {
         var srqs = "";
 
-
         for(var counter = 0; counter < this.files.length; counter++){
           var selectedFile = this.files[counter];
           if (!selectedFile) {
@@ -111,10 +109,6 @@
             var fileData = msgReader.getFileData();
             if (!fileData.error) {
               $('.msg-example .msg-from').html(formatEmail({name: fileData.senderName, email: fileData.senderEmail}));
-
-              $('.msg-example .msg-to').html(jQuery.map(fileData.recipients, function (recipient, i) {
-                return formatEmail(recipient);
-              }).join('<br/>'));
               $('.msg-example .msg-subject').html(fileData.subject);
               $('.msg-example .msg-body').html(
                   fileData.body ? fileData.body.substring(0, Math.min(600000, fileData.body.length))
@@ -125,41 +119,57 @@
               }).join('<br/>'));
               $('.msg-info').show();
 
-              if(fileData.body.search("CRQ") != -1){
-                if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
-                  console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));
-                  if(fileData.subject.toLowerCase().search("no exitoso") != -1){
-                    console.log("Escalado");
-                  }
-                  if (fileData.subject.toLowerCase().search("exitoso") != -1){
-                    if (fileData.subject.toLowerCase().search("no") == -1){
-                      if (fileData.subject.toLowerCase().search("12h") != -1){
-                        console.log("Seguimiento FO");
-                      }
-                      if (fileData.subject.toLowerCase().search("24h") != -1){
-                        console.log("Seguimiento FO");
-                      }
-                      if (fileData.subject.toLowerCase().search("36h") != -1 && fileData.subject.toLowerCase().search("inicio") == -1){
-                        console.log("Produccion");
-                      }
-                    }
-                  }
-                  if(fileData.subject.toLowerCase().search("precheck no exitoso") != -1){
-                    console.log("Escalado");
-                  }
-                  if(fileData.subject.toLowerCase().search("standby") != -1 || fileData.subject.toLowerCase().search("prorroga") != -1){
-                    console.log("queda igual");
-                  }
-                  if(fileData.subject.toLowerCase().search("reinicio") != -1){
-                    console.log("Seguimiento FO");
-                  }
 
-                } else {
-                  console.log(fileData.subject+": "+"crq no valido");
+
+
+
+              var sites = <?php echo $respuesta; ?>;
+            //    var js_obj_data = JSON.stringif(sites);
+
+              console.log(sites);
+              console.log("o.o");
+
+              for(var i = 0; i < sites.stations.data.length; i++){
+                if(fileData.subject.toLowerCase().search(sites.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(sites.stations.data[i].n_name_station.toLowerCase().split(".")[1]) != -1){
+
+                  console.log(sites.stations.data[i].n_name_station);
                 }
-              } else {
-                console.log(fileData.subject+": "+"Correo sin crq");
               }
+              // if(fileData.body.search("CRQ") != -1){
+              //   if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
+              //     console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));
+              //     if(fileData.subject.toLowerCase().search("no exitoso") != -1){
+              //       console.log("Escalado");
+              //     }
+              //     if (fileData.subject.toLowerCase().search("exitoso") != -1){
+              //       if (fileData.subject.toLowerCase().search("no") == -1){
+              //         if (fileData.subject.toLowerCase().search("12h") != -1){
+              //           console.log("Seguimiento FO");
+              //         }
+              //         if (fileData.subject.toLowerCase().search("24h") != -1){
+              //           console.log("Seguimiento FO");
+              //         }
+              //         if (fileData.subject.toLowerCase().search("36h") != -1 && fileData.subject.toLowerCase().search("inicio") == -1){
+              //           console.log("Produccion");
+              //         }
+              //       }
+              //     }
+              //     if(fileData.subject.toLowerCase().search("precheck no exitoso") != -1){
+              //       console.log("Escalado");
+              //     }
+              //     if(fileData.subject.toLowerCase().search("standby") != -1 || fileData.subject.toLowerCase().search("prorroga") != -1){
+              //       console.log("queda igual");
+              //     }
+              //     if(fileData.subject.toLowerCase().search("reinicio") != -1){
+              //       console.log("Seguimiento FO");
+              //     }
+              //
+              //   } else {
+              //     console.log(fileData.subject+": "+"crq no valido");
+              //   }
+              // } else {
+              //   console.log(fileData.subject+": "+"Correo sin crq");
+              // }
 
               // Use msgReader.getAttachment to access attachment content ...
               // msgReader.getAttachment(0) or msgReader.getAttachment(fileData.attachments[0])

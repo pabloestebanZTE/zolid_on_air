@@ -72,6 +72,8 @@ class TicketOnair extends CI_Controller {
         $onair12 = new dao_followUp12h_model();
         $res2 = $onair12->getfollow12ById($userId)->data;
         print_r($res2[0]);
+        
+        $ticket12 =
 
 
     }

@@ -49,7 +49,7 @@
         $this->comprobarSesion();
       }
 
-      public function comprobarSesion(){        
+      public function comprobarSesion(){
         //Comprobar si existe una sesión...
         if(Auth::check()){
           $this->json(new Response(EMessages::SESSION_ACTIVE));
@@ -60,6 +60,17 @@
 
       public function principalView(){
         $this->load->view('principal');
+      }
+
+      public function documenterStrartView(){
+        $this->load->view('documenterStrart');
+      }
+      public function trackingDetails(){
+        $this->load->view('trackingdetails');
+      }
+      
+      public function toAssign(){
+        $this->load->view('toAssign');
       }
   }
 
