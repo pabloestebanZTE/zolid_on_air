@@ -319,3 +319,21 @@ color: #5e5d5d ;
     background: #337ab7 !important;
     color: white;
 }
+
+.table-hover>tbody>tr:hover td{
+    background-color: #f5f5f5 !important;
+    cursor: pointer;
+}
+.form-xs label{
+    font-size: 12.5px;
+}
+
+.modal-dialog .modal-header{
+    background-color: #337ab7;
+    border-radius: 3px 3px 0px 0px;
+    color: #FFF;
+}
+
+.modal-backdrop {    
+    background-color: #dadada;
+}
