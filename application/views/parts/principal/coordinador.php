@@ -38,7 +38,9 @@
                                             <td>Tecnologia</td>
                                             <td>Banda</td>
                                             <td>
-                                                <a href="#"><span class="fa fa-fw fa-sign-in"></span>&nbsp;Asignar</a>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -50,7 +52,9 @@
                                             <td>Tecnologia</td>
                                             <td>Banda</td>
                                             <td>
-                                                <a href="#"><span class="fa fa-fw fa-sign-in"></span>&nbsp;Asignar</a>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -62,7 +66,9 @@
                                             <td>Tecnologia</td>
                                             <td>Banda</td>
                                             <td>
-                                                <a href="#"><span class="fa fa-fw fa-sign-in"></span>&nbsp;Asignar</a>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -92,7 +98,9 @@
                                             <td>Tecnologia</td>
                                             <td>Banda</td>
                                             <td>
-                                                <a href="#"><span class="fa fa-fw fa-eye"></span>&nbsp;Detalle</a>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -104,7 +112,9 @@
                                             <td>Tecnologia</td>
                                             <td>Banda</td>
                                             <td>
-                                                <a href="#"><span class="fa fa-fw fa-eye"></span>&nbsp;Detalle</a>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>
+                                                </div>
                                             </td>
                                         </tr>
                                         <tr>
@@ -116,7 +126,9 @@
                                             <td>Tecnologia</td>
                                             <td>Banda</td>
                                             <td>
-                                                <a href="#"><span class="fa fa-fw fa-eye"></span>&nbsp;Detalle</a>
+                                                <div class="btn-group">
+                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>

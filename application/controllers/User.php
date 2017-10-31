@@ -61,6 +61,10 @@
       public function principalView(){
         $this->load->view('principal');
       }
+      
+      public function documenterStrartView(){
+        $this->load->view('documenterStrart');
+      }
   }
 
 ?>
