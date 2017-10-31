@@ -12,11 +12,10 @@ class TicketOnair extends CI_Controller {
         $this->load->model('data/dao_work_model');
         $this->load->model('data/dao_technology_model');
         $this->load->model('data/dao_statusOnair_model');
-
     }
 
     public function listTicketOnair(){
-      $ticketsOnAir = new dao_ticketOnAir_model();
+       $ticketsOnAir = new dao_ticketOnAir_model();
        $station = new dao_station_model();
        $band = new dao_band_model();
        $work = new dao_work_model();
@@ -27,26 +26,28 @@ class TicketOnair extends CI_Controller {
 
        for ($j=0; $j <count($res->data) ; $j++) {
           $res->data[$j]->k_id_status_onair = $statusOnair->findById($res->data[$j]->k_id_status_onair)->data;//Status onair
-
+          //
           $res->data[$j]->k_id_station = $station->findById($res->data[$j]->k_id_station)->data;//Station
-
+          //
           $res->data[$j]->k_id_band = $band->findById($res->data[$j]->k_id_band)->data;//band
-
+          //
           $res->data[$j]->k_id_work = $work->findById($res->data[$j]->k_id_work)->data;//work
-
+          //
           $res->data[$j]->k_id_technology = $technology->findById($res->data[$j]->k_id_technology)->data;//technology
        }
-       header('Content-Type: text/plain');
-      //  $res->data
-      //  $this->json($res);
-        // print_r($res);
+       $this->json($res);
     }
 
-    public function ticketUser($userId){
+    public function createTicket(){
+      $station_dao = new dao_station_model();
+      $technology_dao = new dao_technology_model();
+      $band_dao = new dao_band_model();
+      $work_dao = new dao_work_model();
 
-
-
+      $stations = $station_dao->getAll();
+      $tehcnologies = $technology_dao->getAll();
+      $bands = $band_dao->getAll();
+      $works = $work_dao->getAll();
+      $this->load->view('createTicketOnair');
     }
-
-
 }
