@@ -1,5 +1,5 @@
 var app = {
-    urlbase: $('body').attr('data-base') + '/',
+    urlbase: $('body').attr('data-base').trim('/') + '/',
     validResponse: function (response) {
         switch (response.code) {
             case 1:
@@ -26,7 +26,7 @@ var app = {
         return app.urlbase + url;
     },
     successResponse: function (response) {
-        return resposne.code > 0;
+        return response.code > 0;
     },
     parseResponse: function (response) {
         var data = app.validResponse(response);
