@@ -27,8 +27,13 @@ class DB extends PDO {
         $DB_PORT = $connection["port"];
         $DB_USER = $connection["username"];
         $DB_PASS = $connection["password"];
-        parent::__construct($DB_TYPE . ':host=' . $DB_HOST . ":" . $DB_PORT . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS);
+        parent::__construct($DB_TYPE . ':host=' . $DB_HOST . ":" . $DB_PORT
+                            . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS,
+                            array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+        $this->setAttribute(PDO::ATTR_PERSISTENT, true);
     }
+
+    public static $db;
 
     /**
      *
@@ -36,7 +41,10 @@ class DB extends PDO {
      * @return DB $this
      */
     public static function table($table) {
-        $db = new DB();
+       if(self::$db == null){
+         self::$db = new DB();
+       }
+        $db = self::$db;
         $db->sql = "";
         $db->table = $table;
         return $db;
