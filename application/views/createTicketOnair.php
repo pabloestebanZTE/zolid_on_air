@@ -83,6 +83,13 @@
   }
 
   $(function () {
+
+                  var sites = '<?php echo json_encode($stations->data); ?>';
+                  var js_obj_data = JSON.parse(sites);
+
+                  console.log(js_obj_data);
+                  console.log("o.o");
+
     if (isSupportedFileAPI()) {
       $('.src-file').change(function () {
         var srqs = "";
@@ -111,10 +118,6 @@
             var fileData = msgReader.getFileData();
             if (!fileData.error) {
               $('.msg-example .msg-from').html(formatEmail({name: fileData.senderName, email: fileData.senderEmail}));
-
-              $('.msg-example .msg-to').html(jQuery.map(fileData.recipients, function (recipient, i) {
-                return formatEmail(recipient);
-              }).join('<br/>'));
               $('.msg-example .msg-subject').html(fileData.subject);
               $('.msg-example .msg-body').html(
                   fileData.body ? fileData.body.substring(0, Math.min(600000, fileData.body.length))
@@ -125,41 +128,42 @@
               }).join('<br/>'));
               $('.msg-info').show();
 
-              if(fileData.body.search("CRQ") != -1){
-                if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
-                  console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));
-                  if(fileData.subject.toLowerCase().search("no exitoso") != -1){
-                    console.log("Escalado");
-                  }
-                  if (fileData.subject.toLowerCase().search("exitoso") != -1){
-                    if (fileData.subject.toLowerCase().search("no") == -1){
-                      if (fileData.subject.toLowerCase().search("12h") != -1){
-                        console.log("Seguimiento FO");
-                      }
-                      if (fileData.subject.toLowerCase().search("24h") != -1){
-                        console.log("Seguimiento FO");
-                      }
-                      if (fileData.subject.toLowerCase().search("36h") != -1 && fileData.subject.toLowerCase().search("inicio") == -1){
-                        console.log("Produccion");
-                      }
-                    }
-                  }
-                  if(fileData.subject.toLowerCase().search("precheck no exitoso") != -1){
-                    console.log("Escalado");
-                  }
-                  if(fileData.subject.toLowerCase().search("standby") != -1 || fileData.subject.toLowerCase().search("prorroga") != -1){
-                    console.log("queda igual");
-                  }
-                  if(fileData.subject.toLowerCase().search("reinicio") != -1){
-                    console.log("Seguimiento FO");
-                  }
 
-                } else {
-                  console.log(fileData.subject+": "+"crq no valido");
-                }
-              } else {
-                console.log(fileData.subject+": "+"Correo sin crq");
-              }
+              // if(fileData.body.search("CRQ") != -1){
+              //   if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
+              //     console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));
+              //     if(fileData.subject.toLowerCase().search("no exitoso") != -1){
+              //       console.log("Escalado");
+              //     }
+              //     if (fileData.subject.toLowerCase().search("exitoso") != -1){
+              //       if (fileData.subject.toLowerCase().search("no") == -1){
+              //         if (fileData.subject.toLowerCase().search("12h") != -1){
+              //           console.log("Seguimiento FO");
+              //         }
+              //         if (fileData.subject.toLowerCase().search("24h") != -1){
+              //           console.log("Seguimiento FO");
+              //         }
+              //         if (fileData.subject.toLowerCase().search("36h") != -1 && fileData.subject.toLowerCase().search("inicio") == -1){
+              //           console.log("Produccion");
+              //         }
+              //       }
+              //     }
+              //     if(fileData.subject.toLowerCase().search("precheck no exitoso") != -1){
+              //       console.log("Escalado");
+              //     }
+              //     if(fileData.subject.toLowerCase().search("standby") != -1 || fileData.subject.toLowerCase().search("prorroga") != -1){
+              //       console.log("queda igual");
+              //     }
+              //     if(fileData.subject.toLowerCase().search("reinicio") != -1){
+              //       console.log("Seguimiento FO");
+              //     }
+              //
+              //   } else {
+              //     console.log(fileData.subject+": "+"crq no valido");
+              //   }
+              // } else {
+              //   console.log(fileData.subject+": "+"Correo sin crq");
+              // }
 
               // Use msgReader.getAttachment to access attachment content ...
               // msgReader.getAttachment(0) or msgReader.getAttachment(fileData.attachments[0])

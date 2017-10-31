@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col col-md-12 p-t-40">
-        <input type="hidden" value="<?= Auth::getRole() ?>" id="rol">    
+        <input type="hidden" value="<?= Auth::getRole() ?>" id="rol">
         <br/>
         <div class="row">
             <div class="col-md-12">
@@ -15,69 +15,12 @@
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab1default">
                                 <h1 class="m-t-0">Pendientes para revisión</h1>
-                                <table id="tablaPrincipal" class="table table-hover table-condensed table-striped" data-toggle="table" data-search="true" data-sortable="true" data-pagination="true">
-                                    <thead>
-                                        <tr>
-                                            <th>Sitio</th>
-                                            <th>Tipo de trabajo</th>
-                                            <th>Estado</th>
-                                            <th>Subestado</th>
-                                            <th>Tiempo</th>
-                                            <th>Tecnologia</th>
-                                            <th>Banda</th>
-                                            <th>Opciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="hidden" id="plantillaTd">
-                                            <td>Sitio</td>
-                                            <td>Tipo de trabajo</td>
-                                            <td>Estado</td>
-                                            <td>Subestado</td>
-                                            <td>Tiempo</td>
-                                            <td>Tecnologia</td>
-                                            <td>Banda</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sitio</td>
-                                            <td>Tipo de trabajo</td>
-                                            <td>Estado</td>
-                                            <td>Subestado</td>
-                                            <td>Tiempo</td>
-                                            <td>Tecnologia</td>
-                                            <td>Banda</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sitio</td>
-                                            <td>Tipo de trabajo</td>
-                                            <td>Estado</td>
-                                            <td>Subestado</td>
-                                            <td>Tiempo</td>
-                                            <td>Tecnologia</td>
-                                            <td>Banda</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <table id="tablaPrincipal" class="table table-hover table-condensed table-striped"></table>
                             </div>
                             <div class="tab-pane fade" id="tab2default">
                                 <table id="tablaPrincipal" class="table table-hover table-condensed table-striped" data-toggle="table" data-search="true" data-sortable="true" data-pagination="true">
                                     <thead>
-                                        <tr>
+                                        <tr class="info">
                                             <th>Sitio</th>
                                             <th>Tipo de trabajo</th>
                                             <th>Estado</th>
@@ -103,33 +46,8 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>Sitio</td>
-                                            <td>Tipo de trabajo</td>
-                                            <td>Estado</td>
-                                            <td>Subestado</td>
-                                            <td>Tiempo</td>
-                                            <td>Tecnologia</td>
-                                            <td>Banda</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sitio</td>
-                                            <td>Tipo de trabajo</td>
-                                            <td>Estado</td>
-                                            <td>Subestado</td>
-                                            <td>Tiempo</td>
-                                            <td>Tecnologia</td>
-                                            <td>Banda</td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a href="#" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>
-                                                </div>
-                                            </td>
+                                        <tr class="no-found">
+                                            <td colspan="8"><i class="fa fa-fw fa-warning"></i> No hay registros</td>
                                         </tr>
                                     </tbody>
                                 </table>

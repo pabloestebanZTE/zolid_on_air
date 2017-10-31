@@ -7,7 +7,7 @@ class Users extends Model {
     protected $username;
     protected $email;
     protected $password;
-    protected $permises; //[]
+    protected $permises; //[]    
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "users";
