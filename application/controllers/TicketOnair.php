@@ -12,6 +12,9 @@ class TicketOnair extends CI_Controller {
         $this->load->model('data/dao_work_model');
         $this->load->model('data/dao_technology_model');
         $this->load->model('data/dao_statusOnair_model');
+        $this->load->model('data/dao_precheck_model');
+        $this->load->model('data/dao_followUp12h_model');
+
     }
 
     public function listTicketOnair(){
@@ -38,17 +41,40 @@ class TicketOnair extends CI_Controller {
        $this->json($res);
     }
 
-    public function createTicket(){
-      $station_dao = new dao_station_model();
-      $technology_dao = new dao_technology_model();
-      $band_dao = new dao_band_model();
-      $work_dao = new dao_work_model();
+    public function ticketUser(){
+        $precheck = new dao_precheck_model();
+        $ticket = new dao_ticketOnair_model();
+        $ticketsOnAir = new dao_ticketOnAir_model();
+        $station = new dao_station_model();
+        $band = new dao_band_model();
+        $work = new dao_work_model();
+        $technology = new dao_technology_model();
+        $statusOnair = new dao_statusOnair_model();
 
-      $answer['stations'] = $station_dao->getAll();
-      $answer['tehcnologies'] = $technology_dao->getAll();
-      $answer['bands'] = $band_dao->getAll();
-      $answer['works'] = $work_dao->getAll();
+        header('Content-Type: text/plain');
+        $userId = 1;
+        $precheckId = $precheck->getPrecheckById($userId)->data;
 
-      $this->load->view('createTicketOnair', $answer);
+        for ($j=0; $j <count($precheckId) ; $j++) {
+          $res = $ticket->findByIdPrecheck($precheckId[$j]->k_id_precheck);
+
+          $res->data->k_id_band = $band->findById($res->data->k_id_band)->data;//band
+          $res->data->k_id_status_onair = $statusOnair->findById($res->data->k_id_status_onair)->data;//Status onair
+          $res->data->k_id_station = $station->findById($res->data->k_id_station)->data;//Station
+          $res->data->k_id_work = $work->findById($res->data->k_id_work)->data;//work
+          $res->data->k_id_technology = $technology->findById($res->data->k_id_technology)->data;//technology
+
+          $respuesta[$j]=$res->data;
+
+        }
+        //print_r($respuesta);
+
+        $onair12 = new dao_followUp12h_model();
+        $res2 = $onair12->getfollow12ById($userId)->data;
+        print_r($res2[0]);
+        
+        $ticket12 =
+
+
     }
 }

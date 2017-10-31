@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_cityd_model extends CI_Model{
+    class dao_city_model extends CI_Model{
 
         public function __construct(){
         }

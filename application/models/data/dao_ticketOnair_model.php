@@ -25,7 +25,7 @@
         public function findByIdOnAir($request){
           try {
             $ticketOnAir = new TicketOnAirModel();
-            $datos = $user->where("k_id_user","=",$request->idOnAir)
+            $datos = $ticketOnAir->where("k_id_onair","=",$request)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
@@ -35,6 +35,17 @@
           }
         }
 
-
+        public function findByIdPrecheck($id){
+          try {
+            $ticketOnAir = new TicketOnAirModel();
+            $datos = $ticketOnAir->where("k_id_precheck","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
     }
 ?>
