@@ -14,7 +14,7 @@
         <!-- CSS BOOTSTRAP-TABLE-->
         <link rel="stylesheet" href="<?= URL::to('assets/plugins/datatables/css/dataTables.bootstrap.min.css?v=1.0') ?>">
         <link rel="stylesheet" href="<?= URL::to('assets/plugins/sweetalert-master/dist/sweetalert.css') ?>" />
-        <link rel="stylesheet" href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" />
+        <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<?= URL::to('assets/css/helper-class.css') ?>">
         <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css?v=1.1') ?>" />
     </head>
@@ -109,9 +109,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="txtFechaIngreso">Fecha ingreso On Air:</label>
+                                        <label for="txtFechaIngresoOnAir">Fecha ingreso On Air:</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control input-sm" id="txtfechaIngreso" placeholder="DD/MM/YYYY" />
+                                            <input type="text" class="form-control input-sm" id="txtFechaIngresoOnAir" placeholder="DD/MM/YYYY" />
                                             <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
                                         </div>
                                     </div>
@@ -346,9 +346,9 @@
 <script src="<?= URL::to('assets/plugins/datatables/js/dataTables.bootstrap.js?v=1.0') ?>"></script>
 <script src="<?= URL::to("assets/js/utils/app.global.js?v=1.0") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/utils/app.dom.js?v=1.0") ?>" type="text/javascript"></script>
-<script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
 <script scr="<?= URL::to("assets/plugins/sweetalert-master/dist/sweetalert.min.js") ?>" ></script>
-<script scr="<?= URL::to("assets/plugins/boostrap-datepicker/dist/bootstrap-datepicker.min.js") ?>" ></script>
-<script scr="<?= URL::to("assets/plugins/jquery.mask.js") ?>" ></script>
+<script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
+<script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
+<script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
 </body>
 </html>

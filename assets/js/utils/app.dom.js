@@ -116,7 +116,7 @@ var dom = {
             control.val(fechaDefecto);
         }
 
-        control.parents(".input-group").find("button").on('click', function () {
+        control.parents(".input-group").find("button").attr('type', 'button').on('click', function () {
             control.trigger("focus");
         });
 
