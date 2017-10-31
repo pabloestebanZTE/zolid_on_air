@@ -44,10 +44,11 @@ class TicketOnair extends CI_Controller {
       $band_dao = new dao_band_model();
       $work_dao = new dao_work_model();
 
-      $stations = $station_dao->getAll();
-      $tehcnologies = $technology_dao->getAll();
-      $bands = $band_dao->getAll();
-      $works = $work_dao->getAll();
-      $this->load->view('createTicketOnair');
+      $answer['stations'] = $station_dao->getAll();
+      $answer['tehcnologies'] = $technology_dao->getAll();
+      $answer['bands'] = $band_dao->getAll();
+      $answer['works'] = $work_dao->getAll();
+
+      $this->load->view('createTicketOnair', $answer);
     }
 }
