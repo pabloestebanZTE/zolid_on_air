@@ -73,7 +73,7 @@
 //            if (Auth::isIngeniero()) {
 //                $this->load->view('parts/principal/ingeniero');
 //            }
-            $this->load->view('parts/principal/documentador');
+            $this->load->view('parts/principal/coordinador');
             ?>
         </div>
         <!--footer Section -->
@@ -95,7 +95,7 @@
 <script src="<?= URL::to('assets/plugins/datatables/js/dataTables.bootstrap.js?v=1.0') ?>"></script>
 <script src="<?= URL::to("assets/js/utils/app.global.js?v=1.0") ?>" type="text/javascript"></script>
 <script src="<?= URL::to("assets/js/utils/app.dom.js?v=1.0") ?>" type="text/javascript"></script>
-<script src="<?= URL::to('assets/js/modules/principal.js?v=1.0') ?>" type="text/javascript"></script>
+<script src="<?= URL::to('assets/js/modules/principal.js?v=1.1') ?>" type="text/javascript"></script>
 <script scr="<?= URL::to("assets/plugins/sweetalert-master/dist/sweetalert.min.js") ?>" ></script>
 </body>
 </html>

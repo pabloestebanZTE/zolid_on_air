@@ -14,7 +14,7 @@
         <!-- CSS BOOTSTRAP-TABLE-->
         <link rel="stylesheet" href="<?= URL::to('assets/css/bootstrap-table.css') ?>">
         <link rel="stylesheet" href="<?= URL::to('assets/css/helper-class.css') ?>">
-        <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css') ?>" />
+        <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css?v=1.0') ?>" />
     </head>
     <body data-base="<?php URL::base() ?>">
         <!-- Navigation -->
