@@ -65,9 +65,12 @@
       public function documenterStrartView(){
         $this->load->view('documenterStrart');
       }
-
       public function trackingDetails(){
         $this->load->view('trackingdetails');
+      }
+      
+      public function toAssign(){
+        $this->load->view('toAssign');
       }
   }
 
