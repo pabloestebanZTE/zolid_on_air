@@ -39,12 +39,11 @@
         public function getPrecheckById($idUser){
           try {
             $precheck = new PrecheckModel();
-            $datos = $precheck->where("k_id_precheck","=",$idUser)
-                          ->first();
+            $datos = $precheck->where("k_id_user","=",$idUser)
+                          ->get();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
-
           } catch (ZolidException $ex) {
             return $ex;
           }

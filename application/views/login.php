@@ -55,7 +55,6 @@
         </div>
       </form>
     </div>
-
     <?php
       if (isset($error)) {
         echo '<script type="text/javascript">showMessage();</script>';

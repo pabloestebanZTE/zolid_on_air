@@ -22,10 +22,10 @@
         }
       }
 
-      public function getUserByOnair12($idUser){
+      public function getUserByOnair12($id){
         try {
           $onair12 = new OnAir12hModel();
-          $datos = $onair12->where("k_id_user","=",$idUser)
+          $datos = $onair12->where("k_id_user","=",$id)
                         ->first();
           $response = new Response(EMessages::SUCCESS);
           $response->setData($datos);
@@ -33,6 +33,19 @@
 
         } catch (ZolidException $ex) {
           return $ex;
+        }
+
+        public function getOnair12ById($id){
+          try {
+            $onair12 = new OnAir12hModel();
+            $datos = $onair12->where("k_id_follow_up_12h","=",$id)
+                          ->get();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
         }
 
 
