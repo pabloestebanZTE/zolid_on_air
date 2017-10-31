@@ -25,7 +25,6 @@
   </style>
 </head>
 <body>
-
 <div class="msg-example">
   <div class="info-box wizard-msg">
     1. Choose *.msg file...
@@ -83,17 +82,9 @@
   }
 
   $(function () {
-
-                  var sites = '<?php echo json_encode($stations->data); ?>';
-                  var js_obj_data = JSON.parse(sites);
-
-                  console.log(js_obj_data);
-                  console.log("o.o");
-
     if (isSupportedFileAPI()) {
       $('.src-file').change(function () {
         var srqs = "";
-
 
         for(var counter = 0; counter < this.files.length; counter++){
           var selectedFile = this.files[counter];
@@ -129,6 +120,21 @@
               $('.msg-info').show();
 
 
+
+
+
+              var sites = <?php echo $respuesta; ?>;
+            //    var js_obj_data = JSON.stringif(sites);
+
+              console.log(sites);
+              console.log("o.o");
+
+              for(var i = 0; i < sites.stations.data.length; i++){
+                if(fileData.subject.toLowerCase().search(sites.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(sites.stations.data[i].n_name_station.toLowerCase().split(".")[1]) != -1){
+
+                  console.log(sites.stations.data[i].n_name_station);
+                }
+              }
               // if(fileData.body.search("CRQ") != -1){
               //   if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
               //     console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));

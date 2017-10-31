@@ -49,6 +49,9 @@ class TicketOnair extends CI_Controller {
       $answer['bands'] = $band_dao->getAll();
       $answer['works'] = $work_dao->getAll();
 
+      $answer['respuesta'] = json_encode($answer, true);
+//print_r($answer);
+
       $this->load->view('createTicketOnair', $answer);
     }
 }
