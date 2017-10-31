@@ -65,6 +65,10 @@
       public function documenterStrartView(){
         $this->load->view('documenterStrart');
       }
+      
+      public function toAssign(){
+        $this->load->view('toAssign');
+      }
   }
 
 ?>

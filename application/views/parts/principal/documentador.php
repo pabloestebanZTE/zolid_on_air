@@ -1,4 +1,4 @@
-<div class='tab-content contentPrincipal hidden' id='tab1'><br><br><br><br>
+<div class='tab-content contentPrincipal hidden' id='tab1'>
     <div class='container'>
         <form class= 'well form-horizontal' action='' method='post'  id='assignService' name='assignServie' enctype= 'multipart/form-data'>
             <fieldset>

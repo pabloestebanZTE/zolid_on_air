@@ -39,7 +39,7 @@ var principal = {
     return '<div class="btn-group">'
         + '<a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>'
         + '<a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="Documentación"><span class="fa fa-fw fa-file-archive-o"></span></a>'
-        + '<a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>'
+        + '<a href="'+app.base('User/toAssign')+'" class="btn btn-default btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>'
         + '</div>';
   },
   fillTable: function(data){

@@ -1,4 +1,4 @@
-<div class='tab-content contentPrincipal hidden' id='tab1'><br><br><br><br>
+<div class='tab-content contentPrincipal hidden' id='tab1'>
     <div class='container'>
         <form class= 'well form-horizontal' action='' method='post'  id='assignService' name='assignServie' enctype= 'multipart/form-data'>
             <fieldset>
@@ -22,6 +22,7 @@
                                                 <table id="tablaPrincipal" class="table table-hover table-condensed table-striped"></table>
                                             </div>
                                             <div class="tab-pane fade" id="tab2default">
+                                                <h1 class="m-t-0">Ya asignados</h1>
                                                 <table id="tablaPrincipal" class="table table-hover table-condensed table-striped"></table>
                                             </div>
                                         </div>
