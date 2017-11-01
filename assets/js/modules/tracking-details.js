@@ -12,6 +12,8 @@ var TD = {
         var step = $(this);
         var content = step.parents('.stepwizard').parent();
         var stepPanel = content.find('.step-panel' + step.attr('href'));
+        content.find('.stepwizard-step a').attr('class', 'btn btn-default btn-circle');
+        step.attr('class', 'btn btn-primary btn-circle');
         content.find('.step-panel').addClass('hidden');
         stepPanel.removeClass('hidden').hide().fadeIn(500);
     },

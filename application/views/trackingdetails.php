@@ -311,109 +311,111 @@
                                     </form>
                                 </div>
                                 <div class="hidden well display-block p-l-40 p-r-40 m-b-0 step-panel" id="step-2">
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtTicketTremedy">Ticket Tremedy:</label>
-                                            <input type="text" class="form-control input-sm" id="txtTicketTremedy" placeholder="Tiecket Tremedy"/>
+                                    <form class="row form-xs">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtTicketTremedy">Ticket Tremedy:</label>
+                                                <input type="text" class="form-control input-sm" id="txtTicketTremedy" placeholder="Tiecket Tremedy"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtLAC">LAC:</label>
-                                            <input type="text" class="form-control input-sm" id="txtLAC" placeholder="LAC" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtLAC">LAC:</label>
+                                                <input type="text" class="form-control input-sm" id="txtLAC" placeholder="LAC" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtRAC">RAC:</label>
-                                            <input type="text" class="form-control input-sm" id="txtRAC" placeholder="RAC" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtRAC">RAC:</label>
+                                                <input type="text" class="form-control input-sm" id="txtRAC" placeholder="RAC" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtSAC">SAC:</label>                                        
-                                            <input type="text" class="form-control input-sm" id="txtSAC" placeholder="SAC"/>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtSAC">SAC:</label>                                        
+                                                <input type="text" class="form-control input-sm" id="txtSAC" placeholder="SAC"/>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="cmbIntegracionGestionYTrafica">Int. Gestión y Tráfica:</label>
-                                            <select class="form-control input-sm" id="cmbIntegracionGestionYTrafica">
-                                                <option>Seleccione</option>
-                                            </select>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="cmbIntegracionGestionYTrafica">Int. Gestión y Tráfica:</label>
+                                                <select class="form-control input-sm" id="cmbIntegracionGestionYTrafica">
+                                                    <option>Seleccione</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="cmbPuestaServicioSitioNuevoLTE">Puesta Sitio Nuevo LTE:</label>
-                                            <select class="form-control input-sm" id="cmbPuestaServicioSitioNuevoLTE">
-                                                <option>Seleccione</option>
-                                            </select>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="cmbPuestaServicioSitioNuevoLTE">Puesta Sitio Nuevo LTE:</label>
+                                                <select class="form-control input-sm" id="cmbPuestaServicioSitioNuevoLTE">
+                                                    <option>Seleccione</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="cmbInstalacionHW4GSitio">Instalación HW 4G Sitio:</label>
-                                            <select id="cmbInstalacionHW4GSitio" class="form-control input-sm">
-                                                <option>Seleccione</option>
-                                            </select>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="cmbInstalacionHW4GSitio">Instalación HW 4G Sitio:</label>
+                                                <select id="cmbInstalacionHW4GSitio" class="form-control input-sm">
+                                                    <option>Seleccione</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="cmbPrelaunch">Prelaunch:</label>
-                                            <select class="form-control input-sm" id="cmbPrelaunch">
-                                                <option>Seleccione</option>
-                                            </select>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="cmbPrelaunch">Prelaunch:</label>
+                                                <select class="form-control input-sm" id="cmbPrelaunch">
+                                                    <option>Seleccione</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtEvidenciaSL">Evidencia SL:</label>
-                                            <input type="text" class="form-control input-sm" placeholder="Evidencia SL" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtEvidenciaSL">Evidencia SL:</label>
+                                                <input type="text" class="form-control input-sm" placeholder="Evidencia SL" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtEvidenciaTG">Evidencia TG:</label>
-                                            <input type="text" class="form-control input-sm" id="txtEvidenciaTG" placeholder="Evidencia TG" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtEvidenciaTG">Evidencia TG:</label>
+                                                <input type="text" class="form-control input-sm" id="txtEvidenciaTG" placeholder="Evidencia TG" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="nmbWeek">WEEK:</label>
-                                            <input type="number" class="form-control input-sm" placeholder="Week" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="nmbWeek">WEEK:</label>
+                                                <input type="number" class="form-control input-sm" placeholder="Week" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtIdNotificacion">Id Notificación:</label>
-                                            <input type="text" class="form-control input-sm" id="txtIdNotificacion" placeholder="Id Notificación" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtIdNotificacion">Id Notificación:</label>
+                                                <input type="text" class="form-control input-sm" id="txtIdNotificacion" placeholder="Id Notificación" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtIdDocumentacion">Id Documentación:</label>
-                                            <input type="text" class="form-control input-sm" id="txtIdDocumentacion" placeholder="Id Documentación" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtIdDocumentacion">Id Documentación:</label>
+                                                <input type="text" class="form-control input-sm" id="txtIdDocumentacion" placeholder="Id Documentación" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtIdRFTools">Id RFTools:</label>
-                                            <input type="text" class="form-control input-sm" id="txtIdRFTools" placeholder="Id RFTools" />
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtIdRFTools">Id RFTools:</label>
+                                                <input type="text" class="form-control input-sm" id="txtIdRFTools" placeholder="Id RFTools" />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="txtFechaApertura">Fecha de apertura:</label>
-                                            <div class="input-group">
-                                                <input type="text" class="form-control input-sm" id="txtFechaApertura" name="" value="" placeholder="DD/MM/YYYY">
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="txtFechaApertura">Fecha de apertura:</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control input-sm" id="txtFechaApertura" name="" value="" placeholder="DD/MM/YYYY">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
