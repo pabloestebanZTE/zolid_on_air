@@ -37,7 +37,7 @@
                         <fieldset class="col-md-6 control-label">
                             <!-- Input Text -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Estacion</label>
+                                <label class="col-md-3 control-label">Estacion:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -48,19 +48,12 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Banda</label>
+                                <label class="col-md-3 control-label">Banda:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
                                         <select name="banda" id="banda" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la banda</option>
-                                            <?php
-//                if(isset($services)){
-//                  for($i =0; $i < count($services); $i++){
-//                    echo "<option value='".$services[$i]->getId()."'>".$services[$i]->getType()."</option>";
-//                  }
-//                }
-                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -68,19 +61,12 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Regional</label>
+                                <label class="col-md-3 control-label">Regional:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
                                         <select name="regional" id="regional" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la regional</option>
-                                            <?php
-//                if(isset($services)){
-//                  for($i =0; $i < count($services); $i++){
-//                    echo "<option value='".$services[$i]->getId()."'>".$services[$i]->getType()."</option>";
-//                  }
-//                }
-                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -92,19 +78,12 @@
                         <fieldset >
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Tecnologia</label>
+                                <label class="col-md-3 control-label">Tecnologia:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
                                         <select name="tecnologia" id="tecnologia" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la tecnologia</option>
-                                            <?php
-//                if(isset($services)){
-//                  for($i =0; $i < count($services); $i++){
-//                    echo "<option value='".$services[$i]->getId()."'>".$services[$i]->getType()."</option>";
-//                  }
-//                }
-                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -112,19 +91,12 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Tipo de trabajo</label>
+                                <label class="col-md-3 control-label">Tipo de trabajo:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
                                         <select name="tipotrabajo" id="tipotrabajo" class="form-control selectpicker" required>
                                             <option value="" >Seleccione el tipo de trabajo</option>
-                                            <?php
-//                if(isset($services)){
-//                  for($i =0; $i < count($services); $i++){
-//                    echo "<option value='".$services[$i]->getId()."'>".$services[$i]->getType()."</option>";
-//                  }
-//                }
-                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -132,19 +104,12 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Ciudad</label>
+                                <label class="col-md-3 control-label">Ciudad:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
                                         <select name="ciudad" id="ciudad" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la ciudad</option>
-                                            <?php
-//                if(isset($services)){
-//                  for($i =0; $i < count($services); $i++){
-//                    echo "<option value='".$services[$i]->getId()."'>".$services[$i]->getType()."</option>";
-//                  }
-//                }
-                                            ?>
                                         </select>
                                     </div>
                                 </div>
