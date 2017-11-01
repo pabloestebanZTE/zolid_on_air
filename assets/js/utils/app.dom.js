@@ -5,6 +5,23 @@
  */
 
 var dom = {
+    //Para agregar todas las interacciones del dom genericas.
+    init: function () {
+        $('body').on('click', '.alert .close', function () {
+            $(this).parent().hide();
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+        $('.container.autoheight').css('min-height', screen.height + 'px');
+        dom.events();
+    },
+    events: function () {
+        $(document).on('click', '.panel .panel-heading .panel-title a', function () {
+            var link = $(this);
+            var panel = link.parents('.panel');
+            panel.parents('.panel-group').find('.panel-primary').attr('class', 'panel panel-default');
+            panel.attr('class', 'panel panel-primary');
+        });
+    },    
     /**
      *
      * @param {Element} cmb
@@ -156,16 +173,6 @@ var dom = {
             }).send();
         };
         form.on('submit', onSubmitForm);
-    },
-    //Para agregar todas las interacciones del dom genericas.
-    init: function () {
-        $('body').on('click', '.alert .close', function () {
-            $(this).parent().hide();
-        });
-
-        $('[data-toggle="tooltip"]').tooltip();
-
-        $('.container.autoheight').css('min-height', screen.height + 'px');
     },
     fillString: function (dom, obj) {
         var getKeyPart = function (keyPart, key) {
