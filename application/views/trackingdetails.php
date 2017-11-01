@@ -298,7 +298,10 @@
                                             <div class="form-group">
                                                 <label for="cmbIntegracionGestionYTrafica">Int. Gestión y Tráfica:</label>
                                                 <select class="form-control input-sm" id="cmbIntegracionGestionYTrafica">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -306,7 +309,10 @@
                                             <div class="form-group">
                                                 <label for="cmbPuestaServicioSitioNuevoLTE">Puesta Sitio Nuevo LTE:</label>
                                                 <select class="form-control input-sm" id="cmbPuestaServicioSitioNuevoLTE">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -314,7 +320,10 @@
                                             <div class="form-group">
                                                 <label for="cmbInstalacionHW4GSitio">Instalación HW 4G Sitio:</label>
                                                 <select id="cmbInstalacionHW4GSitio" class="form-control input-sm">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -322,7 +331,10 @@
                                             <div class="form-group">
                                                 <label for="cmbPrelaunch">Prelaunch:</label>
                                                 <select class="form-control input-sm" id="cmbPrelaunch">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
