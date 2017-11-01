@@ -12,6 +12,7 @@
     <!-- CSS BOOTSTRAP-TABLE-->
     <link rel="stylesheet" href="<?= URL::to('assets/plugins/datatables/css/dataTables.bootstrap.min.css?v=1.0') ?>">
     <link rel="stylesheet" href="<?= URL::to('assets/css/helper-class.css') ?>">
+    <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css?v=1.0') ?>" />
     <link rel="stylesheet" href="<?= URL::to('assets/plugins/sweetalert-master/dist/sweetalert.css') ?>" />
 </head>

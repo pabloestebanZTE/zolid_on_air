@@ -10,17 +10,17 @@
             </div>
             <!-- TRACKING DETAILS FORM -->            
             <div class="col-md-12">
-                <div class="panel-group" id="accordion">
-                    <div class="panel panel-primary">
+                <div class="panel-group m-b-5" id="accordion">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><i class="fa fa-fw fa-info"></i> Información básica</a>
                             </h4>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse in">
+                        <div id="collapse1" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <form class="form-horizontal well">
-                                    <div class="panel-body">                                                                   
+                                    <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Estacion</label>
@@ -391,9 +391,64 @@
                         </div>
                     </div>                    
                 </div>
-                <div class="">
-                </div>
-            </div>                
+                <div class="well">
+                    <div class="col-xs-12 text-right">
+                        <div class="display-block pull-right" style="width: 300px;">
+                            <div class="col-xs-4 text-right p-r-0 p-t-5">
+                                <label class="">Grupos:</label>
+                            </div>
+                            <div class="col-xs-8 p-r-0">
+                                <select class="form-control" id="cmbGruposTracking">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="display-block">
+                        <div class="hour-step active">
+                            <div class="body-step">
+                                <label>12H</label>
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                            </div>
+                            <div class="back-progress-step">
+                                <span class="progress-step" style="width: 30%;"></span>
+                            </div>
+                            <div class="footer-step">
+                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -01:35</label>
+                            </div>
+                        </div>
+                        <div class="hour-step">
+                            <div class="body-step">
+                                <label>24H</label>
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                            </div>
+                            <div class="back-progress-step">
+                                <span class="progress-step"></span>
+                            </div>
+                            <div class="footer-step">
+                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                            </div>
+                        </div>
+                        <div class="hour-step">
+                            <div class="body-step">
+                                <label>36H</label>
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>                            
+                            </div>
+                            <div class="back-progress-step">
+                                <span class="progress-step"></span>
+                            </div>
+                            <div class="footer-step">
+                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="well white p-t-5 p-b-5 p-r-5 p-l-5">
+                        <div class="well m-b-0">
+                            <table id="tblTrackingDetails" class="table table-hover table-condensed table-striped"></table>
+                        </div>
+                    </div>
+                </div>  
+            </div>
         </form>
         <!-- FIN TRACKING DETAILS FORM -->
 
@@ -405,8 +460,7 @@
     </div>
     <!--End footer Section -->
 
-    <?php $this->load->view('parts/generic/scripts'); ?>
-    <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
+    <?php $this->load->view('parts/generic/scripts'); ?>    
     <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
     <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
     <script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
