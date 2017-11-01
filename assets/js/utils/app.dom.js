@@ -15,13 +15,16 @@ var dom = {
         dom.events();
     },
     events: function () {
+        //Configuración panel.
         $(document).on('click', '.panel .panel-heading .panel-title a', function () {
             var link = $(this);
             var panel = link.parents('.panel');
             panel.parents('.panel-group').find('.panel-primary').attr('class', 'panel panel-default');
-            panel.attr('class', 'panel panel-primary');
+            if (link.attr('aria-expanded') == "true") {
+                panel.attr('class', 'panel panel-primary');
+            }
         });
-
+        //Steps...
         $('.stepwizard-step a').on('click', function (e) {
             app.stopEvent(e);
             var step = $(this);
