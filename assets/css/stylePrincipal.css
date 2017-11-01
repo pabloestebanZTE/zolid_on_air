@@ -309,10 +309,13 @@ nav {
     padding:20px 50px 20px 50px;
     text-align:center;
 }
-
 .dataTable>tbody>tr>td, .dataTable>tbody>tr>th, .dataTable>tfoot>tr>td, .dataTable>tfoot>tr>th, .dataTable>thead>tr>td, .dataTable>thead>tr>th{
     background: white !important;
     border: 0.5px solid #cccccc;
+}
+.dataTable > tbody > tr >td:last-child{
+    width: 90px;
+    text-align: center;
 }
 
 .dataTable>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th{
