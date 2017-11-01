@@ -21,7 +21,18 @@ var dom = {
             panel.parents('.panel-group').find('.panel-primary').attr('class', 'panel panel-default');
             panel.attr('class', 'panel panel-primary');
         });
-    },    
+
+        $('.stepwizard-step a').on('click', function (e) {
+            app.stopEvent(e);
+            var step = $(this);
+            var content = step.parents('.stepwizard').parent();
+            var stepPanel = content.find('.step-panel' + step.attr('href'));
+            content.find('.stepwizard-step a').attr('class', 'btn btn-default btn-circle');
+            step.attr('class', 'btn btn-primary btn-circle');
+            content.find('.step-panel').addClass('hidden');
+            stepPanel.removeClass('hidden').hide().fadeIn(500);
+        });
+    },
     /**
      *
      * @param {Element} cmb
