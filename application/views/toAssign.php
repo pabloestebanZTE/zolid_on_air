@@ -10,7 +10,7 @@
                             <legend>Asignar Actividad</legend>
                             <fieldset class="col-md-6 control-label">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Estacion</label>
+                                    <label class="col-md-3 control-label">Estacion:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -20,7 +20,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Banda</label>
+                                    <label class="col-md-3 control-label">Banda:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
@@ -30,7 +30,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Regional</label>
+                                    <label class="col-md-3 control-label">Regional:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -40,19 +40,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Ingeniero</label>
+                                    <label class="col-md-3 control-label">Ingeniero:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
                                             <select name="cbmIngeniero" id="cbmIngeniero" class="form-control selectpicker" required>
                                                 <option value="" >Seleccione el ingeniero</option>
-                                                <?php
-//                if(isset($services)){
-//                  for($i =0; $i < count($services); $i++){
-//                    echo "<option value='".$services[$i]->getId()."'>".$services[$i]->getType()."</option>";
-//                  }
-//                }
-                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -63,7 +56,7 @@
                             <!--  inicio seccion derecha form---->
                             <fieldset>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Tecnologia</label>
+                                    <label class="col-md-3 control-label">Tecnologia:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
@@ -73,7 +66,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Tipo de trabajo</label>
+                                    <label class="col-md-3 control-label">Tipo de trabajo:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
@@ -83,7 +76,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Ciudad</label>
+                                    <label class="col-md-3 control-label">Ciudad:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
@@ -99,7 +92,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
-                                        <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "this.form.action = 'http://localhost/Datafill_OT/index.php/SpecificService/saveServiceS'">Asignar <span class="fa fa-fw fa-floppy-o"></span></button>
+                                        <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "this.form.action = 'http://localhost/Datafill_OT/index.php/SpecificService/saveServiceS'">Asignar <span class="fa fa-fw fa-user-plus"></span></button>
                                     </div>
                                 </div>
                             </center>

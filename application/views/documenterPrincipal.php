@@ -18,7 +18,7 @@
                                     <div class="panel-body">                                                                   
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estacion</label>
+                                                <label class="col-md-3 control-label">Estacion:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -28,7 +28,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Banda</label>
+                                                <label class="col-md-3 control-label">Banda:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
@@ -38,7 +38,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Regional</label>
+                                                <label class="col-md-3 control-label">Regional:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -48,11 +48,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Ingeniero</label>
+                                                <label class="col-md-3 control-label">Ingeniero:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" name="txtIngeniero" id="txtIngeniero" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="txtIngeniero" id="txtIngeniero" class="form-control" value="" readonly="flase">
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +62,7 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Tecnologia</label>
+                                                <label class="col-md-3 control-label">Tecnologia:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
@@ -72,7 +72,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Tipo de trabajo</label>
+                                                <label class="col-md-3 control-label">Tipo de trabajo:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
@@ -82,7 +82,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Ciudad</label>
+                                                <label class="col-md-3 control-label">Ciudad:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
@@ -109,10 +109,10 @@
                                     <div class="panel-body">                                                                   
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estado</label>
+                                                <label class="col-md-3 control-label">Estado:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-list-ul"></i></span>
                                                         <select name="cmbEstado" id="cmbEstado" class="form-control selectpicker" required>
                                                             <option value="" >Seleccione el estado</option>
                                                         </select>
@@ -121,10 +121,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Subestado</label>
+                                                <label class="col-md-3 control-label">Subestado:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-list-ol"></i></span>
                                                         <select name="cmbSubestado" id="cmbSubestado" class="form-control selectpicker" required>
                                                             <option value="" >Seleccione el Subestado</option>
                                                         </select>
@@ -133,7 +133,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Excepción GRI</label>
+                                                <label class="col-md-3 control-label">Excepción GRI:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -146,10 +146,10 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Fecha de desbloqueo</label>
+                                                <label class="col-md-3 control-label">Fecha de desbloqueo:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <input type="text" class="form-control input-sm" id="txtDesbloqueo" name="txtDesbloqueo" placeholder="DD/MM/YYYY" />
                                                         <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
                                                     </div>
@@ -161,10 +161,10 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Fecha de bloqueo</label>
+                                                <label class="col-md-3 control-label">Fecha de bloqueo:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
                                                         <input type="text" class="form-control input-sm" id="txtBloqueado" name="txtBloqueado" placeholder="DD/MM/YYYY" />
                                                         <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
                                                     </div>
@@ -172,30 +172,30 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Sectores bloqueados</label>
+                                                <label class="col-md-3 control-label">Sectores bloqueados:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
-                                                        <input type="text" name="txtSectoresBloqueados" id="txtSectoresBloqueados" class="form-control" value="" readonly="false">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-times-circle"></i></span>
+                                                        <input type="text" name="txtSectoresBloqueados" id="txtSectoresBloqueados" class="form-control" value="" >
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Sectores desbloqueados</label>
+                                                <label class="col-md-3 control-label">Sectores desbloqueados:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                        <input type="text" name="txtSectoresDesbloqueados" id="txtSectoresDesbloqueados" class="form-control" value="" readonly="false">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
+                                                        <input type="text" name="txtSectoresDesbloqueados" id="txtSectoresDesbloqueados" class="form-control" value="" >
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estado On Air</label>
+                                                <label class="col-md-3 control-label">Estado On Air:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-cloud"></i></span>
                                                         <select name="cmbEstadoOnAir" id="cmbEstadoOnAir" class="form-control selectpicker" required>
                                                             <option value="" >Seleccione el Estado</option>
                                                         </select>
@@ -209,7 +209,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-12 control-label"></label>
                                                 <div class="col-md-12">
-                                                    <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "this.form.action = 'http://localhost/Datafill_OT/index.php/SpecificService/saveServiceS'">Asignar <span class="fa fa-fw fa-floppy-o"></span></button>
+                                                    <button type="submit" id="btnGuardar" class="btn btn-primary" onclick = "this.form.action = 'http://localhost/Datafill_OT/index.php/SpecificService/saveServiceS'">Guardar <span class="fa fa-fw fa-floppy-o"></span></button>
                                                 </div>
                                             </div>
                                         </center>
@@ -218,6 +218,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -484,6 +485,8 @@
         </div>
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
+        <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
+        <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
         <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
         <script src="<?= URL::to('assets/js/modules/documenterPrincipal.js') ?>" type="text/javascript"></script>
     </body>
