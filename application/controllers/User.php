@@ -72,6 +72,10 @@
       public function toAssign(){
         $this->load->view('toAssign');
       }
+      
+      public function documenterPrincipalView(){
+        $this->load->view('documenterPrincipal');
+      }
   }
 
 ?>
