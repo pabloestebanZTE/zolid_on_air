@@ -551,3 +551,77 @@ nav {
     border-color: #5cb85c; }
 .radio-success input[type="radio"]:checked + label::after {
     background-color: #5cb85c; }
+
+.hour-step{
+    display: inline-table;
+    width: 225px;
+    background-color: #FFF;
+    border-radius: 5px 5px 0px 0px;
+    margin-right: 5px;
+    border: 1px solid #337ab77a;
+    border-bottom: 0px;
+    box-shadow: 0px 0px 3px #ccc;
+    opacity: 0.3;
+}
+.hour-step.active{
+    opacity: 1;
+}
+.hour-step .body-step{
+    display: block;    
+    padding: 15px;
+}
+.hour-step{
+    cursor: pointer;
+}
+.hour-step .body-step label{
+    color: #525252;
+    font-size: 35px;
+    line-height: 0px;    
+    text-shadow: 2px 1px 0 #ffffff, 4px 3px 0 rgba(0,0,0,0.15);
+    margin-top: 25px;
+}
+
+.hour-step .body-step .icon-step .fa{
+    display: block;
+    margin: 0 auto;
+    margin-top: 11px;
+}
+.hour-step .body-step .icon-step{
+    margin-top: -5px;
+    float: right;
+    font-size: 28px;
+    background: #24d0f4!important;
+    background: -moz-linear-gradient(top,#24d0f4 0,#007aff 100%)!important;
+    background: -webkit-linear-gradient(top,#24d0f4 0,#007aff 100%)!important;
+    background: linear-gradient(to bottom,#24d0f4 0,#007aff 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#24d0f4', endColorstr='#007aff', GradientType=0 )!important;
+    color: #FFF;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;    
+}
+.hour-step .back-progress-step{
+    display: block;    
+    background-color: #e0e0e0;    
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 3px;
+    border-top: 1px solid #ccc;
+}
+.hour-step .back-progress-step .progress-step{
+    display: block;
+    background-color: #207be5;
+    width: 0px;
+    height: 3px;
+}
+.hour-step .footer-step{
+    padding: 5px 5px 0px 9px;
+    color: #525252;    
+}
+.well.white{
+    background-color: #FFF !important;
+    border: 1px solid #337ab77a;    
+    box-shadow: 0px 0px 3px #ccc;
+    border-radius: 0px 0px 3px 3px;
+}
