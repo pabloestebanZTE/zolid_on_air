@@ -109,7 +109,7 @@
                                     <div class="panel-body">                                                                   
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estado:</label>
+                                                <label for="cmbEstado" class="col-md-3 control-label">Estado:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-list-ul"></i></span>
@@ -121,7 +121,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Subestado:</label>
+                                                <label for="cmbSubestado" class="col-md-3 control-label">Subestado:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-list-ol"></i></span>
@@ -133,7 +133,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Excepción GRI:</label>
+                                                <label for="cmbExcepciongri" class="col-md-3 control-label">Excepción GRI:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -146,7 +146,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Fecha de desbloqueo:</label>
+                                                <label for="txtDesbloqueo" class="col-md-3 control-label">Fecha de desbloqueo:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
@@ -161,7 +161,7 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Fecha de bloqueo:</label>
+                                                <label for="txtBloqueado" class="col-md-3 control-label">Fecha de bloqueo:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-lock"></i></span>
@@ -172,7 +172,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Sectores bloqueados:</label>
+                                                <label for="txtSectoresBloqueados" class="col-md-3 control-label">Sectores bloqueados:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-times-circle"></i></span>
@@ -182,7 +182,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Sectores desbloqueados:</label>
+                                                <label for="txtSectoresDesbloqueados" class="col-md-3 control-label">Sectores desbloqueados:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
@@ -192,7 +192,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estado On Air:</label>
+                                                <label for="cmbEstadoOnAir" class="col-md-3 control-label">Estado On Air:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-cloud"></i></span>

@@ -7,7 +7,6 @@
 
             <!--asignacion-->
             <div class='tab-content' id='tab1'><br><br>
-
                 <div class='container'>
                     <form class= 'well form-horizontal' action='' method='post'  id='assignService' name='assignServie' enctype= 'multipart/form-data'>
                         <fieldset>
