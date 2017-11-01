@@ -73,7 +73,7 @@ class TicketOnair extends CI_Controller {
         $res2 = $onair12->getfollow12ById($userId)->data;
         print_r($res2[0]);
         
-        $ticket12 =
+//        $ticket12 =
 
 
     }
