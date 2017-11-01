@@ -72,9 +72,22 @@ class TicketOnair extends CI_Controller {
         $onair12 = new dao_followUp12h_model();
         $res2 = $onair12->getfollow12ById($userId)->data;
         print_r($res2[0]);
-        
-        $ticket12 =
 
-
+      //  $ticket12 =
     }
+
+    // public function createTicket(){
+    //   $station = new dao_station_model();
+    //   $band = new dao_band_model();
+    //   $work = new dao_work_model();
+    //   $technology = new dao_technology_model();
+    //
+    //   $res['stations'] = $station->getAll();
+    //   $res['bands'] = $band->getAll();
+    //   $res['works'] = $work->getAll();
+    //   $res['technologies'] = $technology->getAll();
+    //
+    //   $answer['respuesta'] = json_encode($res);
+    //   $this->load->view('createTicketOnair', $answer);
+    // }
 }

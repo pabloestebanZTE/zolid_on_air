@@ -29,6 +29,7 @@
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             $response->data->k_id_city = $this->findCityById($response->data->k_id_city)->data;//city
+
             if($response->data->k_id_city){
               $response->data->k_id_city->k_id_regional = $this->findRegionalById($response->data->k_id_city->k_id_regional)->data;//regional
             }
