@@ -1,69 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Zolid ZTE</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!--   ICONO PAGINA    -->
-        <link rel="icon" href="http://cellaron.com/media/wysiwyg/zte-mwc-2015-8-l-124x124.png">
-        <!--   BOOTSTRAP    -->
-        <link rel="stylesheet" href="<?= URL::to('assets/plugins/bootstrap/css/bootstrap.min.css') ?>"/>->
-        <link rel="stylesheet" href="<?= URL::to('assets/plugins/font-awesome/css/font-awesome.min.css') ?>"/>
-        <!--   CSS ESTILOS PRINCIPAL    -->
-        <link rel='stylesheet' type='text/css'  href='http://fonts.googleapis.com/css?family=Open+Sans'/>
-        <!-- CSS BOOTSTRAP-TABLE-->
-        <link rel="stylesheet" href="<?= URL::to('assets/plugins/datatables/css/dataTables.bootstrap.min.css?v=1.0') ?>">
-        <link rel="stylesheet" href="<?= URL::to('assets/plugins/sweetalert-master/dist/sweetalert.css') ?>" />
-        <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="<?= URL::to('assets/css/helper-class.css') ?>">
-        <link rel="stylesheet" href="<?= URL::to('assets/css/stylePrincipal.css?v=1.2') ?>" />
-    </head>
+    <?php $this->load->view('parts/generic/head'); ?>
     <body data-base="<?= URL::base() ?>">
-        <!-- Navigation -->
-        <header>
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="logo"><img id="logo" src="<?= URL::to('assets/img/logo2.png') ?>"/></a>
-                    </div>
-                    <!-- Collect the nav links for toggling -->
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <!-- <li class="cam"><a >Bienvenid@ <?php echo $_SESSION['userName'] ?></a> -->                            
-                            <li class="cam"><a href="#home">Home</a>
-                            </li>
-                            <li class="cam"><a href="#services">Servicios</a>
-                                <ul>
-                                    <li><a href="#">Agendar Actividad</a></li>
-                                    <li><a href="#">Ver Actividades</a></li>
-                                    <li><a href="#">Ver</a></li>
-                                </ul>
-                            </li>
-                            <li class="cam"><a href="#">servicios</a>
-                            </li>
-                            <li class="cam"><a href="#contact-sec">Contactos</a>
-                            </li>
-                            </li>
-                            <li class="cam"><a href="<?= URL::to('index.php/welcome/index') ?>" />Salir</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <!--End Navigation -->
+        <?php $this->load->view('parts/generic/header'); ?>
         <div class="container autoheight p-t-20">
             <div class="alert alert-success alert-dismissable hidden" id="principalAlert">
                 <a href="#" class="close">&times;</a>
                 <p id="text" class="m-b-0 p-b-0"></p>
             </div>
-
             <!-- TRACKING DETAILS FORM -->            
             <div class="col-md-12">
                 <div class="panel-group" id="accordion">
@@ -208,11 +152,13 @@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label for="cmbVistaMM">Vista MM:</label>
-                                                <select class="form-control input-sm" id="cmbVistaMM" >
-                                                    <option value="">Selecione</option>
-                                                </select>
+                                            <div class="form-group p-t-10 p-b-10">                                                
+                                                <div class="checkbox checkbox-primary">
+                                                    <input id="checkbox2" type="checkbox">
+                                                    <label for="checkbox2" class="text-bold">
+                                                        VistaMM
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
@@ -269,6 +215,9 @@
                                                 <label for="txtTestGestion">Test Gestión:</label>
                                                 <select class="form-control input-sm" name="" id="txtTestGestion">
                                                     <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="2">NO</option>
+                                                    <option value="3">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -276,7 +225,10 @@
                                             <div class="form-group">
                                                 <label for="cmbSitioLimpio">Instalación HW Sitio:</label>
                                                 <select id="cmbSitioLimpio" class="form-control input-sm">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="2">NO</option>
+                                                    <option value="3">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -284,15 +236,21 @@
                                             <div class="form-group">
                                                 <label for="cmbCambiosConfigSolicitados">Cambios Config Solicitados:</label>
                                                 <select id="cmbCambiosConfigSolicitados" class="form-control input-sm">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="2">NO</option>
+                                                    <option value="3">NA</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label for="cmbCambiosSolicitados">Cambios Config Solicitados:</label>
-                                                <select class="form-control input-sm" id="cmbCambiosSolicitados" >
+                                                <label for="cmbCambiosFin">Cambios Config Fin:</label>
+                                                <select class="form-control input-sm" id="cmbCambiosFin" >
                                                     <option>Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="2">NO</option>
+                                                    <option value="3">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -340,7 +298,10 @@
                                             <div class="form-group">
                                                 <label for="cmbIntegracionGestionYTrafica">Int. Gestión y Tráfica:</label>
                                                 <select class="form-control input-sm" id="cmbIntegracionGestionYTrafica">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -348,7 +309,10 @@
                                             <div class="form-group">
                                                 <label for="cmbPuestaServicioSitioNuevoLTE">Puesta Sitio Nuevo LTE:</label>
                                                 <select class="form-control input-sm" id="cmbPuestaServicioSitioNuevoLTE">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -356,7 +320,10 @@
                                             <div class="form-group">
                                                 <label for="cmbInstalacionHW4GSitio">Instalación HW 4G Sitio:</label>
                                                 <select id="cmbInstalacionHW4GSitio" class="form-control input-sm">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -364,7 +331,10 @@
                                             <div class="form-group">
                                                 <label for="cmbPrelaunch">Prelaunch:</label>
                                                 <select class="form-control input-sm" id="cmbPrelaunch">
-                                                    <option>Seleccione</option>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">SI</option>
+                                                    <option value="1">NO</option>
+                                                    <option value="1">NA</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -435,46 +405,10 @@
     </div>
     <!--End footer Section -->
 
-    <!-- MODAL DETALLES INICIO -->
-    <div id="modalDetailsInit" class="modal fade" role="dialog" >
-        <div class="modal-dialog modal-lg">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><i class="fa fa-fw fa-list"></i> Detalles / Preckeck</h4>
-                </div>
-                <div class="modal-body p-t-15 p-b-15 p-l-15 p-r-15">
-                    <div class="display-block well m-b-0">
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-fw fa-check"></i> Aceptar</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-fw fa-times"></i> Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- FIN MODAL DETALLES INICIO -->
-
-    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-    <!-- CORE JQUERY  -->
-    <script src="<?= URL::to('assets/plugins/jquery-1.10.2.js') ?>" /></script>
-<!-- BOOTSTRAP CORE SCRIPT   -->
-<script src="<?= URL::to('assets/plugins/bootstrap/js/bootstrap.min.js') ?>" /></script>
-<!-- PARALLAX SCRIPT   -->
-<script src="<?= URL::to('assets/plugins/4jquery.parallax-1.1.3.js') ?>" /></script>
-<!-- CUSTOM SCRIPT   -->
-<script src="<?= URL::to('assets/js/custom.js') ?>" /></script>
-<!--BOOTSTRAP-TABLE SCRIPT-->
-<script src="<?= URL::to('assets/plugins/datatables/js/jquery.dataTables.js?v=1.0') ?>"></script>
-<script src="<?= URL::to('assets/plugins/datatables/js/dataTables.bootstrap.js?v=1.0') ?>"></script>
-<script src="<?= URL::to("assets/js/utils/app.global.js?v=1.0") ?>" type="text/javascript"></script>
-<script src="<?= URL::to("assets/js/utils/app.dom.js?v=1.0") ?>" type="text/javascript"></script>
-<script scr="<?= URL::to("assets/plugins/sweetalert-master/dist/sweetalert.min.js") ?>" ></script>
-<script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
-<script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
-<script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
+    <?php $this->load->view('parts/generic/scripts'); ?>
+    <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
+    <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
+    <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
+    <script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
 </body>
 </html>
