@@ -7,7 +7,7 @@
             <div class='tab-content' id='tab3'><brt><br>
                     <div class="container">
                         <form class="well form-horizontal" action=" " method="post"  id="assignService" name="assignServie">
-                            <legend>Asignar Actividad</legend>
+                            <legend>Confirmar precheck</legend>
                             <fieldset class="col-md-6 control-label">
                                 <div class="form-group">
                                     <label for="txtEstacion" class="col-md-3 control-label">Estacion:</label>
@@ -40,13 +40,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cbmIngeniero" class="col-md-3 control-label">Ingeniero:</label>
+                                    <label for="txtIngeniero" class="col-md-3 control-label">Ingeniero:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                            <select name="cbmIngeniero" id="cbmIngeniero" class="form-control selectpicker" required>
-                                                <option value="" >Seleccione el ingeniero</option>
-                                            </select>
+                                            <input type='text' name="txtIngeniero" id="txtIngeniero" class="form-control" value='' readonly="false">
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +90,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
-                                        <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "">Asignar <span class="fa fa-fw fa-user-plus"></span></button>
+                                        <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "">Confirmar <span class="fa fa-fw fa-check"></span></button>
                                     </div>
                                 </div>
                             </center>

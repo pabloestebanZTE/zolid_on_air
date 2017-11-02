@@ -233,33 +233,41 @@ var dom = {
         tabla.rows.add(data);
         tabla.columns.adjust().draw();
     },
-    notify: function (title, img, type) {
-        var icon, html = '';
-        switch (type) {
-                case 'asignacion':
-                    icon = '<i class="fa fa-fw fa-5x fa-info-circle"></i> ';
-                case 'vencimiento':
-                    icon = '<i class="fa fa-fw fa-5x fa-refresh fa-spin"></i> ';
-                case 'danger':
-                    icon = '<i class="fa fa-fw fa-5x fa-times-circle"></i> ';
-                default:
-                    icon = '<i class="fa fa-fw fa-5x fa-warning"></i> ';
-            }
-        
-        html = '<div class="modal fade" id="myModal" role="dialog">'+
-                        '<div class="modal-dialog">'+
-                          '<div class="modal-content">'+
-                            '<div class="modal-body">'+
-                              '<p>Some text in the modal.</p>'+
-                            '</div>'+
-                            '<div class="modal-footer">'+
-                              '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>'+
-                            '</div>'+
-                          '</div>'+
-                        '</div>'+
-                      '</div>';
-        $("body").append(html);
-        
+//    notify: {
+//        asignar: function () {
+//            swal({
+//                title: "NUEVAS ASIGNACIONES!!",
+//                text: "Tienes nuevas asignaciones pendientes.",
+//                icon: "info",
+//                button: "Aceptar",
+//            });
+//        },
+//        vencimiento: function () {
+//            swal({
+//                title: "TICKETS POR VENCER!!",
+//                text: "Tienes tickets que estan apunto de vencer.",
+//                icon: "warning",
+//                button: "Aceptar",
+//            });
+//        },
+//        nuevas: function () {
+//            swal({
+//                title: "NUEVOS TICKETS!!",
+//                text: "Tienes nuevos tickes para asignar",
+//                icon: "info",
+//                button: "Aceptar",
+//            });
+//        }
+//
+//    }
+    notify: function (title, text, icon) {
+        swal({
+            title: title,
+            text: text,
+            icon: icon,
+            button: "Aceptar",
+        });
+
     }
 };
 
