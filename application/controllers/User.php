@@ -7,19 +7,14 @@ class User extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('data/dao_user_model');
-<<<<<<< HEAD
         $this->load->model('data/dao_station_model');
         $this->load->model('data/dao_band_model');
         $this->load->model('data/dao_work_model');
         $this->load->model('data/dao_technology_model');
       }
 
-      private function validUser($request){
-=======
-    }
 
     private function validUser($request) {
->>>>>>> 225a78808193c2b77b29131dc5fd6c507d762684
         return Auth::attempt([
                     "n_mail_user" => $request->username,
                     "n_password" => $request->password,

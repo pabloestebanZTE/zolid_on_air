@@ -12,6 +12,7 @@ class EMessages {
     const SESSION_ACTIVE = 12;
     const SESSION_INACTIVE = 13;
     const ERROR = -1;
+    const NOT_ALLOWED = -12;
     const ERROR_CONNECTION = -6;
     const ERROR_QUERY = -5;
     const ERROR_INSERT = -6;
@@ -53,6 +54,8 @@ class EMessages {
                 return new Response(1, "La sesión se encuentra activa");
             case EMessages::SESSION_INACTIVE:
                 return new Response(1, "La sesión se encuentra inactiva.");
+            case EMessages::NOT_ALLOWED:
+                return new Response(-5, "No tienes permisos");
         }
     }
 

@@ -31,7 +31,7 @@ class Hash {
 
     public static function getTimeStamp($date) {
         $date = date_create($date);
-        $date = date_format($date, "Y-m-d h:i:s");
+        $date = date_format($date, "Y-m-d H:i:s");
         return strtotime($date) * 1000;
     }
 
