@@ -7,7 +7,6 @@
 
             <!--asignacion-->
             <div class='tab-content' id='tab1'><br><br>
-
                 <div class='container'>
                     <form class= 'well form-horizontal' action='' method='post'  id='assignService' name='assignServie' enctype= 'multipart/form-data'>
                         <fieldset>
@@ -122,7 +121,7 @@
                             <div class="form-group">
                                 <label class="col-md-12 control-label"></label>
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary" onclick = "this.form.action = 'http://localhost/Datafill_OT/index.php/SpecificService/saveServiceS'">Guardar <span class="fa fa-fw fa-floppy-o"></span></button>
+                                    <button type="submit" class="btn btn-primary" onclick = "">Guardar <span class="fa fa-fw fa-floppy-o"></span></button>
                                 </div>
                             </div>
                         </center>

@@ -295,6 +295,42 @@ var dom = {
         tabla.clear().draw();
         tabla.rows.add(data);
         tabla.columns.adjust().draw();
+    },
+//    notify: {
+//        asignar: function () {
+//            swal({
+//                title: "NUEVAS ASIGNACIONES!!",
+//                text: "Tienes nuevas asignaciones pendientes.",
+//                icon: "info",
+//                button: "Aceptar",
+//            });
+//        },
+//        vencimiento: function () {
+//            swal({
+//                title: "TICKETS POR VENCER!!",
+//                text: "Tienes tickets que estan apunto de vencer.",
+//                icon: "warning",
+//                button: "Aceptar",
+//            });
+//        },
+//        nuevas: function () {
+//            swal({
+//                title: "NUEVOS TICKETS!!",
+//                text: "Tienes nuevos tickes para asignar",
+//                icon: "info",
+//                button: "Aceptar",
+//            });
+//        }
+//
+//    }
+    notify: function (title, text, icon) {
+        swal({
+            title: title,
+            text: text,
+            icon: icon,
+            button: "Aceptar",
+        });
+
     }
 };
 $(function () {

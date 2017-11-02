@@ -91,6 +91,10 @@ class User extends CI_Controller {
         $this->load->view('documenterPrincipal');
     }
 
+    public function precheck() {
+        $this->load->view('precheck');
+    }
+
 }
 
 ?>
