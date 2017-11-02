@@ -292,16 +292,23 @@
           function editTextCityRegional(){
             var estacion = $( "#estacion" ).val();
             var info = <?php echo $respuesta; ?>;
+            var city;
             for (var j = 0; j < info.stations.data.length; j++){
               if(info.stations.data[j].k_id_station == estacion){
-              //  $('regional').val('000000');
-                $('input[name=ciudad]').val(info.stations.data[j].k_id_city.n_name_city);
+                for(var m = 0; m < info.cities.data.length; m++){
+                  if (info.stations.data[j].k_id_city == info.cities.data[m].k_id_city){
+                    city = info.cities.data[m].k_id_regional;
+                    $('input[name=ciudad]').val(info.cities.data[m].n_name_city);
+                  }
+                }
+                for(var x = 0; x < info.regions.data.length; x++){
+                  if(info.regions.data[x].k_id_regional == city){
+                    $('input[name=regional]').val(info.regions.data[x].n_name_regional);
+                  }
+                }
               }
             }
           }
         </script>
-
-
-
     </body>
 </html>

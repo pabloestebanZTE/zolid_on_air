@@ -70,15 +70,12 @@
         $band = new dao_band_model();
         $work = new dao_work_model();
         $technology = new dao_technology_model();
-
         $res['stations'] = $station->getAll();
-        for ($i = 0; $i < count($res['stations']->data); $i++){
-          $res['stations']->data[$i] = $station->findById($res['stations']->data[$i]->k_id_station)->data;
-        }
+        $res['cities'] = $station->getAllCities();
+        $res['regions'] = $station->getAllRegions();
         $res['bands'] = $band->getAll();
         $res['works'] = $work->getAll();
         $res['technologies'] = $technology->getAll();
-
         $answer['respuesta'] = json_encode($res);
         $this->load->view('documenterStrart', $answer);
       }
@@ -89,11 +86,11 @@
       public function toAssign(){
         $this->load->view('toAssign');
       }
-      
+
       public function documenterPrincipalView(){
         $this->load->view('documenterPrincipal');
       }
-      
+
       public function precheck(){
         $this->load->view('precheck');
       }
