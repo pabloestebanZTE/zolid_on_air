@@ -93,6 +93,10 @@
       public function documenterPrincipalView(){
         $this->load->view('documenterPrincipal');
       }
+      
+      public function precheck(){
+        $this->load->view('precheck');
+      }
   }
 
 ?>

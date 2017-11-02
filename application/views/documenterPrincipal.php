@@ -18,7 +18,7 @@
                                     <div class="panel-body">                                                                   
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estacion:</label>
+                                                <label for="txtEstacion" class="col-md-3 control-label">Estacion:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -28,7 +28,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Banda:</label>
+                                                <label for="txtBanda" class="col-md-3 control-label">Banda:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
@@ -38,7 +38,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Regional:</label>
+                                                <label for="txtRegional" class="col-md-3 control-label">Regional:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -48,7 +48,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Ingeniero:</label>
+                                                <label for="txtIngeniero" class="col-md-3 control-label">Ingeniero:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
@@ -62,7 +62,7 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Tecnologia:</label>
+                                                <label for="txtTecnologia" class="col-md-3 control-label">Tecnologia:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
@@ -72,7 +72,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Tipo de trabajo:</label>
+                                                <label for="txtTipotrabajo" class="col-md-3 control-label">Tipo de trabajo:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
@@ -82,11 +82,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Ciudad:</label>
+                                                <label for="txtciudad" class="col-md-3 control-label">Ciudad:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                        <input type="text" name="txtTipotrabajo" id="txtTipotrabajo" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="txtciudad" id="txtciudad" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -209,7 +209,7 @@
                                             <div class="form-group">
                                                 <label class="col-md-12 control-label"></label>
                                                 <div class="col-md-12">
-                                                    <button type="submit" id="btnGuardar" class="btn btn-primary" onclick = "this.form.action = 'http://localhost/Datafill_OT/index.php/SpecificService/saveServiceS'">Guardar <span class="fa fa-fw fa-floppy-o"></span></button>
+                                                    <button type="submit" id="btnGuardar" class="btn btn-primary" onclick = "">Guardar <span class="fa fa-fw fa-floppy-o"></span></button>
                                                 </div>
                                             </div>
                                         </center>
@@ -475,7 +475,65 @@
                             </div>
                         </div>
                     </div>
-                </div>                        
+                </div>
+                
+                <div class="well">
+                    <div class="col-xs-12 text-right">
+                        <div class="display-block pull-right" style="width: 300px;">
+                            <div class="col-xs-4 text-right p-r-0 p-t-5">
+                                <label class="">Grupos:</label>
+                            </div>
+                            <div class="col-xs-8 p-r-0">
+                                <select class="form-control" id="cmbGruposTracking">
+                                    <option value="">Seleccione</option>
+                                </select>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="display-block">
+                        <div class="hour-step active">
+                            <div class="body-step">
+                                <label>12H</label>
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                            </div>
+                            <div class="back-progress-step">
+                                <span class="progress-step" style="width: 30%;"></span>
+                            </div>
+                            <div class="footer-step">
+                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -01:35</label>
+                            </div>
+                        </div>
+                        <div class="hour-step">
+                            <div class="body-step">
+                                <label>24H</label>
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                            </div>
+                            <div class="back-progress-step">
+                                <span class="progress-step"></span>
+                            </div>
+                            <div class="footer-step">
+                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                            </div>
+                        </div>
+                        <div class="hour-step">
+                            <div class="body-step">
+                                <label>36H</label>
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>                            
+                            </div>
+                            <div class="back-progress-step">
+                                <span class="progress-step"></span>
+                            </div>
+                            <div class="footer-step">
+                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="well white p-t-5 p-b-5 p-r-5 p-l-5">
+                        <div class="well m-b-0">
+                            <table id="tblTrackingDetails" class="table table-hover table-condensed table-striped"></table>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
