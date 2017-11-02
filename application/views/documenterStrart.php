@@ -7,7 +7,6 @@
 
             <!--asignacion-->
             <div class='tab-content' id='tab1'><br><br>
-
                 <div class='container'>
                     <form class= 'well form-horizontal' action='' method='post'  id='assignService' name='assignServie' enctype= 'multipart/form-data'>
                         <fieldset>
@@ -34,7 +33,7 @@
                         <fieldset class="col-md-6 control-label">
                             <!-- Input Text -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Estacion</label>
+                                <label class="col-md-3 control-label">Estacion:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -47,7 +46,7 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Banda</label>
+                                <label class="col-md-3 control-label">Banda:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
@@ -60,7 +59,7 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Regional</label>
+                                <label class="col-md-3 control-label">Regional:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -76,7 +75,7 @@
                         <fieldset >
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Tecnologia</label>
+                                <label class="col-md-3 control-label">Tecnologia:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
@@ -89,7 +88,7 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Tipo de trabajo</label>
+                                <label class="col-md-3 control-label">Tipo de trabajo:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
@@ -102,7 +101,7 @@
 
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Ciudad</label>
+                                <label class="col-md-3 control-label">Ciudad:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
@@ -296,7 +295,7 @@
             for (var j = 0; j < info.stations.data.length; j++){
               if(info.stations.data[j].k_id_station == estacion){
               //  $('regional').val('000000');
-                $('input[name=ciudad]').val(info.stations.data[j].k_id_city);
+                $('input[name=ciudad]').val(info.stations.data[j].k_id_city.n_name_city);
               }
             }
           }

@@ -5,6 +5,37 @@
  */
 
 var dom = {
+    //Para agregar todas las interacciones del dom genericas.
+    init: function () {
+        $('body').on('click', '.alert .close', function () {
+            $(this).parent().hide();
+        });
+        $('[data-toggle="tooltip"]').tooltip();
+        $('.container.autoheight').css('min-height', screen.height + 'px');
+        dom.events();
+    },
+    events: function () {
+        //Configuración panel.
+        $(document).on('click', '.panel .panel-heading .panel-title a', function () {
+            var link = $(this);
+            var panel = link.parents('.panel');
+            panel.parents('.panel-group').find('.panel-primary').attr('class', 'panel panel-default');
+            if (link.attr('aria-expanded') == "true") {
+                panel.attr('class', 'panel panel-primary');
+            }
+        });
+        //Steps...
+        $('.stepwizard-step a').on('click', function (e) {
+            app.stopEvent(e);
+            var step = $(this);
+            var content = step.parents('.stepwizard').parent();
+            var stepPanel = content.find('.step-panel' + step.attr('href'));
+            content.find('.stepwizard-step a').attr('class', 'btn btn-default btn-circle');
+            step.attr('class', 'btn btn-primary btn-circle');
+            content.find('.step-panel').addClass('hidden');
+            stepPanel.removeClass('hidden').hide().fadeIn(500);
+        });
+    },
     /**
      *
      * @param {Element} cmb
@@ -116,7 +147,7 @@ var dom = {
             control.val(fechaDefecto);
         }
 
-        control.parents(".input-group").find("button").on('click', function () {
+        control.parents(".input-group").find("button").attr('type', 'button').on('click', function () {
             control.trigger("focus");
         });
 
@@ -156,16 +187,6 @@ var dom = {
             }).send();
         };
         form.on('submit', onSubmitForm);
-    },
-    //Para agregar todas las interacciones del dom genericas.
-    init: function () {
-        $('body').on('click', '.alert .close', function () {
-            $(this).parent().hide();
-        });
-
-        $('[data-toggle="tooltip"]').tooltip();
-
-        $('.container.autoheight').css('min-height', screen.height + 'px');
     },
     fillString: function (dom, obj) {
         var getKeyPart = function (keyPart, key) {
