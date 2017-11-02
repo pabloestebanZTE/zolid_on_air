@@ -11,7 +11,10 @@ var TD = {
         dom.configCalendar($('#txtFechaIngresoOnAir'));
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
-        dom.timer($('#timeStep'), 1509628221368);
+        dom.configCalendar($('#txtDesbloqueo'));
+        dom.configCalendar($('#txtBloqueado'));
+//        dom.notify.vencimiento();
+        dom.notify("NUEVOS TICKETS!!", "Tienes nuevos tickes para asignar", "info");
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');
@@ -36,7 +39,7 @@ var TD = {
                     {title: "Columna 5", data: TD.fillNA()},
                 ]));
     }
-};
+}
 
 $(function () {
     TD.init();

@@ -13,7 +13,7 @@
                 <span style="color: white; margin-left: -4px;">ACS - On Air</span>
             </div>
             <!-- Collect the nav links for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse p-t-5">
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li class="cam"><a >Bienvenid@ <?php echo $_SESSION['userName'] ?></a> -->
                     </li>
