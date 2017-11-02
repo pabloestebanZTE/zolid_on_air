@@ -411,7 +411,7 @@
                                 <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
                             </div>
                             <div class="back-progress-step">
-                                <span class="progress-step" style="width: 30%;"></span>
+                                <span class="progress-step" id="progressStep1"></span>
                             </div>
                             <div class="footer-step">
                                 <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -01:35</label>
@@ -453,6 +453,44 @@
         <!-- FIN TRACKING DETAILS FORM -->
 
     </div>
+
+
+    <!--MODAL CHANGE STATE-->
+    <div id="modalChangeState" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-xs">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-fw fa-edit"></i> Cambiar estado</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="states-modal">
+                        <li>
+                            <a href="#"><span class="icon-state theme1"><i class="fa fa-fw fa-pause"></i></span> Crear Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme2"><i class="fa fa-fw fa-stop"></i></span> Detener Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme3"><i class="fa fa-fw fa-refresh"></i></span> Reiniciar Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme4"><i class="fa fa-fw fa-undo"></i></span> Escalar proceso</a>
+                        </li>
+                    </ul>
+                    <label for="txtObservations">Observaciones:</label>
+                    <textarea id="txtObservations" class="form-control" rows="5" placeholder="Escriba aquí las observaciones por las cuales está realizando el cambio."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-fw fa-check"></i> Aceptar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-fw fa-times"></i> Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--MODAL CHANGE STATE-->
 
     <!--footer Section -->
     <div class="for-full-back" id="footer">

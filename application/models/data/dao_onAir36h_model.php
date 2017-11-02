@@ -35,8 +35,21 @@
           return $ex;
         }
 
-
       }
+
+      public function getOnair36ByFollow($id){
+        try {
+          $onair36 = new OnAir36hModel();
+          $datos = $onair36->where("k_id_follow_up_36h","=",$id)
+                        ->first();
+          $response = new Response(EMessages::SUCCESS);
+          $response->setData($datos);
+          return $response;
+        } catch (ZolidException $ex) {
+          return $ex;
+        }
+      }
+
 
   }
 ?>

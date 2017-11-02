@@ -13,12 +13,12 @@ class Utils extends CI_Controller {
     }
 
     public function getCurrentTimeStamp() {
-        $x = date("Y-m-d h:i:sa");
+        $x = date("Y-m-d H:i:s");
         $this->json(Hash::getTimeStamp($x));
     }
 
     public function getCurrentDate() {
-        $x = date("Y-m-d h:i:sa");
+        $x = date("Y-m-d H:i:s");
         $this->json($x);
     }
 
@@ -31,7 +31,7 @@ class Utils extends CI_Controller {
     }
 
     public function time() {
-        $x = date("Y-m-d h:i:sa");
+        $x = date("Y-m-d H:i:s");
         $this->json($x);
     }
 

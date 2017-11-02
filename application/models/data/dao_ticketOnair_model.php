@@ -22,10 +22,10 @@
           }
         }
 
-        public function findByIdOnAir($request){
+        public function findByIdOnAir($id){
           try {
             $ticketOnAir = new TicketOnAirModel();
-            $datos = $ticketOnAir->where("k_id_onair","=",$request)
+            $datos = $ticketOnAir->where("k_id_onair","=",$id)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
