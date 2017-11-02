@@ -7,9 +7,19 @@ class User extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('data/dao_user_model');
+<<<<<<< HEAD
+        $this->load->model('data/dao_station_model');
+        $this->load->model('data/dao_band_model');
+        $this->load->model('data/dao_work_model');
+        $this->load->model('data/dao_technology_model');
+      }
+
+      private function validUser($request){
+=======
     }
 
     private function validUser($request) {
+>>>>>>> 225a78808193c2b77b29131dc5fd6c507d762684
         return Auth::attempt([
                     "n_mail_user" => $request->username,
                     "n_password" => $request->password,
@@ -36,14 +46,14 @@ class User extends CI_Controller {
             //Se actualiza la forma de validar los roles...
             //Podemos acceder directamente al método que comprobará un rol en especifico.
             if (Auth::isCoordinador()) {
-                
+
             }
             if (Auth::isDocumentador()) {
-                
+
             }
             //O también podemos detectar si el rol es uno personalizado...
             if (Auth::isRole("Ingeniero")) {
-                
+
             }
             Redirect::redirect(URL::to("User/principal"));
         } else {
@@ -75,23 +85,33 @@ class User extends CI_Controller {
         $this->load->view('principal');
     }
 
-    public function documenterStrartView() {
-        $this->load->view('documenterStrart');
-    }
-
-    public function trackingDetails() {
+      public function documenterStrartView(){
+        $station = new dao_station_model();
+        $band = new dao_band_model();
+        $work = new dao_work_model();
+        $technology = new dao_technology_model();
+        $res['stations'] = $station->getAll();
+        $res['cities'] = $station->getAllCities();
+        $res['regions'] = $station->getAllRegions();
+        $res['bands'] = $band->getAll();
+        $res['works'] = $work->getAll();
+        $res['technologies'] = $technology->getAll();
+        $answer['respuesta'] = json_encode($res);
+        $this->load->view('documenterStrart', $answer);
+      }
+      public function trackingDetails(){
         $this->load->view('trackingdetails');
-    }
+      }
 
-    public function toAssign() {
+      public function toAssign(){
         $this->load->view('toAssign');
-    }
+      }
 
-    public function documenterPrincipalView() {
+      public function documenterPrincipalView(){
         $this->load->view('documenterPrincipal');
-    }
+      }
 
-    public function precheck() {
+      public function precheck(){
         $this->load->view('precheck');
     }
 
