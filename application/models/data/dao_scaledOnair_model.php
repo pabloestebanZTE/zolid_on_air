@@ -7,6 +7,36 @@
     class dao_scaledOnair_model extends CI_Model{
 
         public function __construct(){
+          $this->load->model('dto/ScaledOnAirMOdel');
         }
+
+        public function getAll(){
+          try {
+            $scaledOnair = new ScaledOnAirMOdel();
+            $datos = $scaledOnair->get();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+        public function getScaledByTicket($ticket){
+          try {
+            $scaledOnair = new ScaledOnAirMOdel();
+            $datos = $scaledOnair->where("k_id_onair","=",$ticket)
+                          ->get();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+
+
+
     }
 ?>

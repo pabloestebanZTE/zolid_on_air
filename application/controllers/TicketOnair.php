@@ -46,7 +46,12 @@ class TicketOnair extends CI_Controller {
        $this->json($res);
     }
 
-    public function ticketUser($userId){
+    public function ticketUser(){
+      //Se comprueba si no hay sesión.
+      if(!Auth::check()){
+        $this->json(new Response(EMessages::SESSION_INACTIVE));
+        return;
+      }
         $precheck = new dao_precheck_model();
         $ticket = new dao_ticketOnair_model();
         $ticketsOnAir = new dao_ticketOnAir_model();
@@ -56,6 +61,7 @@ class TicketOnair extends CI_Controller {
         $technology = new dao_technology_model();
         $statusOnair = new dao_statusOnair_model();
 
+        $userId = Auth::user()->id();
         $precheckId = $precheck->getPrecheckById($userId)->data;
 
         for ($j=0; $j <count($precheckId) ; $j++) {
@@ -123,7 +129,14 @@ class TicketOnair extends CI_Controller {
       // header('Content-Type: text/plain');
     }
 
+    public function pablonoentiendo($ticket){
+      $ticketsOnAir = new dao_ticketOnAir_model();
 
+      $res = $ticketsOnAir->findByIdOnAir($ticket);
+
+    }
+
+}
 
 
 }
