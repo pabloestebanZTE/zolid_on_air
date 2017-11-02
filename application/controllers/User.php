@@ -46,14 +46,14 @@ class User extends CI_Controller {
             //Se actualiza la forma de validar los roles...
             //Podemos acceder directamente al método que comprobará un rol en especifico.
             if (Auth::isCoordinador()) {
-                
+
             }
             if (Auth::isDocumentador()) {
-                
+
             }
             //O también podemos detectar si el rol es uno personalizado...
             if (Auth::isRole("Ingeniero")) {
-                
+
             }
             Redirect::redirect(URL::to("User/principal"));
         } else {
@@ -85,7 +85,6 @@ class User extends CI_Controller {
         $this->load->view('principal');
     }
 
-<<<<<<< HEAD
       public function documenterStrartView(){
         $station = new dao_station_model();
         $band = new dao_band_model();
@@ -113,25 +112,6 @@ class User extends CI_Controller {
       }
 
       public function precheck(){
-=======
-    public function documenterStrartView() {
-        $this->load->view('documenterStrart');
-    }
-
-    public function trackingDetails() {
-        $this->load->view('trackingdetails');
-    }
-
-    public function toAssign() {
-        $this->load->view('toAssign');
-    }
-
-    public function documenterPrincipalView() {
-        $this->load->view('documenterPrincipal');
-    }
-
-    public function precheck() {
->>>>>>> 225a78808193c2b77b29131dc5fd6c507d762684
         $this->load->view('precheck');
     }
 
