@@ -138,53 +138,59 @@ var dom = {
      * Crea un timer de tiempo en el emento que se le atribulla.     
      * @param {Elem} element : El elemento donde actuará el timer... 
      * @param {Long} time : La fecha en la que inició el proceso...     
+     * @param {Elem} progressElement : El elemento progress del timer... 
      * @returns {undefined}
      */
-    timer: function (element, time) {
+    timer: function (element, time, progressElement) {
         //Número de tiempos al límite...        
-        element.html('<i class="fa fa-fw fa-refresh fa-spin"></i> --:--');
+        if (element) {
+            element.html('<i class="fa fa-fw fa-refresh fa-spin"></i> --:--');
+        }
         //Comprobará si se ha consultado la hora actual, o de lo contrario se 
         //consultará...
         var getTimeActual = function (callback) {
             if (dom.currentTimeStamp) {
-                callback(time, element);
+                callback(time, element, progressElement);
                 return;
             }
             //Consultamos la hora actual en milisegundos...
             app.get('Utils/getCurrentTimeStamp').success(function (response) {
                 dom.currentTimeStamp = parseFloat(response);
-                callback(time, element);
+                callback(time, element, progressElement);
             }).send();
         };
 
-        getTimeActual(function (time, element) {
-            dom.parseTimer(time, element);
+        getTimeActual(function (time, element, progress) {
+            dom.parseTimer(time, element, progress);
             //Creamos el intervalo a un minuto...
             window.setInterval(function () {
                 dom.currentTimeStamp += (1000 * 60);
-                dom.parseTimer(time, element);
+                dom.parseTimer(time, element, progress);
             }, (1000 * 60));
         });
     },
-    parseTimer: function (time, element) {
+    parseTimer: function (time, element, progress) {
         var hoursToMillisecounds = function (hours) {
             return (((1000 * 60) * 60) * hours);
         };
         var timeTemp = time + hoursToMillisecounds(12);
-        var today = new Date(dom.currentTimeStamp);
-        var dateStart = new Date(timeTemp);
-        var diffMs = (dateStart - today); // Milisegundos entre la fecha y hoy.
+        var diffMs = (timeTemp - dom.currentTimeStamp); // Milisegundos entre la fecha y hoy.
         var diffHrs = Math.floor(Math.abs(diffMs) / 36e5); // hours
         var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-        console.log(new Date(timeTemp));
-        console.log(new Date(dom.currentTimeStamp));
+        var progressValue = Math.round(((dom.currentTimeStamp - time) / (timeTemp - time)) * 100);
+
         if (diffHrs < 0) {
             diffHrs *= -1;
         }
         if (diffMins < 0) {
             diffMins *= -1;
         }
-        element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
+        if (element) {
+            element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
+        }
+        if (progress) {
+            progress.css('width', progressValue + '%');
+        }
     },
     configCalendar: function (control, fechaInicio, fechaFin, fechaDefecto, btnToday) {
         control.datepicker('remove');

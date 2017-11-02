@@ -565,9 +565,11 @@ nav {
     border-bottom: 0px;
     box-shadow: 0px 0px 3px #ccc;
     opacity: 0.3;
+    pointer-events: none;
 }
 .hour-step.active{
     opacity: 1;
+    pointer-events: auto;
 }
 .hour-step .body-step{
     display: block;    
@@ -627,4 +629,69 @@ nav {
     border: 1px solid #337ab77a;    
     box-shadow: 0px 0px 3px #ccc;
     border-radius: 0px 0px 3px 3px;
+}
+
+.hour-step .body-step .icon-step:hover{
+    margin-top: -5px;
+    float: right;
+    font-size: 28px;
+    background: #24d0f4!important;
+    background: -moz-linear-gradient(top,#fda59a 0,#ff0000 100%)!important;
+    background: -webkit-linear-gradient(top,#fda59a 0,#ff0000 100%)!important;
+    background: linear-gradient(to bottom,#fda59a 0,#ff0000 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fda59a', endColorstr='#ff0000', GradientType=0 )!important;
+    color: #FFF;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.hour-step .body-step .icon-step:hover .fa-clock-o:before {
+    content: "\f04c";            
+}
+.hour-step .body-step .icon-step:hover .fa-clock-o{
+    font-size: 24px;
+    margin-top: 13px;
+}
+.states-modal{
+    display: block;
+    width: 100%;    
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-bottom: 0px;
+}
+.states-modal .icon-state{
+    background-color: #848484;
+    padding: 8px;
+    color: #FFF;
+    font-size: 20px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.states-modal li a{
+    display: block;
+    padding: 15px 15px;
+    border-bottom: 1px solid #ccc;
+    font-size: 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f5f5f5;
+}
+.states-modal li a:hover, .states-modal li a.active{
+    background-color: #FFF;
+}
+.states-modal li a:hover .icon-state.theme1, .states-modal li a.active .icon-state.theme1{
+    background: #26c3e4 !important;    
+}
+.states-modal li a:hover .icon-state.theme2, .states-modal li a.active .icon-state.theme2{
+    background: #f4244f !important;    
+}
+
+.states-modal li a:hover .icon-state.theme3, .states-modal li a.active .icon-state.theme3{
+    background: #2cb8de !important
+}
+.states-modal li a:hover .icon-state.theme4, .states-modal li a.active .icon-state.theme4{
+    background: #ce0017 !important;
 }
