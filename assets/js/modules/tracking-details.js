@@ -11,6 +11,7 @@ var TD = {
         dom.configCalendar($('#txtFechaIngresoOnAir'));
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
+        dom.timer($('#timeStep'), 1509628221368);
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');

@@ -1,12 +1,13 @@
 <?php
 
-  defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-  class User extends CI_Controller {
+class User extends CI_Controller {
 
-      function __construct() {
+    function __construct() {
         parent::__construct();
         $this->load->model('data/dao_user_model');
+<<<<<<< HEAD
         $this->load->model('data/dao_station_model');
         $this->load->model('data/dao_band_model');
         $this->load->model('data/dao_work_model');
@@ -14,57 +15,77 @@
       }
 
       private function validUser($request){
+=======
+    }
+
+    private function validUser($request) {
+>>>>>>> 225a78808193c2b77b29131dc5fd6c507d762684
         return Auth::attempt([
-                  "n_mail_user" => $request->username,
-                  "n_password" => $request->password,
-                  "OR" => [
-                      "n_username_user" => $request->username
-                  ]
-                ]);
-      }
+                    "n_mail_user" => $request->username,
+                    "n_password" => $request->password,
+                    "OR" => [
+                        "n_username_user" => $request->username
+                    ]
+        ]);
+    }
 
-      public function loginUser(){
-        $res = $this->validUser($this->request);
-        //Comprobamos si el Auth ha encontrado válida las credenciales consultadas...
-        if($res){
-             //Se actualiza la forma de validar los roles...
-             //Podemos acceder directamente al método que comprobará un rol en especifico.
-             if(Auth::isCoordinador()){
+    public function time() {
+        $x = date("Y-m-d h:i:sa");
+        echo $x . "<br/>";
+        echo Hash::getTimeStamp($x);
+    }
 
-             }
-             if(Auth::isDocumentador()){
-
-             }
-             //O también podemos detectar si el rol es uno personalizado...
-             if(Auth::isRole("Ingeniero")){
-
-             }
-             $answer['user'] = Auth::user();
-             $this->load->view('principal', $answer);
-        }else {
-         $answer['error'] = "error";
-         $this->load->view('login', $answer);
+    public function loginUser() {
+        if (!Auth::check()) {
+            $res = $this->validUser($this->request);
+        } else {
+            $res = true;
         }
-      }
+        //Comprobamos si el Auth ha encontrado válida las credenciales consultadas...
+        if ($res) {
+            //Se actualiza la forma de validar los roles...
+            //Podemos acceder directamente al método que comprobará un rol en especifico.
+            if (Auth::isCoordinador()) {
+                
+            }
+            if (Auth::isDocumentador()) {
+                
+            }
+            //O también podemos detectar si el rol es uno personalizado...
+            if (Auth::isRole("Ingeniero")) {
+                
+            }
+            Redirect::redirect(URL::to("User/principal"));
+        } else {
+            $answer['error'] = "error";
+            $this->load->view('login', $answer);
+        }
+    }
 
-      public function logout(){
+    public function principal() {
+        $answer['user'] = Auth::user();
+        $this->load->view('principal', $answer);
+    }
+
+    public function logout() {
         Auth::logout();
         $this->comprobarSesion();
-      }
+    }
 
-      public function comprobarSesion(){
+    public function comprobarSesion() {
         //Comprobar si existe una sesión...
-        if(Auth::check()){
-          $this->json(new Response(EMessages::SESSION_ACTIVE));
-        }else{
-          $this->json(new Response(EMessages::SESSION_INACTIVE));
+        if (Auth::check()) {
+            $this->json(new Response(EMessages::SESSION_ACTIVE));
+        } else {
+            $this->json(new Response(EMessages::SESSION_INACTIVE));
         }
-      }
+    }
 
-      public function principalView(){
+    public function principalView() {
         $this->load->view('principal');
-      }
+    }
 
+<<<<<<< HEAD
       public function documenterStrartView(){
         $station = new dao_station_model();
         $band = new dao_band_model();
@@ -92,8 +113,28 @@
       }
 
       public function precheck(){
+=======
+    public function documenterStrartView() {
+        $this->load->view('documenterStrart');
+    }
+
+    public function trackingDetails() {
+        $this->load->view('trackingdetails');
+    }
+
+    public function toAssign() {
+        $this->load->view('toAssign');
+    }
+
+    public function documenterPrincipalView() {
+        $this->load->view('documenterPrincipal');
+    }
+
+    public function precheck() {
+>>>>>>> 225a78808193c2b77b29131dc5fd6c507d762684
         $this->load->view('precheck');
-      }
-  }
+    }
+
+}
 
 ?>

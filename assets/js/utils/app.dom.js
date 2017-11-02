@@ -5,7 +5,7 @@
  */
 
 var dom = {
-    //Para agregar todas las interacciones del dom genericas.
+//Para agregar todas las interacciones del dom genericas.
     init: function () {
         $('body').on('click', '.alert .close', function () {
             $(this).parent().hide();
@@ -122,6 +122,70 @@ var dom = {
             }
         };
     },
+    parseTime: function (time) {
+        if (typeof time === "string") {
+            var parts = time.split(':');
+            var h = parts[0];
+            var m = parts[1];
+            return ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m);
+        } else {
+            return "00:00";
+        }
+    },
+    timesInLimit: 0,
+    timeForNotifyLimit: 1,
+    /**
+     * Crea un timer de tiempo en el emento que se le atribulla.     
+     * @param {Elem} element : El elemento donde actuará el timer... 
+     * @param {Long} time : La fecha en la que inició el proceso...     
+     * @returns {undefined}
+     */
+    timer: function (element, time) {
+        //Número de tiempos al límite...        
+        element.html('<i class="fa fa-fw fa-refresh fa-spin"></i> --:--');
+        //Comprobará si se ha consultado la hora actual, o de lo contrario se 
+        //consultará...
+        var getTimeActual = function (callback) {
+            if (dom.currentTimeStamp) {
+                callback(time, element);
+                return;
+            }
+            //Consultamos la hora actual en milisegundos...
+            app.get('Utils/getCurrentTimeStamp').success(function (response) {
+                dom.currentTimeStamp = parseFloat(response);
+                callback(time, element);
+            }).send();
+        };
+
+        getTimeActual(function (time, element) {
+            dom.parseTimer(time, element);
+            //Creamos el intervalo a un minuto...
+            window.setInterval(function () {
+                dom.currentTimeStamp += (1000 * 60);
+                dom.parseTimer(time, element);
+            }, (1000 * 60));
+        });
+    },
+    parseTimer: function (time, element) {
+        var hoursToMillisecounds = function (hours) {
+            return (((1000 * 60) * 60) * hours);
+        };
+        var timeTemp = time + hoursToMillisecounds(12);
+        var today = new Date(dom.currentTimeStamp);
+        var dateStart = new Date(timeTemp);
+        var diffMs = (dateStart - today); // Milisegundos entre la fecha y hoy.
+        var diffHrs = Math.floor(Math.abs(diffMs) / 36e5); // hours
+        var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+        console.log(new Date(timeTemp));
+        console.log(new Date(dom.currentTimeStamp));
+        if (diffHrs < 0) {
+            diffHrs *= -1;
+        }
+        if (diffMins < 0) {
+            diffMins *= -1;
+        }
+        element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
+    },
     configCalendar: function (control, fechaInicio, fechaFin, fechaDefecto, btnToday) {
         control.datepicker('remove');
         control.mask("99/99/9999");
@@ -150,7 +214,6 @@ var dom = {
         control.parents(".input-group").find("button").attr('type', 'button').on('click', function () {
             control.trigger("focus");
         });
-
         if (control.parent('.input-group.date').length > 0) {
             return control.parent('.input-group.date').datepicker(args);
         }
@@ -270,7 +333,6 @@ var dom = {
 
     }
 };
-
 $(function () {
     dom.init();
 });
