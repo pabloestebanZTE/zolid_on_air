@@ -16,7 +16,6 @@ var TD = {
         ul.find('a.active').removeClass('active');
         link.addClass('active');
     },
-
     onClickIconStep: function () {
         var icon = $(this);
         $('#modalChangeState').modal('show');
@@ -26,6 +25,7 @@ var TD = {
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
         dom.timer($('#timeStep'), 1509706921000, $('#progressStep1'));
+        $('select').select2({'width': '100%'});
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');
