@@ -76,11 +76,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtTipotrabajo" class="col-md-3 control-label">Ciudad:</label>
+                                    <label for="txtCiudad" class="col-md-3 control-label">Ciudad:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                            <input type='text' name="txtTipotrabajo" id="txtTipotrabajo" class="form-control" value='' readonly="false">
+                                            <input type='text' name="txtCiudad" id="txtCiudad" class="form-control" value='' readonly="false">
                                         </div>
                                     </div>
                                 </div>

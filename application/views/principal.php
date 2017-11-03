@@ -18,7 +18,7 @@
 //            if (Auth::isIngeniero()) {
 //                $this->load->view('parts/principal/ingeniero');
 //            }
-            $this->load->view('parts/principal/documentador');
+            $this->load->view('parts/principal/coordinador');
             ?>
         </div>
         <!--footer Section -->
