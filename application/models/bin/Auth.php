@@ -89,7 +89,7 @@ class Auth {
 
     public static function isRole($role) {
         if (Auth::check()) {
-            return Auth::user()->n_role_user == $role;
+            return strtoupper(Auth::user()->n_role_user) == $role;
         } else {
             return false;
         }

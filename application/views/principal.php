@@ -8,7 +8,7 @@
                 <a href="#" class="close">&times;</a>
                 <p id="text" class="m-b-0 p-b-0"></p>
             </div>
-            <?php
+            <?php            
             if (Auth::isCoordinador()) {
                 $this->load->view('parts/principal/coordinador');
             }
