@@ -35,11 +35,7 @@ class User extends CI_Controller {
             $res = $this->validUser($this->request);
         } else {
             $res = true;
-        }
-        echo "<pre>";
-        print_r(Auth::user());
-        echo "</pre>";
-        return;
+        }        
         //Comprobamos si el Auth ha encontrado válida las credenciales consultadas...
         if ($res) {
             //Se actualiza la forma de validar los roles...
