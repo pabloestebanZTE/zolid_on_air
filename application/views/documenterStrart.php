@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php $this->load->view('parts/generic/head'); ?>
-    <body data-base="<?php URL::base() ?>">
+    <body data-base="<?= URL::base() ?>">
         <?php $this->load->view('parts/generic/header'); ?>
         <div class="container">
 
@@ -28,7 +28,11 @@
 
             <div class='tab-content' id='tab3'>
                 <div class="container">
-                    <form class="well form-horizontal" action=" " method="post"  id="assignService" name="assignServie">
+                    <form class="well form-horizontal" action="TicketOnAir/insertTicketOnair" method="post"  id="assignServie2" name="assignServie2">
+                      <div class="alert alert-success alert-dismissable hidden">
+                          <a href="#" class="close" >&times;</a>
+                          <p class="p-b-0" id="text"></p>
+                      </div>
                         <legend >Asignar Actividad</legend>
                         <fieldset class="col-md-6 control-label">
                             <!-- Input Text -->
@@ -37,7 +41,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
-                                        <select name="estacion" id="estacion" class="form-control selectpicker" onchange="editTextCityRegional()" required>
+                                        <select name="k_id_station" id="estacion" class="form-control selectpicker" onchange="editTextCityRegional()" required>
                                             <option value="" >Seleccione la estación</option>
                                         </select>
                                     </div>
@@ -50,7 +54,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
-                                        <select name="banda" id="banda" class="form-control selectpicker" required>
+                                        <select name="k_id_band" id="banda" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la banda</option>
                                         </select>
                                     </div>
@@ -79,7 +83,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
-                                        <select name="tecnologia" id="tecnologia" class="form-control selectpicker" required>
+                                        <select name="k_id_technology" id="tecnologia" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la tecnologia</option>
                                         </select>
                                     </div>
@@ -92,7 +96,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
-                                        <select name="tipotrabajo" id="tipotrabajo" class="form-control selectpicker" required>
+                                        <select name="k_id_work" id="tipotrabajo" class="form-control selectpicker" required>
                                             <option value="" >Seleccione el tipo de trabajo</option>
                                         </select>
                                     </div>
@@ -131,7 +135,7 @@
         </div>
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
+
 
         <div class="incorrect-type info-box error-msg" style="display: none;">
           Sorry, the file you selected is not MSG type
@@ -309,6 +313,16 @@
               }
             }
           }
+
+
+
+        </script>
+        <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
+        <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(function(){
+          dom.submit($('#assignServie2'));
+        })
         </script>
     </body>
 </html>

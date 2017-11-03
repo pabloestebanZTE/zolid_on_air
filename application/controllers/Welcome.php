@@ -6,8 +6,8 @@ class Welcome extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('data/dao_examples_model');
-        $this->load->model('data/dao_user_model');
+        $this->load->model('data/Dao_examples_model');
+        $this->load->model('data/Dao_user_model');
 
     }
 

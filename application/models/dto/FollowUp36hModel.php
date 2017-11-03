@@ -4,6 +4,7 @@ class FollowUp36hModel extends Model {
 
     protected $k_id_follow_up_36h;
     protected $k_id_user;
+    protected $n_round;
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "follow_up_36h";
@@ -27,6 +28,11 @@ class FollowUp36hModel extends Model {
     public function getKIdUser() {
         return $this->k_id_user;
     }
-
+    public function setNRound($n_round) {
+        $this->n_round = $n_round;
+    }
+    public function getNRound() {
+        return $this->n_round;
+    }
 
 }

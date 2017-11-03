@@ -14,7 +14,7 @@ var TD = {
         dom.configCalendar($('#txtDesbloqueo'));
         dom.configCalendar($('#txtBloqueado'));
 //        dom.notify.vencimiento();
-        dom.notify("NUEVOS TICKETS!!", "Tienes nuevos tickes para asignar", "info");
+//        dom.notify("NUEVOS TICKETS!!", "Tienes nuevos tickes para asignar", "info");
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');
