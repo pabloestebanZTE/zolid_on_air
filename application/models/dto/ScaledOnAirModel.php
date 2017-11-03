@@ -24,6 +24,7 @@ class ScaledOnAirModel extends Model {
     protected $n_tipificacion_solucion;
     protected $n_detalle_solucion;
     protected $n_ultimo_subestado_de_escalamiento;
+    protected $n_round;
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "scaled_on_air";
@@ -167,6 +168,11 @@ class ScaledOnAirModel extends Model {
     public function getNUltimoSubestadoDeEscalamiento() {
         return $this->n_ultimo_subestado_de_escalamiento;
     }
-
+    public function setNRound($n_round) {
+        $this->n_round = $n_round;
+    }
+    public function getNRound() {
+        return $this->n_round;
+    }
 
 }

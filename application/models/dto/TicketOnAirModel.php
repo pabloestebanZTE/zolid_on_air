@@ -52,7 +52,9 @@ class TicketOnAirModel extends Model {
     protected $n_en_prorroga__;
     protected $n_cont_prorrogas__;
     protected $n_noc;
-
+    protected $n_round;
+    protected $d_finish;
+    protected $d_temporal;
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "ticket_on_air";
     //Los campos que desea exculir del modelo.
@@ -363,6 +365,22 @@ class TicketOnAirModel extends Model {
     public function getNNoc() {
         return $this->n_noc;
     }
-
-
+    public function setNRound($n_round) {
+        $this->n_round = $n_round;
+    }
+    public function getNRound() {
+        return $this->n_round;
+    }
+    public function setDFinish($d_finish) {
+        $this->d_finish = $d_finish;
+    }
+    public function getDFinish() {
+        return $this->d_finish;
+    }
+    public function setDTemporal($d_temporal) {
+        $this->d_temporal = $d_temporal;
+    }
+    public function getDTemporal() {
+        return $this->$d_temporal;
+    }
 }
