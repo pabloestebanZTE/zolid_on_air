@@ -9,16 +9,15 @@
                 <p id="text" class="m-b-0 p-b-0"></p>
             </div>
             <?php
-//            if (Auth::isCoordinador()) {
-//                $this->load->view('parts/principal/coordinador');
-//            }
-//            if (Auth::isDocumentador()) {
-//                $this->load->view('parts/principal/documentador');
-//            }
-//            if (Auth::isIngeniero()) {
-//                $this->load->view('parts/principal/ingeniero');
-//            }
-            $this->load->view('parts/principal/coordinador');
+           if (Auth::isCoordinador()) {
+               $this->load->view('parts/principal/coordinador');
+           }
+           if (Auth::isDocumentador()) {
+               $this->load->view('parts/principal/documentador');
+           }
+           if (Auth::isIngeniero()) {
+               $this->load->view('parts/principal/ingeniero');
+           }
             ?>
         </div>
         <!--footer Section -->
