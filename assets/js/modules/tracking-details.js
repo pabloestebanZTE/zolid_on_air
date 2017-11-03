@@ -9,13 +9,14 @@ var TD = {
         $('.hour-step .icon-step').on('click', TD.onClickIconStep);
         $('.states-modal li a').on('click', TD.onClickItemState)
     },
-    onClickItemState: function () {
+    onClickItemState: function (e) {
+        app.stopEvent(e);
         var link = $(this);
         var ul = link.parents('ul');
         ul.find('a.active').removeClass('active');
         link.addClass('active');
     },
-    
+
     onClickIconStep: function () {
         var icon = $(this);
         $('#modalChangeState').modal('show');

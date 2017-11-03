@@ -142,7 +142,7 @@ var dom = {
      * @returns {undefined}
      */
     timer: function (element, time, progressElement) {
-        //Número de tiempos al límite...        
+        //Número de tiempos al límite...
         if (element) {
             element.html('<i class="fa fa-fw fa-refresh fa-spin"></i> --:--');
         }
@@ -186,7 +186,12 @@ var dom = {
             diffMins *= -1;
         }
         if (element) {
-            element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
+            if (progressValue <= 100) {
+                element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
+            } else {
+                progressValue = 100;
+                element.html('<span class="text-danger"><i class="fa fa-fw fa-warning"></i> Tiempo agotado</span>');
+            }
         }
         if (progress) {
             progress.css('width', progressValue + '%');
@@ -302,40 +307,31 @@ var dom = {
         tabla.rows.add(data);
         tabla.columns.adjust().draw();
     },
-//    notify: {
-//        asignar: function () {
-//            swal({
-//                title: "NUEVAS ASIGNACIONES!!",
-//                text: "Tienes nuevas asignaciones pendientes.",
-//                icon: "info",
-//                button: "Aceptar",
-//            });
-//        },
-//        vencimiento: function () {
-//            swal({
-//                title: "TICKETS POR VENCER!!",
-//                text: "Tienes tickets que estan apunto de vencer.",
-//                icon: "warning",
-//                button: "Aceptar",
-//            });
-//        },
-//        nuevas: function () {
-//            swal({
-//                title: "NUEVOS TICKETS!!",
-//                text: "Tienes nuevos tickes para asignar",
-//                icon: "info",
-//                button: "Aceptar",
-//            });
-//        }
-//
-//    }
-    notify: function (title, text, icon) {
-        swal({
-            title: title,
-            text: text,
-            icon: icon,
-            button: "Aceptar",
-        });
+    notify: {
+        asignar: function () {
+            swal({
+                title: "NUEVAS ASIGNACIONES!!",
+                text: "Tienes nuevas asignaciones pendientes.",
+                icon: "info",
+                button: "Aceptar",
+            });
+        },
+        vencimiento: function () {
+            swal({
+                title: "TICKETS POR VENCER!!",
+                text: "Tienes tickets que estan apunto de vencer.",
+                icon: "warning",
+                button: "Aceptar",
+            });
+        },
+        nuevas: function () {
+            swal({
+                title: "NUEVOS TICKETS!!",
+                text: "Tienes nuevos tickes para asignar",
+                icon: "info",
+                button: "Aceptar",
+            });
+        }
 
     }
 };
