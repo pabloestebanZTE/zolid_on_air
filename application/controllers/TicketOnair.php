@@ -19,6 +19,7 @@ class TicketOnair extends CI_Controller {
         $this->load->model('data/dao_onAir12h_model');
         $this->load->model('data/dao_onAir24h_model');
         $this->load->model('data/dao_onAir36h_model');
+        $this->load->model('data/dao_preparationStage_model');
 
     }
 
@@ -129,14 +130,28 @@ class TicketOnair extends CI_Controller {
       // header('Content-Type: text/plain');
     }
 
-    public function pablonoentiendo($ticket){
+    public function getAllService(){
+      header('Content-Type: text/plain');
       $ticketsOnAir = new dao_ticketOnAir_model();
+      $preparatinStage = new dao_preparationStage_model();
+      $station = new dao_station_model();
+      $band = new dao_band_model();
+      $work = new dao_work_model();
+      $technology = new dao_technology_model();
+      $statusOnair = new dao_statusOnair_model();
+      $ticket = 3;
+      $res = $ticketsOnAir->findByIdOnAir($ticket)->data;
+      $res->k_id_preparation = $preparatinStage->findByIdPreparation($res->k_id_preparation)->data;
+      $res->k_id_band = $band->findById($res->k_id_band)->data;//band
+      $res->k_id_status_onair = $statusOnair->findById($res->k_id_status_onair)->data;//Status onair
+      $res->k_id_station = $station->findById($res->k_id_station)->data;//Station
+      $res->k_id_work = $work->findById($res->k_id_work)->data;//work
+      $res->k_id_technology = $technology->findById($res->k_id_technology)->data;//technology
 
-      $res = $ticketsOnAir->findByIdOnAir($ticket);
-
+      print_r($res);
     }
 
-}
+
 
 
 }
