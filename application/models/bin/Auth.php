@@ -6,7 +6,7 @@ class Auth {
     private static $class;
 
     function __construct() {
-
+        
     }
 
     public static function init() {
@@ -15,7 +15,7 @@ class Auth {
         }
         $cogs = require_once APPPATH . "config/auth.php";
         self::$class = $cogs["providers"]["users"]["model"];
-        require_once APPPATH. "models/dto/" . self::$class . ".php";
+        require_once APPPATH . "models/dto/" . self::$class . ".php";
     }
 
     /**
@@ -51,8 +51,8 @@ class Auth {
             $i++;
         }
         $user = $db->select(self::$sql)->first();
-        if($user != null){
-          self::save($user);
+        if ($user != null) {
+            self::save($user);
         }
         return $user != null;
     }
@@ -87,30 +87,28 @@ class Auth {
         Session::destroy("auth");
     }
 
-    public static function isRole($role){
-      if(Auth::check()){
-        return Auth::user()->n_role_user == $role;
-      }else{
-        return false;
-      }
+    public static function isRole($role) {
+        if (Auth::check()) {
+            return Auth::user()->n_role_user == $role;
+        } else {
+            return false;
+        }
     }
 
-    public static function getRole(){
-      return Auth::user()->n_role_user;
+    public static function getRole() {
+        return strtoupper(Auth::user()->n_role_user);
     }
 
-    public static function isCoordinador(){
-      return Auth::isRole("Coordinador");
+    public static function isCoordinador() {
+        return Auth::isRole("COORDINADOR");
     }
 
-    public static function isDocumentador(){
-      return Auth::isRole("Documentador");
+    public static function isDocumentador() {
+        return Auth::isRole("DOCUMENTADOR");
     }
 
-    public static function isIngeniero(){
-      return Auth::isRole("Ingeniero");
+    public static function isIngeniero() {
+        return Auth::isRole("INGENIERO");
     }
-
-
 
 }
