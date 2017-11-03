@@ -28,7 +28,7 @@
                     <li class="cam"><a href="#contact-sec">Contactos</a>
                     </li>
                     </li>
-                    <li class="cam"><a href="<?= URL::to('index.php/welcome/index') ?>" />Salir</a>
+                    <li class="cam"><a href="<?= URL::to('User/logout') ?>" />Salir</a>
                     </li>
                 </ul>
             </div>

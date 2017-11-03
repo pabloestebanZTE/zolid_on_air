@@ -1,3 +1,4 @@
+
 <?php
 
 return [
@@ -23,12 +24,12 @@ return [
       | you may use many connections at once using the Database library.
       |
      */
-    'default' => 'mysqlLocalhost',
+    'default' => 'jj',
     /*
       |--------------------------------------------------------------------------
       | Database Connections
       |--------------------------------------------------------------------------
-      |mysqlLocalhost
+      |
       | Here are each of the database connections setup for your application.
       | Of course, examples of configuring each database platform that is
       | supported by Laravel is shown below to make development simple.
@@ -55,7 +56,20 @@ return [
         ],
         'mysqlLocalhost' => [
             'driver' => 'mysql',
-            'host' => '127.0.0.1',
+            'host' => 'localhost',
+            'port' => '3306',
+            'database' => 'on_air',
+            'username' => 'root',
+            'password' => 'a4b3c2d1',
+            'charset' => 'utf8',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+        'jj' => [
+            'driver' => 'mysql',
+            'host' => 'localhost',
             'port' => '3306',
             'database' => 'on_air',
             'username' => 'root',
