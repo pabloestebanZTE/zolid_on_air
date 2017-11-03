@@ -296,7 +296,7 @@ create table technology
 /*==============================================================*/
 create table ticket_on_air
 (
-   k_id_onair           int not null,
+   k_id_onair           int not null AUTO_INCREMENT,
    k_id_status_onair    int,
    k_id_work            int,
    k_id_preparation     int,

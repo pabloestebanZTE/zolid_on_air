@@ -123,7 +123,11 @@ class TicketOnair extends CI_Controller {
       // header('Content-Type: text/plain');
     }
 
-
+    public function insertTicketOnair(){
+      $ticket = new dao_ticketOnAir_model();
+      $response = $ticket->insertTicket($this->request);
+      $this->json($response);
+    }
 
 
 }
