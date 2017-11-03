@@ -54,13 +54,12 @@ caption, th {
   font-style: normal;
 }
 html {
-  background-image: url(/zolid_on_air/assets/img/font.jpg);
+  background-image: url(https://image.ibb.co/dB8iXb/font.jpg);
   background-size: 100vw 140vh;
 }
 body {
   min-height: 100%;
   height: 100%;
-  background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/navy_blue.png) repeat;
   font-weight: lighter;
   font-family: "HelveticaNeue-Light",
     "Helvetica Neue Light",

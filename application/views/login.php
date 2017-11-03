@@ -49,7 +49,7 @@
         <div class="cms">
           <div class="roti">
             <h1>ZTE</h1>
-            <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = 'http://localhost/zolid_on_air/index.php/User/loginUser'">Login</button><br />
+            <button type="submit" class="button" id="valid" name="valid" onclick = "this.form.action = '<?= URL::to('User/loginUser') ?>'">Login</button><br />
             <p><a href="<?= URL::to('index.php/TicketOnair/listTicketOnair') ?>">ZTE</a> <a>And</a> <a href="#">ZTE Colombia</a></p>
           </div>
         </div>

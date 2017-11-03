@@ -76,7 +76,7 @@ create table city
 /*==============================================================*/
 create table follow_up_12h
 (
-   k_id_follow_up_12h   int not null,
+   k_id_follow_up_12h   int not null AUTO_INCREMENT,
    k_id_user            int,
    primary key (k_id_follow_up_12h)
 );
@@ -86,7 +86,7 @@ create table follow_up_12h
 /*==============================================================*/
 create table follow_up_24h
 (
-   k_id_follow_up_24h   int not null,
+   k_id_follow_up_24h   int not null AUTO_INCREMENT,
    k_id_user            int,
    primary key (k_id_follow_up_24h)
 );
@@ -96,7 +96,7 @@ create table follow_up_24h
 /*==============================================================*/
 create table follow_up_36h
 (
-   k_id_follow_up_36h   int not null,
+   k_id_follow_up_36h   int not null AUTO_INCREMENT,
    k_id_user            int,
    primary key (k_id_follow_up_36h)
 );
@@ -106,7 +106,7 @@ create table follow_up_36h
 /*==============================================================*/
 create table on_air24h
 (
-   k_id_24h_real        int not null,
+   k_id_24h_real        int not null AUTO_INCREMENT,
    k_id_onair           int,
    k_id_follow_up_24h   int,
    d_fin24h             datetime,
@@ -118,7 +118,7 @@ create table on_air24h
 /*==============================================================*/
 create table on_air_12h
 (
-   k_id_12h_real        int not null,
+   k_id_12h_real        int not null AUTO_INCREMENT,
    k_id_follow_up_12h   int,
    k_id_onair           int,
    d_fin12h             date,
@@ -130,7 +130,7 @@ create table on_air_12h
 /*==============================================================*/
 create table on_air_36h
 (
-   k_id_36h_real        int not null,
+   k_id_36h_real        int not null AUTO_INCREMENT,
    k_id_follow_up_36h   int,
    k_id_onair           int,
    d_fin36h             datetime,
@@ -142,7 +142,7 @@ create table on_air_36h
 /*==============================================================*/
 create table precheck
 (
-   k_id_precheck        int not null,
+   k_id_precheck        int not null AUTO_INCREMENT,
    k_id_user            int,
    d_finpre             datetime,
    primary key (k_id_precheck)
@@ -153,7 +153,7 @@ create table precheck
 /*==============================================================*/
 create table preparation_stage
 (
-   k_id_preparation     int not null,
+   k_id_preparation     int not null AUTO_INCREMENT,
    n_bcf_wbts_id        varchar(100),
    n_bts_id             varchar(100),
    d_ingreso_on_air     datetime,
@@ -205,7 +205,7 @@ create table regional
 /*==============================================================*/
 create table scaled
 (
-   k_id_sacled          int not null,
+   k_id_sacled          int not null AUTO_INCREMENT,
    primary key (k_id_sacled)
 );
 
@@ -214,7 +214,7 @@ create table scaled
 /*==============================================================*/
 create table scaled_on_air
 (
-   k_id_scaled_on_air   int not null,
+   k_id_scaled_on_air   int not null AUTO_INCREMENT,
    k_id_onair           int,
    k_id_sacled          int,
    d_time_escalado__    datetime,

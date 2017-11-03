@@ -2,6 +2,8 @@ ALTER TABLE user add n_mail_user varchar(100);
 ALTER TABLE user add i_phone_user integer;
 ALTER TABLE user add i_cellphone_user integer;
 ALTER TABLE user add n_password varchar(30);
+ALTER TABLE user add n_role_user varchar(100);
+
 ALTER TABLE ticket_on_air add n_round integer;
 ALTER TABLE ticket_on_air add d_finish datetime;
 ALTER TABLE ticket_on_air add d_temporal datetime;
