@@ -116,7 +116,7 @@ class User extends CI_Controller {
     }
 
     public function assignEngineer(){
-      $id = 1;
+      $id = $_REQUES['idUser'];
       $ticketOnAir = new dao_ticketOnAir_model();
       $station = new dao_station_model();
       $band = new dao_band_model();
