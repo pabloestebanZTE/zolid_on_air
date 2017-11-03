@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <?php $this->load->view('parts/generic/head'); ?>
-    <body data-base="<?php URL::base() ?>">
+    <body data-base="<?= URL::base() ?>">
         <?php $this->load->view('parts/generic/header'); ?>
         <div class="container">
 
@@ -17,13 +17,10 @@
                                 <div class= 'col-md-6 inputGroupContainer'>
                                     <div class= 'input-group'>
                                         <span class= 'input-group-addon'><i class= 'fa fa-fw fa-envelope-open'></i></span>
-                                        <input  name= 'idarchivo' class= 'form-control'  type= 'file'>
+                                        <input  name= 'idarchivo' class= 'src-file'  type= 'file'>
                                     </div>
                                 </div>
                             </div>
-                            <center>
-                                <button type= 'submit' class= 'btn btn-primary' onclick = "this.form.action = 'http://localhost/zolid_on_air/index.php/User/loginUser'">Verificar  <span class= 'fa fa-fw fa-check'></span></button>
-                            </center>
                         </fieldset>
                     </form>
                 </div>
@@ -31,7 +28,11 @@
 
             <div class='tab-content' id='tab3'>
                 <div class="container">
-                    <form class="well form-horizontal" action=" " method="post"  id="assignService" name="assignServie">
+                    <form class="well form-horizontal" action="TicketOnAir/insertTicketOnair" method="post"  id="assignServie2" name="assignServie2">
+                      <div class="alert alert-success alert-dismissable hidden">
+                          <a href="#" class="close" >&times;</a>
+                          <p class="p-b-0" id="text"></p>
+                      </div>
                         <legend >Asignar Actividad</legend>
                         <fieldset class="col-md-6 control-label">
                             <!-- Input Text -->
@@ -40,7 +41,9 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
-                                        <input type='text' name="estacion" id="estacion" class="form-control" value='' placeholder='Digite el nombre de la estacion' required>
+                                        <select name="k_id_station" id="estacion" class="form-control selectpicker" onchange="editTextCityRegional()" required>
+                                            <option value="" >Seleccione la estación</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +54,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
-                                        <select name="banda" id="banda" class="form-control selectpicker" required>
+                                        <select name="k_id_band" id="banda" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la banda</option>
                                         </select>
                                     </div>
@@ -64,9 +67,8 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
-                                        <select name="regional" id="regional" class="form-control selectpicker" required>
-                                            <option value="" >Seleccione la regional</option>
-                                        </select>
+                                        <input type='text' name="regional" id="regional" class="form-control" value='' required>
+
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +83,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
-                                        <select name="tecnologia" id="tecnologia" class="form-control selectpicker" required>
+                                        <select name="k_id_technology" id="tecnologia" class="form-control selectpicker" required>
                                             <option value="" >Seleccione la tecnologia</option>
                                         </select>
                                     </div>
@@ -94,7 +96,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
-                                        <select name="tipotrabajo" id="tipotrabajo" class="form-control selectpicker" required>
+                                        <select name="k_id_work" id="tipotrabajo" class="form-control selectpicker" required>
                                             <option value="" >Seleccione el tipo de trabajo</option>
                                         </select>
                                     </div>
@@ -107,9 +109,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <select name="ciudad" id="ciudad" class="form-control selectpicker" required>
-                                            <option value="" >Seleccione la ciudad</option>
-                                        </select>
+                                        <input type='text' name="ciudad" id="ciudad" class="form-control" value='' required>
                                     </div>
                                 </div>
                             </div>
@@ -135,6 +135,194 @@
         </div>
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
+
+
+        <div class="incorrect-type info-box error-msg" style="display: none;">
+          Sorry, the file you selected is not MSG type
+        </div>
+
+        <div class="file-api-not-available info-box error-msg" style="display: none;">
+          Sorry, your browser isn't supported
+        </div>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="<?= URL::to('assets/js/DataStream.js') ?>"></script>
+        <script type="text/javascript" src="<?= URL::to('assets/js/msg.reader.js') ?>"></script>
+
+
+        <script>
+          function isSupportedFileAPI() {
+            return window.File && window.FileReader && window.FileList && window.Blob;
+          }
+
+          function formatEmail(data) {
+            return data.name ? data.name + " [" + data.email + "]" : data.email;
+          }
+
+          $(function () {
+            var info = <?php echo $respuesta; ?>;
+            for (var j = 0; j < info.bands.data.length; j++){
+              $('#banda').append($('<option>', {
+                  value: info.bands.data[j].k_id_band,
+                  text: info.bands.data[j].n_name_band
+              }));
+            }
+            for (var j = 0; j < info.technologies.data.length; j++){
+              $('#tecnologia').append($('<option>', {
+                  value: info.technologies.data[j].k_id_technology,
+                  text: info.technologies.data[j].n_name_technology
+              }));
+            }
+            for (var j = 0; j < info.works.data.length; j++){
+              $('#tipotrabajo').append($('<option>', {
+                  value: info.works.data[j].k_id_work,
+                  text: info.works.data[j].n_name_ork
+              }));
+            }
+            for (var j = 0; j < info.stations.data.length; j++){
+              $('#estacion').append($('<option>', {
+                  value: info.stations.data[j].k_id_station,
+                  text: info.stations.data[j].n_name_station
+              }));
+            }
+
+            if (isSupportedFileAPI()) {
+              $('.src-file').change(function () {
+                var srqs = "";
+
+                for(var counter = 0; counter < this.files.length; counter++){
+                  var selectedFile = this.files[counter];
+                  if (!selectedFile) {
+                    $('.msg-info, .incorrect-type').hide();
+                    return;
+                  }
+                  if (selectedFile.name.indexOf('.msg') == -1) {
+                    $('.msg-info').hide();
+                    $('.incorrect-type').show();
+                    return;
+                  }
+                  $('.msg-example .msg-file-name').html(selectedFile.name);
+                  $('.incorrect-type').hide();
+
+                  // read file...
+                  var fileReader = new FileReader();
+                  fileReader.onload = function (evt) {
+
+                    var buffer = evt.target.result;
+                    var msgReader = new MSGReader(buffer);
+                    var fileData = msgReader.getFileData();
+                    if (!fileData.error) {
+                      // $('.msg-example .msg-from').html(formatEmail({name: fileData.senderName, email: fileData.senderEmail}));
+                      // $('.msg-example .msg-subject').html(fileData.subject);
+                      // $('.msg-example .msg-body').html(
+                      //     fileData.body ? fileData.body.substring(0, Math.min(600000, fileData.body.length))
+                      //     + (fileData.body.length > 600000 ? '...' : '') : '');
+                      // $('.msg-example .msg-attachment').html(jQuery.map(fileData.attachments, function (attachment, i) {
+                      //   return attachment.fileName + ' [' + attachment.contentLength + 'bytes]' +
+                      //       (attachment.pidContentId ? '; ID = ' + attachment.pidContentId : '');
+                      // }).join('<br/>'));
+                      // $('.msg-info').show();
+
+                      var info = <?php echo $respuesta; ?>;
+
+                      console.log(info);
+                      for(var i = 0; i < info.stations.data.length; i++){
+                        if(info.stations.data[i].n_name_station.toLowerCase().split(".").length == 2){
+                          if(fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[1]) != -1){
+                            console.log(info.stations.data[i].n_name_station);
+                          }
+                        } else {
+                          if(info.stations.data[i].n_name_station.toLowerCase().split(".").length == 3){
+                            if(fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[1] +". "+ info.stations.data[i].n_name_station.toLowerCase().split(".")[2]) != -1){
+                              console.log(info.stations.data[i].n_name_station);
+                            }
+                          }
+                        }
+                      }
+                      // if(fileData.body.search("CRQ") != -1){
+                      //   if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
+                      //     console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));
+                      //     if(fileData.subject.toLowerCase().search("no exitoso") != -1){
+                      //       console.log("Escalado");
+                      //     }
+                      //     if (fileData.subject.toLowerCase().search("exitoso") != -1){
+                      //       if (fileData.subject.toLowerCase().search("no") == -1){
+                      //         if (fileData.subject.toLowerCase().search("12h") != -1){
+                      //           console.log("Seguimiento FO");
+                      //         }
+                      //         if (fileData.subject.toLowerCase().search("24h") != -1){
+                      //           console.log("Seguimiento FO");
+                      //         }
+                      //         if (fileData.subject.toLowerCase().search("36h") != -1 && fileData.subject.toLowerCase().search("inicio") == -1){
+                      //           console.log("Produccion");
+                      //         }
+                      //       }
+                      //     }
+                      //     if(fileData.subject.toLowerCase().search("precheck no exitoso") != -1){
+                      //       console.log("Escalado");
+                      //     }
+                      //     if(fileData.subject.toLowerCase().search("standby") != -1 || fileData.subject.toLowerCase().search("prorroga") != -1){
+                      //       console.log("queda igual");
+                      //     }
+                      //     if(fileData.subject.toLowerCase().search("reinicio") != -1){
+                      //       console.log("Seguimiento FO");
+                      //     }
+                      //
+                      //   } else {
+                      //     console.log(fileData.subject+": "+"crq no valido");
+                      //   }
+                      // } else {
+                      //   console.log(fileData.subject+": "+"Correo sin crq");
+                      // }
+
+                      // Use msgReader.getAttachment to access attachment content ...
+                      // msgReader.getAttachment(0) or msgReader.getAttachment(fileData.attachments[0])
+                    } else {
+                      $('.msg-info').hide();
+                      $('.incorrect-type').show();
+                    }
+                  };
+                  fileReader.readAsArrayBuffer(selectedFile);
+                }
+              });
+            } else {
+              $('.msg-example').hide();
+              $('.file-api-not-available').show();
+            }
+          });
+        </script>
+
+        <script>
+          function editTextCityRegional(){
+            var estacion = $( "#estacion" ).val();
+            var info = <?php echo $respuesta; ?>;
+            var city;
+            for (var j = 0; j < info.stations.data.length; j++){
+              if(info.stations.data[j].k_id_station == estacion){
+                for(var m = 0; m < info.cities.data.length; m++){
+                  if (info.stations.data[j].k_id_city == info.cities.data[m].k_id_city){
+                    city = info.cities.data[m].k_id_regional;
+                    $('input[name=ciudad]').val(info.cities.data[m].n_name_city);
+                  }
+                }
+                for(var x = 0; x < info.regions.data.length; x++){
+                  if(info.regions.data[x].k_id_regional == city){
+                    $('input[name=regional]').val(info.regions.data[x].n_name_regional);
+                  }
+                }
+              }
+            }
+          }
+
+
+
+        </script>
+        <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
+        <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(function(){
+          dom.submit($('#assignServie2'));
+        })
+        </script>
     </body>
 </html>

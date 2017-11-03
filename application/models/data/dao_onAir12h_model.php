@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_onAir12h_model1 extends CI_Model{
+    class dao_onAir12h_model extends CI_Model{
 
       public function __construct(){
         $this->load->model('dto/OnAir12hModel');
@@ -34,12 +34,13 @@
         } catch (ZolidException $ex) {
           return $ex;
         }
+      }
 
-        public function getOnair12ById($id){
+        public function getOnair12ByFollow($id){
           try {
             $onair12 = new OnAir12hModel();
             $datos = $onair12->where("k_id_follow_up_12h","=",$id)
-                          ->get();
+                          ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
@@ -49,7 +50,6 @@
         }
 
 
-      }
 
   }
 ?>

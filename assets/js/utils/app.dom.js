@@ -5,14 +5,21 @@
  */
 
 var dom = {
-    //Para agregar todas las interacciones del dom genericas.
+//Para agregar todas las interacciones del dom genericas.
     init: function () {
+
+      try {
         $('body').on('click', '.alert .close', function () {
-            $(this).parent().hide();
+          $(this).parent().hide();
         });
         $('[data-toggle="tooltip"]').tooltip();
         $('.container.autoheight').css('min-height', screen.height + 'px');
         dom.events();
+
+      } catch (e) {
+
+      }
+
     },
     events: function () {
         //Configuración panel.
@@ -122,6 +129,76 @@ var dom = {
             }
         };
     },
+    parseTime: function (time) {
+        if (typeof time === "string") {
+            var parts = time.split(':');
+            var h = parts[0];
+            var m = parts[1];
+            return ((h < 10) ? '0' + h : h) + ':' + ((m < 10) ? '0' + m : m);
+        } else {
+            return "00:00";
+        }
+    },
+    timesInLimit: 0,
+    timeForNotifyLimit: 1,
+    /**
+     * Crea un timer de tiempo en el emento que se le atribulla.
+     * @param {Elem} element : El elemento donde actuará el timer...
+     * @param {Long} time : La fecha en la que inició el proceso...
+     * @param {Elem} progressElement : El elemento progress del timer...
+     * @returns {undefined}
+     */
+    timer: function (element, time, progressElement) {
+        //Número de tiempos al límite...
+        if (element) {
+            element.html('<i class="fa fa-fw fa-refresh fa-spin"></i> --:--');
+        }
+        //Comprobará si se ha consultado la hora actual, o de lo contrario se
+        //consultará...
+        var getTimeActual = function (callback) {
+            if (dom.currentTimeStamp) {
+                callback(time, element, progressElement);
+                return;
+            }
+            //Consultamos la hora actual en milisegundos...
+            app.get('Utils/getCurrentTimeStamp').success(function (response) {
+                dom.currentTimeStamp = parseFloat(response);
+                callback(time, element, progressElement);
+            }).send();
+        };
+
+        getTimeActual(function (time, element, progress) {
+            dom.parseTimer(time, element, progress);
+            //Creamos el intervalo a un minuto...
+            window.setInterval(function () {
+                dom.currentTimeStamp += (1000 * 60);
+                dom.parseTimer(time, element, progress);
+            }, (1000 * 60));
+        });
+    },
+    parseTimer: function (time, element, progress) {
+        var hoursToMillisecounds = function (hours) {
+            return (((1000 * 60) * 60) * hours);
+        };
+        var timeTemp = time + hoursToMillisecounds(12);
+        var diffMs = (timeTemp - dom.currentTimeStamp); // Milisegundos entre la fecha y hoy.
+        var diffHrs = Math.floor(Math.abs(diffMs) / 36e5); // hours
+        var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+        var progressValue = Math.round(((dom.currentTimeStamp - time) / (timeTemp - time)) * 100);
+
+        if (diffHrs < 0) {
+            diffHrs *= -1;
+        }
+        if (diffMins < 0) {
+            diffMins *= -1;
+        }
+        if (element) {
+            element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
+        }
+        if (progress) {
+            progress.css('width', progressValue + '%');
+        }
+    },
     configCalendar: function (control, fechaInicio, fechaFin, fechaDefecto, btnToday) {
         control.datepicker('remove');
         control.mask("99/99/9999");
@@ -150,7 +227,6 @@ var dom = {
         control.parents(".input-group").find("button").attr('type', 'button').on('click', function () {
             control.trigger("focus");
         });
-
         if (control.parent('.input-group.date').length > 0) {
             return control.parent('.input-group.date').datepicker(args);
         }
@@ -161,6 +237,7 @@ var dom = {
         $("html, body").animate({scrollTop: 0}, "slow");
     },
     submit: function (form) {
+      console.log("Formulairo;",form)
         form.validate();
         var onSubmitForm = function (e) {
             if (e.isDefaultPrevented())
@@ -270,7 +347,6 @@ var dom = {
 
     }
 };
-
 $(function () {
     dom.init();
 });

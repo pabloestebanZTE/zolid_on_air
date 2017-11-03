@@ -6,11 +6,25 @@ var TD = {
     },
     events: function () {
         $('#btnDetails').on('click', TD.onClickDetails);
+        $('.hour-step .icon-step').on('click', TD.onClickIconStep);
+        $('.states-modal li a').on('click', TD.onClickItemState)
+    },
+    onClickItemState: function () {
+        var link = $(this);
+        var ul = link.parents('ul');
+        ul.find('a.active').removeClass('active');
+        link.addClass('active');
+    },
+    
+    onClickIconStep: function () {
+        var icon = $(this);
+        $('#modalChangeState').modal('show');
     },
     configView: function () {
         dom.configCalendar($('#txtFechaIngresoOnAir'));
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
+        dom.timer($('#timeStep'), 1509628221368, $('#progressStep1'));
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');

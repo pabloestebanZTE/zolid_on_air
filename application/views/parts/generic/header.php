@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- <li class="cam"><a >Bienvenid@ <?php echo $_SESSION['userName'] ?></a> -->
                     </li>
-                    <li class="cam"><a href="#home">Home</a>
+                    <li class="cam"><a href="<?= URL::to('index.php/User/principalView') ?>">Home</a>
                     </li>
                     <li class="cam"><a href="#services">Servicios</a>
                         <ul>
@@ -25,9 +25,6 @@
                             <li><a href="#">Ver Actividades</a></li>
                             <li><a href="#">Ver</a></li>
                         </ul>
-                    </li>
-                    <li class="cam"><a href="#">servicios</a>
-                    </li>
                     <li class="cam"><a href="#contact-sec">Contactos</a>
                     </li>
                     </li>

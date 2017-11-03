@@ -7,7 +7,7 @@
     class dao_statusOnair_model extends CI_Model{
 
         public function __construct(){
-          $this->load->model('dto/StatusOnairModel');
+          $this->load->model('dto/StatusOnAirModel');
         }
 
         public function getAll(){

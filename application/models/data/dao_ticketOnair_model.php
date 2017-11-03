@@ -10,6 +10,18 @@
           $this->load->model('dto/TicketOnAirModel');
         }
 
+        public function insertTicket($request){
+          try {
+            $ticket = new TicketOnAirModel();
+            $datos = $ticket->insert($request->all());
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
         public function getAll(){
           try {
             $ticketOnAir = new TicketOnAirModel();
@@ -22,10 +34,10 @@
           }
         }
 
-        public function findByIdOnAir($request){
+        public function findByIdOnAir($id){
           try {
             $ticketOnAir = new TicketOnAirModel();
-            $datos = $ticketOnAir->where("k_id_onair","=",$request)
+            $datos = $ticketOnAir->where("k_id_onair","=",$id)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);

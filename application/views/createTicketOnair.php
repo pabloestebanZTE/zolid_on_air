@@ -119,20 +119,20 @@
               }).join('<br/>'));
               $('.msg-info').show();
 
+              var info = <?php echo $respuesta; ?>;
 
-
-
-
-              var sites = <?php echo $respuesta; ?>;
-            //    var js_obj_data = JSON.stringif(sites);
-
-              console.log(sites);
-              console.log("o.o");
-
-              for(var i = 0; i < sites.stations.data.length; i++){
-                if(fileData.subject.toLowerCase().search(sites.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(sites.stations.data[i].n_name_station.toLowerCase().split(".")[1]) != -1){
-
-                  console.log(sites.stations.data[i].n_name_station);
+              console.log(info);
+              for(var i = 0; i < info.stations.data.length; i++){
+                if(info.stations.data[i].n_name_station.toLowerCase().split(".").length == 2){
+                  if(fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[1]) != -1){
+                    console.log(info.stations.data[i].n_name_station);
+                  }
+                } else {
+                  if(info.stations.data[i].n_name_station.toLowerCase().split(".").length == 3){
+                    if(fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[1] +". "+ info.stations.data[i].n_name_station.toLowerCase().split(".")[2]) != -1){
+                      console.log(info.stations.data[i].n_name_station);
+                    }
+                  }
                 }
               }
               // if(fileData.body.search("CRQ") != -1){

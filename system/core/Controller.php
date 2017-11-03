@@ -90,7 +90,9 @@ class CI_Controller {
         $this->load->model('bin/URL');
         $this->load->model('bin/Hash');
         $this->load->model('bin/Session');
+        $this->load->model('bin/Redirect');
         $this->request = new Request();
+        date_default_timezone_set("America/Bogota");
         log_message('info', 'Controller Class Initialized');
     }
 
@@ -106,13 +108,16 @@ class CI_Controller {
         return self::$instance;
     }
 
-    public function  json($response){
-      if(get_class($response) === 'Response'){
-        echo $response->json();
-      } else if (is_object($response) || is_array($response)) {
-        $r = new Response();
-        echo $r->json($response);
-      }
+    public function json($response) {
+        if (is_string($response) || is_numeric($response)) {
+            echo $response;
+        } else
+        if (get_class($response) === 'Response') {
+            echo $response->json();
+        } else if (is_object($response) || is_array($response)) {
+            $r = new Response();
+            echo $r->json($response);
+        }
     }
 
 }

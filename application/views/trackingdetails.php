@@ -418,7 +418,7 @@
                                 <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
                             </div>
                             <div class="back-progress-step">
-                                <span class="progress-step" style="width: 30%;"></span>
+                                <span class="progress-step" id="progressStep1"></span>
                             </div>
                             <div class="footer-step">
                                 <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -01:35</label>
@@ -460,485 +460,43 @@
         <!-- FIN TRACKING DETAILS FORM -->
     </div>
 
-    <!-- formulario escalamiento -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+
+    <!--MODAL CHANGE STATE-->
+    <div id="modalChangeState" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-xs">
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Escalar Ticket</h4>
+                    <h4 class="modal-title"><i class="fa fa-fw fa-edit"></i> Cambiar estado</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="panel-body">
-                        <div class="stepwizard col-md-offset-3 m-t-10 m-b-25">
-                            <div class="stepwizard-row setup-panel">
-                                <div class="stepwizard-step">
-                                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                                    <!--<p>Parte 1</p>-->
-                                </div>
-                                <div class="stepwizard-step">
-                                    <a href="#step-2" type="button" class="btn btn-default btn-circle" >2</a>
-                                    <!--<p>Parte 2</p>-->
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="display-block p-l-40 p-r-40 m-b-0 well step-panel" id="step-1">
-                            <form class="row form-xs" action=" " method="post"  id="assignService" name="assignServie">
-                                <fieldset class="col-md-6 control-label">
-                                    <div class="form-group">
-                                        <label for="cmbAtribuibleNokia" class="col-md-3 control-label">Atribuible a Nokia:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
-                                                <select class="form-control input-sm" id="cmbAtribuibleNokia" name="cmbAtribuibleNokia">
-                                                    <option value="">Seleccione</option>
-                                                    <option value="1">SI</option>
-                                                    <option value="1">NO</option>
-                                                    <option value="1">NA</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscalado" class="col-md-3 control-label">Time escalado:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
-                                                <input type="text" class="form-control input-sm" id="txtTimeEscalado" name="txtTimeEscalado" placeholder="DD/MM/YYYY" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtFechaEscalado" class="col-md-3 control-label">Fecha escalado:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
-                                                <input type='text' name="txtFechaEscalado" id="txtFechaEscalado" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtContEscImp" class="col-md-3 control-label">Cont esc imp:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                <input type='text' name="txtContEscImp" id="txtContEscImp" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscImp" class="col-md-3 control-label">Time esc imp:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                <input type='text' name="txtTimeEscImp" id="txtTimeEscImp" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtContEscRf" class="col-md-3 control-label">Cont esc RF:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                <input type='text' name="txtContEscRf" id="txtContEscRf" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscRf" class="col-md-3 control-label">Time esc RF:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                <input type='text' name="txtTimeEscRf" id="txtTimeEscRf" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtContEscNpo" class="col-md-3 control-label">Cont esc NPO:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                <input type='text' name="txtContEscNpo" id="txtContEscNpo" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscNpo" class="col-md-3 control-label">Time esc NPO:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                <input type='text' name="txtTimeEscNpo" id="txtTimeEscNpo" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                <!--  fin seccion izquierda form---->
-
-                                <!--  inicio seccion derecha form---->
-<!--                                <fieldset>
-                                    <div class="form-group">
-                                        <label for="txtContEscCare" class="col-md-3 control-label">Cont esc care:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
-                                                <input type='text' name="txtContEscCare" id="txtContEscCare" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscCare" class="col-md-3 control-label">Time esc care:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
-                                                <input type='text' name="txtTimeEscCare" id="txtTimeEscCare" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtContEscGdrt" class="col-md-3 control-label">Cont esc GDRT:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtContEscGdrt" id="txtContEscGdrt" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscGdrt" class="col-md-3 control-label">Time esc GDRT:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtTimeEscGdrt" id="txtTimeEscGdrt" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtContEscOym" class="col-md-3 control-label">Cont esc OyM:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtContEscOym" id="txtContEscOym" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtTimeEscOym" class="col-md-3 control-label">Time esc OyM:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtTimeEscOym" id="txtTimeEscOym" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtContEscCalidad" class="col-md-3 control-label">Cont esc calidad:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtContEscCalidad" id="txtContEscCalidad" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label for="txtContEscCalidad" class="col-md-3 control-label">Atribuible nokia 2:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <select class="form-control input-sm" id="cmbAtribuibleNokia" name="cmbAtribuibleNokia">
-                                                    <option value="">Seleccione</option>
-                                                    <option value="1">SI</option>
-                                                    <option value="1">NO</option>
-                                                    <option value="1">NA</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cmbTipificacionSolucion" class="col-md-3 control-label">Tipificacion solucion:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <select class="form-control input-sm" id="cmbTipificacionSolucion" name="cmbTipificacionSolucion">
-                                                    <option value="">Seleccione</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtDetalleSolucion" class="col-md-3 control-label">Detalle solucion:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtDetalleSolucion" id="txtDetalleSolucion" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="txtUltimoSubestadoEscalamiento" class="col-md-3 control-label">Ultimo subestado de escalamiento:</label>
-                                        <div class="col-md-8 selectContainer">
-                                            <div class="input-group">
-                                                <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                <input type='text' name="txtUltimoSubestadoEscalamiento" id="txtUltimoSubestadoEscalamiento" class="form-control" value='' readonly="false">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>-->
-                                <!--   fin seccion derecha---->
-                            </form>
-                        </div>
-                    </div>
-                    <!-- formulario -->
-                    <form class="well form-horizontal" action=" " method="post"  id="assignService" name="assignServie">
-                        <fieldset class="col-md-6 control-label">
-                            <div class="form-group">
-                                <label for="cmbAtribuibleNokia" class="col-md-3 control-label">Atribuible a Nokia:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
-                                        <select class="form-control input-sm" id="cmbAtribuibleNokia" name="cmbAtribuibleNokia">
-                                            <option value="">Seleccione</option>
-                                            <option value="1">SI</option>
-                                            <option value="1">NO</option>
-                                            <option value="1">NA</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscalado" class="col-md-3 control-label">Time escalado:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
-                                        <input type="text" class="form-control input-sm" id="txtTimeEscalado" name="txtTimeEscalado" placeholder="DD/MM/YYYY" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtFechaEscalado" class="col-md-3 control-label">Fecha escalado:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
-                                        <input type='text' name="txtFechaEscalado" id="txtFechaEscalado" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtContEscImp" class="col-md-3 control-label">Cont esc imp:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input type='text' name="txtContEscImp" id="txtContEscImp" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscImp" class="col-md-3 control-label">Time esc imp:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input type='text' name="txtTimeEscImp" id="txtTimeEscImp" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtContEscRf" class="col-md-3 control-label">Cont esc RF:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input type='text' name="txtContEscRf" id="txtContEscRf" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscRf" class="col-md-3 control-label">Time esc RF:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input type='text' name="txtTimeEscRf" id="txtTimeEscRf" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtContEscNpo" class="col-md-3 control-label">Cont esc NPO:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input type='text' name="txtContEscNpo" id="txtContEscNpo" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscNpo" class="col-md-3 control-label">Time esc NPO:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                        <input type='text' name="txtTimeEscNpo" id="txtTimeEscNpo" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <!--  fin seccion izquierda form---->
-
-                        <!--  inicio seccion derecha form---->
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="txtContEscCare" class="col-md-3 control-label">Cont esc care:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
-                                        <input type='text' name="txtContEscCare" id="txtContEscCare" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscCare" class="col-md-3 control-label">Time esc care:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
-                                        <input type='text' name="txtTimeEscCare" id="txtTimeEscCare" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtContEscGdrt" class="col-md-3 control-label">Cont esc GDRT:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtContEscGdrt" id="txtContEscGdrt" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscGdrt" class="col-md-3 control-label">Time esc GDRT:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtTimeEscGdrt" id="txtTimeEscGdrt" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtContEscOym" class="col-md-3 control-label">Cont esc OyM:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtContEscOym" id="txtContEscOym" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtTimeEscOym" class="col-md-3 control-label">Time esc OyM:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtTimeEscOym" id="txtTimeEscOym" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtContEscCalidad" class="col-md-3 control-label">Cont esc calidad:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtContEscCalidad" id="txtContEscCalidad" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label for="txtContEscCalidad" class="col-md-3 control-label">Atribuible nokia 2:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <select class="form-control input-sm" id="cmbAtribuibleNokia" name="cmbAtribuibleNokia">
-                                            <option value="">Seleccione</option>
-                                            <option value="1">SI</option>
-                                            <option value="1">NO</option>
-                                            <option value="1">NA</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="cmbTipificacionSolucion" class="col-md-3 control-label">Tipificacion solucion:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <select class="form-control input-sm" id="cmbTipificacionSolucion" name="cmbTipificacionSolucion">
-                                            <option value="">Seleccione</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtDetalleSolucion" class="col-md-3 control-label">Detalle solucion:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtDetalleSolucion" id="txtDetalleSolucion" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="txtUltimoSubestadoEscalamiento" class="col-md-3 control-label">Ultimo subestado de escalamiento:</label>
-                                <div class="col-md-8 selectContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="txtUltimoSubestadoEscalamiento" id="txtUltimoSubestadoEscalamiento" class="form-control" value='' readonly="false">
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <!--   fin seccion derecha---->
-                    </form>
+                    <ul class="states-modal">
+                        <li>
+                            <a href="#"><span class="icon-state theme1"><i class="fa fa-fw fa-pause"></i></span> Crear Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme2"><i class="fa fa-fw fa-stop"></i></span> Detener Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme3"><i class="fa fa-fw fa-refresh"></i></span> Reiniciar Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme4"><i class="fa fa-fw fa-undo"></i></span> Escalar proceso</a>
+                        </li>
+                    </ul>
+                    <label for="txtObservations">Observaciones:</label>
+                    <textarea id="txtObservations" class="form-control" rows="5" placeholder="Escriba aquí las observaciones por las cuales está realizando el cambio."></textarea>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Guardar</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-fw fa-check"></i> Aceptar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-fw fa-times"></i> Cerrar</button>
                 </div>
             </div>
+
         </div>
     </div>
-    <!-- fin formulario escalamiento -->
+    <!--MODAL CHANGE STATE-->
 
     <!--footer Section -->
     <div class="for-full-back" id="footer">
