@@ -718,3 +718,6 @@ nav {
 .states-modal li a:hover .icon-state.theme4, .states-modal li a.active .icon-state.theme4{
     background: #ce0017 !important;
 }
+.icon-state.theme3 .fa:before{
+    margin-left: 4px;
+}

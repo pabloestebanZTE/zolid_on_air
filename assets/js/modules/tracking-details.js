@@ -10,7 +10,7 @@ var TD = {
         $('.states-modal li a').on('click', TD.onClickItemState)
     },
     onClickItemState: function (e) {
-        app.stopEvent(e);
+//        app.stopEvent(e);
         var link = $(this);
         var ul = link.parents('ul');
         ul.find('a.active').removeClass('active');
