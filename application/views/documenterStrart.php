@@ -115,6 +115,7 @@
                             </div>
                         </fieldset>
                         <!--   fin seccion derecha---->
+                        <input type='hidden' name="k_id_status_onair" id="k_id_status_onair" class="form-control" value='1'>
 
                         <!-- Button -->
                         <center>
