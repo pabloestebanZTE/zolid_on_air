@@ -10,7 +10,7 @@ var TD = {
         $('.states-modal li a').on('click', TD.onClickItemState)
     },
     onClickItemState: function (e) {
-        app.stopEvent(e);
+//        app.stopEvent(e);
         var link = $(this);
         var ul = link.parents('ul');
         ul.find('a.active').removeClass('active');
@@ -25,7 +25,7 @@ var TD = {
         dom.configCalendar($('#txtFechaIngresoOnAir'));
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
-        dom.timer($('#timeStep'), 1509628221368, $('#progressStep1'));
+        dom.timer($('#timeStep'), 1509706921000, $('#progressStep1'));
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');

@@ -105,8 +105,7 @@
             Zolid By ZTE Colombia | All Right Reserved
         </div>
         <?php $this->load->view('parts/generic/scripts'); ?>
-        <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
+        <!-- CUSTOM SCRIPT   -->        
         <script>
           $(function () {
             var ticket = <?php echo $ticket; ?>;

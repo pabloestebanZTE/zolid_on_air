@@ -23,10 +23,8 @@
         <!--footer Section -->
         <div class="for-full-back" id="footer">
             Zolid By ZTE Colombia | All Right Reserved
-        </div>
-        <?php $this->load->view('parts/generic/scripts'); ?>
+        </div>        
         <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal/principal.js?v=1.1') ?>" type="text/javascript"></script>
         <script scr="<?= URL::to("assets/plugins/sweetalert-master/dist/sweetalert.min.js") ?>" ></script>
     </body>
 </html>

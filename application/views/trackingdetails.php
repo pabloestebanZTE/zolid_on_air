@@ -23,7 +23,6 @@
                                     <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Estacion</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -391,14 +390,7 @@
                         </div>
                     </div>                    
                 </div>
-                <div class="well">
-                    <div class="col-xs-12 text-right">
-                        <div class="display-block pull-right" style="width: 300px;">
-                            <div class="col-xs-4 text-right p-r-0 p-t-5">
-                                <label data-toggle="modal" data-target="#myModal">Escalar</label>
-                            </div>                            
-                        </div>
-                    </div>
+                <div class="well">                    
                     <div class="col-xs-12 text-right">
                         <div class="display-block pull-right" style="width: 300px;">
                             <div class="col-xs-4 text-right p-r-0 p-t-5">
@@ -473,16 +465,13 @@
                 <div class="modal-body">
                     <ul class="states-modal">
                         <li>
-                            <a href="#"><span class="icon-state theme1"><i class="fa fa-fw fa-pause"></i></span> Crear Prorroga</a>
+                            <a href="javascript:;"><span class="icon-state theme2"><i class="fa fa-fw fa-pause"></i></span> Crear Prorroga</a>
+                        </li>                        
+                        <li>
+                            <a href="javascript:;"><span class="icon-state theme3"><i class="fa fa-fw fa-forward"></i></span> Siguiente fase</a>
                         </li>
                         <li>
-                            <a href="#"><span class="icon-state theme2"><i class="fa fa-fw fa-stop"></i></span> Detener Prorroga</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="icon-state theme3"><i class="fa fa-fw fa-refresh"></i></span> Reiniciar Prorroga</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="icon-state theme4"><i class="fa fa-fw fa-undo"></i></span> Escalar proceso</a>
+                            <a href="<?= URL::to("User/scaling"); ?>"><span class="icon-state theme4"><i class="fa fa-fw fa-undo"></i></span> Escalar proceso</a>
                         </li>
                     </ul>
                     <label for="txtObservations">Observaciones:</label>
