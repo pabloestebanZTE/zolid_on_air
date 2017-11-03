@@ -15,7 +15,7 @@
 
         public function getAll(){
           try {
-            $user = new User();
+            $user = new UserModel();
             $datos = $user->get();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);

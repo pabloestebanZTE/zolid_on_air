@@ -6,11 +6,12 @@ class User extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('data/dao_user_model');
-        $this->load->model('data/dao_station_model');
-        $this->load->model('data/dao_band_model');
-        $this->load->model('data/dao_work_model');
-        $this->load->model('data/dao_technology_model');
+        $this->load->model('data/Dao_ticketOnair_model');
+        $this->load->model('data/Dao_user_model');
+        $this->load->model('data/Dao_station_model');
+        $this->load->model('data/Dao_band_model');
+        $this->load->model('data/Dao_work_model');
+        $this->load->model('data/Dao_technology_model');
       }
 
 
@@ -80,26 +81,15 @@ class User extends CI_Controller {
         $this->load->view('principal');
     }
 
-      public function documenterStrartView(){
-        $station = new dao_station_model();
-        $band = new dao_band_model();
-        $work = new dao_work_model();
-        $technology = new dao_technology_model();
-        $res['stations'] = $station->getAll();
-        $res['cities'] = $station->getAllCities();
-        $res['regions'] = $station->getAllRegions();
-        $res['bands'] = $band->getAll();
-        $res['works'] = $work->getAll();
-        $res['technologies'] = $technology->getAll();
-        $answer['respuesta'] = json_encode($res);
+      public function documenterStrartView($answer){
         $this->load->view('documenterStrart', $answer);
       }
       public function trackingDetails(){
         $this->load->view('trackingdetails');
       }
 
-      public function toAssign(){
-        $this->load->view('toAssign');
+      public function toAssign($ticket){
+        $this->load->view('toAssign', $ticket);
       }
 
       public function documenterPrincipalView(){
@@ -108,6 +98,41 @@ class User extends CI_Controller {
 
       public function precheck(){
         $this->load->view('precheck');
+    }
+
+    public function createTicketOnair(){
+      $station = new dao_station_model();
+      $band = new dao_band_model();
+      $work = new dao_work_model();
+      $technology = new dao_technology_model();
+      $res['stations'] = $station->getAll();
+      $res['cities'] = $station->getAllCities();
+      $res['regions'] = $station->getAllRegions();
+      $res['bands'] = $band->getAll();
+      $res['works'] = $work->getAll();
+      $res['technologies'] = $technology->getAll();
+      $answer['respuesta'] = json_encode($res);
+      $this->documenterStrartView($answer);
+    }
+
+    public function assignEngineer(){
+      $id = 1;
+      $ticketOnAir = new dao_ticketOnAir_model();
+      $station = new dao_station_model();
+      $band = new dao_band_model();
+      $work = new dao_work_model();
+      $technology = new dao_technology_model();
+      $users = new Dao_user_model();
+
+      $response = $ticketOnAir->findByIdOnAir($id);
+      $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
+      //$response->data->k_id_station->k_id_city->k_id_regional = $station->findRegionalById($response->data->k_id_station->k_id_city->k_id_regional)->data;
+      $response->data->k_id_band = $band->findById($response->data->k_id_band)->data;
+      $response->data->k_id_technology = $technology->findById($response->data->k_id_technology)->data;
+      $response->data->k_id_work = $work->findById($response->data->k_id_work)->data;
+      $answer['ticket'] = json_encode($response->data);
+      $answer['users'] = json_encode($users->getAll());
+      $this->toAssign($answer);
     }
 
 }

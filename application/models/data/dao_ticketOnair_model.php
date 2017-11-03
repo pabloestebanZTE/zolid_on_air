@@ -10,6 +10,18 @@
           $this->load->model('dto/TicketOnAirModel');
         }
 
+        public function insertTicket($request){
+          try {
+            $ticket = new TicketOnAirModel();
+            $datos = $ticket->insert($request->all());
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
         public function getAll(){
           try {
             $ticketOnAir = new TicketOnAirModel();

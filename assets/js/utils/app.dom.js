@@ -7,12 +7,19 @@
 var dom = {
 //Para agregar todas las interacciones del dom genericas.
     init: function () {
+
+      try {
         $('body').on('click', '.alert .close', function () {
-            $(this).parent().hide();
+          $(this).parent().hide();
         });
         $('[data-toggle="tooltip"]').tooltip();
         $('.container.autoheight').css('min-height', screen.height + 'px');
         dom.events();
+
+      } catch (e) {
+
+      }
+
     },
     events: function () {
         //Configuración panel.
@@ -135,18 +142,18 @@ var dom = {
     timesInLimit: 0,
     timeForNotifyLimit: 1,
     /**
-     * Crea un timer de tiempo en el emento que se le atribulla.     
-     * @param {Elem} element : El elemento donde actuará el timer... 
-     * @param {Long} time : La fecha en la que inició el proceso...     
-     * @param {Elem} progressElement : El elemento progress del timer... 
+     * Crea un timer de tiempo en el emento que se le atribulla.
+     * @param {Elem} element : El elemento donde actuará el timer...
+     * @param {Long} time : La fecha en la que inició el proceso...
+     * @param {Elem} progressElement : El elemento progress del timer...
      * @returns {undefined}
      */
     timer: function (element, time, progressElement) {
-        //Número de tiempos al límite...        
+        //Número de tiempos al límite...
         if (element) {
             element.html('<i class="fa fa-fw fa-refresh fa-spin"></i> --:--');
         }
-        //Comprobará si se ha consultado la hora actual, o de lo contrario se 
+        //Comprobará si se ha consultado la hora actual, o de lo contrario se
         //consultará...
         var getTimeActual = function (callback) {
             if (dom.currentTimeStamp) {
@@ -230,6 +237,7 @@ var dom = {
         $("html, body").animate({scrollTop: 0}, "slow");
     },
     submit: function (form) {
+      console.log("Formulairo;",form)
         form.validate();
         var onSubmitForm = function (e) {
             if (e.isDefaultPrevented())

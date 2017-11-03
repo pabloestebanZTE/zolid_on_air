@@ -395,6 +395,13 @@
                     <div class="col-xs-12 text-right">
                         <div class="display-block pull-right" style="width: 300px;">
                             <div class="col-xs-4 text-right p-r-0 p-t-5">
+                                <label data-toggle="modal" data-target="#myModal">Escalar</label>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="col-xs-12 text-right">
+                        <div class="display-block pull-right" style="width: 300px;">
+                            <div class="col-xs-4 text-right p-r-0 p-t-5">
                                 <label class="">Grupos:</label>
                             </div>
                             <div class="col-xs-8 p-r-0">
@@ -451,8 +458,45 @@
             </div>
         </form>
         <!-- FIN TRACKING DETAILS FORM -->
-
     </div>
+
+
+    <!--MODAL CHANGE STATE-->
+    <div id="modalChangeState" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-xs">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-fw fa-edit"></i> Cambiar estado</h4>
+                </div>
+                <div class="modal-body">
+                    <ul class="states-modal">
+                        <li>
+                            <a href="#"><span class="icon-state theme1"><i class="fa fa-fw fa-pause"></i></span> Crear Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme2"><i class="fa fa-fw fa-stop"></i></span> Detener Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme3"><i class="fa fa-fw fa-refresh"></i></span> Reiniciar Prorroga</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="icon-state theme4"><i class="fa fa-fw fa-undo"></i></span> Escalar proceso</a>
+                        </li>
+                    </ul>
+                    <label for="txtObservations">Observaciones:</label>
+                    <textarea id="txtObservations" class="form-control" rows="5" placeholder="Escriba aquí las observaciones por las cuales está realizando el cambio."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-fw fa-check"></i> Aceptar</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-fw fa-times"></i> Cerrar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--MODAL CHANGE STATE-->
 
 
     <!--MODAL CHANGE STATE-->
