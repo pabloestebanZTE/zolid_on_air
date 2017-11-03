@@ -99,6 +99,10 @@ class User extends CI_Controller {
     public function precheck() {
         $this->load->view('precheck');
     }
+    
+    public function scaling() {
+        $this->load->view('scaling');
+    }
 
     public function createTicketOnair() {
         $station = new dao_station_model();
