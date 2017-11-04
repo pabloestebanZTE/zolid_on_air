@@ -8,25 +8,23 @@
                 <a href="#" class="close">&times;</a>
                 <p id="text" class="m-b-0 p-b-0"></p>
             </div>
-            <?php
-           if (Auth::isCoordinador()) {
-               $this->load->view('parts/principal/coordinador');
-           }
-           if (Auth::isDocumentador()) {
-               $this->load->view('parts/principal/documentador');
-           }
-           if (Auth::isIngeniero()) {
-               $this->load->view('parts/principal/ingeniero');
-           }
+            <?php            
+            if (Auth::isCoordinador()) {
+                $this->load->view('parts/principal/coordinador');
+            }
+            if (Auth::isDocumentador()) {
+                $this->load->view('parts/principal/documentador');
+            }
+            if (Auth::isIngeniero()) {
+                $this->load->view('parts/principal/ingeniero');
+            }
             ?>
         </div>
         <!--footer Section -->
         <div class="for-full-back" id="footer">
             Zolid By ZTE Colombia | All Right Reserved
-        </div>
-        <?php $this->load->view('parts/generic/scripts'); ?>
+        </div>        
         <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal.js?v=1.1') ?>" type="text/javascript"></script>
         <script scr="<?= URL::to("assets/plugins/sweetalert-master/dist/sweetalert.min.js") ?>" ></script>
     </body>
 </html>

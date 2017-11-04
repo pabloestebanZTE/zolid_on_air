@@ -22,6 +22,7 @@ $(function () {
                         $('.contentPrincipal').removeClass('hidden');
                     })
                     .success(function (response) {
+                        console.log(response);
                         if (app.successResponse(response)) {
                             principal.fillTable(response.data);
                         } else {
