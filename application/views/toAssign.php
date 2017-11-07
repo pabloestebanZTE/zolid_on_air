@@ -119,10 +119,10 @@
               }));
             }
 
-            console.log(users);
+            console.log(ticket);
             $('input[name=txtEstacion]').val(ticket.k_id_station.n_name_station);
             $('input[name=txtBanda]').val(ticket.k_id_band.n_name_band);
-      //      $('input[name=txtRegional]').val(ticket.k_id_band.n_name_band);
+            $('input[name=txtRegional]').val(ticket.k_id_station.k_id_city.k_id_regional.n_name_regional);
             $('input[name=txtTecnologia]').val(ticket.k_id_technology.n_name_technology);
             $('input[name=txtTipotrabajo]').val(ticket.k_id_work.n_name_ork);
             $('input[name=txtCiudad]').val(ticket.k_id_station.k_id_city.n_name_city);

@@ -8,6 +8,8 @@
 
         public function __construct(){
           $this->load->model('dto/StatusOnAirModel');
+          $this->load->model('dto/StatusModel');
+          $this->load->model('dto/SubstatusModel');
         }
 
         public function getAll(){
@@ -25,34 +27,23 @@
         public function findById($id){
           try {
             $statusOnair = new StatusOnairModel();
+            $status = new StatusModel();
+            $substatus = new SubstatusModel();
             $datos = $statusOnair->where("k_id_status_onair","=",$id)
                           ->first();
-            $response = new Response(EMessages::SUCCESS);
-            $response->setData($datos);
-            $response->data->k_id_status = $this->findStatusById($response->data->k_id_status)->data;//DB::status
-            $response->data->k_id_substatus = $this->findSubstatusById($response->data->k_id_substatus)->data;//substatus
-            return $response;
-          } catch (ZolidException $ex) {
-            return $ex;
-          }
-        }
+            // consulto status...
+            $statusObj = $status->where("k_id_status","=", $datos->k_id_status)
+                          ->first();
+            // Consulto substatus
+            $substatusObj = $substatus ->where("k_id_substatus","=", $datos->k_id_substatus)
+                          ->first();
+            if ($statusObj) {//si no es vacia la consulta asigna el objeto
+              $datos->k_id_status = $statusObj;
+            }
 
-        public function findStatusById($id){//prueba con DB
-          try {
-            $datos = DB::table("status")->where("k_id_status","=", $id)
-                                  ->first();
-            $response = new Response(EMessages::SUCCESS);
-            $response->setData($datos);
-            return $response;
-          } catch (ZolidException $ex) {
-            return $ex;
-          }
-        }
-
-        public function findSubstatusById($id){//prueba con DB
-          try {
-            $datos = DB::table("substatus")->where("k_id_substatus","=", $id)
-                                  ->first();
+            if ($substatusObj) {//si no es vacia la consulta asigna el objeto
+              $datos->k_id_substatus = $substatusObj;
+            }
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
@@ -61,6 +52,6 @@
           }
         }
 
-
+        
     }
 ?>
