@@ -186,6 +186,7 @@ class User extends CI_Controller {
       $response->data->k_id_technology = $technology->findById($response->data->k_id_technology)->data;
       $response->data->k_id_work = $work->findById($response->data->k_id_work)->data;
       $response->data->k_id_status_onair = $status->findById($response->data->k_id_status_onair)->data;
+      $answer['user'] = json_encode($users->getPrecheckUser($id));
       $answer['ticket'] = json_encode($response->data);
       $this->precheck($answer);
     }

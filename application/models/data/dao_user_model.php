@@ -51,5 +51,17 @@
           }
         }
 
+        public function getPrecheckUser($id){
+          try {
+            $datos = DB::table("regional")->where("k_id_regional","=", $id)
+                                  ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
     }
 ?>
