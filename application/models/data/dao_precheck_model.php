@@ -81,6 +81,18 @@ class dao_precheck_model extends CI_Model {
         }
     }
 
+    public function insertPrecheck($request){
+      try {
+        $precheck = new PrecheckModel();
+        $datos = $precheck->insert($request->all());
+        $response = new Response(EMessages::SUCCESS);
+        $response->setData($datos);
+        return $response;
+      } catch (ZolidException $ex) {
+        return $ex;
+      }
+    }
+
 }
 
 ?>

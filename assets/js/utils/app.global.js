@@ -22,7 +22,7 @@ var app = {
         }
         return response;
     },
-    base: function (url) {
+    urlTo: function (url) {
         return app.urlbase + url;
     },
     successResponse: function (response) {

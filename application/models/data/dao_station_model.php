@@ -71,5 +71,28 @@
           }
         }
 
+        public function findRegionalById($id){
+          try {
+            $datos = DB::table("regional")->where("k_id_regional","=", $id)
+                                  ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+        public function findCityById($id){
+          try {
+            $datos = DB::table("city")->where("k_id_city","=", $id)
+                                  ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
     }
 ?>

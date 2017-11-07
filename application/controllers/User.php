@@ -12,6 +12,7 @@ class User extends CI_Controller {
         $this->load->model('data/Dao_band_model');
         $this->load->model('data/Dao_work_model');
         $this->load->model('data/Dao_technology_model');
+        $this->load->model('data/dao_preparationStage_model');
         $this->load->model('data/dao_statusOnair_model');
     }
 
@@ -97,14 +98,14 @@ class User extends CI_Controller {
         $this->load->view('documenterPrincipal');
     }
 
-    public function precheck() {
-        $this->load->view('precheck');
+    public function precheck($answer) {
+        $this->load->view('precheck', $answer);
     }
 
     public function scaling() {
         $this->load->view('scaling');
     }
-    
+
     public function coordinadordetails() {
         $this->load->view('coordinadordetails');
     }
@@ -142,29 +143,51 @@ class User extends CI_Controller {
     }
 
     public function assignEngineer() {
-        $id = 1;
+        $id = $this->request->idOnair;
         $ticketOnAir = new dao_ticketOnAir_model();
         $station = new dao_station_model();
         $band = new dao_band_model();
         $work = new dao_work_model();
         $technology = new dao_technology_model();
         $users = new Dao_user_model();
-
-        $response = $ticketOnAir->findByIdOnAir($id);
-        $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
-        echo "<br><br><br><br>";
-        $response->data->k_id_station->k_id_city = $station->findCityById($response->data->k_id_station->k_id_city->k_id_city)->data;
-        echo 
-        $response->data->k_id_station->k_id_city->k_id_regional = $station->findRegionalById($response->data->k_id_station->k_id_city->k_id_regional)->data;
-
-        print_r($response->data->k_id_station);
+        $PS = new dao_preparationStage_model();
+        $status = new dao_statusOnair_model();
+        $response = $ticketOnAir->findByIdSingleOnAir($id);
+        $response->data->k_id_preparation = $PS->findByIdPreparation($response->data->k_id_preparation)->data;
+         $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
+         $response->data->k_id_station->k_id_city = $station->findCityById($response->data->k_id_station->k_id_city->k_id_city)->data;
         //$response->data->k_id_station->k_id_city->k_id_regional = $station->findRegionalById($response->data->k_id_station->k_id_city->k_id_regional)->data;
         $response->data->k_id_band = $band->findById($response->data->k_id_band)->data;
         $response->data->k_id_technology = $technology->findById($response->data->k_id_technology)->data;
         $response->data->k_id_work = $work->findById($response->data->k_id_work)->data;
+        $response->data->k_id_status_onair = $status->findById($response->data->k_id_status_onair)->data;
         $answer['ticket'] = json_encode($response->data);
         $answer['users'] = json_encode($users->getAll());
         $this->toAssign($answer);
+    }
+
+    public function doPrecheck(){
+  //    $id = $this->request->idOnair;
+      $id = 60;
+      $ticketOnAir = new dao_ticketOnAir_model();
+      $station = new dao_station_model();
+      $band = new dao_band_model();
+      $work = new dao_work_model();
+      $technology = new dao_technology_model();
+      $users = new Dao_user_model();
+      $PS = new dao_preparationStage_model();
+      $status = new dao_statusOnair_model();
+      $response = $ticketOnAir->findByIdSingleOnAir($id);
+      $response->data->k_id_preparation = $PS->findByIdPreparation($response->data->k_id_preparation)->data;
+      $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
+      $response->data->k_id_station->k_id_city = $station->findCityById($response->data->k_id_station->k_id_city->k_id_city)->data;
+      //$response->data->k_id_station->k_id_city->k_id_regional = $station->findRegionalById($response->data->k_id_station->k_id_city->k_id_regional)->data;
+      $response->data->k_id_band = $band->findById($response->data->k_id_band)->data;
+      $response->data->k_id_technology = $technology->findById($response->data->k_id_technology)->data;
+      $response->data->k_id_work = $work->findById($response->data->k_id_work)->data;
+      $response->data->k_id_status_onair = $status->findById($response->data->k_id_status_onair)->data;
+      $answer['ticket'] = json_encode($response->data);
+      $this->precheck($answer);
     }
 
 }
