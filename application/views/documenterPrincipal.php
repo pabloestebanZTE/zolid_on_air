@@ -185,9 +185,13 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbTestGestion" id="cmbTestGestion" class="form-control selectpicker" required>
-                                                            <option value="SI">SI</option>
-                                                            <option value="NO">NO</option>
+                                                            <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="POR_FASES">POR FASES</option>
+                                                            <option value="SI">SI</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -199,9 +203,10 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbSitioLimpio" id="cmbSitioLimpio" class="form-control selectpicker" required>
-                                                            <option value="SI">SI</option>
-                                                            <option value="NO">NO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="SI">SI</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -213,9 +218,12 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbInstalacionHWSitio" id="cmbInstalacionHWSitio" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -227,9 +235,12 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbCambiosConfigSolicitados" id="cmbCambiosConfigSolicitados" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -241,9 +252,12 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbCambiosConfigFinal" id="cmbCambiosConfigFinal" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="NO">NO</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -265,9 +279,13 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbIntegracionGestionTrafica" id="cmbIntegracionGestionTrafica" class="form-control selectpicker" required>
-                                                            <option value="SI">SI</option>
-                                                            <option value="NO">NO</option>
+                                                            <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="SI">SI</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -279,9 +297,13 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbPuestaServicioSitioNuevoLTE" id="cmbPuestaServicioSitioNuevoLTE" class="form-control selectpicker" required>
-                                                            <option value="SI">SI</option>
-                                                            <option value="NO">NO</option>
+                                                            <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="SI">SI</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -293,9 +315,13 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbInstalacionHW4GSitio" id="cmbInstalacionHW4GSitio" class="form-control selectpicker" required>
-                                                            <option value="SI">SI</option>
-                                                            <option value="NO">NO</option>
+                                                            <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="SI">SI</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -311,9 +337,14 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbPrelaunch" id="cmbPrelaunch" class="form-control selectpicker" required>
-                                                            <option value="SI">SI</option>
-                                                            <option value="NO">NO</option>
+                                                            <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="NO">NO</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="POR_FASES">POR FASES</option>
+                                                            <option value="SI">SI</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -375,9 +406,13 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbImplementacionCampo" id="cmbImplementacionCampo" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
+                                                            <option value="DOC">DOC</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="TAREA">TAREA</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -403,9 +438,15 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbGestionPower" id="cmbGestionPower" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
+                                                            <option value="DOC">DOC</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="POR_FASES">POR FASES</option>
+                                                            <option value="SI">SI</option>
+                                                            <option value="TAREA">TAREA</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -417,9 +458,14 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbObraCivil" id="cmbObraCivil" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
+                                                            <option value="DOC">DOC</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="PENDIENTE">PENDIENTE</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="POR FASES">POR FASES</option>
+                                                            <option value="TAREA">TAREA</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -431,9 +477,15 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbOnAIR" id="cmbOnAIR" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
                                                             <option value="ABIERTO">ABIERTO</option>
+                                                            <option value="CERRADO">CERRADO</option>
+                                                            <option value="CRQ_NO_CONCUERDA">CRQ NO CONCUERDA</option>
+                                                            <option value="CRQ_NO_CORRESPONDE">CRQ NO CORRESPONDE</option>
                                                             <option value="NA">NA</option>
+                                                            <option value="ON_AIR">ON_AIR</option>
+                                                            <option value="PENDIENTE_CRQ">PENDIENTE CRQ</option>
+                                                            <option value="TAREAS_ADICIONALES">TAREAS ADICIONALES</option>
+                                                            <option value="TAREAS_SIN_CREAR">TAREAS SIN CREAR</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -446,8 +498,9 @@
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
                                                         <select name="cmbNOC" id="cmbNOC" class="form-control selectpicker" required>
                                                             <option value="NOKIA">NOKIA</option>
-                                                            <option value="ZTE">ZTE</option>
                                                             <option value="NOKIA_ZTE">NOKIA ZTE</option>
+                                                            <option value="SEGUIMIENTO_FO">SIGUIMIENTO FO</option>
+                                                            <option value="ZTE">ZTE</option>
                                                         </select>
                                                     </div>
                                                 </div>
