@@ -52,7 +52,37 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" name="txtIngeniero" id="txtIngeniero" class="form-control" value="" readonly="flase">
+                                                        <input type="text" name="txtIngeniero" id="txtIngeniero" class="form-control" value="" readonly="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="txtFechaIngresoOnAir" class="col-md-3 control-label">Fecha ingreso On Air:</label>
+                                                <div class="col-md-8 selectContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
+                                                        <input type="text" name="txtFechaIngresoOnAir" id="txtFechaIngresoOnAir" class="form-control" value="" readonly="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="txtCRQ" class="col-md-3 control-label">CRQ:</label>
+                                                <div class="col-md-8 selectContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-drivers-license"></i></span>
+                                                        <input type="text" name="txtCRQ" id="txtCRQ" class="form-control" value="" readonly="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="txtWP" class="col-md-3 control-label">WP:</label>
+                                                <div class="col-md-8 selectContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-drivers-license"></i></span>
+                                                        <input type="text" name="txtWP" id="txtWP" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -87,6 +117,36 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
                                                         <input type="text" name="txtciudad" id="txtciudad" class="form-control" value="" readonly="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="txtEnteEjecutor" class="col-md-3 control-label">Ente Ejecutor:</label>
+                                                <div class="col-md-8 selectContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-address-book"></i></span>
+                                                        <input type="text" name="txtEnteEjecuto" id="txtEnteEjecuto" class="form-control" value="" readonly="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="txtEstado" class="col-md-3 control-label">Estado:</label>
+                                                <div class="col-md-8 selectContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
+                                                        <input type="text" name="txtEstado" id="txtEstado" class="form-control" value="" readonly="false">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="txtSubestado" class="col-md-3 control-label">subestado:</label>
+                                                <div class="col-md-8 selectContainer">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
+                                                        <input type="text" name="txtSubestado" id="txtSubestado" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
