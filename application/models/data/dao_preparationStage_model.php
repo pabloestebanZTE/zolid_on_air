@@ -23,6 +23,18 @@
           }
         }
 
+        public function insertPreparationStage($request){
+          try {
+            $PS = new PreparationStageModel();
+            $datos = $PS->insert($request->all());
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
 
 
     }

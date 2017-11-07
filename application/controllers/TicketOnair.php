@@ -131,8 +131,12 @@ class TicketOnair extends CI_Controller {
 
     public function insertTicketOnair(){
       $ticket = new dao_ticketOnAir_model();
+      $ticketPS = new dao_preparationStage_model();
+      $response = $ticketPS->insertPreparationStage($this->request);
+      $this->request->k_id_preparation = $response->data->data;
       $response = $ticket->insertTicket($this->request);
       $this->json($response);
+
     }
 
 

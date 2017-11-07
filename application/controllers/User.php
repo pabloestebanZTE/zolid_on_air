@@ -148,6 +148,12 @@ class User extends CI_Controller {
 
         $response = $ticketOnAir->findByIdOnAir($id);
         $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
+        echo "<br><br><br><br>";
+        $response->data->k_id_station->k_id_city = $station->findCityById($response->data->k_id_station->k_id_city->k_id_city)->data;
+        echo 
+        $response->data->k_id_station->k_id_city->k_id_regional = $station->findRegionalById($response->data->k_id_station->k_id_city->k_id_regional)->data;
+
+        print_r($response->data->k_id_station);
         //$response->data->k_id_station->k_id_city->k_id_regional = $station->findRegionalById($response->data->k_id_station->k_id_city->k_id_regional)->data;
         $response->data->k_id_band = $band->findById($response->data->k_id_band)->data;
         $response->data->k_id_technology = $technology->findById($response->data->k_id_technology)->data;

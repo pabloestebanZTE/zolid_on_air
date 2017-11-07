@@ -141,7 +141,7 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-calendar-o "></i></span>
-                                        <input type='date' name="d_ingreso_on_air" id="d_ingreso_on_air" class="form-control" value='' required>
+                                        <input type='datetime-local' name="d_ingreso_on_air" id="d_ingreso_on_air" class="form-control" value='' required>
                                     </div>
                                 </div>
                             </div>
@@ -161,15 +161,13 @@
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
-                                        <select name="k_id_substatus" id="substatus" class="form-control selectpicker" required>
+                                        <select name="k_id_status_onair" id="substatus" class="form-control selectpicker" required>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
                         <!--   fin seccion derecha---->
-                        <input type='hidden' name="k_id_status_onair" id="k_id_status_onair" class="form-control" value='1'>
-
                         <!-- Button -->
                         <center>
                             <div class="form-group">
