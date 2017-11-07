@@ -12,6 +12,7 @@ class User extends CI_Controller {
         $this->load->model('data/Dao_band_model');
         $this->load->model('data/Dao_work_model');
         $this->load->model('data/Dao_technology_model');
+        $this->load->model('data/dao_statusOnair_model');
     }
 
     private function validUser($request) {
@@ -35,20 +36,20 @@ class User extends CI_Controller {
             $res = $this->validUser($this->request);
         } else {
             $res = true;
-        }        
+        }
         //Comprobamos si el Auth ha encontrado válida las credenciales consultadas...
         if ($res) {
             //Se actualiza la forma de validar los roles...
             //Podemos acceder directamente al método que comprobará un rol en especifico.
             if (Auth::isCoordinador()) {
-                
+
             }
             if (Auth::isDocumentador()) {
-                
+
             }
             //O también podemos detectar si el rol es uno personalizado...
             if (Auth::isRole("Ingeniero")) {
-                
+
             }
             Redirect::redirect(URL::to("User/principal"));
         } else {
@@ -99,7 +100,7 @@ class User extends CI_Controller {
     public function precheck() {
         $this->load->view('precheck');
     }
-    
+
     public function scaling() {
         $this->load->view('scaling');
     }
@@ -113,12 +114,29 @@ class User extends CI_Controller {
         $band = new dao_band_model();
         $work = new dao_work_model();
         $technology = new dao_technology_model();
+        $status = new dao_statusOnair_model();
+
         $res['stations'] = $station->getAll();
         $res['cities'] = $station->getAllCities();
         $res['regions'] = $station->getAllRegions();
         $res['bands'] = $band->getAll();
         $res['works'] = $work->getAll();
         $res['technologies'] = $technology->getAll();
+        $res['statusOnAir'] = $status->getAll();
+        $res['status'] = $status->getAllStatus();
+        $res['substatus'] = $status->getAllSubstatus();
+        for($i = 0; $i < count($res['statusOnAir']->data); $i++){
+          for($j = 0; $j < count($res['status']->data); $j++){
+            if($res['statusOnAir']->data[$i]->k_id_status == $res['status']->data[$j]->k_id_status){
+              $res['statusOnAir']->data[$i]->n_name_status = $res['status']->data[$j]->n_name_status;
+            }
+          }
+          for($j = 0; $j < count($res['substatus']->data); $j++){
+            if($res['statusOnAir']->data[$i]->k_id_substatus == $res['substatus']->data[$j]->k_id_substatus){
+              $res['statusOnAir']->data[$i]->n_name_substatus = $res['substatus']->data[$j]->n_name_substatus;
+            }
+          }
+        }
         $answer['respuesta'] = json_encode($res);
         $this->documenterStrartView($answer);
     }

@@ -11,8 +11,7 @@
                     <form class= 'well form-horizontal' action='' method='post'  id='assignService' name='assignServie' enctype= 'multipart/form-data'>
                         <fieldset>
                             <legend>Asignacion</legend>
-                            <!--Text input-->
-                            <div class= 'form-group'>
+                            <!-- <div class= 'form-group'>
                                 <label class= 'col-md-4 control-label'>Elegir Archivo</label>
                                 <div class= 'col-md-6 inputGroupContainer'>
                                     <div class= 'input-group'>
@@ -20,7 +19,7 @@
                                         <input  name= 'idarchivo' class= 'src-file'  type= 'file'>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </fieldset>
                     </form>
                 </div>
@@ -47,28 +46,52 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Banda:</label>
+                                <label class="col-md-3 control-label">Ciudad:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
-                                        <select name="k_id_band" id="banda" class="form-control selectpicker" required>
-                                            <option value="" >Seleccione la banda</option>
-                                        </select>
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
+                                        <input type='text' name="ciudad" id="ciudad" class="form-control" value='' disabled>
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Select Basic -->
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Regional:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
-                                        <input type='text' name="regional" id="regional" class="form-control" value='' required>
-
+                                        <input type='text' name="regional" id="regional" class="form-control" value='' disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Ente Ejecutor:</label>
+                                <div class="col-md-8 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-address-book"></i></span>
+                                        <select name="n_enteejecutor" id="n_enteejecutor" class="form-control selectpicker" required>
+                                            <option value="" >Seleccione el ente ejecutor</option><option value="Claro" >Claro</option><option value="INGYTELCOM" >INGYTELCOM</option><option value="Nokia" >Nokia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">CRQ:</label>
+                                <div class="col-md-8 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-id-card"></i></span>
+                                        <input type='text' name="n_crq" id="n_crq" class="form-control" value='' required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">WP:</label>
+                                <div class="col-md-8 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-id-card"></i></span>
+                                        <input type='text' name="n_wp" id="n_wp" class="form-control" value='' required>
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +112,18 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Banda:</label>
+                                <div class="col-md-8 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
+                                        <select name="k_id_band" id="banda" class="form-control selectpicker" required>
+                                            <option value="" >Seleccione la banda</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- Select Basic -->
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Tipo de trabajo:</label>
@@ -102,19 +136,39 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Select Basic -->
                             <div class="form-group">
-                                <label class="col-md-3 control-label">Ciudad:</label>
+                                <label class="col-md-3 control-label">Fecha Ingreso On-Air:</label>
                                 <div class="col-md-8 selectContainer">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                        <input type='text' name="ciudad" id="ciudad" class="form-control" value='' required>
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-calendar-o "></i></span>
+                                        <input type='date' name="d_ingreso_on_air" id="d_ingreso_on_air" class="form-control" value='' required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Estado:</label>
+                                <div class="col-md-8 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
+                                        <select name="k_id_status" id="status" class="form-control selectpicker" onchange="editSubstatus()" required>
+                                            <option value="" >Seleccione el Estado</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Subestado:</label>
+                                <div class="col-md-8 selectContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
+                                        <select name="k_id_substatus" id="substatus" class="form-control selectpicker" required>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </fieldset>
                         <!--   fin seccion derecha---->
+                        <input type='hidden' name="k_id_status_onair" id="k_id_status_onair" class="form-control" value='1'>
 
                         <!-- Button -->
                         <center>
@@ -148,19 +202,10 @@
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="<?= URL::to('assets/js/DataStream.js') ?>"></script>
         <script type="text/javascript" src="<?= URL::to('assets/js/msg.reader.js') ?>"></script>
-
-
         <script>
-          function isSupportedFileAPI() {
-            return window.File && window.FileReader && window.FileList && window.Blob;
-          }
-
-          function formatEmail(data) {
-            return data.name ? data.name + " [" + data.email + "]" : data.email;
-          }
-
           $(function () {
             var info = <?php echo $respuesta; ?>;
+            console.log(info);
             for (var j = 0; j < info.bands.data.length; j++){
               $('#banda').append($('<option>', {
                   value: info.bands.data[j].k_id_band,
@@ -185,114 +230,13 @@
                   text: info.stations.data[j].n_name_station
               }));
             }
-
-            if (isSupportedFileAPI()) {
-              $('.src-file').change(function () {
-                var srqs = "";
-
-                for(var counter = 0; counter < this.files.length; counter++){
-                  var selectedFile = this.files[counter];
-                  if (!selectedFile) {
-                    $('.msg-info, .incorrect-type').hide();
-                    return;
-                  }
-                  if (selectedFile.name.indexOf('.msg') == -1) {
-                    $('.msg-info').hide();
-                    $('.incorrect-type').show();
-                    return;
-                  }
-                  $('.msg-example .msg-file-name').html(selectedFile.name);
-                  $('.incorrect-type').hide();
-
-                  // read file...
-                  var fileReader = new FileReader();
-                  fileReader.onload = function (evt) {
-
-                    var buffer = evt.target.result;
-                    var msgReader = new MSGReader(buffer);
-                    var fileData = msgReader.getFileData();
-                    if (!fileData.error) {
-                      // $('.msg-example .msg-from').html(formatEmail({name: fileData.senderName, email: fileData.senderEmail}));
-                      // $('.msg-example .msg-subject').html(fileData.subject);
-                      // $('.msg-example .msg-body').html(
-                      //     fileData.body ? fileData.body.substring(0, Math.min(600000, fileData.body.length))
-                      //     + (fileData.body.length > 600000 ? '...' : '') : '');
-                      // $('.msg-example .msg-attachment').html(jQuery.map(fileData.attachments, function (attachment, i) {
-                      //   return attachment.fileName + ' [' + attachment.contentLength + 'bytes]' +
-                      //       (attachment.pidContentId ? '; ID = ' + attachment.pidContentId : '');
-                      // }).join('<br/>'));
-                      // $('.msg-info').show();
-
-                      var info = <?php echo $respuesta; ?>;
-
-                      console.log(info);
-                      for(var i = 0; i < info.stations.data.length; i++){
-                        if(info.stations.data[i].n_name_station.toLowerCase().split(".").length == 2){
-                          if(fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[1]) != -1){
-                            console.log(info.stations.data[i].n_name_station);
-                          }
-                        } else {
-                          if(info.stations.data[i].n_name_station.toLowerCase().split(".").length == 3){
-                            if(fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[0]) != -1 && fileData.subject.toLowerCase().search(info.stations.data[i].n_name_station.toLowerCase().split(".")[1] +". "+ info.stations.data[i].n_name_station.toLowerCase().split(".")[2]) != -1){
-                              console.log(info.stations.data[i].n_name_station);
-                            }
-                          }
-                        }
-                      }
-                      // if(fileData.body.search("CRQ") != -1){
-                      //   if(fileData.body.substring(fileData.body.search("CRQ")+5, fileData.body.search("CRQ")+20).search("CRQ") != -1){
-                      //     console.log(fileData.subject+": "+fileData.body.substring(fileData.body.search("CRQ")+4, fileData.body.search("CRQ")+20));
-                      //     if(fileData.subject.toLowerCase().search("no exitoso") != -1){
-                      //       console.log("Escalado");
-                      //     }
-                      //     if (fileData.subject.toLowerCase().search("exitoso") != -1){
-                      //       if (fileData.subject.toLowerCase().search("no") == -1){
-                      //         if (fileData.subject.toLowerCase().search("12h") != -1){
-                      //           console.log("Seguimiento FO");
-                      //         }
-                      //         if (fileData.subject.toLowerCase().search("24h") != -1){
-                      //           console.log("Seguimiento FO");
-                      //         }
-                      //         if (fileData.subject.toLowerCase().search("36h") != -1 && fileData.subject.toLowerCase().search("inicio") == -1){
-                      //           console.log("Produccion");
-                      //         }
-                      //       }
-                      //     }
-                      //     if(fileData.subject.toLowerCase().search("precheck no exitoso") != -1){
-                      //       console.log("Escalado");
-                      //     }
-                      //     if(fileData.subject.toLowerCase().search("standby") != -1 || fileData.subject.toLowerCase().search("prorroga") != -1){
-                      //       console.log("queda igual");
-                      //     }
-                      //     if(fileData.subject.toLowerCase().search("reinicio") != -1){
-                      //       console.log("Seguimiento FO");
-                      //     }
-                      //
-                      //   } else {
-                      //     console.log(fileData.subject+": "+"crq no valido");
-                      //   }
-                      // } else {
-                      //   console.log(fileData.subject+": "+"Correo sin crq");
-                      // }
-
-                      // Use msgReader.getAttachment to access attachment content ...
-                      // msgReader.getAttachment(0) or msgReader.getAttachment(fileData.attachments[0])
-                    } else {
-                      $('.msg-info').hide();
-                      $('.incorrect-type').show();
-                    }
-                  };
-                  fileReader.readAsArrayBuffer(selectedFile);
-                }
-              });
-            } else {
-              $('.msg-example').hide();
-              $('.file-api-not-available').show();
+            for (var j = 0; j < info.status.data.length; j++){
+              $('#status').append($('<option>', {
+                  value: info.status.data[j].k_id_status,
+                  text: info.status.data[j].n_name_status
+              }));
             }
-          });
-        </script>
-
-        <script>
+          })
           function editTextCityRegional(){
             var estacion = $( "#estacion" ).val();
             var info = <?php echo $respuesta; ?>;
@@ -313,9 +257,20 @@
               }
             }
           }
-
-
-
+          function editSubstatus(){
+            var status = $( "#status" ).val();
+            console.log(status);
+            var info = <?php echo $respuesta; ?>;
+            $('#substatus').empty();
+            for (var j = 0; j < info.statusOnAir.data.length; j++){
+              if(status == info.statusOnAir.data[j].k_id_status){
+                  $('#substatus').append($('<option>', {
+                      value: info.statusOnAir.data[j].k_id_status_onair,
+                      text: info.statusOnAir.data[j].n_name_substatus
+                  }));
+              }
+            }
+          }
         </script>
         <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
         <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>

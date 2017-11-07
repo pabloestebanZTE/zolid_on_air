@@ -6,6 +6,7 @@ class OnAir36hModel extends Model {
     protected $k_id_follow_up_36h;
     protected $k_id_onair;
     protected $d_fin36h;
+    protected $n_comentario;
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "on_air_36h";
@@ -41,6 +42,11 @@ class OnAir36hModel extends Model {
     public function getDFin36h() {
         return $this->d_fin36h;
     }
-
+    public function setNComentario($n_comentario) {
+        $this->n_comentario = $n_comentario;
+    }
+    public function getNComentario() {
+        return $this->n_comentario;
+    }
 
 }

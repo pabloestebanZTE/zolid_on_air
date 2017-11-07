@@ -55,6 +55,8 @@ class TicketOnAirModel extends Model {
     protected $n_round;
     protected $d_finish;
     protected $d_temporal;
+    protected $d_actualizacion_final;
+    protected $d_asignacion_final;
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "ticket_on_air";
     //Los campos que desea exculir del modelo.
@@ -381,6 +383,18 @@ class TicketOnAirModel extends Model {
         $this->d_temporal = $d_temporal;
     }
     public function getDTemporal() {
-        return $this->$d_temporal;
+        return $this->d_temporal;
+    }
+    public function setDActualizacionFinal($d_actualizacion_final) {
+        $this->d_actualizacion_final = $d_actualizacion_final;
+    }
+    public function getDActualizacionFinal() {
+        return $this->d_actualizacion_final;
+    }
+    public function setDAsignacionFinal($d_asignacion_final) {
+        $this->d_asignacion_final = $d_asignacion_final;
+    }
+    public function getDAsignacionFinal() {
+        return $this->d_asignacion_final;
     }
 }
