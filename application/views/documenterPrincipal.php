@@ -161,7 +161,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><i class="fa fa-fw fa-list"></i> Detalles</a>
                             </h4>
                         </div>
                         <div id="collapse2" class="panel-collapse collapse">
@@ -170,13 +170,11 @@
                                     <div class="panel-body">                                                                   
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label for="cmbEstado" class="col-md-3 control-label">Estado:</label>
+                                                <label for="txtIntegrador" class="col-md-3 control-label">Integrador:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-list-ul"></i></span>
-                                                        <select name="cmbEstado" id="cmbEstado" class="form-control selectpicker" required>
-                                                            <option value="" >Seleccione el estado</option>
-                                                        </select>
+                                                        <input type="text" name="txtSectoresDesbloqueados" id="txtSectoresDesbloqueados" class="form-control" value="" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -280,7 +278,7 @@
                         </div>
                     </div>
                     
-                    <div class="panel panel-default">
+<!--                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><i class="fa fa-fw fa-list"></i> Detalles</a>
@@ -293,11 +291,11 @@
                                         <div class="stepwizard-row setup-panel">
                                             <div class="stepwizard-step">
                                                 <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
-                                                <!--<p>Parte 1</p>-->
+                                                <p>Parte 1</p>
                                             </div>
                                             <div class="stepwizard-step">
                                                 <a href="#step-2" type="button" class="btn btn-default btn-circle" >2</a>
-                                                <!--<p>Parte 2</p>-->
+                                                <p>Parte 2</p>
                                             </div>
                                         </div>
                                     </div>
@@ -535,7 +533,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 
                 <div class="well">
