@@ -160,13 +160,13 @@ class TicketOnair extends CI_Controller {
         $this->json($response);
     }
 
-    public function insertTicketOnair(){
-      $ticket = new dao_ticketOnAir_model();
-      $ticketPS = new dao_preparationStage_model();
-      $response = $ticketPS->insertPreparationStage($this->request);
-      $this->request->k_id_preparation = $response->data->data;
-      $response = $ticket->insertTicket($this->request);
-      $this->json($response);
+    public function insertTicketOnair() {
+        $ticket = new dao_ticketOnAir_model();
+        $ticketPS = new dao_preparationStage_model();
+        $response = $ticketPS->insertPreparationStage($this->request);
+        $this->request->k_id_preparation = $response->data->data;
+        $response = $ticket->insertTicket($this->request);
+        $this->json($response);
     }
 
     public function getAllStates() {
@@ -177,8 +177,9 @@ class TicketOnair extends CI_Controller {
 
     public function updateTicket() {
         $ticket = new dao_ticketOnAir_model();
+//        $response = new Response(EMessages::CORRECT);
         $response = $ticket->updateTicket($this->request);
-        $thsi->json($response);
+        $this->json($response);
     }
 
 //    
@@ -189,11 +190,11 @@ class TicketOnair extends CI_Controller {
 //    }
 
     public function assignTicket() {
-      $precheck = new dao_precheck_model();
-      $ticket = new dao_ticketOnAir_model();
-      $response = $precheck->insertPrecheck($this->request);
-      $this->request->k_id_precheck = $response->data->data;
-      $response = $ticket->updateTicket($this->request);
+        $precheck = new dao_precheck_model();
+        $ticket = new dao_ticketOnAir_model();
+        $response = $precheck->insertPrecheck($this->request);
+        $this->request->k_id_precheck = $response->data->data;
+        $response = $ticket->updateTicket($this->request);
     }
 
 }

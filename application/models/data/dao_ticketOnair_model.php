@@ -81,11 +81,22 @@ class dao_ticketOnair_model extends CI_Model {
     function updateTicket($request) {
         try {
             $ticketOnAir = new TicketOnAirModel();
-            $datos = $ticketOnAir->where("k_id_onair", "=", $request->k_id_ticket)
-                    ->update($request->all());
-            $response = new Response(EMessages::SUCCESS);
-            $response->setData($datos);
+            //Consultamos el registro onair...
+            $temp = $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->k_id_onair)->get();
+            if ($temp) {
+                //Se actualizaría el registro onair...
+                $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->k_id_onair)
+                        ->update($request->ticket_on_air->all());
+                //Se actualiza el preparation_stage.
+                $ps = new PreparationStageModel();
+                $ps->join("preparation_stage", "prepartion_stage.k_id_preparation", "=", "k_id_preparation")
+                        ->where("prepartion_stage.k_id_preparation", "=", $temp->k_id_preparation)
+                        ->update($request->preparation_stage->all());
+            }
+            $response = new Response(EMessages::UPDATE);
+            $response->setData($temp);
             return $response;
+            return null;
         } catch (ZolidException $ex) {
             return $ex;
         }

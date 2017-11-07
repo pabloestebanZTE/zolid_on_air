@@ -5,11 +5,12 @@ var TD = {
         TD.fillTable([]);
         TD.getDetail();
         TD.listCombox();
+        dom.submit($('#formTrackingDetails'));
     },
     events: function () {
         $('#btnDetails').on('click', TD.onClickDetails);
         $('.hour-step .icon-step').on('click', TD.onClickIconStep);
-        $('.states-modal li a').on('click', TD.onClickItemState)
+        $('.states-modal li a').on('click', TD.onClickItemState);
     },
     onClickItemState: function (e) {
 //        app.stopEvent(e);
