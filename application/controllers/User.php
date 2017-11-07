@@ -152,7 +152,7 @@ class User extends CI_Controller {
         $users = new Dao_user_model();
         $PS = new dao_preparationStage_model();
         $status = new dao_statusOnair_model();
-        $response = $ticketOnAir->findByIdSingleOnAir($id);
+        $response = $ticketOnAir->findByIdOnAir($id);
         $response->data->k_id_preparation = $PS->findByIdPreparation($response->data->k_id_preparation)->data;
          $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
          $response->data->k_id_station->k_id_city = $station->findCityById($response->data->k_id_station->k_id_city->k_id_city)->data;
@@ -177,7 +177,7 @@ class User extends CI_Controller {
       $users = new Dao_user_model();
       $PS = new dao_preparationStage_model();
       $status = new dao_statusOnair_model();
-      $response = $ticketOnAir->findByIdSingleOnAir($id);
+      $response = $ticketOnAir->findByIdOnAir($id);
       $response->data->k_id_preparation = $PS->findByIdPreparation($response->data->k_id_preparation)->data;
       $response->data->k_id_station = $station->findById($response->data->k_id_station)->data;
       $response->data->k_id_station->k_id_city = $station->findCityById($response->data->k_id_station->k_id_city->k_id_city)->data;
