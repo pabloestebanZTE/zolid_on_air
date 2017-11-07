@@ -20,7 +20,11 @@
                         <div id="collapse1" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <form class="form-horizontal well" id="formDetallesBasicos">
-                                    <div class="panel-body">                                                                   
+                                    <div class="alert alert-success alert-dismissable hidden">
+                                        <a href="#" class="close" >&times;</a>
+                                        <p class="p-b-0" id="text"></p>
+                                    </div>
+                                    <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
                                                 <label for="txtEstacion" class="col-md-3 control-label">Estacion:</label>
@@ -191,7 +195,7 @@
                                     </div>
                                 </div>
                                 <form id="formTrackingDetails" action="TicketOnair/updateTicket">
-                                    <input type="hidden" name="k_id_onair" value="<?= isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
+                                    <input type="hidden" name="ticket_on_air.k_id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
                                     <div class="display-block p-l-40 p-r-40 m-b-0 well step-panel" id="step-0">
                                         <div class="row form-xs">
                                             <div class="col-md-3">
@@ -564,6 +568,7 @@
     <?php $this->load->view('parts/generic/scripts'); ?>    
     <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
     <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
+    <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>        
     <script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
 </body>
 </html>
