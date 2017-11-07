@@ -20,6 +20,7 @@ class TicketOnair extends CI_Controller {
         $this->load->model('data/dao_onAir24h_model');
         $this->load->model('data/dao_onAir36h_model');
         $this->load->model('data/dao_preparationStage_model');
+        $this->load->model('data/dao_scaledOnair_model');
     }
 
     public function listTicketOnair() {
@@ -29,18 +30,12 @@ class TicketOnair extends CI_Controller {
         $work = new dao_work_model();
         $technology = new dao_technology_model();
         $statusOnair = new dao_statusOnair_model();
-
         $res = $ticketsOnAir->getAll($this->request);
-
         for ($j = 0; $j < count($res->data); $j++) {
             $res->data[$j]->k_id_status_onair = $statusOnair->findById($res->data[$j]->k_id_status_onair)->data; //Status onair
-
             $res->data[$j]->k_id_station = $station->findById($res->data[$j]->k_id_station)->data; //Station
-
             $res->data[$j]->k_id_band = $band->findById($res->data[$j]->k_id_band)->data; //band
-
             $res->data[$j]->k_id_work = $work->findById($res->data[$j]->k_id_work)->data; //work
-
             $res->data[$j]->k_id_technology = $technology->findById($res->data[$j]->k_id_technology)->data; //technology
         }
         $this->json($res);
@@ -60,10 +55,8 @@ class TicketOnair extends CI_Controller {
         $work = new dao_work_model();
         $technology = new dao_technology_model();
         $statusOnair = new dao_statusOnair_model();
-
         $userId = Auth::user()->id();
         $precheckId = $precheck->getPrecheckById($userId)->data;
-
         for ($j = 0; $j < count($precheckId); $j++) {
             $res = $ticket->findByIdPrecheck($precheckId[$j]->k_id_precheck);
             // $res->data->k_id_band = $band->findById($res->data->k_id_band)->data;//band
@@ -78,7 +71,6 @@ class TicketOnair extends CI_Controller {
         $onair12 = new dao_onAir12h_model();
         $ticket12 = new dao_ticketOnAir_model();
         $res2 = $follow12->getfollow12ById($userId)->data;
-
         for ($i = 0; $i < count($res2); $i++) {
             $res3[$i] = $onair12->getOnair12ByFollow($res2[$i]->k_id_follow_up_12h)->data;
             $res = $ticket12->findByIdOnAir($res3[$i]->k_id_onair);
@@ -89,7 +81,6 @@ class TicketOnair extends CI_Controller {
         $onair24 = new dao_onAir24h_model();
         $ticket24 = new dao_ticketOnAir_model();
         $res24 = $follow24->getfollow24ById($userId)->data;
-
         for ($f = 0; $f < count($res24); $f++) {
             $resp[$f] = $onair24->getOnair24ByFollow($res24[$f]->k_id_follow_up_24h)->data;
             $respuesta[$j + $i + $f] = $res->data;
@@ -99,9 +90,7 @@ class TicketOnair extends CI_Controller {
         $onair36 = new dao_onAir36h_model();
         $ticket36 = new dao_ticketOnAir_model();
         $res36 = $follow36->getfollow36ById($userId)->data;
-
         for ($g = 0; $g < count($res36); $g++) {
-
             $respu[$g] = $onair36->getOnair36ByFollow($res36[$g]->k_id_follow_up_36h)->data;
             $respuesta[$j + $i + $f + $g] = $res->data;
         }
@@ -111,12 +100,9 @@ class TicketOnair extends CI_Controller {
         }
         $unique = array_unique($flag);
         $final = array_values($unique);
-
         $ticketUnic = new dao_ticketOnAir_model();
-
         for ($t = 0; $t < count($final); $t++) {
             $ticketUser[$t] = $ticketUnic->findByIdOnAir($final[$t])->data;
-
             $ticketUser[$t]->k_id_band = $band->findById($ticketUser[$t]->k_id_band)->data; //band
             $ticketUser[$t]->k_id_status_onair = $statusOnair->findById($ticketUser[$t]->k_id_status_onair)->data; //Status onair
             $ticketUser[$t]->k_id_station = $station->findById($ticketUser[$t]->k_id_station)->data; //Station
@@ -129,18 +115,55 @@ class TicketOnair extends CI_Controller {
         // header('Content-Type: text/plain');
     }
 
+    public function getAllService() {
+        if (!Auth::check()) {
+            $this->json(new Response(EMessages::SESSION_INACTIVE));
+            return;
+        }
+        $ticketsOnAir = new dao_ticketOnAir_model();
+        $preparatinStage = new dao_preparationStage_model();
+        $station = new dao_station_model();
+        $band = new dao_band_model();
+        $work = new dao_work_model();
+        $technology = new dao_technology_model();
+        $statusOnair = new dao_statusOnair_model();
+        $scaledOnair = new dao_scaledOnair_model();
+        $precheck = new dao_precheck_model();
+        $onair12 = new dao_onAir12h_model();
+        $follow12 = new dao_followUp12h_model();
+        $onair24 = new dao_onAir24h_model();
+        $follow24 = new dao_followUp24h_model();
+        $onair36 = new dao_onAir36h_model();
+        $follow36 = new dao_followUp36h_model();
+        $ticket = 3;
+        $res = $ticketsOnAir->findByIdOnAir($ticket)->data;
+        $res->k_id_preparation = $preparatinStage->findByIdPreparation($res->k_id_preparation)->data;
+        $res->k_id_band = $band->findById($res->k_id_band)->data; //band
+        $res->k_id_status_onair = $statusOnair->findById($res->k_id_status_onair)->data; //Status onair
+        $res->k_id_station = $station->findById($res->k_id_station)->data; //Station
+        $res->k_id_work = $work->findById($res->k_id_work)->data; //work
+        $res->k_id_technology = $technology->findById($res->k_id_technology)->data; //technology
+        $res->scaledOnair = $scaledOnair->getScaledByTicket($res->k_id_onair)->data; //scaledOnair nuevo elemento
+        $res->k_id_precheck = $precheck->getPrecheckByIdPrech($res->k_id_precheck)->data; //precheck
+        $res->onair12 = $onair12->getOnair12ByIdOnair($res->k_id_onair)->data; //onair12 nuevo elemento
+        $res->onair12->k_id_follow_up_12h = $follow12->getfollow12ByIdFollow($res->onair12->k_id_follow_up_12h)->data; //follow up 12
+        $res->onair24 = $onair24->getOnair24ByIdOnair($res->k_id_onair)->data; //onair24 nuevo elemento
+        $res->onair24->k_id_follow_up_24h = $follow24->getfollow24ByIdFollow($res->onair24->k_id_follow_up_24h)->data; //follow up 24
+        $res->onair36 = $onair36->getOnair36ByIdOnair($res->k_id_onair)->data; //onair24 nuevo elemento
+        $res->onair36->k_id_follow_up_36h = $follow36->getfollow36ByIdFollow($res->onair36->k_id_follow_up_36h)->data; //follow up 24
+        $response = new Response(EMessages::QUERY);
+        $response->setData($res);
+        $this->json($response);
+    }
+
     public function insertTicketOnair() {
         $ticket = new dao_ticketOnAir_model();
         $response = $ticket->insertTicket($this->request);
         $this->json($response);
     }
 
-    public function getTicketById2() {
-        $id = $this->request->id;
-        $response = new Response(EMessages::QUERY);
-        $ticket = new dao_ticketOnair_model();
-        $obj = $ticket->findByIdOnAir($id);        
-        $this->json($response);
+    public function assignTicket() {
+        print_r($_POST);
     }
 
 }
