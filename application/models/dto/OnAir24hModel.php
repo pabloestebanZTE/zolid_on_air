@@ -6,6 +6,7 @@ class OnAir24hModel extends Model {
     protected $k_id_onair;
     protected $k_id_follow_up_24h;
     protected $d_fin24h;
+    protected $n_comentario;
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "on_air24h";
@@ -41,6 +42,11 @@ class OnAir24hModel extends Model {
     public function getDFin24h() {
         return $this->d_fin24h;
     }
-
+    public function setNComentario($n_comentario) {
+        $this->n_comentario = $n_comentario;
+    }
+    public function getNComentario() {
+        return $this->n_comentario;
+    }
 
 }

@@ -620,6 +620,12 @@ nav {
     width: 0px;
     height: 3px;
 }
+.hour-step.warning .back-progress-step .progress-step{
+    background-color: red;
+}
+.hour-step.warning .footer-step label{
+    color: #cc0606;
+}
 .hour-step .footer-step{
     padding: 5px 5px 0px 9px;
     color: #525252;    
@@ -630,7 +636,21 @@ nav {
     box-shadow: 0px 0px 3px #ccc;
     border-radius: 0px 0px 3px 3px;
 }
-
+.hour-step.warning .body-step .icon-step{
+    margin-top: -5px;
+    float: right;
+    font-size: 28px;
+    background: #24d0f4!important;
+    background: -moz-linear-gradient(top,#ffec00 0,#ff0000 100%)!important;
+    background: -webkit-linear-gradient(top,#ffec00    59a 0,#ff3b00 100%)!important;
+    background: linear-gradient(to bottom,#ffec00 0,#ff3b00 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffec00', endColorstr='#ff3b00', GradientType=0 )!important;
+    color: #FFF;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
 .hour-step .body-step .icon-step:hover{
     margin-top: -5px;
     float: right;
@@ -638,7 +658,7 @@ nav {
     background: #24d0f4!important;
     background: -moz-linear-gradient(top,#fda59a 0,#ff0000 100%)!important;
     background: -webkit-linear-gradient(top,#fda59a 0,#ff0000 100%)!important;
-    background: linear-gradient(to bottom,#fda59a 0,#ff0000 100%)!important;
+    background: linear-gradient(to bottom,#fda59a 0,#ff0b0b 100%)!important;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fda59a', endColorstr='#ff0000', GradientType=0 )!important;
     color: #FFF;
     border-radius: 50px;
@@ -647,7 +667,10 @@ nav {
     text-align: center;
 }
 .hour-step .body-step .icon-step:hover .fa-clock-o:before {
-    content: "\f04c";            
+     content: "\f04c";
+}
+.hour-step .body-step.danger .icon-step .fa-clock-o:before{
+    content: "\f017";
 }
 .hour-step .body-step .icon-step:hover .fa-clock-o{
     font-size: 24px;
@@ -694,4 +717,7 @@ nav {
 }
 .states-modal li a:hover .icon-state.theme4, .states-modal li a.active .icon-state.theme4{
     background: #ce0017 !important;
+}
+.icon-state.theme3 .fa:before{
+    margin-left: 4px;
 }

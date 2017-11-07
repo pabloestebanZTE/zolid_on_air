@@ -52,6 +52,31 @@
           }
         }
 
+<<<<<<< HEAD
         
+=======
+        public function getAllStatus(){
+          try {
+            $datos = DB::table("status")->get();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+        public function getAllSubstatus(){
+          try {
+            $datos = DB::table("substatus")->get();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+>>>>>>> 232e10a52124c72a7d7759fbf49c054523510a68
     }
 ?>

@@ -106,7 +106,6 @@
         </div>
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
         <script>
           $(function () {
             var ticket = <?php echo $ticket; ?>;
