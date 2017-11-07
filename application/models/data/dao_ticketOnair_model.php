@@ -51,11 +51,37 @@
           }
         }
 
+        public function findByIdSingleOnAir($id){
+          try {
+            $ticketOnAir = new TicketOnAirModel();
+            $datos = $ticketOnAir->where("k_id_onair","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
         public function findByIdPrecheck($id){
           try {
             $ticketOnAir = new TicketOnAirModel();
             $datos = $ticketOnAir->where("k_id_precheck","=",$id)
                           ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
+        public function updateTicket($request){
+          try {
+            $ticketOnAir = new TicketOnAirModel();
+            $datos = $ticketOnAir->where("k_id_onair","=",$request->k_id_ticket)
+                          ->update($request->all());
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
