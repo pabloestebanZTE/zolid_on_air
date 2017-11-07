@@ -135,8 +135,12 @@ class TicketOnair extends CI_Controller {
         $follow24 = new dao_followUp24h_model();
         $onair36 = new dao_onAir36h_model();
         $follow36 = new dao_followUp36h_model();
-        $ticket = 3;
+        $ticket = $this->request->id;
         $res = $ticketsOnAir->findByIdOnAir($ticket)->data;
+        if (!$res) {
+            $this->json(new Response(EMessages::NO_FOUND_REGISTERS));
+            return;
+        }
         $res->k_id_preparation = $preparatinStage->findByIdPreparation($res->k_id_preparation)->data;
         $res->k_id_band = $band->findById($res->k_id_band)->data; //band
         $res->k_id_status_onair = $statusOnair->findById($res->k_id_status_onair)->data; //Status onair
@@ -164,6 +168,25 @@ class TicketOnair extends CI_Controller {
       $response = $ticket->insertTicket($this->request);
       $this->json($response);
     }
+
+    public function getAllStates() {
+        $ticket = new dao_ticketOnAir_model();
+        $response = $ticket->getAllStates();
+        $this->json($response);
+    }
+
+    public function updateTicket() {
+        $ticket = new dao_ticketOnAir_model();
+        $response = $ticket->updateTicket($this->request);
+        $thsi->json($response);
+    }
+
+//    
+//    public function insertTicketOnair() {
+//        $ticket = new dao_ticketOnAir_model();
+//        $response = $ticket->insertTicket($this->request);
+//        $this->json($response);
+//    }
 
     public function assignTicket() {
       $precheck = new dao_precheck_model();

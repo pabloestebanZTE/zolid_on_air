@@ -150,7 +150,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
-                                        <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "">Asignar <span class="fa fa-fw fa-user-plus"></span></button>
+                                        <button type="submit" id="btnAsignar" class="btn btn-success" onclick = "">Asignar <span class="fa fa-fw fa-user-plus"></span></button>
                                     </div>
                                 </div>
                             </center>

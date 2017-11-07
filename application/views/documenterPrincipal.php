@@ -419,20 +419,6 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="cmbDoc" class="col-md-3 control-label">Doc:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbDoc" id="cmbDoc" class="form-control selectpicker" required>
-                                                            <option value="CERRADO">CERRADO</option>
-                                                            <option value="ABIERTO">ABIERTO</option>
-                                                            <option value="NA">NA</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
                                                 <label for="cmbGestionPower" class="col-md-3 control-label">Gestión Power:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">

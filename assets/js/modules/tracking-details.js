@@ -3,6 +3,8 @@ var TD = {
         TD.events();
         TD.configView();
         TD.fillTable([]);
+        TD.getDetail();
+        TD.listCombox();
     },
     events: function () {
         $('#btnDetails').on('click', TD.onClickDetails);
@@ -20,12 +22,52 @@ var TD = {
         var icon = $(this);
         $('#modalChangeState').modal('show');
     },
+    listCombox: function () {
+        TD.listStates();
+    },
+    listStates: function () {
+        var cmbStatus = $('#cmbEstadosTD');
+        var cmbSubStatus = $('#cmbSubEstadosTD');
+        app.post('TicketOnair/getAllStates').success(function (response) {
+            if (response.code > 0) {
+                dom.llenarCombo(cmbStatus, response.data["states"], {text: 'n_name_status', value: 'k_id_status'});
+                dom.llenarCombo(cmbSubStatus, response.data["substates"], {text: 'n_name_substatus', value: 'k_id_substatus'});
+            } else {
+                dom.comboVacio(cmbStatus);
+            }
+        }).error(function (e) {
+            console.error(e);
+            dom.comboVacio(cmbStatus);
+        }).send();
+    },
     configView: function () {
         dom.configCalendar($('#txtFechaIngresoOnAir'));
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
+        dom.configCalendar($('#txtFechaRFT'));
+        dom.configCalendar($('#txtFechaCG'));
+        dom.configCalendar($('#txtFechaBloqueado'));
+        dom.configCalendar($('#txtFechaDesBloqueado'));
         dom.timer($('#timeStep'), 1509706921000, $('#progressStep1'));
         $('select').select2({'width': '100%'});
+    },
+    getDetail: function () {
+        var alert = dom.printAlert('Consultando detalles, por favor espere...', 'loading', $('#principalAlert'));
+        //Consultamos...
+        app.post('TicketOnair/getAllService', {id: app.getParamURL('id')})
+                .success(function (response) {
+                    console.log(response);
+                    if (response.code > 0) {
+                        $('#trackingDetails').removeClass('hidden');
+                        alert.hide();
+                        $('#formDetallesBasicos').fillForm(response.data);
+                    } else {
+                        alert.print("No se encontró ninguna coincidencia", "warning");
+                    }
+                }).error(function (error) {
+            alert.print("Se ha producido un error desconocido, compruebe su conexión a internet y vuelva a intentarlo.", "danger");
+            console.error(error);
+        }).send();
     },
     onClickDetails: function () {
         $('#modalDetailsInit').modal('show');
