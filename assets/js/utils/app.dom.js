@@ -241,8 +241,8 @@ var dom = {
     scrollTop: function () {
         $("html, body").animate({scrollTop: 0}, "slow");
     },
-    submit: function (form) {
-      console.log("Formulairo;",form)
+    submit: function (form, callback) {
+      console.log("Formulairo;",form);
         form.validate();
         var onSubmitForm = function (e) {
             if (e.isDefaultPrevented())
@@ -263,6 +263,9 @@ var dom = {
                 if (app.successResponse) {
                     dom.printAlert(response.message, 'success', form.find('.alert'));
                     form.find('input,textarea,select').val('');
+                    if(typeof callback === "function"){
+                      callback(response);
+                    }
                 } else {
                     dom.printAlert(response.message, 'error', form.find('.alert'));
                 }
