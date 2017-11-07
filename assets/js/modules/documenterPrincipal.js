@@ -8,7 +8,6 @@ var TD = {
         $('#btnDetails').on('click', TD.onClickDetails);
     },
     configView: function () {
-        dom.configCalendar($('#txtFechaIngresoOnAir'));
         dom.configCalendar($('#txtCorrecionPendientes'));
         dom.configCalendar($('#txtFechaApertura'));
         dom.configCalendar($('#txtDesbloqueo'));
