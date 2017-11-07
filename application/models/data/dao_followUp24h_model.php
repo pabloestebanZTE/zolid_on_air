@@ -35,5 +35,18 @@
           }
         }
 
+        public function getfollow24ByIdFollow($id){
+          try {
+            $follow24 = new FollowUp24hModel();
+            $datos = $follow24->where("k_id_follow_up_24h","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
     }
 ?>

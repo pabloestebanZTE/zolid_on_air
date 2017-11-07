@@ -26,7 +26,7 @@
           try {
             $scaledOnair = new ScaledOnAirMOdel();
             $datos = $scaledOnair->where("k_id_onair","=",$ticket)
-                          ->get();
+                          ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;

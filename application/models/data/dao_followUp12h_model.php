@@ -26,7 +26,7 @@
           try {
             $follow12 = new FollowUp12hModel();
             $datos = $follow12->where("k_id_user","=",$idUser)
-                          ->get();
+                          ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
@@ -35,6 +35,18 @@
           }
         }
 
+        public function getfollow12ByIdFollow($id){
+          try {
+            $follow12 = new FollowUp12hModel();
+            $datos = $follow12->where("k_id_follow_up_12h","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
 
 
     }

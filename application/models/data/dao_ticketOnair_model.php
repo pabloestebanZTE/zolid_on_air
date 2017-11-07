@@ -39,6 +39,10 @@
             $ticketOnAir = new TicketOnAirModel();
             $datos = $ticketOnAir->where("k_id_onair","=",$id)
                           ->first();
+            //Evaluamos si se encontró algún registro.
+            if($datos){
+                $datos->k_id_onair = DB::table("work")->where("k_id_work")->get();
+            }
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;

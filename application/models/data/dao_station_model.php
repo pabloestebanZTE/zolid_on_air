@@ -8,6 +8,8 @@
 
         public function __construct(){
            $this->load->model('dto/StationModel');
+           $this->load->model('dto/CityModel');
+           $this->load->model('dto/RegionalModel');
         }
         public function getAll(){
           try {
@@ -24,25 +26,21 @@
         public function findById($id){
           try {
             $station = new StationModel();
+            $city = new CityModel();
+            $regionalModel = new RegionalModel();
             $datos = $station->where("k_id_station","=",$id)
                           ->first();
-            $response = new Response(EMessages::SUCCESS);
-            $response->setData($datos);
-            $response->data->k_id_city = $this->findCityById($response->data->k_id_city)->data;//city
-
-            if($response->data->k_id_city){
-              $response->data->k_id_city->k_id_regional = $this->findRegionalById($response->data->k_id_city->k_id_regional)->data;//regional
+            //Consltamos la ciudad...
+            $cityObj = $city->where("k_id_city", "=", $datos->k_id_city)
+                          ->first();
+            if($cityObj){
+              $datos->k_id_city = $cityObj;
+              //Consultamos la regional.
+              $regionalObj = $regionalModel->where("k_id_regional", "=", $datos->k_id_city->k_id_regional)->first();
+              if($regionalObj){
+                  $datos->k_id_city->k_id_regional = $regionalObj;
+              }
             }
-            return $response;
-          } catch (ZolidException $ex) {
-            return $ex;
-          }
-        }
-
-        public function findCityById($id){
-          try {
-            $datos = DB::table("city")->where("k_id_city","=", $id)
-                                  ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
@@ -72,20 +70,6 @@
             return $ex;
           }
         }
-
-        public function findRegionalById($id){
-          try {
-            $datos = DB::table("regional")->where("k_id_regional","=", $id)
-                                  ->first();
-            $response = new Response(EMessages::SUCCESS);
-            $response->setData($datos);
-            return $response;
-          } catch (ZolidException $ex) {
-            return $ex;
-          }
-
-        }
-
 
     }
 ?>

@@ -35,6 +35,19 @@
           }
         }
 
+        public function getfollow36ByIdFollow($id){
+          try {
+            $follow36 = new FollowUp36hModel();
+            $datos = $follow36->where("k_id_follow_up_36h","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
+
 
     }
 ?>
