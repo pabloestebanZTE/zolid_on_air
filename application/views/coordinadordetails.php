@@ -20,10 +20,9 @@
                         <div id="collapse1" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <form class="form-horizontal well">
-                                    <div class="panel-body">                                                                   
+                                    <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label for="txtEstacion" class="col-md-3 control-label">Estacion:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -33,7 +32,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtBanda" class="col-md-3 control-label">Banda:</label>
+                                                <label class="col-md-3 control-label">Banda</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
@@ -43,7 +42,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtRegional" class="col-md-3 control-label">Regional:</label>
+                                                <label class="col-md-3 control-label">Regional</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
@@ -53,41 +52,13 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtIngeniero" class="col-md-3 control-label">Ingeniero:</label>
+                                                <label class="col-md-3 control-label">Ingeniero</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" name="txtIngeniero" id="txtIngeniero" class="form-control" value="" readonly="false">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="txtFechaIngresoOnAir" class="col-md-3 control-label">Fecha ingreso On Air:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
-                                                        <input type="text" name="txtFechaIngresoOnAir" id="txtFechaIngresoOnAir" class="form-control" value="" readonly="false" maxlength="10" placeholder="DD/MM/AAAA">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="txtCRQ" class="col-md-3 control-label">CRQ:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-drivers-license"></i></span>
-                                                        <input type="text" name="txtCRQ" id="txtCRQ" class="form-control" value="" readonly="false">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="txtWP" class="col-md-3 control-label">WP:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-drivers-license"></i></span>
-                                                        <input type="text" name="txtWP" id="txtWP" class="form-control" value="" readonly="false">
+                                                        <select name="cbmIngeniero" id="cbmIngeniero" class="form-control selectpicker" required="">
+                                                            <option value="">Seleccione el ingeniero</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,7 +68,7 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label for="txtTecnologia" class="col-md-3 control-label">Tecnologia:</label>
+                                                <label class="col-md-3 control-label">Tecnologia</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
@@ -107,7 +78,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtTipotrabajo" class="col-md-3 control-label">Tipo de trabajo:</label>
+                                                <label class="col-md-3 control-label">Tipo de trabajo</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
@@ -117,41 +88,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtciudad" class="col-md-3 control-label">Ciudad:</label>
+                                                <label class="col-md-3 control-label">Ciudad</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                        <input type="text" name="txtciudad" id="txtciudad" class="form-control" value="" readonly="false">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="txtEnteEjecutor" class="col-md-3 control-label">Ente Ejecutor:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-address-book"></i></span>
-                                                        <input type="text" name="txtEnteEjecuto" id="txtEnteEjecuto" class="form-control" value="" readonly="false">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="txtEstado" class="col-md-3 control-label">Estado:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
-                                                        <input type="text" name="txtEstado" id="txtEstado" class="form-control" value="" readonly="false">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="txtSubestado" class="col-md-3 control-label">subestado:</label>
-                                                <div class="col-md-8 selectContainer">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
-                                                        <input type="text" name="txtSubestado" id="txtSubestado" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="txtTipotrabajo" id="txtTipotrabajo" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>

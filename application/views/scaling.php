@@ -14,8 +14,12 @@
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
-                                            <input type='text' name="txtAtribuibleNokia" id="txtAtribuibleNokia" class="form-control" value='' placeholder="DD/MM/YYYY">
-                                            <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
+                                            <select class="form-control input-sm" name="" id="txtAtribuibleNokia" name="txtAtribuibleNokia">
+                                                <option value="">Seleccione</option>
+                                                <option value="1">SI</option>
+                                                <option value="2">NO</option>
+                                                <option value="3">NA</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +29,8 @@
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
-                                            <input type='text' name="txtTimeEscalado" id="txtTimeEscalado" class="form-control" value='' >
+                                            <input type='text' name="txtTimeEscalado" id="txtTimeEscalado" class="form-control" value='' placeholder="DD/MM/YYYY">
+                                            <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -49,7 +54,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscImp" class="col-md-3 control-label">Time esc imp:</label>
                                     <div class="col-md-8 selectContainer">
@@ -59,7 +64,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtContEscRF" class="col-md-3 control-label">Cont esc RF:</label>
                                     <div class="col-md-8 selectContainer">
@@ -69,7 +74,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscRF" class="col-md-3 control-label">Time esc RF:</label>
                                     <div class="col-md-8 selectContainer">
@@ -79,7 +84,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtContEscNpo" class="col-md-3 control-label">Cont esc NPO:</label>
                                     <div class="col-md-8 selectContainer">
@@ -89,7 +94,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscNpo" class="col-md-3 control-label">Time Esc NPO:</label>
                                     <div class="col-md-8 selectContainer">
@@ -99,7 +104,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtContEscCare" class="col-md-3 control-label">Cont esc care:</label>
                                     <div class="col-md-8 selectContainer">
@@ -109,7 +114,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscCare" class="col-md-3 control-label">Time esc care:</label>
                                     <div class="col-md-8 selectContainer">
@@ -153,7 +158,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscOym" class="col-md-3 control-label">Time esc OyM:</label>
                                     <div class="col-md-8 selectContainer">
@@ -163,7 +168,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtContEscCalidad" class="col-md-3 control-label">Cont esc calidad:</label>
                                     <div class="col-md-8 selectContainer">
@@ -173,7 +178,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscCalidad" class="col-md-3 control-label">Time esc calidad:</label>
                                     <div class="col-md-8 selectContainer">
@@ -183,7 +188,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtTimeEscCalidad" class="col-md-3 control-label">Time esc calidad:</label>
                                     <div class="col-md-8 selectContainer">
@@ -193,17 +198,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtAtribuibleNokia2" class="col-md-3 control-label">Atribuible a nokia 2:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                            <input type='text' name="txtAtribuibleNokia2" id="txtAtribuibleNokia2" class="form-control" value='' >
+                                            <select class="form-control input-sm" name="" id="txtAtribuibleNokia2" name="txtAtribuibleNokia2">
+                                                <option value="">Seleccione</option>
+                                                <option value="1">SI</option>
+                                                <option value="2">NO</option>
+                                                <option value="3">NA</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtAtribuibleNokia2" class="col-md-3 control-label">Tipificacion solucion:</label>
                                     <div class="col-md-8 selectContainer">
@@ -213,7 +223,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtAtribuibleNokia2" class="col-md-3 control-label">Detalle solucion:</label>
                                     <div class="col-md-8 selectContainer">
@@ -223,7 +233,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <label for="txtUltimoSubestadoEscalamiento" class="col-md-3 control-label">Ultimo subestado de escalamiento:</label>
                                     <div class="col-md-8 selectContainer">
@@ -255,6 +265,8 @@
         </div>
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
-        <script src="<?= URL::to('assets/js/modules/principal.js') ?>" type="text/javascript"></script>
+        <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
+        <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
+        <script src="<?= URL::to('assets/js/modules/scaling.js') ?>" type="text/javascript"></script>
     </body>
 </html>

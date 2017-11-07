@@ -104,6 +104,10 @@ class User extends CI_Controller {
     public function scaling() {
         $this->load->view('scaling');
     }
+    
+    public function coordinadordetails() {
+        $this->load->view('coordinadordetails');
+    }
 
     public function createTicketOnair() {
         $station = new dao_station_model();

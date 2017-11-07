@@ -49,6 +49,19 @@
         }
       }
 
+      public function getOnair24ByIdOnair($id){
+        try {
+          $onair24 = new OnAir24hModel();
+          $datos = $onair24->where("k_id_onair","=",$id)
+                        ->first();
+          $response = new Response(EMessages::SUCCESS);
+          $response->setData($datos);
+          return $response;
+        } catch (ZolidException $ex) {
+          return $ex;
+        }
+      }
+
 
 
   }
