@@ -5,7 +5,7 @@
  */
 
 var dom = {
-//Para agregar todas las interacciones del dom genericas.
+    //Para agregar todas las interacciones del dom genericas.
     init: function () {
 
         try {
@@ -242,7 +242,7 @@ var dom = {
     scrollTop: function () {
         $("html, body").animate({scrollTop: 0}, "slow");
     },
-    submit: function (form, callback) {
+    submit: function (form, callback, clearForm) {
         form.validate();
         var onSubmitForm = function (e) {
             if (e.isDefaultPrevented())
@@ -262,7 +262,10 @@ var dom = {
             }).success(function (response) {
                 if (app.successResponse(response)) {
                     dom.printAlert(response.message, 'success', form.find('.alert'));
-                    form.find('input,textarea,select').val('');
+                    if (clearForm != false) {
+                        form.find('input:not([type="hidden"]),textarea,select').val('');
+                        form.find('select.select2-hidden-accessible').trigger('change.select2');
+                    }
                     if (typeof callback === "function") {
                         callback(response);
                     }
