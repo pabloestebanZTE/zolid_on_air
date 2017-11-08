@@ -611,25 +611,25 @@
             var fields = <?php echo $fields; ?>;
             console.log(fields);
             $('input[name=n_integrador]').val(fields.k_id_preparation.n_integrador);
-          //  $('input[name=n_testgestion]').val(fields.k_id_preparation.n_testgestion);
             $('#n_testgestion option[value="'+fields.k_id_preparation.n_testgestion+'"]').attr('selected', 'selected');
-        //    $('.n_testgestion option[value="'+fields.k_id_preparation.n_testgestion+'"]')
-            $('input[name=n_sitiolimpio]').val(fields.k_id_preparation.n_sitiolimpio);
-            $('input[name=n_instalacion_hw_sitio]').val(fields.k_id_preparation.n_instalacion_hw_sitio);
-            $('input[name=n_cambios_config_solicitados]').val(fields.k_id_preparation.n_cambios_config_solicitados);
-            $('input[name=n_cambios_config_final]').val(fields.k_id_preparation.n_cambios_config_final);
+            $('#n_sitiolimpio option[value="'+fields.k_id_preparation.n_sitiolimpio+'"]').attr('selected', 'selected');
+            $('#n_instalacion_hw_sitio option[value="'+fields.k_id_preparation.n_instalacion_hw_sitio+'"]').attr('selected', 'selected');
+            $('#n_cambios_config_solicitados option[value="'+fields.k_id_preparation.n_cambios_config_solicitados+'"]').attr('selected', 'selected');
+            $('#n_cambios_config_final option[value="'+fields.k_id_preparation.n_cambios_config_final+'"]').attr('selected', 'selected');
             $('input[name=n_contratista__]').val(fields.k_id_preparation.n_contratista__);
-            $('input[name=n_integracion_gestion_y_trafica]').val(fields.k_id_preparation.n_integracion_gestion_y_trafica);
-            $('input[name=puesta_servicio_sitio_nuevo_lte__]').val(fields.k_id_preparation.puesta_servicio_sitio_nuevo_lte__);
-            $('input[name=n_instalacion_hw_4g_sitio__]').val(fields.k_id_preparation.n_instalacion_hw_4g_sitio__);
-            $('input[name=pre_launch]').val(fields.k_id_preparation.pre_launch);
+            $('#n_integracion_gestion_y_trafica option[value="'+fields.k_id_preparation.n_integracion_gestion_y_trafica+'"]').attr('selected', 'selected');
+            $('#puesta_servicio_sitio_nuevo_lte__ option[value="'+fields.k_id_preparation.puesta_servicio_sitio_nuevo_lte__+'"]').attr('selected', 'selected');
+            $('#n_instalacion_hw_4g_sitio__ option[value="'+fields.k_id_preparation.n_instalacion_hw_4g_sitio__+'"]').attr('selected', 'selected');
+            $('#pre_launch option[value="'+fields.k_id_preparation.pre_launch+'"]').attr('selected', 'selected');
             $('input[name=n_evidenciasl__]').val(fields.k_id_preparation.n_evidenciasl__);
             $('input[name=n_evidenciatg]').val(fields.k_id_preparation.n_evidenciatg);
             $('input[name=id_rftools__]').val(fields.k_id_preparation.id_rftools__);
             $('input[name=i_lider_cambio]').val(fields.i_lider_cambio);
             $('input[name=i_lider_cuadrilla]').val(fields.i_lider_cuadrilla);
-            $('input[name=n_implementacion_campo__]').val(fields.n_implementacion_campo__);
-            $('input[name=n_gestion_power__]').val(fields.n_gestion_power__);
+            $('#n_implementacion_campo__ option[value="'+fields.n_implementacion_campo__+'"]').attr('selected', 'selected');
+            $('#n_gestion_power__ option[value="'+fields.n_gestion_power__+'"]').attr('selected', 'selected');
+
+
             $('input[name=n_obra_civil__]').val(fields.n_obra_civil__);
             $('input[name=on_air__]').val(fields.on_air__);
             $('input[name=n_noc]').val(fields.n_name_band);
