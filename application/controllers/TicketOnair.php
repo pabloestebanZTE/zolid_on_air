@@ -195,6 +195,7 @@ class TicketOnair extends CI_Controller {
         $response = $precheck->insertPrecheck($this->request);
         $this->request->k_id_precheck = $response->data->data;
         $response = $ticket->updatePrecheckOnair($this->request);
+        $this->json($response);
     }
 
 }
