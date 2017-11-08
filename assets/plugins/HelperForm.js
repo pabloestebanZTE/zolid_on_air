@@ -25,7 +25,7 @@ $.fn.fillForm = function (data) {
                 default:
                     var callback = $el.attr('data-callback');
                     if (callback) {
-                        val = eval(callback + '("' + val + '")');
+                        val = eval(callback + '("' + val + '", "fillForm")');
                     }
                     $el.val(val);
             }
@@ -115,7 +115,7 @@ $.fn.getFormData = function () {
                 let val = $el.val();
                 var callback = $el.attr('data-callback');
                 if (callback) {
-                    val = eval(callback + '("' + val + '")');
+                    val = eval(callback + '("' + val + '", "getFormData")');
                 }
                 pushObject(nameEl, val, nameEntity);
                 break;
