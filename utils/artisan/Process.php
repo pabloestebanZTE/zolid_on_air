@@ -41,7 +41,7 @@ class Process {
         $name_table = $this->args[0];
         require_once PATH_UTILS . "artisan/bin/CamelTypes.php";
         $path = PATH_MODELS;
-        $className = CamelTypes::camelCase($name_table);
+        $className = CamelTypes::camelCase($name_table) . "Model";
         $file = new File($path . "$className.php");
         $fileModel = PATH_UTILS . "artisan/source/Model.dpy";
         if (isset($this->args[1])) {
@@ -76,7 +76,6 @@ class Process {
         $content = str_replace("ATTRIBUTES", $atributes, $content);
         $content = str_replace("NAME_TABLE", $name_table, $content);
         $content = str_replace("GETTERANDSETTERS", $getterandsetters, $content);
-        echo $content;
         $file->write($content);
         echo $className . " --> Creado correctamente.";
     }
