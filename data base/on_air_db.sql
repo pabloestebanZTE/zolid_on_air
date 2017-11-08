@@ -157,7 +157,7 @@ create table preparation_stage
    n_bcf_wbts_id        varchar(100),
    n_bts_id             varchar(100),
    d_ingreso_on_air     datetime,
-   b_vistamm            bool,
+   b_vistamm            boolean,
    n_enteejecutor       varchar(100),
    n_controlador        varchar(100),
    n_idcontrolador      varchar(100),

@@ -19,6 +19,7 @@ class Precheck extends CI_Controller {
         $this->load->model('data/Dao_statusOnair_model');
         $this->load->model('data/Dao_precheck_model');
         $this->load->model('data/Dao_followUp12h_model');
+        $this->load->model('data/Dao_preparationStage_model');
         $this->load->model('data/Dao_precheck_model');
     }
 
@@ -50,6 +51,12 @@ class Precheck extends CI_Controller {
             $res[$j]->k_id_technology = $technology->findById($res[$j]->k_id_technology)->data; //technology
         }
         return $res;
+    }
+
+    public function doPrecheck(){
+      $preparation =  new Dao_preparationStage_model();
+      $response = $preparation->updatePreparationStage($this->request)->data;
+      print_r($response);
     }
 
 }

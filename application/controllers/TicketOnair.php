@@ -182,7 +182,7 @@ class TicketOnair extends CI_Controller {
         $this->json($response);
     }
 
-//    
+//
 //    public function insertTicketOnair() {
 //        $ticket = new dao_ticketOnAir_model();
 //        $response = $ticket->insertTicket($this->request);
@@ -194,7 +194,7 @@ class TicketOnair extends CI_Controller {
         $ticket = new dao_ticketOnAir_model();
         $response = $precheck->insertPrecheck($this->request);
         $this->request->k_id_precheck = $response->data->data;
-        $response = $ticket->updateTicket($this->request);
+        $response = $ticket->updatePrecheckOnair($this->request);
     }
 
 }

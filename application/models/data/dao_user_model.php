@@ -40,7 +40,7 @@
 
         public function findById($request){
           try {
-            $user = new User();
+            $user = new UserModel();
             $datos = $user->where("k_id_user","=",$request->idUser)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
@@ -51,10 +51,11 @@
           }
         }
 
-        public function getPrecheckUser($id){
+        public function findBySingleId($id){
           try {
-            $datos = DB::table("regional")->where("k_id_regional","=", $id)
-                                  ->first();
+            $user = new UserModel();
+            $datos = $user->where("k_id_user","=",$id)
+                          ->first();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
@@ -62,6 +63,5 @@
             return $ex;
           }
         }
-
     }
 ?>

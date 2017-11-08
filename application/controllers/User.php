@@ -13,6 +13,7 @@ class User extends CI_Controller {
         $this->load->model('data/Dao_work_model');
         $this->load->model('data/Dao_technology_model');
         $this->load->model('data/dao_preparationStage_model');
+        $this->load->model('data/dao_precheck_model');
         $this->load->model('data/dao_statusOnair_model');
     }
 
@@ -168,12 +169,13 @@ class User extends CI_Controller {
 
     public function doPrecheck(){
   //    $id = $this->request->idOnair;
-      $id = 60;
+      $id = 40;
       $ticketOnAir = new dao_ticketOnAir_model();
       $station = new dao_station_model();
       $band = new dao_band_model();
       $work = new dao_work_model();
       $technology = new dao_technology_model();
+      $precheck =  new dao_precheck_model();
       $users = new Dao_user_model();
       $PS = new dao_preparationStage_model();
       $status = new dao_statusOnair_model();
@@ -186,7 +188,8 @@ class User extends CI_Controller {
       $response->data->k_id_technology = $technology->findById($response->data->k_id_technology)->data;
       $response->data->k_id_work = $work->findById($response->data->k_id_work)->data;
       $response->data->k_id_status_onair = $status->findById($response->data->k_id_status_onair)->data;
-      $answer['user'] = json_encode($users->getPrecheckUser($id));
+      $response->data->k_id_precheck = $precheck->getPrecheckByIdPrech($response->data->k_id_precheck)->data;
+      $response->data->k_id_precheck->k_id_user = $users->findBySingleId($response->data->k_id_precheck->k_id_user)->data;
       $answer['ticket'] = json_encode($response->data);
       $this->precheck($answer);
     }

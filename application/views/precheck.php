@@ -6,7 +6,7 @@
         <div class="container autoheight">
             <div class='tab-content' id='tab3'><brt><br>
                     <div class="container">
-                        <form class="well form-horizontal" action=" " method="post"  id="assignService" name="assignServie">
+                        <form class="well form-horizontal" action="Precheck/doPrecheck" method="post"  id="precheckForm" name="precheckForm">
                             <legend>Confirmar precheck</legend>
                             <fieldset class="col-md-6 control-label">
                                 <div class="form-group">
@@ -191,13 +191,15 @@
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
-                                            <select name="k_id_technology" id="k_id_technology" class="form-control selectpicker" required>
-                                                <option value="TRUE" >TRUE</option><option value="FALSE" >FALSE</option>
+                                            <select name="b_vistamm" id="b_vistamm" class="form-control selectpicker" required>
+                                                <option value="true" >TRUE</option><option value="false" >FALSE</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </fieldset>
+                            <input type='hidden' name="k_id_preparation" id="k_id_preparation" class="form-control" value='' required>
+
                             <!--   fin seccion derecha---->
 
                             <!-- Button -->
@@ -222,6 +224,7 @@
         <script>
           $(function () {
             var ticket = <?php echo $ticket; ?>;
+            console.log(ticket);
             $('input[name=txtEstacion]').val(ticket.k_id_station.n_name_station);
             $('input[name=txtBanda]').val(ticket.k_id_band.n_name_band);
             $('input[name=txtRegional]').val(ticket.k_id_station.k_id_city.k_id_regional.n_name_regional);
@@ -235,8 +238,17 @@
             $('input[name=txtEstado]').val(ticket.k_id_status_onair.k_id_status.n_name_status);
             $('input[name=txtSubestado]').val(ticket.k_id_status_onair.k_id_substatus.n_name_substatus);
             $('input[name=k_id_ticket]').val(ticket.k_id_onair);
-
+            $('input[name=txtIngeniero]').val(ticket.k_id_precheck.k_id_user.n_name_user+" "+ticket.k_id_precheck.k_id_user.n_last_name_user);
+            $('input[name=k_id_preparation]').val(ticket.k_id_preparation.k_id_preparation);
           })
+        </script>
+        <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
+        <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(function(){
+          dom.submit($('#precheckForm'));
+        })
+        // , function(){location.href = app.urlTo('User/principalView');}
         </script>
     </body>
 </html>

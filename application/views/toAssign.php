@@ -195,10 +195,9 @@
         <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
         <script type="text/javascript">
         $(function(){
-          dom.submit($('#assignEng'), function(){
-            location.href = app.urlTo('User/principalView');
-          });
+          dom.submit($('#assignEng'));
         })
+        // , function(){location.href = app.urlTo('User/principalView');}
         </script>
     </body>
 </html>
