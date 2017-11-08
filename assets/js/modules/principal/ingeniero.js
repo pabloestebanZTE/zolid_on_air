@@ -36,10 +36,10 @@ $(function () {
         fillNA: function () {
             return "N/A";
         },
-        getButtons: function () {
+        getButtons: function (obj) {
             return '<div class="btn-group">'
-                    + '<a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="seguimiento"><span class="fa fa-fw fa-history"></span></a>'
-                    + '<a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="Documentación"><span class="fa fa-fw fa-file-archive-o"></span></a>'
+                    + '<a href="#" class="btn btn-default btn-xs" data-toggle="tooltip" title="Seguimiento"><span class="fa fa-fw fa-history"></span></a>'
+                    + '<a href="' + app.urlTo('User/assignEngineer?idOnair=' + obj.k_id_onair) + '" class="btn btn-default btn-xs" data-toggle="tooltip" title="Precheck"><span class="fa fa-fw fa-file-archive-o"></span></a>'
                     + '</div>';
         },
         fillTable: function (data) {

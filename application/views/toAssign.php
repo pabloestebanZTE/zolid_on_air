@@ -199,7 +199,6 @@
                     location.href = app.urlTo('User/principalView');
                 });
             })
-            // , function(){location.href = app.urlTo('User/principalView');}
         </script>
     </body>
 </html>
