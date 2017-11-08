@@ -177,7 +177,6 @@ class TicketOnair extends CI_Controller {
 
     public function updateTicket() {
         $ticket = new dao_ticketOnAir_model();
-//        $response = new Response(EMessages::CORRECT);
         $response = $ticket->updateTicket($this->request);
         $this->json($response);
     }
