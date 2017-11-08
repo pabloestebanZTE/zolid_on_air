@@ -14,4 +14,4 @@
     </div>
 </div>
 <?php $this->load->view('parts/generic/scripts'); ?>
-<script type="text/javascript" src="<?= URL::to("assets/js/modules/principal/principal.js") ?>"></script>
+<script type="text/javascript" src="<?= URL::to("assets/js/modules/principal/ingeniero.js") ?>"></script>

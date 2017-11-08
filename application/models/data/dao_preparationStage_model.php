@@ -23,7 +23,30 @@
           }
         }
 
+        public function insertPreparationStage($request){
+          try {
+            $PS = new PreparationStageModel();
+            $datos = $PS->insert($request->all());
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
 
+        public function updatePreparationStage($request){
+          try {
+            $preparation = new PreparationStageModel();
+            $datos = $preparation->where("k_id_preparation","=",$request->k_id_preparation)
+                          ->update($request->all());
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
 
     }
 ?>

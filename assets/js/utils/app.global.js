@@ -22,7 +22,7 @@ var app = {
         }
         return response;
     },
-    base: function (url) {
+    urlTo: function (url) {
         return app.urlbase + url;
     },
     successResponse: function (response) {
@@ -77,25 +77,25 @@ var app = {
         //app.ajax(ajax);
     },
     methods: {
-      before: function(callback){
-        this.ajax.before = callback;
-        return this;
-      },
-      complete: function(callback){
-        this.ajax.complete = callback;
-        return this;
-      },
-      success: function(callback){
-        this.ajax.success = callback;
-        return this;
-      },
-      error: function(callback){
-        this.ajax.error = callback;
-        return this;
-      },
-      send: function(){
-        app.ajax(this.ajax);
-      }
+        before: function (callback) {
+            this.ajax.before = callback;
+            return this;
+        },
+        complete: function (callback) {
+            this.ajax.complete = callback;
+            return this;
+        },
+        success: function (callback) {
+            this.ajax.success = callback;
+            return this;
+        },
+        error: function (callback) {
+            this.ajax.error = callback;
+            return this;
+        },
+        send: function () {
+            app.ajax(this.ajax);
+        }
     },
     getObjectAjax(url, data, success, error, method, before, complete) {
         var ajax = new Object();
@@ -134,4 +134,10 @@ var app = {
         }
         return returnArray;
     },
+    getParamURL: function (param) {
+        var url = new URL(location.href);
+        var c = url.searchParams.get(param);
+        console.log(c);
+        return c;
+    }
 };

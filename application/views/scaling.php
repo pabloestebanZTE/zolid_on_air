@@ -28,9 +28,9 @@
                                     <label for="txtTimeEscalado" class="col-md-3 control-label">Time escalado:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtTimeEscalado" id="txtTimeEscalado" class="form-control" value='' placeholder="DD/MM/YYYY">
-                                            <div class="input-group-btn"><button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button></div>
+                                            <div class="input-group-btn"><button class="btn btn-default"><i class="fa fa-fw fa-calendar"></i></button></div>
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +59,7 @@
                                     <label for="txtTimeEscImp" class="col-md-3 control-label">Time esc imp:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtTimeEscImp" id="txtTimeEscImp" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -79,7 +79,7 @@
                                     <label for="txtTimeEscRF" class="col-md-3 control-label">Time esc RF:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtTimeEscRF" id="txtTimeEscRF" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                     <label for="txtTimeEscNpo" class="col-md-3 control-label">Time Esc NPO:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtContEscNpo" id="txtContEscNpo" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@
                                     <label for="txtTimeEscCare" class="col-md-3 control-label">Time esc care:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtTimeEscCare" id="txtTimeEscCare" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                     <label for="txtTimeEscGDRT" class="col-md-3 control-label">Time esc GDRT:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtTimeEscGDRT" id="txtTimeEscGDRT" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -163,7 +163,7 @@
                                     <label for="txtTimeEscOym" class="col-md-3 control-label">Time esc OyM:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendarw"></i></span>
                                             <input type='text' name="txtTimeEscOym" id="txtTimeEscOym" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -183,17 +183,7 @@
                                     <label for="txtTimeEscCalidad" class="col-md-3 control-label">Time esc calidad:</label>
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                            <input type='text' name="txtTimeEscCalidad" id="txtTimeEscCalidad" class="form-control" value='' >
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="txtTimeEscCalidad" class="col-md-3 control-label">Time esc calidad:</label>
-                                    <div class="col-md-8 selectContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
+                                            <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
                                             <input type='text' name="txtTimeEscCalidad" id="txtTimeEscCalidad" class="form-control" value='' >
                                         </div>
                                     </div>
@@ -204,7 +194,7 @@
                                     <div class="col-md-8 selectContainer">
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                            <select class="form-control input-sm" name="" id="txtAtribuibleNokia2" name="txtAtribuibleNokia2">
+                                            <select class="form-control" name="" id="txtAtribuibleNokia2" name="txtAtribuibleNokia2">
                                                 <option value="">Seleccione</option>
                                                 <option value="1">SI</option>
                                                 <option value="2">NO</option>
@@ -251,7 +241,7 @@
                                 <div class="form-group">
                                     <label class="col-md-12 control-label"></label>
                                     <div class="col-md-12">
-                                        <button type="submit" id="btnAsignar" class="btn btn-primary" onclick = "">Escalar <span class="fa fa-fw fa-user-plus"></span></button>
+                                        <button type="submit" id="btnAsignar" class="btn btn-success" onclick = "">Escalar <span class="fa fa-fw fa-user-plus"></span></button>
                                     </div>
                                 </div>
                             </center>

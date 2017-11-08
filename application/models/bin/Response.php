@@ -44,7 +44,7 @@ class Response {
     }
 
     public function get() {
-      return "HOLLA";
+        return "HOLLA";
         return $this->json($this);
     }
 

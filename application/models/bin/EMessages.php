@@ -20,6 +20,7 @@ class EMessages {
     const ERROR_DELETE = -8;
     const ERROR_ACTION = -9;
     const ERROR_FATAL = -10;
+    const NO_FOUND_REGISTERS = -11;
 
     public static function getResponse($code) {
         switch ($code) {
@@ -56,6 +57,8 @@ class EMessages {
                 return new Response(1, "La sesión se encuentra inactiva.");
             case EMessages::NOT_ALLOWED:
                 return new Response(-5, "No tienes permisos");
+            case EMessages::NO_FOUND_REGISTERS:
+                return new Response(0, "No se encontraron registros");
         }
     }
 

@@ -40,7 +40,7 @@
 
         public function findById($request){
           try {
-            $user = new User();
+            $user = new UserModel();
             $datos = $user->where("k_id_user","=",$request->idUser)
                           ->first();
             $response = new Response(EMessages::SUCCESS);
@@ -51,5 +51,17 @@
           }
         }
 
+        public function findBySingleId($id){
+          try {
+            $user = new UserModel();
+            $datos = $user->where("k_id_user","=",$id)
+                          ->first();
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+          } catch (ZolidException $ex) {
+            return $ex;
+          }
+        }
     }
 ?>

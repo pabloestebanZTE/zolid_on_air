@@ -36,10 +36,15 @@ $(function () {
         fillNA: function () {
             return "N/A";
         },
-        getButtons: function (obj) {
+        getButtonsPending: function (obj) {
             return '<div class="btn-group">'
-                    + '<a href="' + app.base('User/trackingDetails') + '" class="btn btn-default btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>'
-                    + '<a href="' + app.base('User/assignEngineer?idUser=' + obj.k_id_onair) + '" class="btn btn-default btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>'
+                    + '<a href="' + app.urlTo('User/trackingDetails') + '" class="btn btn-default btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>'
+                    + '<a href="' + app.urlTo('User/assignEngineer?idOnair=' + obj.k_id_onair) + '" class="btn btn-default btn-xs" data-toggle="tooltip" title="Asignar"><span class="fa fa-fw fa-sign-in"></span></a>'
+                    + '</div>';
+        },
+        getButtonsAssing: function (obj) {
+            return '<div class="btn-group">'
+                    + '<a href="' + app.urlTo('User/trackingDetails') + '" class="btn btn-default btn-xs" data-toggle="tooltip" title="Detalle"><span class="fa fa-fw fa-eye"></span></a>'
                     + '</div>';
         },
         fillTablePending: function (data) {
@@ -58,7 +63,7 @@ $(function () {
                         {title: "Tecnologia", data: 'k_id_technology.n_name_technology'},
                         {title: "Banda", data: 'k_id_band.n_name_band'},
                         {title: "Encargado", data: principal.fillNA},
-                        {title: "Opciones", data: principal.getButtons},
+                        {title: "Opciones", data: principal.getButtonsPending},
                     ]
                     ));
         },
@@ -78,7 +83,7 @@ $(function () {
                         {title: "Tecnologia", data: 'k_id_technology.n_name_technology'},
                         {title: "Banda", data: 'k_id_band.n_name_band'},
                         {title: "Encargado", data: principal.fillNA},
-                        {title: "Opciones", data: principal.getButtons},
+                        {title: "Opciones", data: principal.getButtonsAssing},
                     ]
                     ));
         },

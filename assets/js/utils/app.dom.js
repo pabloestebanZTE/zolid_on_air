@@ -8,17 +8,17 @@ var dom = {
 //Para agregar todas las interacciones del dom genericas.
     init: function () {
 
-      try {
-        $('body').on('click', '.alert .close', function () {
-          $(this).parent().hide();
-        });
-        $('[data-toggle="tooltip"]').tooltip();
-        $('.container.autoheight').css('min-height', screen.height + 'px');
-        dom.events();
+        try {
+            $('body').on('click', '.alert .close', function () {
+                $(this).parent().hide();
+            });
+            $('[data-toggle="tooltip"]').tooltip();
+            $('.container.autoheight').css('min-height', screen.height + 'px');
+            dom.events();
 
-      } catch (e) {
+        } catch (e) {
 
-      }
+        }
 
     },
     events: function () {
@@ -197,6 +197,7 @@ var dom = {
                 element.html('<i class="fa fa-fw fa-clock-o"></i> -' + dom.parseTime(diffHrs + ":" + diffMins));
             } else {
                 progressValue = 100;
+                element.parents('.hour-step').addClass('warning');
                 element.html('<span class="text-danger"><i class="fa fa-fw fa-warning"></i> Tiempo agotado</span>');
             }
         }
@@ -241,8 +242,7 @@ var dom = {
     scrollTop: function () {
         $("html, body").animate({scrollTop: 0}, "slow");
     },
-    submit: function (form) {
-      console.log("Formulairo;",form)
+    submit: function (form, callback) {
         form.validate();
         var onSubmitForm = function (e) {
             if (e.isDefaultPrevented())
@@ -263,6 +263,9 @@ var dom = {
                 if (app.successResponse) {
                     dom.printAlert(response.message, 'success', form.find('.alert'));
                     form.find('input,textarea,select').val('');
+                    if (typeof callback === "function") {
+                        callback(response);
+                    }
                 } else {
                     dom.printAlert(response.message, 'error', form.find('.alert'));
                 }
