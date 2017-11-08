@@ -255,6 +255,7 @@ var dom = {
             form.find('button[type="submit"] i.fa-save').attr('class', 'fa fa-fw fa-refresh fa-spin');
             var obj = form.getFormData();
             var ajax = null;
+            dom.printAlert("Enviando, por favor espere...", 'loading', form.find('.alert'));
             ajax = app.post(form.attr('action'), obj);
             ajax.complete(function () {
                 form.find('fieldset').prop('disabled', false);

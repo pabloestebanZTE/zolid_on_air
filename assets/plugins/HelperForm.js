@@ -121,6 +121,11 @@ $.fn.getFormData = function () {
                 if (callback) {
                     val = eval(callback + '("' + val + '", "getFormData")');
                 }
+                if ($el.is('select')) {
+                    if ($el.attr('data-value') && val.trim() == "") {
+                        val = $el.attr('data-value');
+                    }
+                }
                 pushObject(nameEl, val, nameEntity);
                 break;
         }
