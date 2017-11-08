@@ -17,7 +17,11 @@ $.fn.fillForm = function (data) {
         var fill = function (type, $el, val) {
             switch (type) {
                 case 'checkbox':
-                    $el.attr('checked', 'checked');
+                    if (val == true || val == 1) {
+                        $el.prop('checked', true);
+                    } else {
+                        $el.prop('checked', false);
+                    }
                     break;
                 case 'radio':
                     $el.filter('[value="' + val + '"]').attr('checked', 'checked');
@@ -109,7 +113,7 @@ $.fn.getFormData = function () {
                 pushObject(nameEl, valTemp, nameEntity);
                 break;
             case "checkbox":
-                pushObject(nameEl, $el.is(":checked"), nameEntity);
+                pushObject(nameEl, (($el.is(":checked")) ? 1 : 0), nameEntity);
                 break;
             default:
                 let val = $el.val();

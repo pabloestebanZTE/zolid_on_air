@@ -199,7 +199,6 @@
                     location.href = app.urlTo('User/principalView');
                 });
             })
-            // , function(){location.href = app.urlTo('User/principalView');}
         </script>
         <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
         <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>

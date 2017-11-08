@@ -246,7 +246,9 @@
         <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
         <script type="text/javascript">
         $(function(){
-          dom.submit($('#precheckForm'));
+          dom.submit($('#precheckForm'), function () {
+              location.href = app.urlTo('User/principalView');
+          });
         })
         // , function(){location.href = app.urlTo('User/principalView');}
         </script>

@@ -11,6 +11,11 @@ var TD = {
         $('#btnDetails').on('click', TD.onClickDetails);
         $('.hour-step .icon-step').on('click', TD.onClickIconStep);
         $('.states-modal li a').on('click', TD.onClickItemState);
+        $('.select-fill').on('select2fill', function () {
+            var cmb = $(this);
+            cmb.val(cmb.attr('data-value'));
+            cmb.trigger('change.select2');
+        });
     },
     onClickItemState: function (e) {
 //        app.stopEvent(e);
@@ -65,10 +70,10 @@ var TD = {
                         var objTemp = {ticket_on_air: response.data};
                         var form = $('#formTrackingDetails');
                         form.fillForm(objTemp);
-                        form.find('#cmbEstadosTD').val(response.data.k_id_status_onair.k_id_status.k_id_status);
-//                        form.find('#cmbSubEstadosTD').val(response.data.k_id_status_onair.k_id_status.k_id_status);
                         objTemp = {preparation_stage: response.data.k_id_preparation};
                         form.fillForm(objTemp);
+                        form.find('#cmbEstadosTD').attr("data-value", response.data.k_id_status_onair.k_id_status.k_id_status);
+//                        form.find('#cmbSubEstadosTD').val(response.data.k_id_status_onair.k_id_status.k_id_status);
                         form.find('select').trigger('change.select2');
                     } else {
                         alert.print("No se encontró ninguna coincidencia", "warning");
