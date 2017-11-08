@@ -93,7 +93,6 @@ class dao_ticketOnair_model extends CI_Model {
                 ];
                 $idStatusOnair = 0;
                 $idPreparation = 0;
-                echo "PASDF";
                 //ACTUALIZANDO STATUS_ONAIR
                 if ($status_onair) {
                     //SE REALIZA LA ACTUALIZACIÓN DEL STATUS_ONAIR...
@@ -134,7 +133,6 @@ class dao_ticketOnair_model extends CI_Model {
                 $res = $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->id_onair)
                         ->update($request->ticket_on_air->all());
                 $response = new Response(EMessages::UPDATE);
-                $response->setData(["sql" => $ticketOnAir->getSQL(), "obj" => $request->ticket_on_air->all()]);
             } else {
                 $response = new Response(EMessages::ERROR);
                 $response->setMessage("El ticket solicitado no existe.");
