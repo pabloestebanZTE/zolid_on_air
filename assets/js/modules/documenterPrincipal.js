@@ -16,9 +16,6 @@ var TD = {
 //        dom.notify.vencimiento();
 //        dom.notify("NUEVOS TICKETS!!", "Tienes nuevos tickes para asignar", "info");
     },
-    onClickDetails: function () {
-        $('#modalDetailsInit').modal('show');
-    },
     getDetails: function () {
         var alert = dom.printAlert('Consultando detalles, por favor espere...', 'loading', $('#principalAlert'));
         //Consultamos...
