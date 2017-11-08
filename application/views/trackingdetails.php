@@ -430,59 +430,61 @@
                     </div>
                 </div>
                 <div class="well">
-                    <div class="col-xs-12 text-right">
-                        <div class="display-block pull-right" style="width: 300px;">
-                            <div class="col-xs-4 text-right p-r-0 p-t-5">
-                                <label class="">Grupos:</label>
-                            </div>
-                            <div class="col-xs-8 p-r-0">
-                                <select class="form-control" id="cmbGruposTracking">
-                                    <option value="">Seleccione</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="display-block">
-                        <div class="hour-step active">
-                            <div class="body-step">
-                                <label>12H</label>
-                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
-                            </div>
-                            <div class="back-progress-step">
-                                <span class="progress-step" id="progressStep1"></span>
-                            </div>
-                            <div class="footer-step">
-                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -01:35</label>
+                    <div>
+                        <div class="col-xs-12 text-right">
+                            <div class="display-block pull-right" style="width: 300px;">
+                                <div class="col-xs-4 text-right p-r-0 p-t-5">
+                                    <label class="">Grupos:</label>
+                                </div>
+                                <div class="col-xs-8 p-r-0">
+                                    <select class="form-control" id="cmbGruposTracking">
+                                        <option value="">Seleccione</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
-                        <div class="hour-step">
-                            <div class="body-step">
-                                <label>24H</label>
-                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                        <div class="display-block">
+                            <div class="hour-step active">
+                                <div class="body-step">
+                                    <label>12H</label>
+                                    <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                                </div>
+                                <div class="back-progress-step">
+                                    <span class="progress-step" id="progressStep1"></span>
+                                </div>
+                                <div class="footer-step">
+                                    <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -01:35</label>
+                                </div>
                             </div>
-                            <div class="back-progress-step">
-                                <span class="progress-step"></span>
+                            <div class="hour-step">
+                                <div class="body-step">
+                                    <label>24H</label>
+                                    <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                                </div>
+                                <div class="back-progress-step">
+                                    <span class="progress-step"></span>
+                                </div>
+                                <div class="footer-step">
+                                    <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                                </div>
                             </div>
-                            <div class="footer-step">
-                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                            <div class="hour-step">
+                                <div class="body-step">
+                                    <label>36H</label>
+                                    <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                                </div>
+                                <div class="back-progress-step">
+                                    <span class="progress-step"></span>
+                                </div>
+                                <div class="footer-step">
+                                    <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="hour-step">
-                            <div class="body-step">
-                                <label>36H</label>
-                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
+                        <div class="well white p-t-5 p-b-5 p-r-5 p-l-5">
+                            <div class="well m-b-0">
+                                <table id="tblTrackingDetails" class="table table-hover table-condensed table-striped" width="100%"></table>
                             </div>
-                            <div class="back-progress-step">
-                                <span class="progress-step"></span>
-                            </div>
-                            <div class="footer-step">
-                                <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="well white p-t-5 p-b-5 p-r-5 p-l-5">
-                        <div class="well m-b-0">
-                            <table id="tblTrackingDetails" class="table table-hover table-condensed table-striped" width="100%"></table>
                         </div>
                     </div>
                 </div>

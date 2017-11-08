@@ -163,6 +163,7 @@ class DB extends PDO {
     }
 
     public function first() {
+        $this->limit(1);
         $obj = $this->get();
         if (!is_array($obj)) {
             return null;

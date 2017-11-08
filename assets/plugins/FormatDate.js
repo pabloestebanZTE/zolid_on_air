@@ -56,8 +56,8 @@
 //  "MMM dd, yyyy hh:mm:ssa" matches: "January 01, 2000 12:30:45AM"
 // ------------------------------------------------------------------
 
-var MONTH_NAMES = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
-var DAY_NAMES = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+var MONTH_NAMES = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic');
+var DAY_NAMES = new Array('Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sáb');
 function LZ(x) {
     return (x < 0 || x > 9 ? "" : "0") + x
 }
@@ -126,9 +126,7 @@ function formatDate(date, format, formatDate) {
                 year = parts[i];
             }
         }
-        console.info(month + "/" + day + "/" + year);
         date = new Date(month + "/" + day + "/" + year + complmt);
-        //formatDate(new Date("12/31/2017"), "dd/MM/yyyy");
     }
     format = format + "";
     var result = "";

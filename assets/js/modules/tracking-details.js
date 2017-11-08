@@ -73,7 +73,7 @@ var TD = {
                         objTemp = {preparation_stage: response.data.k_id_preparation};
                         form.fillForm(objTemp);
                         form.find('#cmbEstadosTD').attr("data-value", response.data.k_id_status_onair.k_id_status.k_id_status);
-//                        form.find('#cmbSubEstadosTD').val(response.data.k_id_status_onair.k_id_status.k_id_status);
+                        form.find('#cmbSubEstadosTD').attr("data-value", response.data.k_id_status_onair.k_id_substatus.k_id_substatus);
                         form.find('select').trigger('change.select2');
                     } else {
                         alert.print("No se encontró ninguna coincidencia", "warning");

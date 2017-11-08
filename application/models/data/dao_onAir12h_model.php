@@ -53,7 +53,7 @@
           try {
             $onair12 = new OnAir12hModel();
             $datos = $onair12->where("k_id_onair","=",$id)
-                          ->first();
+                          ->get();
             $response = new Response(EMessages::SUCCESS);
             $response->setData($datos);
             return $response;
