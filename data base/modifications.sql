@@ -18,3 +18,7 @@ ALTER TABLE ticket_on_air add d_asignacion_final datetime;
 ALTER TABLE on_air_12h add n_comentario varchar(1000);
 ALTER TABLE on_air24h add n_comentario varchar(1000);
 ALTER TABLE on_air_36h add n_comentario varchar(1000);
+
+ALTER TABLE preparation_stage add n_evidenciatg varchar(100);
+ALTER TABLE ticket_on_air modify i_lider_cambio varchar(100);
+ALTER TABLE ticket_on_air modify i_lider_cuadrilla varchar(100);

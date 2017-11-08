@@ -95,8 +95,8 @@ class User extends CI_Controller {
         $this->load->view('toAssign', $ticket);
     }
 
-    public function documenterPrincipalView() {
-        $this->load->view('documenterPrincipal');
+    public function documenterPrincipalView($answer) {
+        $this->load->view('documenterPrincipal', $answer);
     }
 
     public function precheck($answer) {

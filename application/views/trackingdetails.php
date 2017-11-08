@@ -8,7 +8,7 @@
                 <a href="#" class="close">&times;</a>
                 <p id="text" class="m-b-0 p-b-0"></p>
             </div>
-            <!-- TRACKING DETAILS FORM -->            
+            <!-- TRACKING DETAILS FORM -->
             <div class="col-md-12 hidden" id="trackingDetails">
                 <div class="panel-group m-b-5" id="accordion">
                     <div class="panel panel-default">
@@ -160,7 +160,7 @@
                                                 </div>
                                             </div>
                                         </fieldset>
-                                        <!--   fin seccion derecha---->                      
+                                        <!--   fin seccion derecha---->
                                     </div>
                                 </form>
                             </div>
@@ -195,7 +195,12 @@
                                     </div>
                                 </div>
                                 <form id="formTrackingDetails" action="TicketOnair/updateTicket">
-                                    <input type="hidden" name="ticket_on_air.k_id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
+                                    <div class="alert alert-success alert-dismissable hidden">
+                                        <a href="#" class="close" >&times;</a>
+                                        <p class="p-b-0" id="text"></p>
+                                    </div>
+                                    <input type="hidden" name="ticket_on_air.id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
+                                    <input type="hidden" name="ticket_on_air.id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : "0" ?>" />
                                     <div class="display-block p-l-40 p-r-40 m-b-0 well step-panel" id="step-0">
                                         <div class="row form-xs">
                                             <div class="col-md-3">
@@ -239,18 +244,18 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3 p-t-20">
-                                                <button class="btn btn-primary"><i class="fa fa-fw fa-check"></i> Revisado</button>                                            
+                                                <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-check"></i> Revisado</button>
                                             </div>
                                             <!--ingenieroPrecheck y FinPre los generará el sistema.-->
                                         </div>
                                     </div>
                                     <div class="hidden display-block p-l-40 p-r-40 m-b-0 well step-panel" id="step-1">
-                                        <div class="row form-xs">                                                                                
+                                        <div class="row form-xs">
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtCorrecionPendientes">Correción pendientes:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtCorrecionPendientes" name="preparation_stage.d_correccionespendientes" value="" placeholder="DD/MM/YYYY" />
+                                                        <input type="text" class="form-control input-sm" id="txtCorrecionPendientes" name="preparation_stage.d_correccionespendientes" value="" placeholder="DD/MM/YYYY"  data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -277,10 +282,10 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtSAC">SAC:</label>                                        
+                                                    <label for="txtSAC">SAC:</label>
                                                     <input type="text" class="form-control input-sm" id="txtSAC" placeholder="SAC" name="preparation_stage.n_sac" />
                                                 </div>
-                                            </div>                                            
+                                            </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="txtIdNotificacion">Id Notificación:</label>
@@ -310,7 +315,7 @@
                                                         <option>Seleccione</option>
                                                     </select>
                                                 </div>
-                                            </div>                                        
+                                            </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="cmbSubEstadosTD">SubEstado:</label>
@@ -320,10 +325,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">              
+                                                <div class="form-group">
                                                     <label for="txtFechaBloqueado">Bloqueado:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_bloqueo"/>
+                                                        <input type="text" class="form-control input-sm" id="txtFechaBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_bloqueo" data-callback="dom.formatDate"/>
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -331,10 +336,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">              
+                                                <div class="form-group">
                                                     <label for="txtFechaDesBloqueado">Desbloqueado:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaDesBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_desbloqueo" />
+                                                        <input type="text" class="form-control input-sm" id="txtFechaDesBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_desbloqueo" data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -342,7 +347,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group has-error">              
+                                                <div class="form-group has-error">
                                                     <label>Sectores bloqueados:</label>
                                                     <select class="form-control input-sm" id="cmbSectoresBloqueados">
                                                         <option value="">Seleccione</option>
@@ -361,7 +366,7 @@
                                                 <div class="form-group">
                                                     <label for="txtFechaRFT">Fecha RFT:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaRFT" placeholder="DD/MM/YYYY" name="ticket_on_air.fecha_rft" />
+                                                        <input type="text" class="form-control input-sm" id="txtFechaRFT" placeholder="DD/MM/YYYY" name="ticket_on_air.fecha_rft" data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -372,7 +377,7 @@
                                                 <div class="form-group">
                                                     <label for="txtFechaCG">Fecha CG:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaCG" placeholder="DD/MM/YYYY" name="ticket_on_air.d_fecha_cg" />
+                                                        <input type="text" class="form-control input-sm" id="txtFechaCG" placeholder="DD/MM/YYYY" name="ticket_on_air.d_fecha_cg" data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -380,7 +385,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">              
+                                                <div class="form-group">
                                                     <label for="txtExclusionTrafico">Exclusión bajo tráfico:</label>
                                                     <input type="text" class="form-control input-sm" id="txtExclusionTrafico" placeholder="Exclusión bajo tráfico" name="ticket_on_air.n_exclusion_bajo_trafico" />
     <!--                                                <select class="form-control input-sm" id="cmbExclusionTrafico">
@@ -395,17 +400,17 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group">              
+                                                <div class="form-group">
                                                     <label for="cmbEstadoTicket">Estado Ticket:</label>
                                                     <select class="form-control input-sm" id="cmbEstadoTicket" name="ticket_on_air.n_estado_ticket">
                                                         <option value="">Seleccione</option>
                                                         <option value="Abierto">Abierto</option>
-                                                        <option value="Cerrado">Cerrado</option>                                                    
+                                                        <option value="Cerrado">Cerrado</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
-                                                <div class="form-group"> 
+                                                <div class="form-group">
                                                     <label for="cmbSLNModernizacion">SLN Modernización:</label>
                                                     <select class="form-control input-sm" id="cmbSLNModernizacion" name="ticket_on_air.n_sln_modernizacion">
                                                         <option value="">Seleccione</option>
@@ -415,16 +420,16 @@
                                                         <option value="4">RF Diversity Sharihg</option>
                                                     </select>
                                                 </div>
-                                            </div>                                        
+                                            </div>
                                         </div>
                                     </div>
                                     <button class="btn btn-success pull-right m-t-10"><i class="fa fa-fw fa-save"></i> Actualizar</button>
                                 </form>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
-                <div class="well">                    
+                <div class="well">
                     <div class="col-xs-12 text-right">
                         <div class="display-block pull-right" style="width: 300px;">
                             <div class="col-xs-4 text-right p-r-0 p-t-5">
@@ -434,7 +439,7 @@
                                 <select class="form-control" id="cmbGruposTracking">
                                     <option value="">Seleccione</option>
                                 </select>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                     <div class="display-block">
@@ -465,7 +470,7 @@
                         <div class="hour-step">
                             <div class="body-step">
                                 <label>36H</label>
-                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>                            
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
                             </div>
                             <div class="back-progress-step">
                                 <span class="progress-step"></span>
@@ -473,14 +478,14 @@
                             <div class="footer-step">
                                 <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
                             </div>
-                        </div>                    
+                        </div>
                     </div>
                     <div class="well white p-t-5 p-b-5 p-r-5 p-l-5">
                         <div class="well m-b-0">
                             <table id="tblTrackingDetails" class="table table-hover table-condensed table-striped" width="100%"></table>
                         </div>
                     </div>
-                </div>  
+                </div>
             </div>
         </form>
         <!-- FIN TRACKING DETAILS FORM -->
@@ -500,7 +505,7 @@
                     <ul class="states-modal">
                         <li>
                             <a href="javascript:;"><span class="icon-state theme2"><i class="fa fa-fw fa-pause"></i></span> Crear Prorroga</a>
-                        </li>                        
+                        </li>
                         <li>
                             <a href="javascript:;"><span class="icon-state theme3"><i class="fa fa-fw fa-forward"></i></span> Siguiente fase</a>
                         </li>
@@ -565,10 +570,10 @@
     </div>
     <!--End footer Section -->
 
-    <?php $this->load->view('parts/generic/scripts'); ?>    
+    <?php $this->load->view('parts/generic/scripts'); ?>
     <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
     <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
-    <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>        
+    <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
     <script src="<?= URL::to('assets/js/modules/tracking-details.js?v=1.1') ?>" type="text/javascript"></script>
 </body>
 </html>

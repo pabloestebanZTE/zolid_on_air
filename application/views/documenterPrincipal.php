@@ -22,7 +22,7 @@
                                     <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label for="txtEstacion" class="col-md-3 control-label">Estacion:</label>
+                                                <label for="txtEstacion" class="col-md-3 control-label">Estación:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
@@ -96,7 +96,7 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label for="txtTecnologia" class="col-md-3 control-label">Tecnologia:</label>
+                                                <label for="txtTecnologia" class="col-md-3 control-label">Tecnología:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
@@ -146,7 +146,7 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtSubestado" class="col-md-3 control-label">subestado:</label>
+                                                <label for="txtSubestado" class="col-md-3 control-label">Subestado:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
@@ -155,7 +155,7 @@
                                                 </div>
                                             </div>
                                         </fieldset>
-                                        <!--   fin seccion derecha---->                      
+                                        <!--   fin seccion derecha---->
                                     </div>
                                 </form>
                             </div>
@@ -170,15 +170,15 @@
                         </div>
                         <div id="collapse2" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <form class="form-horizontal well">
-                                    <div class="panel-body">                                                                   
+                                <form class="form-horizontal well"  action="Documenter/updateDetails" method="post"  id="detailsForm" name="detailsForm">
+                                    <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
                                                 <label for="txtIntegrador" class="col-md-3 control-label">Integrador:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" name="txtIntegrador" id="txtIntegrador" class="form-control" value="" >
+                                                        <input type="text" name="n_integrador" id="n_integrador" class="form-control" value="" >
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,7 +188,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
-                                                        <select name="cmbTestGestion" id="cmbTestGestion" class="form-control selectpicker" required>
+                                                        <select name="n_testgestion" id="n_testgestion" class="form-control selectpicker" required>
                                                             <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
@@ -207,8 +207,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
-                                                        <select name="cmbSitioLimpio" id="cmbSitioLimpio" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_sitiolimpio" id="n_sitiolimpio" class="form-control selectpicker" required>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
                                                             <option value="NO">NO</option>
@@ -223,8 +222,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbInstalacionHWSitio" id="cmbInstalacionHWSitio" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_instalacion_hw_sitio" id="n_instalacion_hw_sitio" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -241,8 +239,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbCambiosConfigSolicitados" id="cmbCambiosConfigSolicitados" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_cambios_config_solicitados" id="n_cambios_config_solicitados" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -259,8 +256,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbCambiosConfigFinal" id="cmbCambiosConfigFinal" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_cambios_config_final" id="n_cambios_config_final" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -277,7 +273,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" class="form-control input-sm" id="txtContratista" name="txtContratista" value="" />
+                                                        <input type="text" class="form-control input-sm" id="n_contratista__" name="n_contratista__" value="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -287,8 +283,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
-                                                        <select name="cmbIntegracionGestionTrafica" id="cmbIntegracionGestionTrafica" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_integracion_gestion_y_trafica" id="n_integracion_gestion_y_trafica" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -306,8 +301,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
-                                                        <select name="cmbPuestaServicioSitioNuevoLTE" id="cmbPuestaServicioSitioNuevoLTE" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="puesta_servicio_sitio_nuevo_lte__" id="puesta_servicio_sitio_nuevo_lte__" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -325,8 +319,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
-                                                        <select name="cmbInstalacionHW4GSitio" id="cmbInstalacionHW4GSitio" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_instalacion_hw_4g_sitio__" id="n_instalacion_hw_4g_sitio__" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -348,8 +341,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
-                                                        <select name="cmbPrelaunch" id="cmbPrelaunch" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="pre_launch" id="pre_launch" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -368,7 +360,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-file-text"></i></span>
-                                                        <input type="text" class="form-control input-sm" id="txtEvidenciaSL" name="txtEvidenciaSL" value="" />
+                                                        <input type="text" class="form-control input-sm" id="n_evidenciasl__" name="n_evidenciasl__" value="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -378,7 +370,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-file-text"></i></span>
-                                                        <input type="text" class="form-control input-sm" id="txtEvidenciaTG" name="txtEvidenciaTG" value="" />
+                                                        <input type="text" class="form-control input-sm" id="n_evidenciatg" name="n_evidenciatg" value="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -388,7 +380,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>
-                                                        <input type="text" class="form-control input-sm" id="txtIDRFTools" name="txtIDRFTools" value="" />
+                                                        <input type="text" class="form-control input-sm" id="id_rftools__" name="id_rftools__" value="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -398,7 +390,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" class="form-control input-sm" id="txtLiderCambio" name="txtLiderCambio" value="" />
+                                                        <input type="text" class="form-control input-sm" id="i_lider_cambio" name="i_lider_cambio" value="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -408,7 +400,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
-                                                        <input type="text" class="form-control input-sm" id="txtLiderCuadrilla" name="txtLiderCuadrilla" value="" />
+                                                        <input type="text" class="form-control input-sm" id="i_lider_cuadrilla" name="i_lider_cuadrilla" value="" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -418,8 +410,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbImplementacionCampo" id="cmbImplementacionCampo" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_implementacion_campo__" id="n_implementacion_campo__" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -437,8 +428,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbGestionPower" id="cmbGestionPower" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_gestion_power__" id="n_gestion_power__" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -458,8 +448,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbObraCivil" id="cmbObraCivil" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_obra_civil__" id="n_obra_civil__" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -478,8 +467,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
-                                                        <select name="cmbOnAIR" id="cmbOnAIR" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="on_air__" id="on_air__" class="form-control selectpicker" required>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="CRQ_NO_CONCUERDA">CRQ NO CONCUERDA</option>
@@ -499,8 +487,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
-                                                        <select name="cmbNOC" id="cmbNOC" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
+                                                        <select name="n_noc" id="n_noc" class="form-control selectpicker" required>
                                                             <option value="NOKIA">NOKIA</option>
                                                             <option value="NOKIA_ZTE">NOKIA ZTE</option>
                                                             <option value="SEGUIMIENTO_FO">SIGUIMIENTO FO</option>
@@ -509,8 +496,10 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <input type="hidden" class="form-control input-sm" id="k_id_ticket" name="k_id_ticket" value="40" />
+                                            <input type="hidden" class="form-control input-sm" id="k_id_prep" name="k_id_prep" value="39" />
                                         </fieldset>
-                                        <!--   fin seccion derecha---->   
+                                        <!--   fin seccion derecha---->
                                         <!-- Button -->
                                         <center>
                                             <div class="form-group">
@@ -537,7 +526,7 @@
                                 <select class="form-control" id="cmbGruposTracking">
                                     <option value="">Seleccione</option>
                                 </select>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                     <div class="display-block">
@@ -568,7 +557,7 @@
                         <div class="hour-step">
                             <div class="body-step">
                                 <label>36H</label>
-                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>                            
+                                <span class="icon-step"><i class="fa fa-fw fa-clock-o"></i></span>
                             </div>
                             <div class="back-progress-step">
                                 <span class="progress-step"></span>
@@ -576,7 +565,7 @@
                             <div class="footer-step">
                                 <label id="timeStep"><i class="fa fa-fw fa-clock-o"></i> -00:00</label>
                             </div>
-                        </div>                    
+                        </div>
                     </div>
                     <div class="well white p-t-5 p-b-5 p-r-5 p-l-5">
                         <div class="well m-b-0">
@@ -594,8 +583,44 @@
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
         <link href="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>" rel="stylesheet" type="text/css"/>
+        <script>
+          $(function () {
+            var fields = <?php echo $fields; ?>;
+            console.log(fields);
+            $('input[name=n_integrador]').val(fields.k_id_preparation.n_integrador);
+            $('input[name=n_testgestion]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_sitiolimpio]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_instalacion_hw_sitio]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_cambios_config_solicitados]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_cambios_config_final]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_contratista__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_integracion_gestion_y_trafica]').val(ticket.k_id_band.n_name_band);
+            $('input[name=puesta_servicio_sitio_nuevo_lte__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_instalacion_hw_4g_sitio__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=pre_launch]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_evidenciasl__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_evidenciatg]').val(ticket.k_id_band.n_name_band);
+            $('input[name=id_rftools__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=i_lider_cambio]').val(ticket.k_id_band.n_name_band);
+            $('input[name=i_lider_cuadrilla]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_implementacion_campo__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_gestion_power__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_obra_civil__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=on_air__]').val(ticket.k_id_band.n_name_band);
+            $('input[name=n_noc]').val(ticket.k_id_band.n_name_band);
+
+          })
+        </script>
         <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
         <script src="<?= URL::to('assets/plugins/jquery.mask.js') ?>" type="text/javascript"></script>
         <script src="<?= URL::to('assets/js/modules/documenterPrincipal.js') ?>" type="text/javascript"></script>
+        <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
+        <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
+        <script type="text/javascript">
+        $(function(){
+          dom.submit($('#detailsForm'));
+        })
+        // , function(){location.href = app.urlTo('User/principalView');}
+        </script>
     </body>
 </html>

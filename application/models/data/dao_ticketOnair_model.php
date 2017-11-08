@@ -78,23 +78,66 @@ class dao_ticketOnair_model extends CI_Model {
         }
     }
 
+
     function updateTicket($request) {
         try {
+
             $ticketOnAir = new TicketOnAirModel();
-            //Consultamos el registro onair...
-            $temp = $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->k_id_onair)->get();
-            if ($temp) {
-                //Se actualizaría el registro onair...
-                $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->k_id_onair)
+            //CONSULTAMOS EL REGISTRO ONAIR...
+            $tempTicketOnAir = $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->id_onair)->first();
+            if ($tempTicketOnAir) {
+                //SE BUSCA EL TK_ID_STATUS_ONAIR Y SE ACTUALIZA...
+                $status_onair = DB::table("status_on_air")->where("k_id_status_onair", "=", $tempTicketOnAir->k_id_status_onair)->first();
+                $objStatusOnair = [
+                    "k_id_status" => $request->ticket_on_air->k_id_status_onair->k_id_status,
+                    "k_id_substatus" => $request->ticket_on_air->k_id_status_onair->k_id_substatus
+                ];
+                $idStatusOnair = 0;
+                $idPreparation = 0;
+                //ACTUALIZANDO STATUS_ONAIR
+                if ($status_onair) {
+                    //SE REALIZA LA ACTUALIZACIÓN DEL STATUS_ONAIR...
+                    $idStatusOnair = $status_onair->k_id_status_onair;
+                    DB::table("status_on_air")
+                            ->where("k_id_status_onair", "=", $tempTicketOnAir->k_id_status_onair)
+                            ->update($objStatusOnair);
+                } else {
+                    //SE INSERTA EL STATUS_ONAIR...
+                    $idStatusOnair = DB::table("status_on_air")
+                            ->insert($objStatusOnair);
+                }
+
+                //ACTUALIZANDO PREPARATION STAGE.
+                $psModel = new PreparationStageModel();
+                //COMPROBAMOS SI EXISTE
+                $tempPreparationStage = $psModel
+                        ->where("k_id_preparation", "=", $tempTicketOnAir->k_id_preparation)
+                        ->first();
+
+                if ($tempPreparationStage) {
+                    $idPreparation = $tempPreparationStage->k_id_preparation;
+                    //SE ACTUALIZA EL PREPARATION_STAGE.
+                    $psModel->where("k_id_preparation", "=", $tempTicketOnAir->k_id_preparation)
+                            ->update($request->preparation_stage->all());
+                } else {
+                    //SE CREA EL PREPARATION_STAGE...
+                    $idPreparation = $psModel->insert($request->preparation_stage->all());
+                }
+
+
+                //SE ACTUALIZA EL REGISTRO ONAIR...
+                //Antes de hacerlo modificamos algunos de los parámetros
+                //asignando los valores correspondientes...
+                $request->ticket_on_air->k_id_status_onair = $idStatusOnair;
+                $request->k_id_preparation = $idPreparation;
+                $ticketOnAir = new TicketOnAirModel();
+                $res = $ticketOnAir->where("k_id_onair", "=", $request->ticket_on_air->id_onair)
                         ->update($request->ticket_on_air->all());
-                //Se actualiza el preparation_stage.
-                $ps = new PreparationStageModel();
-                $ps->join("preparation_stage", "prepartion_stage.k_id_preparation", "=", "k_id_preparation")
-                        ->where("prepartion_stage.k_id_preparation", "=", $temp->k_id_preparation)
-                        ->update($request->preparation_stage->all());
+                $response = new Response(EMessages::UPDATE);
+            } else {
+                $response = new Response(EMessages::ERROR);
+                $response->setMessage("El ticket solicitado no existe.");
             }
-            $response = new Response(EMessages::UPDATE);
-            $response->setData($temp);
             return $response;
             return null;
         } catch (ZolidException $ex) {
@@ -102,17 +145,17 @@ class dao_ticketOnair_model extends CI_Model {
         }
     }
 
-    function updatePrecheckOnair($request){
-      try {
-          $ticketOnAir = new TicketOnAirModel();
-          $datos = $ticketOnAir->where("k_id_onair", "=", $request->k_id_ticket)
-                  ->update($request->all());
-          $response = new Response(EMessages::SUCCESS);
-          $response->setData($datos);
-          return $response;
-      } catch (ZolidException $ex) {
-          return $ex;
-      }
+    function updatePrecheckOnair($request) {
+        try {
+            $ticketOnAir = new TicketOnAirModel();
+            $datos = $ticketOnAir->where("k_id_onair", "=", $request->k_id_ticket)
+                    ->update($request->all());
+            $response = new Response(EMessages::SUCCESS);
+            $response->setData($datos);
+            return $response;
+        } catch (ZolidException $ex) {
+            return $ex;
+        }
     }
 
 }

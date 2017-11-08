@@ -14,7 +14,7 @@ class DB extends PDO {
     }
 
     public function init($table = null) {
-        $this->cogs = require APPPATH.'config/db.php';
+        $this->cogs = require APPPATH . 'config/db.php';
         $this->sql = "";
         $this->others = "";
         $this->table = (isset($table)) ? $table : "";
@@ -28,8 +28,7 @@ class DB extends PDO {
         $DB_USER = $connection["username"];
         $DB_PASS = $connection["password"];
         parent::__construct($DB_TYPE . ':host=' . $DB_HOST . ":" . $DB_PORT
-                            . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS,
-                            array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
+                . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
         $this->setAttribute(PDO::ATTR_PERSISTENT, true);
     }
 
@@ -41,9 +40,9 @@ class DB extends PDO {
      * @return DB $this
      */
     public static function table($table) {
-       if(self::$db == null){
-         self::$db = new DB();
-       }
+        if (self::$db == null) {
+            self::$db = new DB();
+        }
         $db = self::$db;
         $db->sql = "";
         $db->table = $table;
@@ -87,7 +86,7 @@ class DB extends PDO {
 
     public function where($key, $condition, $value) {
         $this->wheres .= (strpos($this->wheres, "WHERE")) ? " AND " : " WHERE ";
-        $this->wheres .= "$key $condition \"$value\" ";
+        $this->wheres .= "$key $condition " . ((is_string($value)) ? "\"$value\"" : $value) . " ";
         return $this;
     }
 

@@ -58,6 +58,11 @@ class Crud {
         return $this->db->count();
     }
 
+    public function exist() {
+        $this->init();
+        return $this->db->count() > 0;
+    }
+
     public function get() {
         $this->init();
         return $this->db->get();
@@ -107,7 +112,7 @@ class Crud {
      * @return boolean ? $update
      * @throws type DeplynException
      */
-    public function update($obj) {
+    public function update($obj = null) {
         if (empty($obj)) {
             $obj = $this->getObj();
         } else {
@@ -122,6 +127,10 @@ class Crud {
             throw (new DeplynException(EMessages::ERROR_UPDATE))
                     ->setOriginalMessage($exc->getMessage());
         }
+    }
+
+    public function getSQL() {
+        return $this->db->getSql();
     }
 
     /**

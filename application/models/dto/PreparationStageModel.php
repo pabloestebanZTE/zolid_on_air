@@ -20,22 +20,23 @@ class PreparationStageModel extends Model {
     protected $n_instalacion_hw_sitio;
     protected $n_cambios_config_solicitados;
     protected $n_cambios_config_final;
-    protected $n_contratista__;
-    protected $n_comentarioccial__;
-    protected $n_ticketremedy__;
+    protected $n_contratista;
+    protected $n_comentarioccial;
+    protected $n_ticketremedy;
     protected $n_lac;
     protected $n_rac;
     protected $n_sac;
     protected $n_integracion_gestion_y_trafica;
-    protected $puesta_servicio_sitio_nuevo_lte__;
-    protected $n_instalacion_hw_4g_sitio__;
+    protected $puesta_servicio_sitio_nuevo_lte;
+    protected $n_instalacion_hw_4g_sitio;
     protected $pre_launch;
-    protected $n_evidenciasl__;
-    protected $idenciasl__;
+    protected $n_evidenciasl;
+    protected $idenciasl;
     protected $i_week;
-    protected $id_notificacion__;
-    protected $id_documentacion__;
-    protected $id_rftools__;
+    protected $id_notificacion;
+    protected $id_documentacion;
+    protected $id_rftools;
+    protected $n_evidenciatg;
 
     //Los campos que desea ocultar para que no se reflejen en la vista.
     protected $table = "preparation_stage";
@@ -156,22 +157,22 @@ class PreparationStageModel extends Model {
         return $this->n_cambios_config_final;
     }
     public function setNContratista($n_contratista__) {
-        $this->n_contratista__ = $n_contratista__;
+        $this->n_contratista = $n_contratista__;
     }
     public function getNContratista() {
-        return $this->n_contratista__;
+        return $this->n_contratista;
     }
     public function setNComentarioccial($n_comentarioccial__) {
-        $this->n_comentarioccial__ = $n_comentarioccial__;
+        $this->n_comentarioccial = $n_comentarioccial__;
     }
     public function getNComentarioccial() {
-        return $this->n_comentarioccial__;
+        return $this->n_comentarioccial;
     }
-    public function setNTicketremedy($n_ticketremedy__) {
-        $this->n_ticketremedy__ = $n_ticketremedy__;
+    public function setNTicketremedy($n_ticketremedy) {
+        $this->n_ticketremedy = $n_ticketremedy;
     }
     public function getNTicketremedy() {
-        return $this->n_ticketremedy__;
+        return $this->n_ticketremedy;
     }
     public function setNLac($n_lac) {
         $this->n_lac = $n_lac;
@@ -197,17 +198,17 @@ class PreparationStageModel extends Model {
     public function getNIntegracionGestionYTrafica() {
         return $this->n_integracion_gestion_y_trafica;
     }
-    public function setPuestaServicioSitioNuevoLte($puesta_servicio_sitio_nuevo_lte__) {
-        $this->puesta_servicio_sitio_nuevo_lte__ = $puesta_servicio_sitio_nuevo_lte__;
+    public function setPuestaServicioSitioNuevoLte($puesta_servicio_sitio_nuevo_lte) {
+        $this->puesta_servicio_sitio_nuevo_lte = $puesta_servicio_sitio_nuevo_lte;
     }
     public function getPuestaServicioSitioNuevoLte() {
-        return $this->puesta_servicio_sitio_nuevo_lte__;
+        return $this->puesta_servicio_sitio_nuevo_lte;
     }
-    public function setNInstalacionHw4gSitio($n_instalacion_hw_4g_sitio__) {
-        $this->n_instalacion_hw_4g_sitio__ = $n_instalacion_hw_4g_sitio__;
+    public function setNInstalacionHw4gSitio($n_instalacion_hw_4g_sitio) {
+        $this->n_instalacion_hw_4g_sitio = $n_instalacion_hw_4g_sitio;
     }
     public function getNInstalacionHw4gSitio() {
-        return $this->n_instalacion_hw_4g_sitio__;
+        return $this->n_instalacion_hw_4g_sitio;
     }
     public function setPreLaunch($pre_launch) {
         $this->pre_launch = $pre_launch;
@@ -215,17 +216,17 @@ class PreparationStageModel extends Model {
     public function getPreLaunch() {
         return $this->pre_launch;
     }
-    public function setNEvidenciasl($n_evidenciasl__) {
-        $this->n_evidenciasl__ = $n_evidenciasl__;
+    public function setNEvidenciasl($n_evidenciasl) {
+        $this->n_evidenciasl = $n_evidenciasl;
     }
     public function getNEvidenciasl() {
-        return $this->n_evidenciasl__;
+        return $this->n_evidenciasl;
     }
-    public function setIdenciasl($idenciasl__) {
-        $this->idenciasl__ = $idenciasl__;
+    public function setIdenciasl($idenciasl) {
+        $this->idenciasl = $idenciasl;
     }
     public function getIdenciasl() {
-        return $this->idenciasl__;
+        return $this->idenciasl;
     }
     public function setIWeek($i_week) {
         $this->i_week = $i_week;
@@ -233,23 +234,29 @@ class PreparationStageModel extends Model {
     public function getIWeek() {
         return $this->i_week;
     }
-    public function setIdNotificacion($id_notificacion__) {
-        $this->id_notificacion__ = $id_notificacion__;
+    public function setIdNotificacion($id_notificacion) {
+        $this->id_notificacion = $id_notificacion;
     }
     public function getIdNotificacion() {
-        return $this->id_notificacion__;
+        return $this->id_notificacion;
     }
-    public function setIdDocumentacion($id_documentacion__) {
-        $this->id_documentacion__ = $id_documentacion__;
+    public function setIdDocumentacion($id_documentacion) {
+        $this->id_documentacion = $id_documentacion;
     }
     public function getIdDocumentacion() {
-        return $this->id_documentacion__;
+        return $this->id_documentacion;
     }
-    public function setIdRftools($id_rftools__) {
-        $this->id_rftools__ = $id_rftools__;
+    public function setIdRftools($id_rftools) {
+        $this->id_rftools = $id_rftools;
     }
     public function getIdRftools() {
-        return $this->id_rftools__;
+        return $this->id_rftools;
+    }
+    public function setNEvidenciatg($n_evidenciatg__) {
+      $this->n_evidenciatg__ = $n_evidenciatg__;
+    }
+    public function getNEvidenciatg() {
+      return $this->n_evidenciatg__;
     }
 
 

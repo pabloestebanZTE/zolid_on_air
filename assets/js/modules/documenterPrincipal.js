@@ -1,4 +1,4 @@
-var TD = {
+ var TD = {
     init: function () {
         TD.events();
         TD.configView();

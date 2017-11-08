@@ -5,7 +5,7 @@ var TD = {
         TD.fillTable([]);
         TD.getDetail();
         TD.listCombox();
-        dom.submit($('#formTrackingDetails'));
+        dom.submit($('#formTrackingDetails'), null, false);
     },
     events: function () {
         $('#btnDetails').on('click', TD.onClickDetails);
@@ -62,6 +62,14 @@ var TD = {
                         $('#trackingDetails').removeClass('hidden');
                         alert.hide();
                         $('#formDetallesBasicos').fillForm(response.data);
+                        var objTemp = {ticket_on_air: response.data};
+                        var form = $('#formTrackingDetails');
+                        form.fillForm(objTemp);
+                        form.find('#cmbEstadosTD').val(response.data.k_id_status_onair.k_id_status.k_id_status);
+//                        form.find('#cmbSubEstadosTD').val(response.data.k_id_status_onair.k_id_status.k_id_status);
+                        objTemp = {preparation_stage: response.data.k_id_preparation};
+                        form.fillForm(objTemp);
+                        form.find('select').trigger('change.select2');
                     } else {
                         alert.print("No se encontró ninguna coincidencia", "warning");
                     }
