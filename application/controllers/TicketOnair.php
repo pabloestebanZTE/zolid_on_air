@@ -13,12 +13,12 @@ class TicketOnair extends CI_Controller {
         $this->load->model('data/dao_technology_model');
         $this->load->model('data/dao_statusOnair_model');
         $this->load->model('data/dao_precheck_model');
-//        $this->load->model('data/dao_followUp12h_model');
-//        $this->load->model('data/dao_followUp24h_model');
-//        $this->load->model('data/dao_followUp36h_model');
-//        $this->load->model('data/dao_onAir12h_model');
-//        $this->load->model('data/dao_onAir24h_model');
-//        $this->load->model('data/dao_onAir36h_model');
+        $this->load->model('data/dao_followUp12h_model');
+        $this->load->model('data/dao_followUp24h_model');
+        $this->load->model('data/dao_followUp36h_model');
+        $this->load->model('data/dao_onAir12h_model');
+        $this->load->model('data/dao_onAir24h_model');
+        $this->load->model('data/dao_onAir36h_model');
         $this->load->model('data/dao_preparationStage_model');
         $this->load->model('data/dao_scaledOnair_model');
         $this->load->model('data/dao_onAirProcess_model');
@@ -130,12 +130,12 @@ class TicketOnair extends CI_Controller {
         $statusOnair = new dao_statusOnair_model();
         $scaledOnair = new dao_scaledOnair_model();
         $precheck = new dao_precheck_model();
-//        $onair12 = new dao_onAir12h_model();
-//        $follow12 = new dao_followUp12h_model();
-//        $onair24 = new dao_onAir24h_model();
-//        $follow24 = new dao_followUp24h_model();
-//        $onair36 = new dao_onAir36h_model();
-//        $follow36 = new dao_followUp36h_model();
+        $onair12 = new dao_onAir12h_model();
+        $follow12 = new dao_followUp12h_model();
+        $onair24 = new dao_onAir24h_model();
+        $follow24 = new dao_followUp24h_model();
+        $onair36 = new dao_onAir36h_model();
+        $follow36 = new dao_followUp36h_model();
         $ticket = $this->request->id;
         $res = $ticketsOnAir->findByIdOnAir($ticket)->data;
         if (!$res) {
@@ -151,12 +151,18 @@ class TicketOnair extends CI_Controller {
         $res->scaledOnair = $scaledOnair->getScaledByTicket($res->k_id_onair)->data; //scaledOnair nuevo elemento
         $res->k_id_precheck = $precheck->getPrecheckByIdPrech($res->k_id_precheck)->data; //precheck
         //Listamos los procesos onair...
-//        $res->onair12 = $onair12->getOnair12ByIdOnair($res->k_id_onair)->data; //onair12 nuevo elemento
-//        $res->onair12->k_id_follow_up_12h = $follow12->getfollow12ByIdFollow($res->onair12->k_id_follow_up_12h)->data; //follow up 12
-//        $res->onair24 = $onair24->getOnair24ByIdOnair($res->k_id_onair)->data; //onair24 nuevo elemento
-//        $res->onair24->k_id_follow_up_24h = $follow24->getfollow24ByIdFollow($res->onair24->k_id_follow_up_24h)->data; //follow up 24
-//        $res->onair36 = $onair36->getOnair36ByIdOnair($res->k_id_onair)->data; //onair24 nuevo elemento
-//        $res->onair36->k_id_follow_up_36h = $follow36->getfollow36ByIdFollow($res->onair36->k_id_follow_up_36h)->data; //follow up 24
+        $res->onair12 = $onair12->getOnair12ByIdOnair($res->k_id_onair)->data; //onair12 nuevo elemento
+        if ($res->onair12 != "") {
+            $res->onair12->k_id_follow_up_12h = $follow12->getfollow12ByIdFollow($res->onair12->k_id_follow_up_12h)->data; //follow up 12
+        }
+        $res->onair24 = $onair24->getOnair24ByIdOnair($res->k_id_onair)->data; //onair24 nuevo elemento
+        if ($res->onair24 != "") {
+            $res->onair24->k_id_follow_up_24h = $follow24->getfollow24ByIdFollow($res->onair24->k_id_follow_up_24h)->data; //follow up 24
+        }
+        $res->onair36 = $onair36->getOnair36ByIdOnair($res->k_id_onair)->data; //onair24 nuevo elemento
+        if ($res->onair36 != "") {
+            $res->onair36->k_id_follow_up_36h = $follow36->getfollow36ByIdFollow($res->onair36->k_id_follow_up_36h)->data; //follow up 24
+        }
         $response = new Response(EMessages::QUERY);
         $response->setData($res);
         $this->json($response);

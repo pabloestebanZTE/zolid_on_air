@@ -14,7 +14,7 @@ class Documenter extends CI_Controller {
       // header('Content-Type: text/plain');
       $ticketOnair = new dao_ticketOnAir_model();
       $preparation = new dao_preparationStage_model();
-      $ticket = 39;
+      $ticket = $this->request->id;
       $res = $ticketOnair->findByIdOnAir($ticket)->data;
 
       $res->k_id_preparation = $preparation->findByIdPreparation($res->k_id_preparation)->data;

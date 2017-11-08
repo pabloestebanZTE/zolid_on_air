@@ -168,8 +168,7 @@ class User extends CI_Controller {
     }
 
     public function doPrecheck(){
-  //    $id = $this->request->idOnair;
-      $id = 54;
+      $id = $this->request->idOnair;
       $ticketOnAir = new dao_ticketOnAir_model();
       $station = new dao_station_model();
       $band = new dao_band_model();
