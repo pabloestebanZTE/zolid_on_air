@@ -20,8 +20,8 @@ class PreparationStageModel extends Model {
     protected $n_instalacion_hw_sitio;
     protected $n_cambios_config_solicitados;
     protected $n_cambios_config_final;
-    protected $n_contratista__;
-    protected $n_comentarioccial__;
+    protected $n_contratista;
+    protected $n_comentarioccial;
     protected $n_ticketremedy__;
     protected $n_lac;
     protected $n_rac;
@@ -156,16 +156,16 @@ class PreparationStageModel extends Model {
         return $this->n_cambios_config_final;
     }
     public function setNContratista($n_contratista__) {
-        $this->n_contratista__ = $n_contratista__;
+        $this->n_contratista = $n_contratista__;
     }
     public function getNContratista() {
-        return $this->n_contratista__;
+        return $this->n_contratista;
     }
     public function setNComentarioccial($n_comentarioccial__) {
-        $this->n_comentarioccial__ = $n_comentarioccial__;
+        $this->n_comentarioccial = $n_comentarioccial__;
     }
     public function getNComentarioccial() {
-        return $this->n_comentarioccial__;
+        return $this->n_comentarioccial;
     }
     public function setNTicketremedy($n_ticketremedy__) {
         $this->n_ticketremedy__ = $n_ticketremedy__;

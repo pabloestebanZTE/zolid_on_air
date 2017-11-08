@@ -20,10 +20,6 @@
                         <div id="collapse1" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <form class="form-horizontal well" id="formDetallesBasicos">
-                                    <div class="alert alert-success alert-dismissable hidden">
-                                        <a href="#" class="close" >&times;</a>
-                                        <p class="p-b-0" id="text"></p>
-                                    </div>
                                     <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
@@ -195,7 +191,11 @@
                                     </div>
                                 </div>
                                 <form id="formTrackingDetails" action="TicketOnair/updateTicket">
-                                    <input type="hidden" name="ticket_on_air.k_id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
+                                    <div class="alert alert-success alert-dismissable hidden">
+                                        <a href="#" class="close" >&times;</a>
+                                        <p class="p-b-0" id="text"></p>
+                                    </div>
+                                    <input type="hidden" name="ticket_on_air.id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
                                     <div class="display-block p-l-40 p-r-40 m-b-0 well step-panel" id="step-0">
                                         <div class="row form-xs">
                                             <div class="col-md-3">
@@ -250,7 +250,7 @@
                                                 <div class="form-group">
                                                     <label for="txtCorrecionPendientes">Correción pendientes:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtCorrecionPendientes" name="preparation_stage.d_correccionespendientes" value="" placeholder="DD/MM/YYYY" />
+                                                        <input type="text" class="form-control input-sm" id="txtCorrecionPendientes" name="preparation_stage.d_correccionespendientes" value="" placeholder="DD/MM/YYYY"  data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -323,7 +323,7 @@
                                                 <div class="form-group">              
                                                     <label for="txtFechaBloqueado">Bloqueado:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_bloqueo"/>
+                                                        <input type="text" class="form-control input-sm" id="txtFechaBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_bloqueo" data-callback="dom.formatDate"/>
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -334,7 +334,7 @@
                                                 <div class="form-group">              
                                                     <label for="txtFechaDesBloqueado">Desbloqueado:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaDesBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_desbloqueo" />
+                                                        <input type="text" class="form-control input-sm" id="txtFechaDesBloqueado" placeholder="DD/MM/YYYY" name="ticket_on_air.d_desbloqueo" data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -361,7 +361,7 @@
                                                 <div class="form-group">
                                                     <label for="txtFechaRFT">Fecha RFT:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaRFT" placeholder="DD/MM/YYYY" name="ticket_on_air.fecha_rft" />
+                                                        <input type="text" class="form-control input-sm" id="txtFechaRFT" placeholder="DD/MM/YYYY" name="ticket_on_air.fecha_rft" data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>
@@ -372,7 +372,7 @@
                                                 <div class="form-group">
                                                     <label for="txtFechaCG">Fecha CG:</label>
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control input-sm" id="txtFechaCG" placeholder="DD/MM/YYYY" name="ticket_on_air.d_fecha_cg" />
+                                                        <input type="text" class="form-control input-sm" id="txtFechaCG" placeholder="DD/MM/YYYY" name="ticket_on_air.d_fecha_cg" data-callback="dom.formatDate" />
                                                         <div class="input-group-btn">
                                                             <button class="btn btn-default btn-sm"><i class="fa fa-fw fa-calendar"></i></button>
                                                         </div>

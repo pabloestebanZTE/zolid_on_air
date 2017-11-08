@@ -252,23 +252,26 @@ var dom = {
             app.stopEvent(e);
             var form = $(this);
             form.find('fieldset').prop('disabled', true);
-            form.find('button i.fa-save').attr('class', 'fa fa-fw fa-refresh fa-spin');
+            form.find('button[type="submit"] i.fa-save').attr('class', 'fa fa-fw fa-refresh fa-spin');
             var obj = form.getFormData();
             var ajax = null;
             ajax = app.post(form.attr('action'), obj);
             ajax.complete(function () {
                 form.find('fieldset').prop('disabled', false);
+                form.find('button[type="submit"] i.fa-refresh.fa-spin').attr('class', 'fa fa-fw fa-save');
             }).success(function (response) {
-                form.find('button i.fa-refresh.fa-spin').attr('class', 'fa fa-fw fa-save');
-                if (app.successResponse) {
+                if (app.successResponse(response)) {
                     dom.printAlert(response.message, 'success', form.find('.alert'));
                     form.find('input,textarea,select').val('');
                     if (typeof callback === "function") {
                         callback(response);
                     }
                 } else {
-                    dom.printAlert(response.message, 'error', form.find('.alert'));
+                    dom.printAlert(response.message, 'danger', form.find('.alert'));
                 }
+            }).error(function (e) {
+                console.error(e);
+                dom.printAlert("Se ha producido un error inesperado, compruebe su conexión a internet e inténtelo de nuevo.", 'danger', form.find('.alert'));
             }).send();
         };
         form.on('submit', onSubmitForm);
@@ -344,6 +347,25 @@ var dom = {
             });
         }
 
+    },
+    parsearFecha: function (fecha) {
+        return fecha.slice(0, 10).split('-').reverse().join().replace(/\,/g, '/');
+    },
+    /**
+     * Recibe una fecha string y la parsea en el formato yyyy-MM-dd
+     * @param {type} dateString
+     * @returns fecha en formato yyyy-MM-dd
+     */
+    formatDate(dateString, method) {
+        if (dateString && dateString.trim() != "") {
+            if (method === "fillForm") {
+                //dateString, outputFormat, inputFormat...            
+                return formatDate(dateString, 'dd/MM/yyyy', 'yyyy/MM/dd');
+            } else if (method === "getFormData") {
+                //dateString, outputFormat, inputFormat...
+                return formatDate(dateString, 'yyyy-MM-dd', 'dd/MM/yyyy');
+            }
+        }
     }
 };
 $(function () {

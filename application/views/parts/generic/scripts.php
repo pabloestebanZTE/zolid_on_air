@@ -16,3 +16,4 @@
 <script src="<?= URL::to("assets/js/utils/app.dom.js?v=1.0") ?>" type="text/javascript"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
+<script src="<?= URL::to("assets/plugins/FormatDate.js") ?>" type="text/javascript"></script>
