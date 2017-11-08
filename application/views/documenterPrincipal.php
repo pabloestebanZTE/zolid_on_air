@@ -18,7 +18,9 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <form class="form-horizontal well" id="formDetallesBasicos">
+
+                                <form class="form-horizontal well">
+
                                     <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
@@ -130,7 +132,8 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-address-book"></i></span>
-                                                        <input type="text" name="k_id_preparation.n_enteejecutor" id="txtEnteEjecuto" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="txtEnteEjecutor" id="txtEnteEjecutor" class="form-control" value="" readonly="false">
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,6 +182,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
                                                         <input type="text" name="n_integrador" id="n_integrador" class="form-control" value="" >
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -189,7 +193,6 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="n_testgestion" id="n_testgestion" class="form-control selectpicker" required>
-                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -208,6 +211,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="n_sitiolimpio" id="n_sitiolimpio" class="form-control selectpicker" required>
+
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
                                                             <option value="NO">NO</option>
@@ -223,6 +227,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="n_instalacion_hw_sitio" id="n_instalacion_hw_sitio" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -240,6 +245,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="n_cambios_config_solicitados" id="n_cambios_config_solicitados" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -257,6 +263,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="n_cambios_config_final" id="n_cambios_config_final" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -274,6 +281,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
                                                         <input type="text" class="form-control input-sm" id="n_contratista__" name="n_contratista__" value="" />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -284,6 +292,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="n_integracion_gestion_y_trafica" id="n_integracion_gestion_y_trafica" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -302,6 +311,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="puesta_servicio_sitio_nuevo_lte__" id="puesta_servicio_sitio_nuevo_lte__" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -320,6 +330,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="n_instalacion_hw_4g_sitio__" id="n_instalacion_hw_4g_sitio__" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -342,6 +353,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="pre_launch" id="pre_launch" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -361,6 +373,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-file-text"></i></span>
                                                         <input type="text" class="form-control input-sm" id="n_evidenciasl__" name="n_evidenciasl__" value="" />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -371,6 +384,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-file-text"></i></span>
                                                         <input type="text" class="form-control input-sm" id="n_evidenciatg" name="n_evidenciatg" value="" />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -381,6 +395,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-key"></i></span>
                                                         <input type="text" class="form-control input-sm" id="id_rftools__" name="id_rftools__" value="" />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -391,6 +406,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
                                                         <input type="text" class="form-control input-sm" id="i_lider_cambio" name="i_lider_cambio" value="" />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -401,6 +417,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-user"></i></span>
                                                         <input type="text" class="form-control input-sm" id="i_lider_cuadrilla" name="i_lider_cuadrilla" value="" />
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -411,6 +428,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="n_implementacion_campo__" id="n_implementacion_campo__" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -429,6 +447,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="n_gestion_power__" id="n_gestion_power__" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -449,6 +468,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="n_obra_civil__" id="n_obra_civil__" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -468,6 +488,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="on_air__" id="on_air__" class="form-control selectpicker" required>
+
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="CRQ_NO_CONCUERDA">CRQ NO CONCUERDA</option>
@@ -488,6 +509,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
                                                         <select name="n_noc" id="n_noc" class="form-control selectpicker" required>
+
                                                             <option value="NOKIA">NOKIA</option>
                                                             <option value="NOKIA_ZTE">NOKIA ZTE</option>
                                                             <option value="SEGUIMIENTO_FO">SIGUIMIENTO FO</option>
@@ -500,6 +522,7 @@
                                             <input type="hidden" class="form-control input-sm" id="k_id_prep" name="k_id_prep" value="39" />
                                         </fieldset>
                                         <!--   fin seccion derecha---->
+
                                         <!-- Button -->
                                         <center>
                                             <div class="form-group">
@@ -588,27 +611,28 @@
             var fields = <?php echo $fields; ?>;
             console.log(fields);
             $('input[name=n_integrador]').val(fields.k_id_preparation.n_integrador);
-            $('input[name=n_testgestion]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_sitiolimpio]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_instalacion_hw_sitio]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_cambios_config_solicitados]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_cambios_config_final]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_contratista__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_integracion_gestion_y_trafica]').val(ticket.k_id_band.n_name_band);
-            $('input[name=puesta_servicio_sitio_nuevo_lte__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_instalacion_hw_4g_sitio__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=pre_launch]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_evidenciasl__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_evidenciatg]').val(ticket.k_id_band.n_name_band);
-            $('input[name=id_rftools__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=i_lider_cambio]').val(ticket.k_id_band.n_name_band);
-            $('input[name=i_lider_cuadrilla]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_implementacion_campo__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_gestion_power__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_obra_civil__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=on_air__]').val(ticket.k_id_band.n_name_band);
-            $('input[name=n_noc]').val(ticket.k_id_band.n_name_band);
-
+          //  $('input[name=n_testgestion]').val(fields.k_id_preparation.n_testgestion);
+            $('#n_testgestion option[value="'+fields.k_id_preparation.n_testgestion+'"]').attr('selected', 'selected');
+        //    $('.n_testgestion option[value="'+fields.k_id_preparation.n_testgestion+'"]')
+            $('input[name=n_sitiolimpio]').val(fields.k_id_preparation.n_sitiolimpio);
+            $('input[name=n_instalacion_hw_sitio]').val(fields.k_id_preparation.n_instalacion_hw_sitio);
+            $('input[name=n_cambios_config_solicitados]').val(fields.k_id_preparation.n_cambios_config_solicitados);
+            $('input[name=n_cambios_config_final]').val(fields.k_id_preparation.n_cambios_config_final);
+            $('input[name=n_contratista__]').val(fields.k_id_preparation.n_contratista__);
+            $('input[name=n_integracion_gestion_y_trafica]').val(fields.k_id_preparation.n_integracion_gestion_y_trafica);
+            $('input[name=puesta_servicio_sitio_nuevo_lte__]').val(fields.k_id_preparation.puesta_servicio_sitio_nuevo_lte__);
+            $('input[name=n_instalacion_hw_4g_sitio__]').val(fields.k_id_preparation.n_instalacion_hw_4g_sitio__);
+            $('input[name=pre_launch]').val(fields.k_id_preparation.pre_launch);
+            $('input[name=n_evidenciasl__]').val(fields.k_id_preparation.n_evidenciasl__);
+            $('input[name=n_evidenciatg]').val(fields.k_id_preparation.n_evidenciatg);
+            $('input[name=id_rftools__]').val(fields.k_id_preparation.id_rftools__);
+            $('input[name=i_lider_cambio]').val(fields.i_lider_cambio);
+            $('input[name=i_lider_cuadrilla]').val(fields.i_lider_cuadrilla);
+            $('input[name=n_implementacion_campo__]').val(fields.n_implementacion_campo__);
+            $('input[name=n_gestion_power__]').val(fields.n_gestion_power__);
+            $('input[name=n_obra_civil__]').val(fields.n_obra_civil__);
+            $('input[name=on_air__]').val(fields.on_air__);
+            $('input[name=n_noc]').val(fields.n_name_band);
           })
         </script>
         <script src="<?= URL::to('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js?v=1') ?>" type="text/javascript"></script>
