@@ -192,7 +192,7 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
                                             <select name="b_vistamm" id="b_vistamm" class="form-control selectpicker" required>
-                                                <option value="true" >TRUE</option><option value="false" >FALSE</option>
+                                                <option value="1" >TRUE</option><option value="0" >FALSE</option>
                                             </select>
                                         </div>
                                     </div>
@@ -246,7 +246,9 @@
         <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
         <script type="text/javascript">
         $(function(){
-          dom.submit($('#precheckForm'));
+          dom.submit($('#precheckForm'), function () {
+              location.href = app.urlTo('User/principalView');
+          });
         })
         // , function(){location.href = app.urlTo('User/principalView');}
         </script>

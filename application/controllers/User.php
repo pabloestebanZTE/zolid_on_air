@@ -95,8 +95,8 @@ class User extends CI_Controller {
         $this->load->view('toAssign', $ticket);
     }
 
-    public function documenterPrincipalView() {
-        $this->load->view('documenterPrincipal');
+    public function documenterPrincipalView($answer) {
+        $this->load->view('documenterPrincipal', $answer);
     }
 
     public function precheck($answer) {
@@ -169,7 +169,7 @@ class User extends CI_Controller {
 
     public function doPrecheck(){
   //    $id = $this->request->idOnair;
-      $id = 40;
+      $id = 54;
       $ticketOnAir = new dao_ticketOnAir_model();
       $station = new dao_station_model();
       $band = new dao_band_model();

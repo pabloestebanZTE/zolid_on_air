@@ -78,6 +78,7 @@ class dao_ticketOnair_model extends CI_Model {
         }
     }
 
+
     function updateTicket($request) {
         try {
 
@@ -125,7 +126,7 @@ class dao_ticketOnair_model extends CI_Model {
 
 
                 //SE ACTUALIZA EL REGISTRO ONAIR...
-                //Antes de hacerlo modificamos algunos de los parámetros 
+                //Antes de hacerlo modificamos algunos de los parámetros
                 //asignando los valores correspondientes...
                 $request->ticket_on_air->k_id_status_onair = $idStatusOnair;
                 $request->k_id_preparation = $idPreparation;
