@@ -23,7 +23,7 @@ return [
       | you may use many connections at once using the Database library.
       |
      */
-    'default' => 'mysqlLocalhost',
+    'default' => 'camilo',
     /*
       |--------------------------------------------------------------------------
       | Database Connections
@@ -60,6 +60,19 @@ return [
             'database' => 'on_air',
             'username' => 'root',
             'password' => '',
+            'charset' => 'utf8',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ],
+        'camilo' => [
+            'driver' => 'mysql',
+            'host' => 'localhost',
+            'port' => '3306',
+            'database' => 'on_air',
+            'username' => 'root',
+            'password' => 'a4b3c2d1',
             'charset' => 'utf8',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
