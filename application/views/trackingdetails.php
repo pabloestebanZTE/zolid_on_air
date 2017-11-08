@@ -195,7 +195,7 @@
                                         <a href="#" class="close" >&times;</a>
                                         <p class="p-b-0" id="text"></p>
                                     </div>
-                                    <input type="hidden" name="ticket_on_air.id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : 0 ?>" />
+                                    <input type="hidden" name="ticket_on_air.id_onair" value="<?php echo isset($_GET["id"]) ? $_GET["id"] : "0" ?>" />
                                     <div class="display-block p-l-40 p-r-40 m-b-0 well step-panel" id="step-0">
                                         <div class="row form-xs">
                                             <div class="col-md-3">
@@ -239,7 +239,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-3 p-t-20">
-                                                <button class="btn btn-primary"><i class="fa fa-fw fa-check"></i> Revisado</button>                                            
+                                                <button type="button" class="btn btn-primary"><i class="fa fa-fw fa-check"></i> Revisado</button>                                            
                                             </div>
                                             <!--ingenieroPrecheck y FinPre los generará el sistema.-->
                                         </div>
