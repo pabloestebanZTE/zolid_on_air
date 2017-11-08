@@ -165,39 +165,41 @@
         <?php $this->load->view('parts/generic/scripts'); ?>
         <!-- CUSTOM SCRIPT   -->
         <script>
-          $(function () {
-            var ticket = <?php echo $ticket; ?>;
-            var users = <?php echo $users; ?>;
+            $(function () {
+                var ticket = <?php echo $ticket; ?>;
+                var users = <?php echo $users; ?>;
 
-            for (var j = 0; j < users.data.length; j++){
-              $('#k_id_user').append($('<option>', {
-                  value: users.data[j].k_id_user,
-                  text: users.data[j].n_name_user + " " + users.data[j].n_last_name_user
-              }));
-            }
-            $('input[name=txtEstacion]').val(ticket.k_id_station.n_name_station);
-            $('input[name=txtBanda]').val(ticket.k_id_band.n_name_band);
-            $('input[name=txtRegional]').val(ticket.k_id_station.k_id_city.k_id_regional.n_name_regional);
-            $('input[name=txtTecnologia]').val(ticket.k_id_technology.n_name_technology);
-            $('input[name=txtTipotrabajo]').val(ticket.k_id_work.n_name_ork);
-            $('input[name=txtCiudad]').val(ticket.k_id_station.k_id_city.n_name_city);
-            $('input[name=txtEnte]').val(ticket.k_id_preparation.n_enteejecutor);
-            $('input[name=txtCRQ]').val(ticket.k_id_preparation.n_crq);
-            $('input[name=txtWP]').val(ticket.k_id_preparation.n_wp);
-            $('input[name=txtFecha]').val(ticket.k_id_preparation.d_ingreso_on_air);
-            $('input[name=txtEstado]').val(ticket.k_id_status_onair.k_id_status.n_name_status);
-            $('input[name=txtSubestado]').val(ticket.k_id_status_onair.k_id_substatus.n_name_substatus);
-            $('input[name=k_id_ticket]').val(ticket.k_id_onair);
+                for (var j = 0; j < users.data.length; j++) {
+                    $('#k_id_user').append($('<option>', {
+                        value: users.data[j].k_id_user,
+                        text: users.data[j].n_name_user + " " + users.data[j].n_last_name_user
+                    }));
+                }
+                $('input[name=txtEstacion]').val(ticket.k_id_station.n_name_station);
+                $('input[name=txtBanda]').val(ticket.k_id_band.n_name_band);
+                $('input[name=txtRegional]').val(ticket.k_id_station.k_id_city.k_id_regional.n_name_regional);
+                $('input[name=txtTecnologia]').val(ticket.k_id_technology.n_name_technology);
+                $('input[name=txtTipotrabajo]').val(ticket.k_id_work.n_name_ork);
+                $('input[name=txtCiudad]').val(ticket.k_id_station.k_id_city.n_name_city);
+                $('input[name=txtEnte]').val(ticket.k_id_preparation.n_enteejecutor);
+                $('input[name=txtCRQ]').val(ticket.k_id_preparation.n_crq);
+                $('input[name=txtWP]').val(ticket.k_id_preparation.n_wp);
+                $('input[name=txtFecha]').val(ticket.k_id_preparation.d_ingreso_on_air);
+                $('input[name=txtEstado]').val(ticket.k_id_status_onair.k_id_status.n_name_status);
+                $('input[name=txtSubestado]').val(ticket.k_id_status_onair.k_id_substatus.n_name_substatus);
+                $('input[name=k_id_ticket]').val(ticket.k_id_onair);
 
-          })
+            })
         </script>
         <script src="<?= URL::to("assets/plugins/jquery.validate.min.js") ?>" type="text/javascript"></script>
         <script src="<?= URL::to("assets/plugins/HelperForm.js") ?>" type="text/javascript"></script>
         <script type="text/javascript">
-        $(function(){
-          dom.submit($('#assignEng'));
-        })
-        // , function(){location.href = app.urlTo('User/principalView');}
+            $(function () {
+                dom.submit($('#assignEng'), function () {
+                    location.href = app.urlTo('User/principalView');
+                });
+            })
+            // , function(){location.href = app.urlTo('User/principalView');}
         </script>
     </body>
 </html>

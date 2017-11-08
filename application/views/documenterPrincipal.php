@@ -4,7 +4,11 @@
     <body data-base="<?= URL::base() ?>">
         <?php $this->load->view('parts/generic/header'); ?>
         <div class="container autoheight p-t-20">
-            <div class="col-md-12">
+            <div class="alert alert-success alert-dismissable hidden" id="principalAlert">
+                <a href="#" class="close">&times;</a>
+                <p id="text" class="m-b-0 p-b-0"></p>
+            </div>
+            <div class="col-md-12 hidden" id="trackingDetails">
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -14,15 +18,15 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <form class="form-horizontal well">
-                                    <div class="panel-body">                                                                   
+                                <form class="form-horizontal well" id="formDetallesBasicos">
+                                    <div class="panel-body">
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
-                                                <label for="txtEstacion" class="col-md-3 control-label">Estación:</label>
+                                                <label for="txtEstacion" class="col-md-3 control-label">Estacion:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-street-view"></i></span>
-                                                        <input type="text" name="txtEstacion" id="txtEstacion" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_station.n_name_station" id="txtEstacion" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -32,7 +36,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-signal"></i></span>
-                                                        <input type="text" name="txtBanda" id="txtBanda" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_band.n_name_band" id="txtBanda" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -42,7 +46,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-globe"></i></span>
-                                                        <input type="text" name="txtRegional" id="txtRegional" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_regional.n_name_regional" id="txtRegional" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +66,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-calendar"></i></span>
-                                                        <input type="text" name="txtFechaIngresoOnAir" id="txtFechaIngresoOnAir" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="txtFechaIngresoOnAir" id="txtFechaIngresoOnAir" class="form-control" value="" readonly="false" maxlength="10" placeholder="DD/MM/AAAA">
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,7 +76,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-drivers-license"></i></span>
-                                                        <input type="text" name="txtCRQ" id="txtCRQ" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_preparation.n_crq" id="txtCRQ" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -82,7 +86,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-drivers-license"></i></span>
-                                                        <input type="text" name="txtWP" id="txtWP" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_preparation.n_wp" id="txtWP" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -92,11 +96,11 @@
                                         <!--  inicio seccion derecha form---->
                                         <fieldset>
                                             <div class="form-group">
-                                                <label for="txtTecnologia" class="col-md-3 control-label">Tecnología:</label>
+                                                <label for="txtTecnologia" class="col-md-3 control-label">Tecnologia:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-tablet"></i></span>
-                                                        <input type="text" name="txtTecnologia" id="txtTecnologia" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_technology.n_name_technology" id="txtTecnologia" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -106,7 +110,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-briefcase"></i></span>
-                                                        <input type="text" name="txtTipotrabajo" id="txtTipotrabajo" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_work.n_name_ork" id="txtTipotrabajo" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,7 +120,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-location-arrow"></i></span>
-                                                        <input type="text" name="txtciudad" id="txtciudad" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_station.k_id_city.n_name_city" id="txtciudad" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,7 +130,7 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-address-book"></i></span>
-                                                        <input type="text" name="txtEnteEjecutor" id="txtEnteEjecutor" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_preparation.n_enteejecutor" id="txtEnteEjecuto" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,17 +140,17 @@
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
-                                                        <input type="text" name="txtEstado" id="txtEstado" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_status_onair.k_id_status.n_name_status" id="txtEstado" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="txtSubestado" class="col-md-3 control-label">Subestado:</label>
+                                                <label for="txtSubestado" class="col-md-3 control-label">subestado:</label>
                                                 <div class="col-md-8 selectContainer">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
-                                                        <input type="text" name="txtSubestado" id="txtSubestado" class="form-control" value="" readonly="false">
+                                                        <input type="text" name="k_id_status_onair.k_id_substatus.n_name_substatus" id="txtSubestado" class="form-control" value="" readonly="false">
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,6 +189,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbTestGestion" id="cmbTestGestion" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -203,6 +208,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbSitioLimpio" id="cmbSitioLimpio" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
                                                             <option value="NO">NO</option>
@@ -218,6 +224,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbInstalacionHWSitio" id="cmbInstalacionHWSitio" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -235,6 +242,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbCambiosConfigSolicitados" id="cmbCambiosConfigSolicitados" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -252,6 +260,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbCambiosConfigFinal" id="cmbCambiosConfigFinal" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -279,6 +288,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbIntegracionGestionTrafica" id="cmbIntegracionGestionTrafica" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -297,6 +307,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbPuestaServicioSitioNuevoLTE" id="cmbPuestaServicioSitioNuevoLTE" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -315,6 +326,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbInstalacionHW4GSitio" id="cmbInstalacionHW4GSitio" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -337,6 +349,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-check-circle"></i></span>
                                                         <select name="cmbPrelaunch" id="cmbPrelaunch" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="NA">NA</option>
@@ -406,6 +419,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbImplementacionCampo" id="cmbImplementacionCampo" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -424,6 +438,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbGestionPower" id="cmbGestionPower" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -444,6 +459,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbObraCivil" id="cmbObraCivil" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="DOC">DOC</option>
@@ -463,6 +479,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-unlock"></i></span>
                                                         <select name="cmbOnAIR" id="cmbOnAIR" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="ABIERTO">ABIERTO</option>
                                                             <option value="CERRADO">CERRADO</option>
                                                             <option value="CRQ_NO_CONCUERDA">CRQ NO CONCUERDA</option>
@@ -483,6 +500,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="fa fa-fw fa-building"></i></span>
                                                         <select name="cmbNOC" id="cmbNOC" class="form-control selectpicker" required>
+                                                            <option value="">Seleccione</option>
                                                             <option value="NOKIA">NOKIA</option>
                                                             <option value="NOKIA_ZTE">NOKIA ZTE</option>
                                                             <option value="SEGUIMIENTO_FO">SIGUIMIENTO FO</option>
