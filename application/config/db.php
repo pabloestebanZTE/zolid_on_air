@@ -59,7 +59,7 @@ return [
             'port' => '3306',
             'database' => 'on_air',
             'username' => 'root',
-            'password' => 'a4b3c2d1',
+            'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
