@@ -3,6 +3,7 @@ var TD = {
         TD.events();
         TD.configView();
         TD.fillTable([]);
+        TD.getDetails();
     },
     events: function () {
         $('#btnDetails').on('click', TD.onClickDetails);
@@ -19,7 +20,22 @@ var TD = {
         $('#modalDetailsInit').modal('show');
     },
     getDetails: function () {
-
+        var alert = dom.printAlert('Consultando detalles, por favor espere...', 'loading', $('#principalAlert'));
+        //Consultamos...
+        app.post('TicketOnair/getAllService', {id: app.getParamURL('id')})
+                .success(function (response) {
+                    console.log(response);
+                    if (response.code > 0) {
+                        $('#trackingDetails').removeClass('hidden');
+                        alert.hide();
+                        $('#formDetallesBasicos').fillForm(response.data);
+                    } else {
+                        alert.print("No se encontró ninguna coincidencia", "warning");
+                    }
+                }).error(function (error) {
+            alert.print("Se ha producido un error desconocido, compruebe su conexión a internet y vuelva a intentarlo.", "danger");
+            console.error(error);
+        }).send();
     },
     fillNA: function () {
         return "Indefinido";
