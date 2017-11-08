@@ -40,8 +40,7 @@
             $preparation = new PreparationStageModel();
             $datos = $preparation->where("k_id_preparation","=",$request->k_id_preparation)
                           ->update($request->all());
-            echo $preparation->getSQL();              
-            $response = new Response(EMessages::SUCCESS);
+            $response = new Response(EMessages::UPDATE);
             $response->setData($datos);
             return $response;
           } catch (ZolidException $ex) {

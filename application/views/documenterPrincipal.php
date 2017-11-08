@@ -175,6 +175,10 @@
                             <div class="panel-body">
                                 <form class="form-horizontal well"  action="Documenter/updateDetails" method="post"  id="detailsForm" name="detailsForm">
                                     <div class="panel-body">
+                                      <div class="alert alert-success alert-dismissable hidden" id="principalAlert">
+                                          <a href="#" class="close">&times;</a>
+                                          <p id="text" class="m-b-0 p-b-0"></p>
+                                      </div>
                                         <fieldset class="col-md-6 control-label">
                                             <div class="form-group">
                                                 <label for="txtIntegrador" class="col-md-3 control-label">Integrador:</label>
@@ -518,8 +522,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="hidden" class="form-control input-sm" id="k_id_ticket" name="k_id_ticket" value="40" />
-                                            <input type="hidden" class="form-control input-sm" id="k_id_prep" name="k_id_prep" value="39" />
+                                            <input type="hidden" class="form-control input-sm" id="k_id_ticket" name="k_id_ticket" value="" />
+                                            <input type="hidden" class="form-control input-sm" id="k_id_prep" name="k_id_prep" value="" />
                                         </fieldset>
                                         <!--   fin seccion derecha---->
 
@@ -632,6 +636,8 @@
             $('#on_air option[value="'+fields.on_air+'"]').attr('selected', 'selected');
             $('#n_noc option[value="'+fields.n_noc+'"]').attr('selected', 'selected');
 
+            $('input[name=k_id_ticket]').val(fields.k_id_onair);
+            $('input[name=k_id_prep]').val(fields.k_id_preparation.k_id_preparation);
 
           })
         </script>

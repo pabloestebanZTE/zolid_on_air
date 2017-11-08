@@ -24,16 +24,12 @@ class Documenter extends CI_Controller {
     }
 
     public function updateDetails(){
-      echo "o.o";
-      print_r($this->request);
       $ticket = new dao_ticketOnAir_model();
       $preparation = new dao_preparationStage_model();
       $response = $ticket->updatePrecheckOnair($this->request);
       $this->request->k_id_preparation = $this->request->k_id_prep;
       $response = $preparation->updatePreparationStage($this->request);
-      print_r($response);
-
-      echo "-.-";
+      $this->json($response);
     }
 
 
