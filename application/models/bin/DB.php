@@ -8,6 +8,7 @@ class DB extends PDO {
     private $others;
     private $action;
     private $sql;
+    private $query;
 
     public function __construct($table = null) {
         $this->init($table);
@@ -163,6 +164,7 @@ class DB extends PDO {
     }
 
     public function first() {
+        $this->limit(1);
         $obj = $this->get();
         if (!is_array($obj)) {
             return null;
@@ -235,14 +237,16 @@ class DB extends PDO {
 
     private function run($obj) {
         $sth = $this->prepare($this->sql);
+        $this->query = $this->sql;
         foreach ($obj as $key => $value) {
+            $this->query = str_replace(":$key", (($value) ? (($value && is_string($value)) ? "\"$value\"" : $value) : "NULL"), $this->query);
             $sth->bindValue(":$key", $value);
         }
         $sth->execute();
     }
 
     function getSql() {
-        return $this->sql;
+        return $this->query;
     }
 
     function setSql($sql) {
