@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class dao_examples_model extends CI_Model {
+class Dao_examples_model extends CI_Model {
     protected $session;
     public function __construct() {
         $this->load->model('dto/Users');

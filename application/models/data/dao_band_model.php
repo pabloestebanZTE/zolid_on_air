@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_band_model extends CI_Model{
+    class Dao_band_model extends CI_Model{
 
       public function __construct(){
          $this->load->model('dto/BandModel');

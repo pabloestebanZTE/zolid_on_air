@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_onAir36h_model extends CI_Model{
+    class Dao_onAir36h_model extends CI_Model{
 
       public function __construct(){
         $this->load->model('dto/OnAir36hModel');

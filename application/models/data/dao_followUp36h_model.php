@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_followUp36h_model extends CI_Model{
+    class Dao_followUp36h_model extends CI_Model{
 
         public function __construct(){
           $this->load->model('dto/FollowUp36hModel');

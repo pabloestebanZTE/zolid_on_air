@@ -27,7 +27,7 @@
 
             <div class='tab-content' id='tab3'>
                 <div class="container">
-                    <form class="well form-horizontal" action="TicketOnAir/insertTicketOnair" method="post"  id="assignServie2" name="assignServie2">
+                    <form class="well form-horizontal" action="TicketOnair/insertTicketOnair" method="post"  id="assignServie2" name="assignServie2">
                       <div class="alert alert-success alert-dismissable hidden">
                           <a href="#" class="close" >&times;</a>
                           <p class="p-b-0" id="text"></p>

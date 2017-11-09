@@ -6,8 +6,8 @@ class Documenter extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('data/dao_ticketOnAir_model');
-        $this->load->model('data/dao_preparationStage_model');
+        $this->load->model('data/Dao_ticketOnair_model');
+        $this->load->model('data/Dao_preparationStage_model');
     }
 
     public function documenterFields(){

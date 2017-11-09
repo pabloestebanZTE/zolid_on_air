@@ -11,7 +11,7 @@ class Precheck extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('data/Dao_ticketOnAir_model');
+        $this->load->model('data/Dao_ticketOnair_model');
         $this->load->model('data/Dao_station_model');
         $this->load->model('data/Dao_band_model');
         $this->load->model('data/Dao_work_model');

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //    session_start();
 
-class dao_precheck_model extends CI_Model {
+class Dao_precheck_model extends CI_Model {
 
     public function __construct() {
         $this->load->model('dto/TicketOnAirModel');

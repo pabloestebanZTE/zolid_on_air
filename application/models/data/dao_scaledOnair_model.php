@@ -4,10 +4,10 @@
 
 //    session_start();
 
-    class dao_scaledOnair_model extends CI_Model{
+    class Dao_scaledOnair_model extends CI_Model{
 
         public function __construct(){
-          $this->load->model('dto/ScaledOnAirMOdel');
+          $this->load->model('dto/ScaledOnAirModel');
         }
 
         public function getAll(){

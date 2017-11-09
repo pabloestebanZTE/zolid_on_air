@@ -6,21 +6,21 @@ class TicketOnair extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('data/dao_ticketOnAir_model');
-        $this->load->model('data/dao_station_model');
-        $this->load->model('data/dao_band_model');
-        $this->load->model('data/dao_work_model');
-        $this->load->model('data/dao_technology_model');
-        $this->load->model('data/dao_statusOnair_model');
-        $this->load->model('data/dao_precheck_model');
-        $this->load->model('data/dao_followUp12h_model');
-        $this->load->model('data/dao_followUp24h_model');
-        $this->load->model('data/dao_followUp36h_model');
-        $this->load->model('data/dao_onAir12h_model');
-        $this->load->model('data/dao_onAir24h_model');
-        $this->load->model('data/dao_onAir36h_model');
-        $this->load->model('data/dao_preparationStage_model');
-        $this->load->model('data/dao_scaledOnair_model');
+        $this->load->model('data/Dao_ticketOnair_model');
+        $this->load->model('data/Dao_station_model');
+        $this->load->model('data/Dao_band_model');
+        $this->load->model('data/Dao_work_model');
+        $this->load->model('data/Dao_technology_model');
+        $this->load->model('data/Dao_statusOnair_model');
+        $this->load->model('data/Dao_precheck_model');
+        $this->load->model('data/Dao_followUp12h_model');
+        $this->load->model('data/Dao_followUp24h_model');
+        $this->load->model('data/Dao_followUp36h_model');
+        $this->load->model('data/Dao_onAir12h_model');
+        $this->load->model('data/Dao_onAir24h_model');
+        $this->load->model('data/Dao_onAir36h_model');
+        $this->load->model('data/Dao_preparationStage_model');
+        $this->load->model('data/Dao_scaledOnair_model');
     }
 
     public function listTicketOnair() {
@@ -163,7 +163,7 @@ class TicketOnair extends CI_Controller {
         if($res->onair36 != ""){
           $res->onair36->k_id_follow_up_36h = $follow36->getfollow36ByIdFollow($res->onair36->k_id_follow_up_36h)->data; //follow up 24
         }
-        
+
         $response = new Response(EMessages::QUERY);
         $response->setData($res);
         $this->json($response);

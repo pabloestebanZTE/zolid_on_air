@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_work_model extends CI_Model{
+    class Dao_work_model extends CI_Model{
 
         public function __construct(){
           $this->load->model('dto/WorkModel');

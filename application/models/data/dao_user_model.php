@@ -4,7 +4,7 @@
 
 //    session_start();
 
-    class dao_user_model extends CI_Model{
+    class Dao_user_model extends CI_Model{
 
         protected $session;
 

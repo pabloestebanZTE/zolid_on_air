@@ -12,9 +12,9 @@ class User extends CI_Controller {
         $this->load->model('data/Dao_band_model');
         $this->load->model('data/Dao_work_model');
         $this->load->model('data/Dao_technology_model');
-        $this->load->model('data/dao_preparationStage_model');
-        $this->load->model('data/dao_precheck_model');
-        $this->load->model('data/dao_statusOnair_model');
+        $this->load->model('data/Dao_preparationStage_model');
+        $this->load->model('data/Dao_precheck_model');
+        $this->load->model('data/Dao_statusOnair_model');
     }
 
     private function validUser($request) {
